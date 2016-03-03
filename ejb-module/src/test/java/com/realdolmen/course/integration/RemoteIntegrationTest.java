@@ -5,6 +5,7 @@ import com.realdolmen.course.persistence.DatabaseEngine;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
+import javax.naming.CommunicationException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -22,7 +23,6 @@ public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
 
     @BeforeClass
     public static void initializeJndiContext() throws Exception {
-        assumeTrue("Integration testing is disabled (enable using -Dintegration)", isPropertySet());
         context = new InitialContext(jdniProperties());
     }
 
@@ -31,6 +31,7 @@ public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
      */
     @Before
     public void verifyCorrectDatabaseEngine() {
+        assumeTrue("Integration testing is disabled (enable using -Dintegration)", isPropertySet());
         assertTrue("Integration testing should be run on " + DatabaseEngine.mysql + " database engine (in current implementation)", DatabaseEngine.current() == DatabaseEngine.mysql);
     }
 
@@ -48,6 +49,10 @@ public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
     }
 
     protected <T> T lookup(String jndiString) throws NamingException {
-        return (T)context.lookup(jndiString);
+        try {
+            return (T) context.lookup(jndiString);
+        } catch(CommunicationException e) {
+            throw new RuntimeException("Unable to perform JNDI lookup. Did you start up your application server? Is it running the latest update (redeploy if necessary)?");
+        }
     }
 }

@@ -11,7 +11,7 @@ import static org.junit.Assume.*;
 public class RemoteBookRepositoryTest extends RemoteIntegrationTest {
     @Test
     public void findAllRetrievesAllBooksRemotely() throws NamingException {
-        RemoteBookRepository repository = lookup("ear-module-1.1/ejb-module-1.1/BookRepository!com.realdolmen.course.persistence.RemoteBookRepository");
+        RemoteBookRepository repository = lookup("ear-module-1.1/ejb-module-1.1/BookRepository!com.realdolmen.course.persistence.RemoteBookRepository***");
         assertEquals(3, repository.findAll().size());
     }
 }
