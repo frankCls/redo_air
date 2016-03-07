@@ -17,6 +17,8 @@
         </encoder>
     </appender>
 
+    <logger name="com.realdolmen" level="DEBUG"/>
+
     <logger name="org" level="INFO"/>
 
     <logger name="org.hibernate.SQL" level="DEBUG" />

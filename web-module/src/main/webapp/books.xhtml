@@ -11,7 +11,7 @@
     <h:body>
         <h1>Books</h1>
         <p>A list of books.</p>
-        <h:dataTable id="books" value="#{bookController.allBooks}" var="book">
+        <h:dataTable id="books" value="#{personController.allBooks}" var="book">
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Id"/>
@@ -39,7 +39,7 @@
             <h:column>
                 <h:form>
                     <h:commandLink value="Remove">
-                        <f:ajax render="books" event="click" listener="#{bookController.remove(book.id)}"/>
+                        <f:ajax render="books" event="click" listener="#{personController.remove(book.id)}"/>
                     </h:commandLink>
                 </h:form>
             </h:column>

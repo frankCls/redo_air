@@ -1,6 +1,6 @@
 package com.realdolmen.tickets.servlets;
 
-import com.realdolmen.tickets.repository.PersonRepositoryBean;
+import com.realdolmen.course.repository.PersonRepository;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ public class PersonServlet extends HttpServlet {
 
 
     @EJB
-    private PersonRepositoryBean personRepository;
+    private PersonRepository personRepository;
 
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse response) throws ServletException, IOException {

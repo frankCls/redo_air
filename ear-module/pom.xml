@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-        xmlns="http://maven.apache.org/POM/4.0.0"
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -17,24 +17,29 @@
     <packaging>ear</packaging>
 
     <build>
+        <!--
+            This configuration causes deployments to use names without version, which facilitates upgrading the version
+            in the pom.xml later.
+        -->
+        <finalName>jee7-starter</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
-				<version>2.6</version>
+				<version>2.10.1</version>
                 <configuration>
-                    <version>6</version>
+                    <version>7</version>
                     <modules>
                         <ejbModule>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>ticket-ejb</artifactId>
-                            <bundleFileName>ticket-ejb.jar</bundleFileName>
+                            <artifactId>ejb-module</artifactId>
+                            <bundleFileName>ejb-module.jar</bundleFileName>
                         </ejbModule>
                         <webModule>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>ticket-web</artifactId>
-                            <bundleFileName>tickets.war</bundleFileName>
-                            <contextRoot>/tickets</contextRoot>
+                            <artifactId>web-module</artifactId>
+                            <bundleFileName>web-module.war</bundleFileName>
+                            <contextRoot>/jee7-starter</contextRoot>
                         </webModule>
                     </modules>
                 </configuration>
