@@ -1,6 +1,6 @@
 package com.realdolmen.tickets.repository;
 
-import com.realdolmen.tickets.domain.Person;
+import com.realdolmen.course.domain.Person;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;

@@ -1,6 +1,6 @@
 package com.realdolmen.tickets.ws;
 
-import com.realdolmen.tickets.domain.Person;
+import com.realdolmen.course.domain.Person;
 import com.realdolmen.tickets.service.PersonServiceBean;
 
 import javax.ejb.EJB;

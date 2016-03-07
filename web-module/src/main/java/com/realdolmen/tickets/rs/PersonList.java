@@ -1,6 +1,6 @@
 package com.realdolmen.tickets.rs;
 
-import com.realdolmen.tickets.domain.Person;
+import com.realdolmen.course.domain.Person;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

@@ -1,7 +1,6 @@
 package com.realdolmen.tickets.jms;
 
-import com.realdolmen.tickets.domain.Person;
-import org.junit.After;
+import com.realdolmen.course.domain.Person;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package com.realdolmen.tickets.service;
 
-import com.realdolmen.tickets.domain.Person;
+import com.realdolmen.course.domain.Person;
 import com.realdolmen.tickets.repository.PersonRepositoryRemote;
 import org.junit.Before;
 import org.junit.Test;

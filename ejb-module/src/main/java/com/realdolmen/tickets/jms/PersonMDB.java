@@ -1,7 +1,6 @@
 package com.realdolmen.tickets.jms;
 
-import com.realdolmen.tickets.domain.Person;
-import com.realdolmen.tickets.repository.PersonRepositoryRemote;
+import com.realdolmen.course.domain.Person;
 import com.realdolmen.tickets.service.PersonServiceBean;
 
 import javax.ejb.ActivationConfigProperty;
