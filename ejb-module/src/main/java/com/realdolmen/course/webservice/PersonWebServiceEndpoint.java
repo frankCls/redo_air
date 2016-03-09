@@ -9,7 +9,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
 
-//@WebService(serviceName="PersonWebService")
+@WebService(serviceName="PersonWebService", portName = "PersonWebService")
 @Stateless
 public class PersonWebServiceEndpoint implements PersonWebService {
     @EJB

@@ -207,5 +207,15 @@ public abstract class PersistenceTest extends Assert {
             LOGGER.info("Using database engine: " + databaseEngine);
             return databaseEngine;
         }
+
+        /**
+         * Fails when the expected database engine is not the currently selected one.
+         * Allows clients to mandate a specific environment, without them needing to violate their cohesion.
+         * @param expected The expected database engine.
+         * @param why Please add a reason why you would have this almost unreasonable request.
+         */
+        public void assertEquals(DatabaseEngine expected, String why) {
+            Assert.assertEquals(why, expected, current());
+        }
     }
 }

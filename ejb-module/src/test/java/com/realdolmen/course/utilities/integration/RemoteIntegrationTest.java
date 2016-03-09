@@ -1,6 +1,7 @@
 package com.realdolmen.course.utilities.integration;
 
 import com.realdolmen.course.utilities.persistence.DataSetPersistenceTest;
+import com.realdolmen.course.utilities.persistence.PersistenceTest;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
@@ -37,13 +38,16 @@ public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
         assumeTrue("Integration testing is disabled (enable using -Dintegration)", isPropertySet());
     }
 
+    /**
+     * Ensure the current database engine is selected for running the integration tests.
+     * Since integration tests run on a running server, the unit tests should also use that server's database schema
+     * to perform assertions on. This would likely need to be an acceptance environment of some sort.
+     */
     @Override
     protected DatabaseEngine selectDatabaseEngine() {
         DatabaseEngine defaultEngine = super.selectDatabaseEngine();
-        if(defaultEngine != DatabaseEngine.mysql) {
-            logger.warn("Integration testing should be run on " + DatabaseEngine.mysql + " database engine (in current implementation) but selected engine is " + defaultEngine + ". Automatically changing this (only for integration tests).");
-        }
-        return DatabaseEngine.mysql;
+        defaultEngine.assertEquals(DatabaseEngine.mysql, "Integration testing should be run on " + DatabaseEngine.mysql + " database engine (in current implementation) but selected engine is " + defaultEngine + ". See " + PersistenceTest.class + " for details.");
+        return defaultEngine;
     }
 
     private static boolean isPropertySet() {

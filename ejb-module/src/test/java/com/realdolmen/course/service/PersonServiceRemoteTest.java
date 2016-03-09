@@ -13,7 +13,7 @@ public class PersonServiceRemoteTest extends RemoteIntegrationTest {
         List<Person> people = personService.findAll();
         assertEquals(2, people.size());
         for (Person person : people) {
-            logger.trace("Retrieved person " + person.name());
+            logger.trace("Retrieved person " + person);
         }
     }
 }

@@ -17,7 +17,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.realdolmen" level="DEBUG"/>
+    <logger name="com.realdolmen" level="TRACE"/>
 
     <logger name="org" level="INFO"/>
     <logger name="io" level="INFO"/>
