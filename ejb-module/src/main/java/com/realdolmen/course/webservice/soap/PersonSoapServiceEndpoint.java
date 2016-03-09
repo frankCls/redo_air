@@ -1,4 +1,4 @@
-package com.realdolmen.course.webservice;
+package com.realdolmen.course.webservice.soap;
 
 import com.realdolmen.course.domain.Person;
 import com.realdolmen.course.service.PersonServiceBean;
@@ -9,9 +9,12 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
 
-@WebService(serviceName="PersonWebService", portName = "PersonWebService")
+/**
+ * This is an endpoint for a JAX-WS SOAP web service.
+ */
+@WebService(serviceName="PersonSoapService", portName = "PersonWebService")
 @Stateless
-public class PersonWebServiceEndpoint implements PersonWebService {
+public class PersonSoapServiceEndpoint implements PersonSoapService {
     @EJB
     PersonServiceBean personServiceBean;
 

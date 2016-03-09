@@ -1,9 +1,8 @@
-package com.realdolmen.tickets.rs;
+package com.realdolmen.course.webservice.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath("/resources2")
+@ApplicationPath("/rest")
 public class JaxRsActivator extends Application{
-
 }

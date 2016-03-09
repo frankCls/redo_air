@@ -9,16 +9,16 @@ import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PersonControllerTest extends Mockito {
+public class PersonBeanTest extends Mockito {
     @Mock
     private PersonServiceBean personService;
 
     @InjectMocks
-    private PersonController controller = new PersonController();
+    private PersonBean controller = new PersonBean();
 
     @Test
     public void getAllPeopleDelegatesToBookService() throws Exception {
-        controller.getAllPeople();
+        controller.allPeople();
         verify(personService).findAll();
         verifyNoMoreInteractions(personService);
     }

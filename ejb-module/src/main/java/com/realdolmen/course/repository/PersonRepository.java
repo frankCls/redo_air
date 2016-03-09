@@ -1,6 +1,8 @@
 package com.realdolmen.course.repository;
 
 import com.realdolmen.course.domain.Person;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -10,6 +12,8 @@ import java.util.List;
 
 @Stateless
 public class PersonRepository {
+    private Logger logger = LoggerFactory.getLogger(getClass());
+
     @PersistenceContext
     EntityManager em;
 
@@ -27,6 +31,7 @@ public class PersonRepository {
     }
 
     public void remove(long personId) {
+        logger.info("Removing person with id " + personId);
         em.remove(em.getReference(Person.class, personId));
     }
 }

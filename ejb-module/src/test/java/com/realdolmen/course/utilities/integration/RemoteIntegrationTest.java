@@ -31,23 +31,22 @@ public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
     }
 
     /**
-     * Integration tests invoke RMI calls on an actual running server. Since they assert database state, this means they need to run on the same datasource as the server does, which currently is mysql.
-     */
-    @Before
-    public void verifyCorrectDatabaseEngine() {
-        assumeTrue("Integration testing is disabled (enable using -Dintegration)", isPropertySet());
-    }
-
-    /**
      * Ensure the current database engine is selected for running the integration tests.
      * Since integration tests run on a running server, the unit tests should also use that server's database schema
      * to perform assertions on. This would likely need to be an acceptance environment of some sort.
      */
-    @Override
-    protected DatabaseEngine selectDatabaseEngine() {
-        DatabaseEngine defaultEngine = super.selectDatabaseEngine();
-        defaultEngine.assertEquals(DatabaseEngine.mysql, "Integration testing should be run on " + DatabaseEngine.mysql + " database engine (in current implementation) but selected engine is " + defaultEngine + ". See " + PersistenceTest.class + " for details.");
-        return defaultEngine;
+    @Before
+    public void verifyIntegrationEnablingPreConditions() {
+        assumeTrue("Integration testing is disabled (enable using -Dintegration)", isPropertySet());
+        databaseEngine.assertEquals(DatabaseEngine.mysql, "Integration testing should be run on " + DatabaseEngine.mysql + " database engine (in current implementation) but selected engine is " + databaseEngine + ". See " + PersistenceTest.class + " for details.");
+    }
+
+    /**
+
+     */
+    @Before
+    public void verifyCorrectDatabaseEngine() {
+
     }
 
     private static boolean isPropertySet() {

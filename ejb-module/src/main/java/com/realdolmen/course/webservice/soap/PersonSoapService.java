@@ -1,4 +1,4 @@
-package com.realdolmen.course.webservice;
+package com.realdolmen.course.webservice.soap;
 
 import com.realdolmen.course.domain.Person;
 
@@ -10,7 +10,7 @@ import java.util.List;
  * This annotation is required by JAX-WS, both on the interface as well as on the implementing class.
  */
 @WebService
-public interface PersonWebService {
+public interface PersonSoapService {
     @WebMethod
     List<Person> findAll();
 }

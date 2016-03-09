@@ -1,6 +1,6 @@
-package com.realdolmen.tickets.servlets;
+package com.realdolmen.course.servlet;
 
-import com.realdolmen.course.repository.PersonRepository;
+import com.realdolmen.course.service.PersonServiceBean;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -14,12 +14,11 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/people.html")
 public class PeopleServlet extends HttpServlet {
     @EJB
-    private PersonRepository personRepository;
+    private PersonServiceBean personService;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter writer = response.getWriter();
-        request.setAttribute("people", personRepository.findAll());
+        request.setAttribute("people", personService.findAll());
         request.getRequestDispatcher("/WEB-INF/views/people.jsp").forward(request, response);
     }
 }
