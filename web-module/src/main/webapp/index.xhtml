@@ -7,10 +7,19 @@
     <h:head>
         <meta charset="UTF-8"/>
         <title>Home</title>
+
+        <h:outputStylesheet library="bootstrap-3.3.6" name="/css/bootstrap.css"/>
+        <h:outputScript library="bootstrap-3.3.6" name="/js/bootstrap.js"/>
+        <h:outputScript library="jquery-2.2.1" name="jquery.js"/>
     </h:head>
     <h:body>
-        <h1>Home</h1>
-        <p>Landing page.</p>
-        <h:link outcome="/people.xhtml">List of people</h:link>
+        <div class="container">
+            <h1>Home</h1>
+            <p>Welcome to the RealDolmen JEE7 Starter Project.</p>
+            <h:link outcome="/people.xhtml">List of people by JSF</h:link>
+            <a href="people.html">List of peoply by Servlets &amp; JSP</a>
+
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-apple"></span>Bleh</button>
+        </div>
     </h:body>
 </html>

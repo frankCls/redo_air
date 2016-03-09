@@ -1,4 +1,4 @@
-package com.realdolmen.course.integration;
+package com.realdolmen.course.jms;
 
 import com.realdolmen.course.domain.Person;
 import com.realdolmen.course.utilities.integration.RemoteJmsTest;

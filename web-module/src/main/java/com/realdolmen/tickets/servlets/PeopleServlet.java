@@ -12,16 +12,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(urlPatterns = "/people.html")
-public class PersonServlet extends HttpServlet {
-
-
+public class PeopleServlet extends HttpServlet {
     @EJB
     private PersonRepository personRepository;
 
     @Override
-    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter writer = response.getWriter();
-        writer.println("People: " + personRepository.findAll());
-
+        request.setAttribute("people", personRepository.findAll());
+        request.getRequestDispatcher("/WEB-INF/views/people.jsp").forward(request, response);
     }
 }
