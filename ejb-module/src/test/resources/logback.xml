@@ -20,6 +20,7 @@
     <logger name="com.realdolmen" level="DEBUG"/>
 
     <logger name="org" level="INFO"/>
+    <logger name="io" level="INFO"/>
 
     <logger name="org.hibernate.SQL" level="DEBUG" />
 

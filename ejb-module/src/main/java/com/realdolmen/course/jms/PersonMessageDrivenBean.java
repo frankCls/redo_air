@@ -31,7 +31,6 @@ public class PersonMessageDrivenBean implements MessageListener {
             Person person = (Person) om.getObject();
             logger.info("Received JMS message for person " + person);
             personService.save(person);
-
         } catch (JMSException e) {
             throw new RuntimeException("Unable to receive JMS message", e);
         }

@@ -62,7 +62,7 @@ public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
     protected <T> T lookup(String jndiString) throws NamingException {
         try {
             T resource = (T) context.lookup(jndiString);
-            logger.debug("Lookup performed on JNDI string '%s' yields '%s'", jndiString, resource);
+            logger.debug("Lookup performed on JNDI string '" + jndiString + "' yields '" + resource + "'");
             return resource;
         } catch(CommunicationException e) {
             throw new RuntimeException("Unable to perform JNDI lookup. Did you start up your application server? Is it running the latest update (redeploy if necessary)?", e);
