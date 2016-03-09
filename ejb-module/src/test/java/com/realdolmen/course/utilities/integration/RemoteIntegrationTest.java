@@ -41,14 +41,6 @@ public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
         databaseEngine.assertEquals(DatabaseEngine.mysql, "Integration testing should be run on " + DatabaseEngine.mysql + " database engine (in current implementation) but selected engine is " + databaseEngine + ". See " + PersistenceTest.class + " for details.");
     }
 
-    /**
-
-     */
-    @Before
-    public void verifyCorrectDatabaseEngine() {
-
-    }
-
     private static boolean isPropertySet() {
         return System.getProperty(INTEGRATION_ENABLED_SYSTEM_PROPERTY) != null;
     }
