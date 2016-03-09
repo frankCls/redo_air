@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
-    <h:head>
-        <title>Simple JSF Facelets page</title>
-    </h:head>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <h:body>
-        <h1>People data</h1>
-        <h:dataTable value="#{personBean.allPersons}" var="person" border="1">
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Id"/>
-                </f:facet>
-                <h:outputText value="#{person.id}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="First Name"/>
-                </f:facet>
-                <h:outputText value="#{person.firstName}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Last Name"/>
-                </f:facet>
-                <h:outputText value="#{person.lastName}"/>
-            </h:column>
-        </h:dataTable>
-    </h:body>
+    <ui:composition template="template.xhtml">
+        <ui:define name="pageContent">
+            <h1>People data</h1>
+            <p>This page is rendered by JSF.</p>
+            <h:dataTable value="#{personBean.allPersons}" var="person" styleClass="table table-striped">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id"/>
+                    </f:facet>
+                    <h:outputText value="#{person.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="First Name"/>
+                    </f:facet>
+                    <h:outputText value="#{person.firstName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Last Name"/>
+                    </f:facet>
+                    <h:outputText value="#{person.lastName}"/>
+                </h:column>
+            </h:dataTable>
+        </ui:define>
+    </ui:composition>
 
 </html>

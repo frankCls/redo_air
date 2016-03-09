@@ -4,8 +4,8 @@
 
 <html>
     <head>
-        <title>List of people</title>
-        <c:url value="/resources/bootstrap-3.3.6/css/bootstrap.css" var="bootstrapStylesheet"/>
+        <title>JEE7 Starter</title>
+        <c:url value="/resources/bootstrap-3.3.6/css/bootstrap-jsf.css" var="bootstrapStylesheet"/>
         <link rel="stylesheet" type="text/css" href="${bootstrapStylesheet}"/>
 
         <c:url value="/resources/bootstrap-3.3.6/js/bootstrap.js" var="bootstrapScript"/>
@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Showing a list of people</h1>
+            <h1>People data</h1>
             <p>This page is rendered by a Servlet &amp; JSP.</p>
             <table id="peopleTable" class="table table-striped">
                 <tr>
@@ -34,11 +34,11 @@
             </table>
         </div>
         <script>
-            var $peopleTable = $('#peopleTable');
-            $peopleTable.hide();
+            var $pageContent = $('body > div.container');
+            $pageContent.hide();
             $(function() {
-                $peopleTable.fadeIn();
-            })
+                $pageContent.fadeIn();
+            });
         </script>
     </body>
 </html>

@@ -1,3 +1,7 @@
+/*
+ * This is a modified version of bootstrap to allow the glyph icons to work with JSF.
+*/
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -263,8 +267,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+    src: url('#{resource["bootstrap-3.3.6/fonts/glyphicons-halflings-regular.eot"]}');
+    src: url('#{resource["bootstrap-3.3.6/fonts/glyphicons-halflings-regular.eot"]}&#iefix') format('embedded-opentype'), url('#{resource["bootstrap-3.3.6/fonts/glyphicons-halflings-regular.woff"]}') format('woff'), url('#{resource["bootstrap-3.3.6/fonts/glyphicons-halflings-regular.ttf"]}') format('truetype'), url('#{resource["bootstrap-3.3.6/fonts/glyphicons-halflings-regular.svg"]}#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
