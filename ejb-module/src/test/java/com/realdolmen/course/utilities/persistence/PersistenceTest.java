@@ -1,55 +1,25 @@
 package com.realdolmen.course.utilities.persistence;
 
-import com.realdolmen.course.domain.Person;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Expression;
-import javax.persistence.criteria.Root;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
- * Prepares a persistence context for testing with JPA.
- * Use {@link #properties()} to configure database properties
+ * Takes care of some streamlining for getting persistence tests to work correctly in all cases.
+ * These measures would likely be taken by a real world project as well, but they are not relevant to the essence of JPA.
+ *
+ * Advanced course participants are free to explore this code to get some ideas. Beginner course participants can simply
+ * ignore the contents of this file, and assume "things will work".
  */
 public abstract class PersistenceTest extends Assert {
-    public static final String DRIVER = "javax.persistence.jdbc.driver";
-    public static final String URL = "javax.persistence.jdbc.url";
-    public static final String USER = "javax.persistence.jdbc.user";
-    public static final String PASSWORD = "javax.persistence.jdbc.password";
-
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
-    private static final String PERSISTENCE_UNIT_NAME = "MyTestPersistenceUnit";
-
-    private EntityManagerFactory entityManagerFactory;
-    private EntityManager entityManager;
-    private EntityTransaction transaction;
-    protected DatabaseEngine databaseEngine;
-
-    @Before
-    public final void initialize() throws SQLException {
-        databaseEngine = selectDatabaseEngine();
-        initializeEntityManagerFactory();
-        logger.info("Creating transacted EntityManager");
-        entityManager = entityManagerFactory.createEntityManager();
-        transaction = entityManager.getTransaction();
-        transaction.begin();
-    }
+    protected final DatabaseEngine databaseEngine = selectDatabaseEngine();
 
     /**
      * Chooses the database engine to run this unit test.
@@ -61,28 +31,21 @@ public abstract class PersistenceTest extends Assert {
         return DatabaseEngine.current();
     }
 
-    @After
-    public final void destroy() {
-        completeTransaction();
-        destroyEntityManager();
-        destroyEntityManagerFactory();
-    }
-
-    private void initializeEntityManagerFactory() throws SQLException {
-        recreateSchema();
-        loadPersistenceUnit();
-    }
-
-    private void loadPersistenceUnit() {
-        logger.info("Creating EntityManagerFactory from persistence unit " + PERSISTENCE_UNIT_NAME);
-        entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME, properties());
-    }
-
-    private void recreateSchema() throws SQLException {
+    /**
+     * Recreates the SQL schema from scratch.
+     * One might wonder why this is necessary when using a JPA property such as "hbm2ddl.auto". This is due to the fact
+     * that sometimes a drop-create fails to delete old references. For example, when a previous entity is renamed,
+     * the drop-create feature would not "see" that the table that corresponded with the old entity name still exists.
+     * This thus creates "lingering" tables which sporadically causes trouble due to foreign key violations.
+     * This step may not _always_ be necessary, but it _is_ necessary _sometimes_. As this course is not about dealing
+     * with SQL foreign key side-effects, we take this measure to guarantee that problem never happens in the course.
+     */
+    @Before
+    public void recreateSchemaIfRequired() throws SQLException {
         DatabaseEngine databaseEngine = selectDatabaseEngine();
         if(!databaseEngine.isInMemory) {
             logger.info("Recreating database schema '" + databaseEngine.schema + "'");
-            try (Connection connection = newConnection()) {
+            try (Connection connection = newJdbcConnection()) {
                 connection.createStatement().execute("drop schema " + databaseEngine.schema);
                 connection.createStatement().execute("create schema " + databaseEngine.schema);
             }
@@ -90,81 +53,22 @@ public abstract class PersistenceTest extends Assert {
     }
 
     /**
-     * Provides connection settings for the database. These settings will merge with the ones already in the test persistence.xml.
-     * Subclasses can override this to customize.
-     * @return Map of JPA properties.
-     */
-    protected Map<String, String> properties() {
-        DatabaseEngine databaseEngine = selectDatabaseEngine();
-        HashMap<String, String> properties = new HashMap<>();
-        properties.put(DRIVER, databaseEngine.driverClass);
-        properties.put(URL, databaseEngine.url);
-        properties.put(USER, databaseEngine.username);
-        properties.put(PASSWORD, databaseEngine.password);
-        return Collections.unmodifiableMap(properties);
-    }
-
-    private void destroyEntityManager() {
-        if(entityManager != null) {
-            entityManager.close();
-        }
-    }
-
-    private void completeTransaction() {
-        logger.info("Committing and closing transacted EntityManager");
-        if(transaction != null) {
-            if(transaction.getRollbackOnly()) {
-                transaction.rollback();
-            } else {
-                transaction.commit();
-            }
-        }
-    }
-
-    private void destroyEntityManagerFactory() {
-        logger.info("Closing EntityManagerFactory");
-        if(entityManagerFactory != null) {
-            entityManagerFactory.close();
-        }
-    }
-
-    /**
-     * Obtains the current EntityManager. Use this to write tests against.
-     */
-    protected EntityManager entityManager() {
-        return this.entityManager;
-    }
-
-    /**
-     * Obtains a <strong>new</strong> JDBC connection using connection settings defined in {@link #properties()}.
-     * Note this connection does not participate in the same transaction as the {@link #entityManager()}, so be careful
+     * Obtains a <strong>new</strong> JDBC connection using connection settings defined in {@link #databaseEngine}.
+     * Note this connection does not participate in the same transaction as the {@link com.realdolmen.course.utilities.persistence.JpaPersistenceTest#entityManager()}, so be careful
      * when asserting against both.
      * @return A new JDBC connection. Callsite is responsible for closing.
      * @throws SQLException When the shit hits the fan.
      */
-    protected Connection newConnection() throws SQLException {
-        Map<String, String> properties = properties();
-        return DriverManager.getConnection(properties.get(URL), properties.get(USER), properties.get(PASSWORD));
-    }
-
-    /**
-     * Convenience for unit tests that assert entity counts.
-     * @param entityClass The entity class for which to count records.
-     * @param <T> Type of the entity.
-     * @return The number of said entities found in the database.
-     */
-    protected <T> long count(Class<T> entityClass) {
-        CriteriaBuilder builder = entityManager().getCriteriaBuilder();
-        CriteriaQuery<Long> query = builder.createQuery(Long.class);
-        query.select(builder.count(query.from(entityClass)));
-        return entityManager().createQuery(query).getSingleResult();
+    protected Connection newJdbcConnection() throws SQLException {
+        return DriverManager.getConnection(databaseEngine.url, databaseEngine.username, databaseEngine.password);
     }
 
     /**
      * Represents all available database engines that can be used for running unit tests.
      * Switching implementations can be done using a {@link #DATABASE_ENGINE_SYSTEM_PARAMETER system parameter}.
+     * Remember: inner enums are always static!
      */
-    public static enum DatabaseEngine {
+    public enum DatabaseEngine {
         /**
          * MySQL based database engine for running against a production-mirror.
          */

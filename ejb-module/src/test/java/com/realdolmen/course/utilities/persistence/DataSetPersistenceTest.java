@@ -10,6 +10,7 @@ import org.dbunit.dataset.ReplacementDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.ext.mysql.MySqlDataTypeFactory;
 import org.dbunit.operation.DatabaseOperation;
+import org.junit.After;
 import org.junit.Before;
 
 import java.sql.Connection;
@@ -22,8 +23,9 @@ import java.util.HashMap;
 public abstract class DataSetPersistenceTest extends PersistenceTest {
     @Before
     public void loadDataSet() throws Exception {
+        initialize();
         logger.info("Loading datasets");
-        try(Connection jdbcConnection = newConnection()) {
+        try(Connection jdbcConnection = newJdbcConnection()) {
             IDatabaseConnection connection = new DatabaseConnection(jdbcConnection);
             if(databaseEngine == DatabaseEngine.mysql) {
                 connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory()); // Set factorytype in dbconfig to remove warning
@@ -31,6 +33,22 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
             DatabaseOperation.INSERT.execute(connection, createDataSet());
         }
     }
+
+    @After
+    public void unloadDataSet() throws Exception {
+        // Nothing to see here, move along...
+        destroy();
+    }
+
+    /**
+     * Callback hook for subclasses to trigger their behaviour before initializing datasets.
+     */
+    protected abstract void initialize() throws Exception;
+
+    /**
+     * Callback hook for subclasses to trigger their behaviour before unloading datasets.
+     */
+    protected abstract void destroy() throws Exception;
 
     /**
      * Builds a combination dataset, including replacing {null} by null.
@@ -58,4 +76,5 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
     protected String[] dataSets() {
         return new String[] { "/data.xml" };
     }
+
 }

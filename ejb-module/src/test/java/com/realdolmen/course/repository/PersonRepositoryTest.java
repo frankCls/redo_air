@@ -1,13 +1,14 @@
 package com.realdolmen.course.repository;
 
 import com.realdolmen.course.domain.Person;
-import com.realdolmen.course.utilities.persistence.DataSetPersistenceTest;
-import org.junit.*;
+import com.realdolmen.course.utilities.persistence.JpaPersistenceTest;
+import org.junit.Before;
+import org.junit.Test;
 
 import javax.validation.ConstraintViolationException;
 import java.util.List;
 
-public class PersonRepositoryTest extends DataSetPersistenceTest {
+public class PersonRepositoryTest extends JpaPersistenceTest {
     private PersonRepository personRepository;
 
     private static final long TEST_PERSON_ID = 1000;

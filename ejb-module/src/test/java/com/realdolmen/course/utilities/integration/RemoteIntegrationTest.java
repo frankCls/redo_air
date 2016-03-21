@@ -1,6 +1,6 @@
 package com.realdolmen.course.utilities.integration;
 
-import com.realdolmen.course.utilities.persistence.DataSetPersistenceTest;
+import com.realdolmen.course.utilities.persistence.JpaPersistenceTest;
 import com.realdolmen.course.utilities.persistence.PersistenceTest;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -20,10 +20,10 @@ import static org.junit.Assume.assumeTrue;
  * Integration tests are disabled by default, unless a {@link #INTEGRATION_ENABLED_SYSTEM_PROPERTY system parameter} is
  * present.
  */
-public abstract class RemoteIntegrationTest extends DataSetPersistenceTest {
+public abstract class RemoteIntegrationTest extends JpaPersistenceTest {
     public static final String INTEGRATION_ENABLED_SYSTEM_PROPERTY = "integration";
 
-    private static InitialContext context;
+    protected static InitialContext context;
 
     @BeforeClass
     public static void initializeJndiContext() throws Exception {
