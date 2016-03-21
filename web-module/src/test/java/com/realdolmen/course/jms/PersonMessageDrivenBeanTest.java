@@ -4,7 +4,8 @@ import com.realdolmen.course.domain.Person;
 import com.realdolmen.course.utilities.integration.RemoteJmsTest;
 import org.junit.Test;
 
-import javax.jms.*;
+import javax.jms.JMSException;
+import javax.jms.ObjectMessage;
 
 public class PersonMessageDrivenBeanTest extends RemoteJmsTest {
     @Test

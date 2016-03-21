@@ -53,7 +53,7 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
     /**
      * Builds a combination dataset, including replacing {null} by null.
      * @return The combo dataset that should be executed.
-     * @throws DataSetException When the stars are in the wrong position.
+     * @throws org.dbunit.dataset.DataSetException When the stars are in the wrong position.
      */
     private IDataSet createDataSet() throws DataSetException {
         final FlatXmlDataSetBuilder dataSetBuilder = new FlatXmlDataSetBuilder();

@@ -10,16 +10,13 @@ import javax.xml.ws.Service;
 import java.net.URL;
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 public class PersonWebServiceIntegrationTest extends RemoteIntegrationTest {
 
     private PersonSoapService service;
 
     @Before
     public void setupBeforeClass() throws Exception {
-        URL wsdlLocation = new URL("http://localhost:8080/ejb-module/PersonSoapService/PersonSoapServiceEndpoint?wsdl");
+        URL wsdlLocation = new URL("http://localhost:8080/jee7-starter/PersonSoapService/PersonSoapServiceEndpoint?wsdl");
         QName serviceName = new QName("http://soap.webservice.course.realdolmen.com/", "PersonSoapService");
         Service webService = Service.create(wsdlLocation, serviceName);
         service = webService.getPort(PersonSoapService.class);
