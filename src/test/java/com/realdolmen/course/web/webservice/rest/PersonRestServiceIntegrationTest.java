@@ -1,4 +1,4 @@
-package com.realdolmen.course.webservice.rest;
+package com.realdolmen.course.web.webservice.rest;
 
 import com.realdolmen.course.domain.Person;
 import com.realdolmen.course.utilities.integration.RemoteIntegrationTest;

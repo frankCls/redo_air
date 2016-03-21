@@ -1,4 +1,4 @@
-package com.realdolmen.course.servlet;
+package com.realdolmen.course.web.servlet;
 
 import com.realdolmen.course.service.PersonServiceBean;
 

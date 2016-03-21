@@ -1,4 +1,4 @@
-package com.realdolmen.course.webservice.soap;
+package com.realdolmen.course.web.webservice.soap;
 
 import com.realdolmen.course.domain.Person;
 import com.realdolmen.course.service.PersonServiceBean;

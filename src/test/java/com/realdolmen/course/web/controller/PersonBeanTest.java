@@ -1,4 +1,4 @@
-package com.realdolmen.course.controller;
+package com.realdolmen.course.web.controller;
 
 import com.realdolmen.course.service.PersonServiceBean;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.realdolmen.course.webservice.soap;
+package com.realdolmen.course.web.webservice.soap;
 
 import com.realdolmen.course.domain.Person;
 import com.realdolmen.course.utilities.integration.RemoteIntegrationTest;
@@ -17,7 +17,7 @@ public class PersonWebServiceIntegrationTest extends RemoteIntegrationTest {
     @Before
     public void setupBeforeClass() throws Exception {
         URL wsdlLocation = new URL("http://localhost:8080/jee7-starter/PersonSoapService/PersonSoapServiceEndpoint?wsdl");
-        QName serviceName = new QName("http://soap.webservice.course.realdolmen.com/", "PersonSoapService");
+        QName serviceName = new QName("http://soap.webservice.web.course.realdolmen.com/", "PersonSoapService");
         Service webService = Service.create(wsdlLocation, serviceName);
         service = webService.getPort(PersonSoapService.class);
     }
