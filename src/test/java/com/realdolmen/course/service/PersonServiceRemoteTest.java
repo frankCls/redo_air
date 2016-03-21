@@ -9,7 +9,7 @@ import java.util.List;
 public class PersonServiceRemoteTest extends RemoteIntegrationTest {
     @Test
     public void testPersonServiceCanBeAccessedRemotely() throws Exception {
-        PersonServiceRemote personService = lookup("jee7-starter/web-module/PersonServiceBean!com.realdolmen.course.service.PersonServiceRemote");
+        PersonServiceRemote personService = lookup("jee7-starter/PersonServiceBean!com.realdolmen.course.service.PersonServiceRemote");
         List<Person> people = personService.findAll();
         assertEquals(2, people.size());
         for (Person person : people) {

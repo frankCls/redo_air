@@ -5,6 +5,9 @@ JEE7 Starter
 
 This project serves as a demo/template for JEE6 and JEE7 development. It is used as a starting point for a number of RealDolmen courses.
 
+Version 2.0 is now heavily simplified, to make use of the trends in JEE7 to allow more simplified project packaging such
+as web-profile only.
+
 RealDolmen courses
 ------------------
     * Developing Java Enterprise Applications with JEE 6
