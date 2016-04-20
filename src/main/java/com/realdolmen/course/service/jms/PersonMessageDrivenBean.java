@@ -1,4 +1,4 @@
-package com.realdolmen.course.jms;
+package com.realdolmen.course.service.jms;
 
 import com.realdolmen.course.domain.Person;
 import com.realdolmen.course.service.PersonServiceBean;
