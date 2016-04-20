@@ -117,6 +117,23 @@
             <type>pom</type>
             <scope>test</scope>
         </dependency>
+
+		<!--
+			Tyrus is the reference implementation of JSR-356: Java API for WebSocket.
+			We need to have the client jar to be able to create a WebSocket client in standalone mode (@ClientEndpoint).
+		-->
+		<dependency>
+			<groupId>org.glassfish.tyrus</groupId>
+			<artifactId>tyrus-client</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.tyrus</groupId>
+			<artifactId>tyrus-container-grizzly</artifactId>
+			<version>1.2.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
