@@ -103,6 +103,8 @@
 			<version>1.10.19</version>
 			<scope>test</scope>
 		</dependency>
+
+        <!-- Support performing remote JNDI lookups for consuming @Remote EJB interfaces on a different JVM -->
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-ejb-client-bom</artifactId>
@@ -110,6 +112,8 @@
 			<type>pom</type>
 			<scope>test</scope>
 		</dependency>
+
+        <!-- Support for JNDI lookups of JMS resources (ConnectionFactory, Queues, ...) to allow working with Destinations from a different JVM -->
         <dependency>
             <groupId>org.wildfly</groupId>
             <artifactId>wildfly-jms-client-bom</artifactId>
@@ -118,20 +122,19 @@
             <scope>test</scope>
         </dependency>
 
-		<!--
-			Tyrus is the reference implementation of JSR-356: Java API for WebSocket.
-			We need to have the client jar to be able to create a WebSocket client in standalone mode (@ClientEndpoint).
-		-->
+		<!-- Support for WebSocket ClientEndpoints in standalone mode -->
 		<dependency>
-			<groupId>org.glassfish.tyrus</groupId>
-			<artifactId>tyrus-client</artifactId>
-			<version>1.2.1</version>
-			<scope>test</scope>
+			<groupId>io.undertow</groupId>
+			<artifactId>undertow-websockets-jsr</artifactId>
+			<version>1.3.15.Final</version> <!-- Version used by Wildfly 10.0.0.Final -->
+            <scope>test</scope>
 		</dependency>
+
+		<!-- Support in standalone mode for JSON-P. Wildfly 10 actually uses org.glassfish.json as the implementation for this. -->
 		<dependency>
-			<groupId>org.glassfish.tyrus</groupId>
-			<artifactId>tyrus-container-grizzly</artifactId>
-			<version>1.2.1</version>
+			<groupId>org.glassfish</groupId>
+			<artifactId>json</artifactId>
+			<version>1.0.3</version> <!-- Version used by Wildfly 10.0.0.Final -->
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -140,7 +143,7 @@
         <!--
             This setting triggers maven to build a war without version number, which is convenient because it makes
             the remote JNDI lookups in the unit tests to be less brittle (otherwise they would break every time the
-            version of the artifact is updated.
+            version of the artifact is updated (because they would have the version number in their lookup string).
          -->
         <finalName>${artifactId}</finalName>
 
