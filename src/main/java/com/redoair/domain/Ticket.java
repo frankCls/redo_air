@@ -37,8 +37,6 @@ public class Ticket implements Serializable{
 	@OneToOne
 	private Passenger passenger;
 
-	
-
 	public Long getId() {
 		return id;
 	}

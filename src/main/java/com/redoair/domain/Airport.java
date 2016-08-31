@@ -1,6 +1,9 @@
 
 package com.redoair.domain;
 
+
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +13,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "airports")
-public class Airport {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Airport  implements Serializable{
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
 
 	private String name;
@@ -38,7 +41,7 @@ public class Airport {
 	@Column(name = "timezone_tz")
 	private String timezoneTz;
 
-	@Column(name = "DST")
+	@Column(name = "DST")	
 	private String dst;
 
 	private String region;
