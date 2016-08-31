@@ -4,12 +4,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.realdolmen.course.utilities.persistence.JpaPersistenceTest;
 import com.redoair.domain.Airport;
 import com.redoair.domain.Flight;
 import com.redoair.repositories.FlightRepository;
-import com.redoair.utilities.persistence.JpaPersistenceTest;
-
-
 
 public class TestFlightRepository extends JpaPersistenceTest {
 	private FlightRepository repo;

@@ -25,7 +25,7 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
     public void loadDataSet() throws Exception {
         initialize();
         logger.info("Loading datasets");
-        try(Connection jdbcConnection = newJdbcConnection()) {
+       try(Connection jdbcConnection = newJdbcConnection()) {
             IDatabaseConnection connection = new DatabaseConnection(jdbcConnection);
             if(databaseEngine == DatabaseEngine.mysql) {
                 connection.getConfig().setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory()); // Set factorytype in dbconfig to remove warning

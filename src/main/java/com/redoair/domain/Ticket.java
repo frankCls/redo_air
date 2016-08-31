@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,10 +24,10 @@ public class Ticket implements Serializable{
 	@GeneratedValue
 	private Long id;
 	
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private TravelingClassType travelingClass;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private PurchaseStatus purchaseStatus;
 	
 	@NotNull
@@ -34,7 +35,7 @@ public class Ticket implements Serializable{
 	private Flight flight;
 	
 	@NotNull
-	@OneToOne
+	@OneToOne( cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	private Passenger passenger;
 
 	public Long getId() {
