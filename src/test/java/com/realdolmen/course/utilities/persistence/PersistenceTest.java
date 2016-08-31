@@ -80,6 +80,7 @@ public abstract class PersistenceTest extends Assert {
         h2("org.h2.Driver", "jdbc:h2:mem:", "sa", "", true);
 
         private static final DatabaseEngine DEFAULT_DATABASE_ENGINE = DatabaseEngine.mysql;
+        //private static final DatabaseEngine DEFAULT_DATABASE_ENGINE = DatabaseEngine.h2;
         private static final String DATABASE_ENGINE_SYSTEM_PARAMETER = "databaseEngine";
         private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseEngine.class);
         private static final String DATABASE_SCHEMA_NAME = "realdolmen";

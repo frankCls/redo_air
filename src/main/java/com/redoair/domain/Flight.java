@@ -3,11 +3,13 @@ package com.redoair.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -29,10 +31,12 @@ public class Flight implements Serializable {
 	@Future
 	private Date departureTime;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	@JoinColumn(name="depID", nullable=false)
 	private Airport departureLocation;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
 	@Embedded

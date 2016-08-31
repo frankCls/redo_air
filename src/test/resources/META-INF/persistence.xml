@@ -44,6 +44,7 @@
 		<class>com.redoair.domain.Payer</class>
 		<class>com.redoair.domain.Ticket</class>
 		<class>com.redoair.domain.Employee</class>
+		<class>com.redoair.domain.PartnerCompany</class>
 
 
 		<properties>

@@ -22,19 +22,24 @@ public class TicketRepositoryTest extends JpaPersistenceTest {
 		ticketRepository.em = entityManager();
 	}
 
-	@Test
+	//@Test
 	public void testSaveTicket() {
 
-	/*	Ticket ticket = new Ticket();
+		Ticket ticket = new Ticket();
 		Flight flight = new Flight();
+		
+		
 		Passenger passenger = new Passenger();
+		passenger.setFirstName("Jos");
+		passenger.setLastName("Test");
+		passenger.setPassword("password");
 		ticket.setFlight(flight);
 		ticket.setPassenger(passenger);
 		ticket.setPurchaseStatus(PurchaseStatus.PENDING);
 		ticket.setTravelingClass(TravelingClassType.BUSINESS_CLASS);
 
 		ticketRepository.save(ticket);
-		assertNotNull("Ticket ID is not supposed to be null after saving", ticket.getId());*/
+		assertNotNull("Ticket ID is not supposed to be null after saving", ticket.getId());
 	}
 
 }

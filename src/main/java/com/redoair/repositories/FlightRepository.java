@@ -16,4 +16,8 @@ public class FlightRepository {
 	public Flight findFlightById(Long id){
 		return em.find(Flight.class, id);
 	}
+	
+	public void saveFlight(Flight flight){
+		em.persist(flight);
+	}
 }

@@ -34,7 +34,7 @@ public class Ticket implements Serializable{
 	private Flight flight;
 	
 	@NotNull
-	@OneToOne
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
 	private Passenger passenger;
 
 	public Long getId() {
