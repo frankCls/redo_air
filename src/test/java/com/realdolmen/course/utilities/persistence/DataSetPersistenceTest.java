@@ -1,4 +1,4 @@
-package com.redoair.utilities.persistence;
+package com.realdolmen.course.utilities.persistence;
 
 import org.dbunit.database.DatabaseConfig;
 import org.dbunit.database.DatabaseConnection;
@@ -74,7 +74,7 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
      * @return An array of Strings pointing to class-path relative dataset XML files.
      */
     protected String[] dataSets() {
-        return new String[] { "data.xml" };
+        return new String[] { "/data.xml" };
     }
 
 }

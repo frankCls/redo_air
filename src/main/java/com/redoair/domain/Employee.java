@@ -7,9 +7,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import com.redoair.domain.Role;
-import com.sun.istack.NotNull;
+
 
 @Entity
 public class Employee  implements Serializable{

@@ -55,6 +55,13 @@
             Currently haven't found an elegant way around this.
          -->
         <class>com.realdolmen.course.domain.Person</class>
+        <class>com.redoair.Flight</class>
+        <class>com.redoair.Airport</class>
+        <class>com.redoair.Passenger</class>        
+        <class>com.redoair.Booking</class>
+        <class>com.redoair.Payer</class>        
+        <class>com.redoair.Ticket</class>
+    
 
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />

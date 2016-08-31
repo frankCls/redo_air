@@ -1,4 +1,4 @@
-package com.redoair.utilities.persistence;
+package com.realdolmen.course.utilities.persistence;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,7 +23,7 @@ public abstract class PersistenceTest extends Assert {
 
     /**
      * Chooses the database engine to run this unit test.
-     * Default lets {@link com.redoair.utilities.persistence.PersistenceTest.DatabaseEngine#current()} choose.
+     * Default lets {@link com.realdolmen.course.utilities.persistence.PersistenceTest.DatabaseEngine#current()} choose.
      * Subclasses may override this, if they know what they're doing :)
      * @return The selected database engine.
      */
@@ -54,7 +54,7 @@ public abstract class PersistenceTest extends Assert {
 
     /**
      * Obtains a <strong>new</strong> JDBC connection using connection settings defined in {@link #databaseEngine}.
-     * Note this connection does not participate in the same transaction as the {@link com.redoair.utilities.persistence.JpaPersistenceTest#entityManager()}, so be careful
+     * Note this connection does not participate in the same transaction as the {@link com.realdolmen.course.utilities.persistence.JpaPersistenceTest#entityManager()}, so be careful
      * when asserting against both.
      * @return A new JDBC connection. Callsite is responsible for closing.
      * @throws java.sql.SQLException When the shit hits the fan.
