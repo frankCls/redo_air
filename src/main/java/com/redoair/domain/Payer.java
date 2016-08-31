@@ -1,6 +1,4 @@
-
-package com.realdolmen.domain;
-
+package com.redoair.domain;
 
 public class Payer {
 	
@@ -9,4 +7,4 @@ public class Payer {
 	private String lastName;
 	
 	private CreditCard creditCard;
-};
+}

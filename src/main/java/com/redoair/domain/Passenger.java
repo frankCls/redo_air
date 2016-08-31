@@ -1,6 +1,4 @@
-
-package com.realdolmen.domain;
-
+package com.redoair.domain;
 
 public class Passenger {
 	
@@ -9,4 +7,4 @@ public class Passenger {
 	private String lastName;
 	
 	private String firstName;
-};
+}

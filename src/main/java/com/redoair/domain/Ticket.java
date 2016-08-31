@@ -1,13 +1,10 @@
 
-package com.realdolmen.domain;
+package com.redoair.domain;
 
-import com.realdolmen.domain.PurchaseStatus;
-import com.realdolmen.domain.TravelingClassType;
-
-
+import com.redoair.domain.PurchaseStatus;
+import com.redoair.domain.TravelingClassType;
 
 public class Ticket {
-
 	private TravelingClassType travelingClass;
 
 	private PurchaseStatus purchaseStatus;
@@ -15,4 +12,4 @@ public class Ticket {
 	private Flight flight;
 	
 	private Passenger passenger;
-};
+}

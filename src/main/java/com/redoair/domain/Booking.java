@@ -1,14 +1,7 @@
-
-package com.realdolmen.domain;
-
-
+package com.redoair.domain;
 
 import java.util.Date;
 import java.util.List;
-
-
-
-
 public class Booking {
 
 	private List<Ticket> tickets;
@@ -16,4 +9,4 @@ public class Booking {
 	private Date dateBooked;
 
 	private Payer payer;
-};
+}

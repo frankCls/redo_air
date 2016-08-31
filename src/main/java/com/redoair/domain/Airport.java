@@ -1,5 +1,5 @@
 
-package com.realdolmen.domain;
+package com.redoair.domain;
 
 public class Airport {
 
@@ -10,4 +10,4 @@ public class Airport {
 	private String icaoCode;
 
 	private String regio;
-};
+}

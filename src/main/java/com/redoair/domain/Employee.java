@@ -1,8 +1,6 @@
+package com.redoair.domain;
 
-package com.realdolmen.domain;
-
-import com.realdolmen.domain.Role;
-
+import com.redoair.domain.Role;
 
 public class Employee {
 	
@@ -11,4 +9,4 @@ public class Employee {
 	private String firstName;
 	
 	private String lastName;
-};
+}

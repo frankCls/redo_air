@@ -1,5 +1,5 @@
 
-package com.realdolmen.domain;
+package com.redoair.domain;
 
 
 public enum CreditCardType {
@@ -7,4 +7,4 @@ public enum CreditCardType {
 	MASTER_CARD,
 	
 	AMERICAN_EXPRESS;
-};
+}

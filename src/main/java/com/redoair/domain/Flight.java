@@ -1,12 +1,6 @@
-
-package com.realdolmen.domain;
-
-
+package com.redoair.domain;
 
 import java.util.Date;
-
-
-
 
 public class Flight {
 	
@@ -14,7 +8,7 @@ public class Flight {
 
 	private Airport departureLocation;
 	
-
+	private Date departureTime;
 
 	private Airport destinationLocation;
 	
@@ -23,4 +17,4 @@ public class Flight {
 	private EconomyClassData economyClassData;
 	
 	private BusinessClassData businessClassData;
-};
+}
