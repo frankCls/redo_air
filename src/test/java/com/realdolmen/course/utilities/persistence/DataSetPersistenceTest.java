@@ -55,6 +55,7 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
      * @return The combo dataset that should be executed.
      * @throws org.dbunit.dataset.DataSetException When the stars are in the wrong position.
      */
+    
     private IDataSet createDataSet() throws DataSetException {
         final FlatXmlDataSetBuilder dataSetBuilder = new FlatXmlDataSetBuilder();
         HashMap<String, Object> replacements = new HashMap<>();
@@ -74,7 +75,7 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
      * @return An array of Strings pointing to class-path relative dataset XML files.
      */
     protected String[] dataSets() {
-        return new String[] { "/data.xml" };
+        return new String[] {"/airports.xml"  };
     }
 
 }

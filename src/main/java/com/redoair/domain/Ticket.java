@@ -13,10 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 import com.redoair.domain.PurchaseStatus;
 import com.redoair.domain.TravelingClassType;
-import com.sun.istack.NotNull;
+
 
 @Entity
 public class Ticket implements Serializable{
@@ -38,8 +39,6 @@ public class Ticket implements Serializable{
 	@NotNull
 	@OneToOne
 	private Passenger passenger;
-
-	
 
 	public Long getId() {
 		return id;

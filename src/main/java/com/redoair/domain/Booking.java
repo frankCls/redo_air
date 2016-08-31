@@ -15,8 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
-import com.sun.istack.NotNull;
+
 
 @Entity
 public class Booking  implements Serializable{
