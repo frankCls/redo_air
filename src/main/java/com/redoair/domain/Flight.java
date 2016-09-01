@@ -3,11 +3,14 @@ package com.redoair.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,6 +19,11 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Flight implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6067918148882402340L;
+
 	@Id @GeneratedValue
 	private Long id;
 	
@@ -29,19 +37,29 @@ public class Flight implements Serializable {
 	@Future
 	private Date departureTime;
 	
-	@OneToOne
+	@NotNull
+	@OneToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="depID", nullable=false)
 	private Airport departureLocation;
 	
-	@OneToOne
+	@NotNull
+	@OneToOne(fetch=FetchType.EAGER,cascade={CascadeType.MERGE})
+	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
-	@Embedded
+	@NotNull
+	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+	@JoinColumn(name="firstClassId")
 	private FirstClassData firstClassData;
 	
-	@Embedded	
+	@NotNull
+	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+	@JoinColumn(name="economyClassId")
 	private EconomyClassData economyClassData;
 	
-	@Embedded
+	@NotNull
+	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+	@JoinColumn(name="businessClassId")
 	private BusinessClassData businessClassData;
 
 	public Long getId() {

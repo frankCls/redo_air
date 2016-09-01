@@ -33,7 +33,7 @@ public class TicketRepositoryTest extends JpaPersistenceTest {
 		Ticket ticket = new Ticket();
 		Flight flight = new Flight();
 		Passenger passenger = new Passenger();
-		
+		passenger.setPassword("password");
 		passenger.setFirstName("test");
 		passenger.setLastName("lastname");
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
