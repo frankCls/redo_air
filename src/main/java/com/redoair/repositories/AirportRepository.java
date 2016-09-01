@@ -17,7 +17,7 @@ import com.redoair.domain.Booking;
 public class AirportRepository {
 
 	@PersistenceContext(unitName = "MyPersistenceUnit")
-	private EntityManager em;
+	protected EntityManager em;
 
 	public Airport findAirportById(Long id) {
 		return em.find(Airport.class, id);
@@ -31,7 +31,7 @@ public class AirportRepository {
 	}
 
 	public List<String> findAllAirportRegions() {
-		return em.createQuery("select region from Airport a", String.class).getResultList();
+		return em.createQuery("select distinct region from Airport a", String.class).getResultList();
 
 	}
 

@@ -1,9 +1,23 @@
 <dataset>
-<!-- 	<flight id="2" departureTime="2017-05-30 09:00:00" duration="500" -->
-<!-- 		depID="1" destID="2" /> -->
-<!-- 	<passenger id="3" firstName="test" lastName="lastname" /> -->
 
-<!-- 	<ticket id="1" purchaseStatus="PENDING" travelingClass="BUSINESS_CLASS" -->
-<!-- 		flight_id="2" passenger_id="3" /> -->
+	<pricing id="3" basePrice="50" defaultPrice="5.250" />
+	<travelingclassdata id="2" type="business_class"
+		remainingSeats="5" priceId="3" />
+	<travelingclassdata id="4" type="economy_class"
+		remainingSeats="10" priceId="3" />
+	<travelingclassdata id="5" type="first_class"
+		remainingSeats="12" priceId="3" />
+
+
+	<discounts Pricing_id="3" discountPercentage="0.05"
+		seatTreshold="5" />
+	<discounts Pricing_id="3" discountPercentage="0.07"
+		seatTreshold="10" />
+	<flight id="2" departureTime="2017-05-30 09:00:00" duration="500" businessClassId="2" economyClassId="4" firstClassId="5" depID="1" destID="2" />
+	<passenger id="3" firstName="test" lastName="lastname" />
+
+
+ 	<ticket id="1" purchaseStatus="PENDING" travelingClass="BUSINESS_CLASS" 
+		flight_id="2" passenger_id="3" /> 
 
 </dataset>
