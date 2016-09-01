@@ -1,15 +1,31 @@
 package com.redoair.domain;
 
-import javax.persistence.Embeddable;
+import java.util.Map;
 
-@Embeddable
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MapKeyColumn;
+
+@Entity
 public class Pricing {
 
+	@Id @GeneratedValue
+	private Long id;
+	
 	private double defaultPrice;
 
 	private double basePrice;
 
-	private double discount;
+	@ElementCollection
+	@CollectionTable(name="discounts")
+	@MapKeyColumn(name="seatTreshold")
+	@Column(name="discountPercentage")
+	private Map<Integer,Double> discounts;
 
 	public double getDefaultPrice() {
 		return defaultPrice;
@@ -27,12 +43,14 @@ public class Pricing {
 		this.basePrice = basePrice;
 	}
 
-	public double getDiscount() {
-		return discount;
+	public Map<Integer, Double> getDiscounts() {
+		return discounts;
 	}
 
-	public void setDiscount(double discount) {
-		this.discount = discount;
+	public void setDiscounts(Map<Integer, Double> discounts) {
+		this.discounts = discounts;
 	}
+
+	
 
 }

@@ -45,6 +45,12 @@
 		<class>com.redoair.domain.Ticket</class>
 		<class>com.redoair.domain.Employee</class>
 		<class>com.redoair.domain.PartnerCompany</class>
+		<class>com.redoair.domain.BusinessClassData</class>
+		<class>com.redoair.domain.EconomyClassData</class>
+		<class>com.redoair.domain.FirstClassData</class>
+		<class>com.redoair.domain.AbstractTravelingClassData</class>
+		<class>com.redoair.domain.Pricing</class>
+		
 
 
 		<properties>

@@ -84,7 +84,7 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
 	 *         files.
 	 */
 	protected String[] dataSets() {
-		return new String[] { "/airports.xml", "/partner_company_data.xml" };
+		return new String[] { "/500_airports.xml" };/*, "/partner_company_data.xml"*/
 	}
 
 }
