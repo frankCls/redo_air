@@ -1,5 +1,9 @@
 <dataset>
-    <person id="1000" firstName="John" lastName="Doe"/>
-    <person id="2000" firstName="Janee" lastName="Doe"/>
-    <person id="3000" firstName="Janehhke" lastName="Doe"/>
+	<flight id="2" departureTime="2017-05-30 09:00:00" duration="500"
+		departureLocation_id="1" destinationLocation_id="2" />
+	<passenger id="3" firstName="test" lastName="lastname" />
+
+	<ticket id="1" purchaseStatus="PENDING" travelingClass="BUSINESS_CLASS"
+		flight_id="2" passenger_id="3" />
+
 </dataset>

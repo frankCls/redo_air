@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.realdolmen.course.utilities.persistence.*;
@@ -27,7 +28,9 @@ public class TicketRepositoryTest extends JpaPersistenceTest {
 		ticketRepository.em = entityManager();
 	}
 
+	
 	@Test
+	
 	public void testSaveTicket() {
 
 		Ticket ticket = new Ticket();
