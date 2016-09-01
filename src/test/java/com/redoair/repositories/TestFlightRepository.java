@@ -3,10 +3,12 @@ package com.redoair.repositories;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.realdolmen.course.utilities.persistence.JpaPersistenceTest;
@@ -40,11 +42,24 @@ public class TestFlightRepository extends JpaPersistenceTest {
 	}
 	
 	@Test
+	@Ignore
 	public void ShouldReturnAFlight(){
 		Assert.assertTrue(true);
 	}
 	
 	@Test
+	public void returnAllCitiesWithFlightTest(){
+		List<String> findAllCitiesByCountryWithFlights = repo.findAllCitiesByCountryWithFlights("Papua New Guinea");
+		if (findAllCitiesByCountryWithFlights.isEmpty()) {
+			System.err.println("there are no flights in this country! \n");
+		}
+		for (String city : findAllCitiesByCountryWithFlights) {
+			System.out.println(city);
+		}
+	}
+	
+	@Test
+	@Ignore
 	public void ShouldPersistAFlight(){
 		Flight flight = new Flight();		
 		flight.setDepartureLocation(depAirport);

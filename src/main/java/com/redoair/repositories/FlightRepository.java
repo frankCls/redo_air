@@ -31,11 +31,25 @@ public class FlightRepository {
 		em.persist(flight);
 	}
 
-	public List<Flight> findFlightsByLocations(Airport depAirport, Airport destAirport,
-			TravelingClassType travelingClass, Integer seats, Date departureDate) {
+	public List<String> findAllCitiesByCountryWithFlights(String country) {
+
+		TypedQuery<String> q = em.createQuery(
+				"SELECT f.departureLocation.city FROM Flight f WHERE f.departureLocation.country=:country",
+				String.class);
+		q.setParameter("country", country);
+		return q.getResultList();
+	}
+
+	public List<String> findAllCountryWithFlights() {
+		TypedQuery<String> q = em.createQuery("SELECT f.departureLocation.country FROM Flight f", String.class);
+		return q.getResultList();
+	}
+
+	public List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(Airport depAirport,
+			Airport destAirport, TravelingClassType travelingClass, Integer seats, Date departureDate) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(departureDate);
-		cal.add(Calendar.DATE,1);
+		cal.add(Calendar.DATE, 1);
 		Date oneDayLater = cal.getTime();
 		String travelingClassdata = null;
 		switch (travelingClass) {
@@ -51,7 +65,9 @@ public class FlightRepository {
 		}
 
 		TypedQuery<Flight> q = em.createQuery(
-				"SELECT f FROM Flight f WHERE f.departureLocation=:depAirport AND f.destinationLocation=:destAirport AND" + travelingClassdata + ".remainingSeats=:seats AND f.departureTime BETWEEN :departureDate AND :oneDayLater",
+				"SELECT f FROM Flight f WHERE f.departureLocation=:depAirport AND f.destinationLocation=:destAirport AND"
+						+ travelingClassdata
+						+ ".remainingSeats=:seats AND f.departureTime BETWEEN :departureDate AND :oneDayLater",
 				Flight.class);
 		q.setParameter("depAirport", depAirport);
 		q.setParameter("destAirport", destAirport);

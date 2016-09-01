@@ -29,6 +29,27 @@ public class AirportRepositoryTest extends JpaPersistenceTest {
 	}
 
 	@Test
+	@Ignore
+	public void testReturnAllAirportsByCountry() {
+		List<Airport> findAirportByCountry = airportRepository.findAllAirportByCountry("Belgium");
+		for (Airport airport : findAirportByCountry) {
+			System.out.println("name airport: "+airport.getName() +" country: "+ airport.getCountry() + " city: "+ airport.getCity());
+
+		}
+
+	}
+
+	@Test
+	public void testReturnAllAirportsCountry() {
+	 List<String> findAllAirportCountry = airportRepository.findAllAirportCountry();
+		for (String country : findAllAirportCountry) {
+			System.out.println(country);
+		}
+
+	}
+	
+	@Test
+	@Ignore
 	public void testReturnAllAirportsByregion() {
 		List<Airport> findAirportByRegio = airportRepository.findAirportByRegio("Europe");
 		for (Airport airport : findAirportByRegio) {
@@ -41,7 +62,7 @@ public class AirportRepositoryTest extends JpaPersistenceTest {
 	@Test
 	@Ignore
 	public void testReturnAll() {
-		 List<Airport> findAllAirports = airportRepository.findAllAirports();
+		List<Airport> findAllAirports = airportRepository.findAllAirports();
 		for (Airport airport : findAllAirports) {
 			System.out.println(airport.getName());
 
