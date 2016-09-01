@@ -1,8 +1,11 @@
 
 package com.redoair.domain;
 
-import javax.persistence.Embeddable;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
-@Embeddable
-public class BusinessClassData extends abstractTravelingClassData {
+@Entity
+@DiscriminatorValue("business_class")
+public class BusinessClassData extends AbstractTravelingClassData {
+	
 }

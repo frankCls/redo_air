@@ -1,4 +1,3 @@
-
 package com.redoair.domain;
 
 import java.io.Serializable;

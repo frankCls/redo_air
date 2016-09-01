@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataset>
+	<partner_company name="1Time Airline" IATA="1T" ICAO="RNX" callsign="NEXTIME" country="South Africa"/>
+	<partner_company name="40-Mile Air" IATA="Q5" ICAO="MLA" callsign="MILE-AIR" country="United States"/>
+	<partner_company name="Ansett Australia" IATA="AN" ICAO="AAA" callsign="ANSETT" country="Australia"/>
+	<partner_company name="Abacus International" IATA="1B" country="Singapore"/>
+	<partner_company name="Aigle Azur" IATA="ZI" ICAO="AAF" callsign="AIGLE AZUR" country="France"/>
+	<partner_company name="Aloha Airlines" IATA="AQ" ICAO="AAH" callsign="ALOHA" country="United States"/>
+	<partner_company name="American Airlines" IATA="AA" ICAO="AAL" callsign="AMERICAN" country="United States"/>
+	<partner_company name="Asiana Airlines" IATA="OZ" ICAO="AAR" callsign="ASIANA" country="Republic of Korea"/>
+	<partner_company name="Askari Aviation" IATA="4K" ICAO="AAS" callsign="AL-AAS" country="Pakistan"/>
+	<partner_company name="Afriqiyah Airways" IATA="8U" ICAO="AAW" callsign="AFRIQIYAH" country="Libya"/>
+	<partner_company name="Allegiant Air" IATA="G4" ICAO="AAY" callsign="ALLEGIANT" country="United States"/>
+	<partner_company name="ABSA - Aerolinhas Brasileiras" IATA="M3" ICAO="TUS" callsign="ABSA Cargo" country="Brazil"/>
+	<partner_company name="Astral Aviation" IATA="8V" ICAO="ACP" callsign="ASTRAL CARGO" country="Kenya"/>
+	<partner_company name="Air Tindi" IATA="8T" country="Canadian Territories"/>
+	<partner_company name="Ada Air" IATA="ZY" ICAO="ADE" callsign="ADA AIR" country="Albania"/>
+	<partner_company name="Adria Airways" IATA="JP" ICAO="ADR" callsign="ADRIA" country="Slovenia"/>
+	<partner_company name="Air Europa" IATA="UX" ICAO="AEA" callsign="EUROPA" country="Spain"/>
+	<partner_company name="Aero Benin" IATA="EM" ICAO="AEB" callsign="AEROBEN" country="Benin"/>
+	<partner_company name="Aegean Airlines" IATA="A3" ICAO="AEE" callsign="AEGEAN" country="Greece"/>
+	<partner_company name="Air Europe" IATA="PE" ICAO="AEL" callsign="AIR EUROPE" country="Italy"/>
+	<partner_company name="Alaska Central Express" IATA="KO" ICAO="AER" callsign="ACE AIR" country="United States"/>
+	<partner_company name="ACES Colombia" ICAO="AES" callsign="ACES" country="Colombia"/>
+	<partner_company name="Astraeus" IATA="5W" ICAO="AEU" callsign="FLYSTAR" country="United Kingdom"/>
+	<partner_company name="Aerosvit Airlines" IATA="VV" ICAO="AEW" callsign="AEROSVIT" country="Ukraine"/>
+	<partner_company name="Air Italy" IATA="I9" ICAO="AEY" callsign="AIR ITALY" country="Italy"/>
+	<partner_company name="Alliance Airlines" IATA="QQ" ICAO="UTY" callsign="UNITY" country="Australia"/>
+	<partner_company name="Ariana Afghan Airlines" IATA="FG" ICAO="AFG" callsign="ARIANA" country="Afghanistan"/>
+	<partner_company name="Aeroflot Russian Airlines" IATA="SU" ICAO="AFL" callsign="AEROFLOT" country="Russia"/>
+	<partner_company name="Air Bosna" IATA="JA" ICAO="BON" callsign="AIR BOSNA" country="Bosnia and Herzegovina"/>
+	<partner_company name="Air France" IATA="AF" ICAO="AFR" callsign="AIRFRANS" country="France"/>
+	<partner_company name="Air Caledonie International" IATA="SB" ICAO="ACI" callsign="AIRCALIN" country="France"/>
+	<partner_company name="Air Salone" IATA="2O" country="Sierra Leone"/>
+	<partner_company name="Air Cargo Carriers" IATA="2Q" ICAO="SNC" callsign="NIGHT CARGO" country="United States"/>
+	<partner_company name="Air Namibia" IATA="SW" ICAO="NMB" callsign="NAMIBIA" country="Namibia"/>
+	<partner_company name="Aerolitoral" IATA="5D" ICAO="SLI" callsign="COSTERA" country="Mexico"/>
+	<partner_company name="Air Glaciers" IATA="7T" ICAO="AGV" callsign="AIR GLACIERS" country="Switzerland"/>
+	<partner_company name="Aviogenex" ICAO="AGX" callsign="GENEX" country="Serbia"/>
+	<partner_company name="Aeroper" IATA="PL" ICAO="PLI" callsign="Aeroperu" country="Peru"/>
+	<partner_company name="Atlas Blue" IATA="8A" ICAO="BMM" callsign="ATLAS BLUE" country="Morocco"/>
+	<partner_company name="Azerbaijan Airlines" IATA="J2" ICAO="AHY" callsign="AZAL" country="Azerbaijan"/>
+	<partner_company name="Avies" IATA="U3" ICAO="AIA" callsign="AVIES" country="Estonia"/>
+	<partner_company name="Airblue" IATA="ED" ICAO="ABQ" callsign="PAKBLUE" country="Pakistan"/>
+	<partner_company name="Airlift International" ICAO="AIR" callsign="AIRLIFT" country="United States"/>
+	<partner_company name="Air Berlin" IATA="AB" ICAO="BER" callsign="AIR BERLIN" country="Germany"/>
+	<partner_company name="Air India Limited" IATA="AI" ICAO="AIC" callsign="AIRINDIA" country="India"/>
+	<partner_company name="Air Bourbon" IATA="ZB" ICAO="BUB" callsign="BOURBON" country="Reunion"/>
+	<partner_company name="Air Atlanta Icelandic" IATA="CC" ICAO="ABD" callsign="ATLANTA" country="Iceland"/>
+	<partner_company name="Air Tahiti Nui" IATA="TN" ICAO="THT" callsign="TAHITI AIRLINES" country="France"/>
+	<partner_company name="Arkia Israel Airlines" IATA="IZ" ICAO="AIZ" callsign="ARKIA" country="Israel"/>
+	<partner_company name="Air Jamaica" IATA="JM" ICAO="AJM" callsign="JAMAICA" country="Jamaica"/>
+	<partner_company name="Air One" IATA="AP" ICAO="ADH" callsign="HERON" country="Italy"/>
+	<partner_company name="Air Sahara" IATA="S2" ICAO="RSH" callsign="SAHARA" country="India"/>
+	<partner_company name="Air Malta" IATA="KM" ICAO="AMC" callsign="AIR MALTA" country="Malta"/>
+	<partner_company name="Air Japan" IATA="NQ" ICAO="AJX" callsign="AIR JAPAN" country="Japan"/>
+	<partner_company name="Air Korea Co. Ltd." ICAO="AKA" country="Republic of Korea"/>
+	<partner_company name="Air Kiribati" IATA="4A" ICAO="AKL" country="Kiribati"/>
+	<partner_company name="America West Airlines" IATA="HP" ICAO="AWE" callsign="CACTUS" country="United States"/>
+	<partner_company name="Air Wisconsin" IATA="ZW" ICAO="AWI" callsign="AIR WISCONSIN" country="United States"/>
+	<partner_company name="Tatarstan Airlines" IATA="U9" ICAO="TAK" callsign="TATARSTAN" country="Russia"/>
+	<partner_company name="Allegheny Commuter Airlines" ICAO="ALO" callsign="ALLEGHENY" country="United States"/>
+	<partner_company name="Air Sunshine" ICAO="RSI" callsign="AIR SUNSHINE" country="United States"/>
+	<partner_company name="Air Libert" IATA="VD" country="France"/>
+	<partner_company name="Air Malawi" IATA="QM" ICAO="AML" callsign="MALAWI" country="Malawi"/>
+	<partner_company name="Air Sicilia" IATA="BM" country="Italy"/>
+	<partner_company name="ATA Airlines" ICAO="AMT" callsign="AMTRAN" country="United States"/>
+	<partner_company name="Air Macau" IATA="NX" ICAO="AMU" callsign="AIR MACAO" country="Macao"/>
+	<partner_company name="AMC Airlines" ICAO="AMV" country="Egypt"/>
+	<partner_company name="Air Seychelles" IATA="HM" ICAO="SEY" callsign="SEYCHELLES" country="Seychelles"/>
+	<partner_company name="AeroMéxico" IATA="AM" ICAO="AMX" callsign="AEROMEXICO" country="Mexico"/>
+	<partner_company name="All Nippon Airways" IATA="NH" ICAO="ANA" callsign="ALL NIPPON" country="Japan"/>
+	<partner_company name="Air Nostrum" IATA="YW" ICAO="ANE" callsign="AIR NOSTRUM" country="Spain"/>
+	<partner_company name="Air Niugini" IATA="PX" ICAO="ANG" callsign="NUIGINI" country="Papua New Guinea"/>
+	<partner_company name="Air Arabia" IATA="G9" ICAO="ABY" callsign="ARABIA" country="United Arab Emirates"/>
+	<partner_company name="Air Canada" IATA="AC" ICAO="ACA" callsign="AIR CANADA" country="Canada"/>
+	<partner_company name="Air Baltic" IATA="BT" ICAO="BTI" callsign="AIRBALTIC" country="Latvia"/>
+	<partner_company name="Air Nippon" IATA="EL" ICAO="ANK" callsign="ANK AIR" country="Japan"/>
+	<partner_company name="Airnorth" IATA="TL" ICAO="ANO" callsign="TOPEND" country="Australia"/>
+	<partner_company name="Air North Charter - Canada" IATA="4N" ICAO="ANT" callsign="AIR NORTH" country="Canada"/>
+	<partner_company name="Air New Zealand" IATA="NZ" ICAO="ANZ" callsign="NEW ZEALAND" country="New Zealand"/>
+	<partner_company name="Alitalia Express" IATA="XM" ICAO="SMX" callsign="ALIEXPRESS" country="Italy"/>
+	<partner_company name="Aero Flight" IATA="GV" ICAO="ARF" callsign="Aero Fox" country="Germany"/>
+	<partner_company name="Arrow Air" IATA="JW" ICAO="APW" callsign="BIG A" country="United States"/>
+	<partner_company name="Aerocondor" IATA="2B" ICAO="ARD" callsign="AEROCONDOR" country="Portugal"/>
+	<partner_company name="Aires" IATA="4C" ICAO="ARE" callsign=" Aerovias de Integracion Regional" country=" S.A."/>
+	<partner_company name="Aerolineas Argentinas" IATA="AR" ICAO="ARG" callsign="ARGENTINA" country="Argentina"/>
+	<partner_company name="Alaska Airlines" IATA="AS" ICAO="ASA" callsign=" Inc." country="ALASKA"/>
+	<partner_company name="Air Sinai" IATA="4D" ICAO="ASD" callsign="AIR SINAI" country="Egypt"/>
+	<partner_company name="Atlantic Southeast Airlines" IATA="EV" ICAO="ASQ" callsign="ACEY" country="United States"/>
+	<partner_company name="Astrakhan Airlines" IATA="OB" ICAO="ASZ" callsign="AIR ASTRAKHAN" country="Russia"/>
+	<partner_company name="Air Tanzania" IATA="TC" ICAO="ATC" callsign="TANZANIA" country="Tanzania"/>
+	<partner_company name="Air Burkina" IATA="2J" ICAO="VBW" callsign="BURKINA" country="Burkina Faso"/>
+	<partner_company name="Airlines Of Tasmania" IATA="FO" ICAO="ATM" callsign="AIRTAS" country="Australia"/>
+	<partner_company name="Air Saint Pierre" IATA="PJ" ICAO="SPM" country="France"/>
+	<partner_company name="Austrian Airlines" IATA="OS" ICAO="AUA" callsign="AUSTRIAN" country="Austria"/>
+	<partner_company name="Air Southwest" ICAO="WOW" callsign="SWALLOW" country="United Kingdom"/>
+	<partner_company name="Augsburg Airways" IATA="IQ" ICAO="AUB" callsign="AUGSBURG-AIR" country="Germany"/>
+	<partner_company name="ATUR" ICAO="TUR" country="Ecuador"/>
+	<partner_company name="Abu Dhabi Amiri Flight" IATA="MO" ICAO="AUH" callsign="SULTAN" country="United Arab Emirates"/>
+	<partner_company name="Aeroflot-Nord" IATA="5N" ICAO="AUL" callsign="DVINA" country="Russia"/>
+	<partner_company name="Aurigny Air Services" IATA="GR" ICAO="AUR" callsign="AYLINE" country="United Kingdom"/>
+	<partner_company name="Austral Lineas Aereas" IATA="AU" ICAO="AUT" callsign="AUSTRAL" country="Argentina"/>
+	<partner_company name="Avianca - Aerovias Nacionales de Colombia" IATA="AV" ICAO="AVA" callsign=" S.A." country="AVIANCA"/>
+	<partner_company name="Air Vanuatu" IATA="NF" ICAO="AVN" callsign="AIR VAN" country="Vanuatu"/>
+	<partner_company name="Air Bangladesh" IATA="B9" ICAO="BGD" callsign="AIR BANGLA" country="Bangladesh"/>
+	<partner_company name="Air Mediterranee" IATA="DR" ICAO="BIE" callsign="MEDITERRANEE" country="France"/>
+	<partner_company name="Air Moorea" ICAO="TAH" callsign="AIR MOOREA" country="France"/>
+	<partner_company name="Aeroline GmbH" IATA="7E" ICAO="AWU" callsign="SYLT-AIR" country="Germany"/>
+	<partner_company name="Air Wales" IATA="6G" ICAO="AWW" callsign="RED DRAGON" country="United Kingdom"/>
+	<partner_company name="Air Caraïbes" IATA="TX" ICAO="FWI" callsign="FRENCH WEST" country="France"/>
+	<partner_company name="Air India Express" IATA="IX" ICAO="AXB" callsign="EXPRESS INDIA" country="India"/>
+	<partner_company name="Air Exel" IATA="XT" ICAO="AXL" callsign="EXEL COMMUTER" country="Netherlands"/>
+	<partner_company name="AirAsia" IATA="AK" ICAO="AXM" callsign="ASIAN EXPRESS" country="Malaysia"/>
+	<partner_company name="Atlant-Soyuz Airlines" IATA="3G" ICAO="AYZ" callsign="ATLANT-SOYUZ" country="Russia"/>
+	<partner_company name="Alitalia" IATA="AZ" ICAO="AZA" callsign="ALITALIA" country="Italy"/>
+	<partner_company name="Amaszonas" IATA="Z8" ICAO="AZN" country="Bolivia"/>
+	<partner_company name="Air Zimbabwe" IATA="UM" ICAO="AZW" callsign="AIR ZIMBABWE" country="Zimbabwe"/>
+	<partner_company name="Aserca Airlines" IATA="R7" ICAO="OCA" callsign="AROSCA" country="Venezuela"/>
+	<partner_company name="Rossiya-Russian Airlines" IATA="FV" ICAO="SDM" callsign="PULKOVO" country="Russia"/>
+	<partner_company name="American Eagle Airlines" IATA="MQ" ICAO="EGF" callsign="EAGLE FLIGHT" country="United States"/>
+	<partner_company name="AD Aviation" ICAO="VUE" callsign="FLIGHTVUE" country="United Kingdom"/>
+	<partner_company name="Air Ivoire" IATA="VU" ICAO="VUN" callsign="AIRIVOIRE" country="Ivory Coast"/>
+	<partner_company name="Air Botswana" IATA="BP" ICAO="BOT" callsign="BOTSWANA" country="Botswana"/>
+	<partner_company name="Air Foyle" IATA="GS" ICAO="UPA" callsign="FOYLE" country="United Kingdom"/>
+	<partner_company name="Air Tahiti" IATA="VT" ICAO="VTA" callsign="AIR TAHITI" country="French Polynesia"/>
+	<partner_company name="Air VIA" IATA="VL" ICAO="VIM" country="Bulgaria"/>
+	<partner_company name="Africa West" IATA="FK" ICAO="WTA" callsign="WEST TOGO" country="Togo"/>
+	<partner_company name="ATRAN Cargo Airlines" IATA="V8" ICAO="VAS" callsign="ATRAN" country="Russian Federation"/>
+	<partner_company name="Air China" IATA="CA" ICAO="CCA" callsign="AIR CHINA" country="China"/>
+	<partner_company name="Aero Condor Peru" IATA="Q6" ICAO="CDP" callsign="CONDOR-PERU" country="Peru"/>
+	<partner_company name="Air Chathams" IATA="CV" ICAO="CVA" callsign="CHATHAM" country="New Zealand"/>
+	<partner_company name="Air Marshall Islands" IATA="CW" ICAO="CWM" callsign="AIR MARSHALLS" country="Marshall Islands"/>
+	<partner_company name="Access Air" IATA="ZA" ICAO="CYD" callsign="CYCLONE" country="United States"/>
+	<partner_company name="Air Algerie" IATA="AH" ICAO="DAH" callsign="AIR ALGERIE" country="Algeria"/>
+	<partner_company name="Adam Air" IATA="KI" ICAO="DHI" callsign="ADAM SKY" country="Indonesia"/>
+	<partner_company name="Air Dolomiti" IATA="EN" ICAO="DLA" callsign="DOLOMOTI" country="Italy"/>
+	<partner_company name="Aeroflot-Don" IATA="D9" ICAO="DNV" callsign="DONAVIA" country="Russia"/>
+	<partner_company name="Air Madrid" IATA="NM" ICAO="DRD" callsign="ALADA AIR" country="Spain"/>
+	<partner_company name="Aer Lingus" IATA="EI" ICAO="EIN" callsign="SHAMROCK" country="Ireland"/>
+	<partner_company name="Air Finland" IATA="OF" ICAO="FIF" callsign="AIR FINLAND" country="Finland"/>
+	<partner_company name="Airfix Aviation" ICAO="FIX" callsign="AIRFIX" country="Finland"/>
+	<partner_company name="Air Pacific" IATA="FJ" ICAO="FJI" callsign="PACIFIC" country="Fiji"/>
+	<partner_company name="Atlantic Airways" IATA="RC" ICAO="FLI" callsign="FAROELINE" country="Faroe Islands"/>
+	<partner_company name="Air Florida" IATA="QH" ICAO="FLZ" callsign="AIR FLORIDA" country="United States"/>
+	<partner_company name="Air Iceland" IATA="NY" ICAO="FXI" callsign="FAXI" country="Iceland"/>
+	<partner_company name="Air Philippines" IATA="2P" ICAO="GAP" callsign="ORIENT PACIFIC" country="Philippines"/>
+	<partner_company name="Air Guinee Express" IATA="2U" ICAO="GIP" callsign="FUTURE EXPRESS" country="Guinea"/>
+	<partner_company name="Air Greenland" IATA="GL" ICAO="GRL" callsign="GREENLAND" country="Denmark"/>
+	<partner_company name="Atlas Air" IATA="5Y" ICAO="GTI" callsign="GIANT" country="United States"/>
+	<partner_company name="Air Guyane" IATA="GG" ICAO="GUY" callsign="GREEN BIRD" country="French Guiana"/>
+	<partner_company name="Air Bagan" IATA="W9" ICAO="JAB" callsign="AIR BAGAN" country="Myanmar"/>
+	<partner_company name="Air Canada Jazz" IATA="QK" ICAO="JZA" callsign="JAZZ" country="Canada"/>
+	<partner_company name="Atlasjet" IATA="KK" ICAO="KKK" callsign="ATLASJET" country="Turkey"/>
+	<partner_company name="Air Koryo" IATA="JS" ICAO="KOR" callsign="AIR KORYO" country="Democratic People's Republic of Korea"/>
+	<partner_company name="Air Astana" IATA="KC" ICAO="KZR" callsign="ASTANALINE" country="Kazakhstan"/>
+	<partner_company name="Albanian Airlines" IATA="LV" ICAO="LBC" callsign="ALBANIAN" country="Albania"/>
+	<partner_company name="Air Alfa" ICAO="LFA" country="Turkey"/>
+	<partner_company name="Aerolane" IATA="XL" ICAO="LNE" callsign="LAN ECUADOR" country="Ecuador"/>
+	<partner_company name="Atlantis European Airways" IATA="TD" ICAO="LUR" country="Armenia"/>
+	<partner_company name="Air Luxor" IATA="LK" ICAO="LXR" callsign="AIRLUXOR" country="Portugal"/>
+	<partner_company name="Air Mauritius" IATA="MK" ICAO="MAU" callsign="AIRMAURITIUS" country="Mauritius"/>
+	<partner_company name="Air Madagascar" IATA="MD" ICAO="MDG" callsign="AIR MADAGASCAR" country="Madagascar"/>
+	<partner_company name="Air Moldova" IATA="9U" ICAO="MLD" callsign="AIR MOLDOVA" country="Moldova"/>
+	<partner_company name="Air Plus Comet" IATA="A7" ICAO="MPD" callsign="RED COMET" country="Spain"/>
+	<partner_company name="Astair" IATA="8D" country="Russian Federation"/>
+	<partner_company name="Aero Contractors" IATA="AJ" ICAO="NIG" callsign="AEROLINE" country="Nigeria"/>
+	<partner_company name="Aeropelican Air Services" IATA="OT" ICAO="PEL" callsign="PELICAN" country="Australia"/>
+	<partner_company name="Aer Arann" IATA="RE" ICAO="REA" callsign="AER ARANN" country="Ireland"/>
+	<partner_company name="Air Austral" IATA="UU" ICAO="REU" callsign="REUNION" country="France"/>
+	<partner_company name="Asian Spirit" IATA="6K" ICAO="RIT" callsign="ASIAN SPIRIT" country="Philippines"/>
+	<partner_company name="Air Afrique" IATA="RK" ICAO="RKA" callsign="AIRAFRIC" country="Ivory Coast"/>
+	<partner_company name="Airlinair" IATA="A5" ICAO="RLA" callsign="AIRLINAIR" country="France"/>
+	<partner_company name="Aero Lanka" IATA="QL" ICAO="RLN" callsign="AERO LANKA" country="Sri Lanka"/>
+	<partner_company name="Air Salone" IATA="20" ICAO="RNE" callsign="AIR SALONE" country="Sierra Leone"/>
+	<partner_company name="Armavia" IATA="U8" ICAO="RNV" callsign="ARMAVIA" country="Armenia"/>
+	<partner_company name="AeroRep" IATA="P5" ICAO="RPB" callsign="AEROREPUBLICA" country="Colombia"/>
+	<partner_company name="Aero-Service" IATA="BF" ICAO="RSR" callsign="CONGOSERV" country="Republic of the Congo"/>
+	<partner_company name="Aerosur" IATA="5L" ICAO="RSU" callsign="AEROSUR" country="Bolivia"/>
+	<partner_company name="Aeronorte" ICAO="RTE" callsign="LUZAVIA" country="Portugal"/>
+	<partner_company name="Avient Aviation" IATA="Z3" ICAO="SMJ" callsign="AVAVIA" country="Zimbabwe"/>
+	<partner_company name="Aircompany Yakutia" IATA="R3" ICAO="SYL" callsign="AIR YAKUTIA" country="Russia"/>
+	<partner_company name="Aeromar" IATA="VW" ICAO="TAO" callsign="TRANS-AEROMAR" country="Mexico"/>
+	<partner_company name="Arkefly" IATA="OR" ICAO="TFL" callsign="ARKEFLY" country="Netherlands"/>
+	<partner_company name="Airlines PNG" IATA="CG" ICAO="TOK" callsign="BALUS" country="Papua New Guinea"/>
+	<partner_company name="AirTran Airways" IATA="FL" ICAO="TRS" callsign="CITRUS" country="United States"/>
+	<partner_company name="Air Transat" IATA="TS" ICAO="TSC" callsign="TRANSAT" country="Canada"/>
+	<partner_company name="Avialeasing Aviation Company" IATA="EC" ICAO="TWN" callsign="TWINARROW" country="Uzbekistan"/>
+	<partner_company name="Tyrolean Airways" IATA="VO" ICAO="TYR" callsign="TYROLEAN" country="Austria"/>
+	<partner_company name="Aerolineas Galapagos (Aerogal)" IATA="2K" ICAO="GLG" callsign="AEROGAL" country="Ecuador"/>
+	<partner_company name="Alrosa Mirny Air Enterprise" IATA="6R" ICAO="DRU" callsign="MIRNY" country="Russia"/>
+	<partner_company name="British Airways" IATA="BA" ICAO="BAW" callsign="SPEEDBIRD" country="United Kingdom"/>
+	<partner_company name="Biman Bangladesh Airlines" IATA="BG" ICAO="BBC" callsign="BANGLADESH" country="Bangladesh"/>
+	<partner_company name="Belair Airlines" IATA="4T" ICAO="BHP" callsign="BELAIR" country="Switzerland"/>
+	<partner_company name="Bahamasair" IATA="UP" ICAO="BHS" callsign="BAHAMAS" country="Bahamas"/>
+	<partner_company name="Balkan Bulgarian Airlines" IATA="LZ"/>
+	<partner_company name="British International Helicopters" IATA="BS" ICAO="BIH" callsign="BRINTEL" country="United Kingdom"/>
+	<partner_company name="BF-Lento OY" ICAO="BKF" callsign="BAKERFLIGHT" country="Finland"/>
+	<partner_company name="Bangkok Airways" IATA="PG" ICAO="BKP" callsign="BANGKOK AIR" country="Thailand"/>
+	<partner_company name="Blue1" IATA="KF" ICAO="BLF" callsign="BLUEFIN" country="Finland"/>
+	<partner_company name="Baltic Airlines" ICAO="BLL" callsign="BALTIC AIRLINES" country="Russia"/>
+	<partner_company name="Bearskin Lake Air Service" IATA="JV" ICAO="BLS" callsign="BEARSKIN" country="Canada"/>
+	<partner_company name="Bellview Airlines" IATA="B3" ICAO="BLV" callsign="BELLVIEW AIRLINES" country="Nigeria"/>
+	<partner_company name="bmi" IATA="BD" ICAO="BMA" callsign="MIDLAND" country="United Kingdom"/>
+	<partner_company name="bmibaby" IATA="WW" ICAO="BMI" callsign="BABY" country="United Kingdom"/>
+	<partner_company name="Bemidji Airlines" IATA="CH" ICAO="BMJ" callsign="BEMIDJI" country="United States"/>
+	<partner_company name="British Midland Regional" ICAO="BMR" country="United Kingdom"/>
+	<partner_company name="Blue Panorama Airlines" IATA="BV" ICAO="BPA" callsign="BLUE PANOROMA" country="Italy"/>
+	<partner_company name="Budapest Aircraft Services/Manx2" ICAO="BPS" callsign="BASE" country="Hungary"/>
+	<partner_company name="Bering Air" IATA="8E" ICAO="BRG" callsign="BERING AIR" country="United States"/>
+	<partner_company name="Brazilian Air Force" ICAO="BRS" callsign="BRAZILIAN AIR FORCE" country="Brazil"/>
+	<partner_company name="Belavia Belarusian Airlines" IATA="B2" ICAO="BRU" callsign="BELARUS AVIA" country="Belarus"/>
+	<partner_company name="Metro Batavia" IATA="7P" ICAO="BTV" callsign="BATAVIA" country="Indonesia"/>
+	<partner_company name="Berjaya Air" IATA="J8" ICAO="BVT" callsign="BERJAYA" country="Malaysia"/>
+	<partner_company name="Blue Wings" IATA="QW" ICAO="BWG" callsign="BLUE WINGS" country="Germany"/>
+	<partner_company name="Brit Air" IATA="DB" ICAO="BZH" callsign="BRITAIR" country="France"/>
+	<partner_company name="Brussels Airlines" IATA="SN" ICAO="DAT" callsign="BEE-LINE" country="Belgium"/>
+	<partner_company name="Binter Canarias" IATA="NT" ICAO="IBB" country="Spain"/>
+	<partner_company name="Blue Air" IATA="0B" ICAO="JOR" callsign="BLUE TRANSPORT" country="Romania"/>
+	<partner_company name="British Mediterranean Airways" IATA="KJ" ICAO="LAJ" callsign="BEE MED" country="United Kingdom"/>
+	<partner_company name="Bulgaria Air" IATA="FB" ICAO="LZB" callsign="FLYING BULGARIA" country="Bulgaria"/>
+	<partner_company name="Barents AirLink" IATA="8N" ICAO="NKF" callsign="NORDFLIGHT" country="Sweden"/>
+	<partner_company name="CAL Cargo Air Lines" IATA="5C" ICAO="ICL" callsign="CAL" country="Israel"/>
+	<partner_company name="Calima Aviacion" IATA="XG" ICAO="CLI" callsign="CALIMA" country="Spain"/>
+	<partner_company name="Canadian Airlines" IATA="CP" ICAO="CDN" callsign="CANADIAN" country="Canada"/>
+	<partner_company name="Canadian North" IATA="5T" ICAO="MPE" callsign="EMPRESS" country="Canada"/>
+	<partner_company name="Cape Air" IATA="9K" ICAO="KAP" callsign="CAIR" country="United States"/>
+	<partner_company name="Caribbean Airlines" IATA="BW" ICAO="BWA" callsign="CARIBBEAN AIRLINES" country="Trinidad and Tobago"/>
+	<partner_company name="Carpatair" IATA="V3" ICAO="KRP" callsign="CARPATAIR" country="Romania"/>
+	<partner_company name="Caspian Airlines" IATA="RV" ICAO="CPN" callsign="CASPIAN" country="Iran"/>
+	<partner_company name="Cathay Pacific" IATA="CX" ICAO="CPA" callsign="CATHAY" country="Hong Kong SAR of China"/>
+	<partner_company name="Cayman Airways" IATA="KX" ICAO="CAY" callsign="CAYMAN" country="Cayman Islands"/>
+	<partner_company name="Cebu Pacific" IATA="5J" ICAO="CEB" callsign="CEBU AIR" country="Philippines"/>
+	<partner_company name="Central Connect Airlines" ICAO="CCG" country="Czech Republic"/>
+	<partner_company name="Centralwings" IATA="C0" ICAO="CLW" callsign="CENTRALWINGS" country="Poland"/>
+	<partner_company name="Charter Air" ICAO="CHW" callsign="CHARTER WIEN" country="Austria"/>
+	<partner_company name="Chautauqua Airlines" IATA="RP" ICAO="CHQ" callsign="CHAUTAUQUA" country="United States"/>
+	<partner_company name="China Airlines" IATA="CI" ICAO="CAL" callsign="DYNASTY" country="Taiwan"/>
+	<partner_company name="China Eastern Airlines" IATA="MU" ICAO="CES" callsign="CHINA EASTERN" country="China"/>
+	<partner_company name="China Southern Airlines" IATA="CZ" ICAO="CSN" callsign="CHINA SOUTHERN" country="China"/>
+	<partner_company name="China United Airlines" IATA="HR" ICAO="CUA" callsign="LIANHANG" country="China"/>
+	<partner_company name="Yunnan Airlines" IATA="3Q" ICAO="CYH" callsign="YUNNAN" country="China"/>
+	<partner_company name="Cimber Air" IATA="QI" ICAO="CIM" callsign="CIMBER" country="Denmark"/>
+	<partner_company name="Cirrus Airlines" IATA="C9" ICAO="RUS" callsign="CIRRUS AIR" country="Germany"/>
+	<partner_company name="City Airline" IATA="CF" ICAO="SDR" callsign="SWEDESTAR" country="Sweden"/>
+	<partner_company name="City Connexion Airlines" IATA="G3" ICAO="CIX" callsign="CONNEXION" country="Burundi"/>
+	<partner_company name="CityJet" IATA="WX" ICAO="BCY" callsign="CITY-IRELAND" country="Ireland"/>
+	<partner_company name="BA CityFlyer" IATA="CJ" ICAO="CFE" callsign="FLYER" country="United Kingdom"/>
+	<partner_company name="Click Airways" ICAO="CGK" callsign="CLICK AIR" country="Kyrgyzstan"/>
+	<partner_company name="Coastal Air" IATA="DQ" callsign="U.S. Virgin Islands" country="United States"/>
+	<partner_company name="Colgan Air" IATA="9L" ICAO="CJC" callsign="COLGAN" country="United States"/>
+	<partner_company name="Comair" IATA="OH" ICAO="COM" callsign="COMAIR" country="United States"/>
+	<partner_company name="Comair" IATA="MN" ICAO="CAW" callsign="COMMERCIAL" country="South Africa"/>
+	<partner_company name="CommutAir" IATA="C5" ICAO="UCA" callsign="COMMUTAIR" country="United States"/>
+	<partner_company name="Comores Airlines" IATA="KR" ICAO="CWK" callsign="CONTICOM" country="Comoros"/>
+	<partner_company name="Compass Airlines" IATA="CP" ICAO="CPZ" callsign="Compass Rose" country="United States"/>
+	<partner_company name="Condor Flugdienst" IATA="DE" ICAO="CFG" callsign="CONDOR" country="Germany"/>
+	<partner_company name="Consorcio Aviaxsa" IATA="6A" ICAO="CHP" callsign="AVIACSA" country="Mexico"/>
+	<partner_company name="Contact Air" IATA="C3" ICAO="KIS" callsign="CONTACTAIR" country="Germany"/>
+	<partner_company name="Continental Airlines" IATA="CO" ICAO="COA" callsign="CONTINENTAL" country="United States"/>
+	<partner_company name="Continental Express" IATA="CO" callsign="JETLINK" country="United States"/>
+	<partner_company name="Continental Micronesia" IATA="CS" ICAO="CMI" callsign="AIR MIKE" country="United States"/>
+	<partner_company name="Conviasa" IATA="V0" ICAO="VCV" callsign="CONVIASA" country="Venezuela"/>
+	<partner_company name="Copa Airlines" IATA="CM" ICAO="CMP" callsign="COPA" country="Panama"/>
+	<partner_company name="Copterline" ICAO="AAQ" callsign="COPTERLINE" country="Finland"/>
+	<partner_company name="Corendon Airlines" ICAO="CAI" callsign="CORENDON" country="Turkey"/>
+	<partner_company name="Corsairfly" IATA="SS" ICAO="CRL" callsign="CORSAIR" country="France"/>
+	<partner_company name="Corse-Mediterranee" IATA="XK" ICAO="CCM" callsign="CORSICA" country="France"/>
+	<partner_company name="Crest Aviation" ICAO="CAN" callsign="CREST" country="United Kingdom"/>
+	<partner_company name="Croatia Airlines" IATA="OU" ICAO="CTN" callsign="CROATIA" country="Croatia"/>
+	<partner_company name="Crown Airways" ICAO="CRO" callsign="CROWN AIRWAYS" country="United States"/>
+	<partner_company name="Cubana de Aviación" IATA="CU" ICAO="CUB" callsign="CUBANA" country="Cuba"/>
+	<partner_company name="Cyprus Airways" IATA="CY" ICAO="CYP" callsign="CYPRUS" country="Cyprus"/>
+	<partner_company name="Cyprus Turkish Airlines" IATA="YK" country="Turkey"/>
+	<partner_company name="Czech Airlines" IATA="OK" ICAO="CSA" callsign="CSA-LINES" country="Czech Republic"/>
+	<partner_company name="DAT Danish Air Transport" IATA="DX" ICAO="DTR" callsign="DANISH" country="Denmark"/>
+	<partner_company name="Daallo Airlines" IATA="D3" ICAO="DAO" callsign="DALO AIRLINES" country="Djibouti"/>
+	<partner_company name="Dalavia" IATA="H8" ICAO="KHB" callsign="DALAVIA" country="Russia"/>
+	<partner_company name="Darwin Airline" IATA="0D" ICAO="DWT" callsign="DARWIN" country="Switzerland"/>
+	<partner_company name="Delta Aerotaxi" ICAO="DEA" callsign="JET SERVICE" country="Italy"/>
+	<partner_company name="Delta Air Lines" IATA="DL" ICAO="DAL" callsign="DELTA" country="United States"/>
+	<partner_company name="Denim Air" ICAO="DNM" callsign="DENIM" country="Netherlands"/>
+	<partner_company name="Deutsche Bahn" IATA="2A" country="Germany"/>
+	<partner_company name="Djibouti Airlines" IATA="D8" ICAO="DJB" callsign="DJIBOUTI AIR" country="Djibouti"/>
+	<partner_company name="Dniproavia" ICAO="UDN" callsign="DNIEPRO" country="Ukraine"/>
+	<partner_company name="Dominicana de Aviaci" IATA="DO" ICAO="DOA" callsign="DOMINICANA" country="Dominican Republic"/>
+	<partner_company name="Domodedovo Airlines" IATA="E3" ICAO="DMO" callsign="DOMODEDOVO" country="Russia"/>
+	<partner_company name="DonbassAero" IATA="5D" ICAO="UDC" callsign="DONBASS AERO" country="Ukraine"/>
+	<partner_company name="Dragonair" IATA="KA" ICAO="HDA" callsign=" Hong Kong Dragon Airlines" country="DRAGON"/>
+	<partner_company name="Druk Air" IATA="KB" ICAO="DRK" callsign="ROYAL BHUTAN" country="Bhutan"/>
+	<partner_company name="Dubrovnik Air" ICAO="DBK" callsign="SEAGULL" country="Croatia"/>
+	<partner_company name="Dutch Antilles Express" ICAO="DNL" callsign="DUTCH ANTILLES" country="Netherlands Antilles"/>
+	<partner_company name="dba" IATA="DI" ICAO="BAG" callsign="SPEEDWAY" country="Germany"/>
+	<partner_company name="EVA Air" IATA="BR" ICAO="EVA" callsign="EVA" country="Taiwan"/>
+	<partner_company name="Eagle Air" IATA="H7" country="Uganda"/>
+	<partner_company name="East African" IATA="QU" ICAO="UGX" callsign="CRANE" country="Uganda"/>
+	<partner_company name="Eastern Airways" IATA="T3" ICAO="EZE" callsign="EASTFLIGHT" country="United Kingdom"/>
+	<partner_company name="Eastland Air" IATA="DK" ICAO="ELA" country="Australia"/>
+	<partner_company name="Ecuavia" ICAO="ECU" callsign="ECUAVIA" country="Ecuador"/>
+	<partner_company name="Edelweiss Air" IATA="WK" ICAO="EDW" callsign="EDELWEISS" country="Switzerland"/>
+	<partner_company name="Egyptair" IATA="MS" ICAO="MSR" callsign="EGYPTAIR" country="Egypt"/>
+	<partner_company name="El Al Israel Airlines" IATA="LY" ICAO="ELY" callsign="ELAL" country="Israel"/>
+	<partner_company name="El-Buraq Air Transport" IATA="UZ" ICAO="BRQ" callsign="BURAQAIR" country="Libya"/>
+	<partner_company name="Emirates" IATA="EK" ICAO="UAE" callsign="EMIRATES" country="United Arab Emirates"/>
+	<partner_company name="Empresa Ecuatoriana De Aviacion" IATA="EU" ICAO="EEA" callsign="ECUATORIANA" country="Ecuador"/>
+	<partner_company name="Eritrean Airlines" IATA="B8" ICAO="ERT" callsign="ERITREAN" country="Eritrea"/>
+	<partner_company name="Estonian Air" IATA="OV" ICAO="ELL" callsign="ESTONIAN" country="Estonia"/>
+	<partner_company name="Ethiopian Airlines" IATA="ET" ICAO="ETH" callsign="ETHIOPIAN" country="Ethiopia"/>
+	<partner_company name="Etihad Airways" IATA="EY" ICAO="ETD" callsign="ETIHAD" country="United Arab Emirates"/>
+	<partner_company name="Euro Exec Express" IATA="RZ" country="Sweden"/>
+	<partner_company name="Eurocypria Airlines" IATA="UI" ICAO="ECA" callsign="EUROCYPRIA" country="Cyprus"/>
+	<partner_company name="Eurofly Service" IATA="GJ" ICAO="EEU" callsign="EUROFLY" country="Italy"/>
+	<partner_company name="Eurolot" IATA="K2" ICAO="ELO" callsign="EUROLOT" country="Poland"/>
+	<partner_company name="European Air Express" IATA="EA" ICAO="EAL" callsign="STAR WING" country="Germany"/>
+	<partner_company name="Eurowings" IATA="EW" ICAO="EWG" callsign="EUROWINGS" country="Germany"/>
+	<partner_company name="Evergreen International Airlines" IATA="EZ" ICAO="EIA" callsign="EVERGREEN" country="United States"/>
+	<partner_company name="Excel Airways" IATA="JN" ICAO="XLA" callsign="EXPO" country="United Kingdom"/>
+	<partner_company name="Excel Charter" ICAO="XEL" callsign="HELI EXCEL" country="United Kingdom"/>
+	<partner_company name="Express One International" IATA="EO" ICAO="LHN" callsign="LONGHORN" country="United States"/>
+	<partner_company name="ExpressJet" IATA="XE" ICAO="BTA" callsign="JET LINK" country="United States"/>
+	<partner_company name="easyJet" IATA="U2" ICAO="EZY" callsign="EASY" country="United Kingdom"/>
+	<partner_company name="Far Eastern Air Transport" IATA="EF" ICAO="EFA" callsign="Far Eastern" country="Taiwan"/>
+	<partner_company name="Finnair" IATA="AY" ICAO="FIN" callsign="FINNAIR" country="Finland"/>
+	<partner_company name="Finncomm Airlines" IATA="FC" ICAO="WBA" callsign="WESTBIRD" country="Finland"/>
+	<partner_company name="Firefly" IATA="FY" ICAO="FFM" callsign="FIREFLY" country="Malaysia"/>
+	<partner_company name="First Air" IATA="7F" ICAO="FAB" country="Canada"/>
+	<partner_company name="First Choice Airways" IATA="DP" ICAO="FCA" callsign="JETSET" country="United Kingdom"/>
+	<partner_company name="Flightline" IATA="B5" ICAO="FLT" callsign="FLIGHTLINE" country="United Kingdom"/>
+	<partner_company name="Florida West International Airways" IATA="RF" ICAO="FWL" callsign="FLO WEST" country="United States"/>
+	<partner_company name="AirAsia X" IATA="D7" ICAO="XAX" callsign="XANADU" country="Malaysia"/>
+	<partner_company name="FlyLal" IATA="TE" ICAO="LIL" callsign="LITHUANIA AIR" country="Lithuania"/>
+	<partner_company name="FlyNordic" IATA="LF" ICAO="NDC" callsign="NORDIC" country="Sweden"/>
+	<partner_company name="Flybaboo" IATA="F7" ICAO="BBO" callsign="BABOO" country="Switzerland"/>
+	<partner_company name="Flybe" IATA="BE" ICAO="BEE" callsign="JERSEY" country="United Kingdom"/>
+	<partner_company name="Flyglobespan" IATA="B4" ICAO="GSM" callsign="GLOBESPAN" country="United Kingdom"/>
+	<partner_company name="Flyhy Cargo Airlines" ICAO="FYH" callsign="FLY HIGH" country="Thailand"/>
+	<partner_company name="Formosa Airlines" IATA="VY" ICAO="FOS" country="Taiwan"/>
+	<partner_company name="Freedom Air" IATA="FP" ICAO="FRE" callsign="FREEDOM" country="United States"/>
+	<partner_company name="Freedom Airlines" ICAO="FRL" callsign="FREEDOM AIR" country="United States"/>
+	<partner_company name="Frontier Airlines" IATA="F9" ICAO="FFT" callsign="FRONTIER FLIGHT" country="United States"/>
+	<partner_company name="Frontier Flying Service" IATA="2F" ICAO="FTA" callsign="FRONTIER-AIR" country="United States"/>
+	<partner_company name="GB Airways" IATA="GT" ICAO="GBL" callsign="GEEBEE AIRWAYS" country="United Kingdom"/>
+	<partner_company name="Garuda Indonesia" IATA="GA" ICAO="GIA" callsign="INDONESIA" country="Indonesia"/>
+	<partner_company name="Gazpromavia" IATA="4G" ICAO="GZP" callsign="GAZPROMAVIA" country="Russia"/>
+	<partner_company name="Georgian Airways" IATA="A9" ICAO="TGZ" callsign="TAMAZI" country="Georgia"/>
+	<partner_company name="Georgian National Airlines" IATA="QB" ICAO="GFG" callsign="NATIONAL" country="Georgia"/>
+	<partner_company name="Germania" IATA="ST" ICAO="GMI" callsign="GERMANIA" country="Germany"/>
+	<partner_company name="Germanwings" IATA="4U" ICAO="GWI" callsign="GERMAN WINGS" country="Germany"/>
+	<partner_company name="Ghana International Airlines" IATA="G0" ICAO="GHB" callsign="GHANA AIRLINES" country="Ghana"/>
+	<partner_company name="Go Air" IATA="G8" ICAO="GOW" callsign="GOAIR" country="India"/>
+	<partner_company name="GoJet Airlines" IATA="G7" ICAO="GJS" callsign="GATEWAY" country="United States"/>
+	<partner_company name="Gol Transportes Aéreos" IATA="G3" ICAO="GLO" callsign="GOL TRANSPORTE" country="Brazil"/>
+	<partner_company name="Golden Air" IATA="DC" ICAO="GAO" callsign="GOLDEN" country="Sweden"/>
+	<partner_company name="Great Lakes Airlines" IATA="ZK" ICAO="GLA" callsign="LAKES AIR" country="United States"/>
+	<partner_company name="Grupo TACA" IATA="TA" ICAO="TAT" callsign="TACA-COSTARICA" country="Costa Rica"/>
+	<partner_company name="Gulf Air" ICAO="GFA" callsign="GULF AIR" country="Oman"/>
+	<partner_company name="Gulf Air Bahrain" IATA="GF" ICAO="GBA" callsign="GULF BAHRAIN" country="Bahrain"/>
+	<partner_company name="Gulfstream International Airlines" ICAO="GFT" callsign="GULF FLIGHT" country="United States"/>
+	<partner_company name="Hageland Aviation Services" IATA="H6" ICAO="HAG" callsign="HAGELAND" country="United States"/>
+	<partner_company name="Hainan Airlines" IATA="HU" ICAO="CHH" callsign="HAINAN" country="China"/>
+	<partner_company name="Haiti Ambassador Airlines" IATA="2T" ICAO="HAM" country="Haiti"/>
+	<partner_company name="Hamburg International" IATA="4R" ICAO="HHI" callsign="HAMBURG JET" country="Germany"/>
+	<partner_company name="TUIfly" IATA="X3" ICAO="HLX" callsign="YELLOW CAB" country="Germany"/>
+	<partner_company name="Hapagfly" IATA="HF" ICAO="HLF" callsign="HAPAG LLOYD" country="Germany"/>
+	<partner_company name="Hawaiian Airlines" IATA="HA" ICAO="HAL" callsign="HAWAIIAN" country="United States"/>
+	<partner_company name="Hawkair" IATA="BH" country="Canada"/>
+	<partner_company name="Heli France" IATA="8H" ICAO="HFR" callsign="HELIFRANCE" country="France"/>
+	<partner_company name="Helijet" IATA="JB" ICAO="JBA" callsign="HELIJET" country="Canada"/>
+	<partner_company name="Hellas Jet" IATA="T4" ICAO="HEJ" callsign="HELLAS JET" country="Greece"/>
+	<partner_company name="Hello" IATA="HW" ICAO="FHE" callsign="FLYHELLO" country="Switzerland"/>
+	<partner_company name="Helvetic Airways" IATA="2L" ICAO="OAW" callsign="HELVETIC" country="Switzerland"/>
+	<partner_company name="Hex'Air" IATA="UD" ICAO="HER" callsign="HEX AIRLINE" country="France"/>
+	<partner_company name="Highland Airways" ICAO="HWY" callsign="HIWAY" country="United Kingdom"/>
+	<partner_company name="Hokkaido International Airlines" IATA="HD" ICAO="ADO" callsign="AIR DO" country="Japan"/>
+	<partner_company name="Hong Kong Airlines" IATA="HX" ICAO="CRK" callsign="BAUHINIA" country="Hong Kong SAR of China"/>
+	<partner_company name="Hong Kong Express Airways" IATA="UO" ICAO="HKE" callsign="HONGKONG SHUTTLE" country="Hong Kong SAR of China"/>
+	<partner_company name="Horizon Air" IATA="QX" ICAO="QXE" callsign="HORIZON AIR" country="United States"/>
+	<partner_company name="Horizon Airlines" IATA="BN" ICAO="HZA" country="Australia"/>
+	<partner_company name="Iberia Airlines" IATA="IB" ICAO="IBE" callsign="IBERIA" country="Spain"/>
+	<partner_company name="Iberworld" IATA="TY" ICAO="IWD" country="Spain"/>
+	<partner_company name="Ibex Airlines" IATA="FW" ICAO="IBX" callsign="IBEX" country="Japan"/>
+	<partner_company name="Icar Air" ICAO="RAC" callsign="TUZLA AIR" country="Bosnia and Herzegovina"/>
+	<partner_company name="Icelandair" IATA="FI" ICAO="ICE" callsign="ICEAIR" country="Iceland"/>
+	<partner_company name="Imair Airlines" IATA="IK" ICAO="ITX" callsign="IMPROTEX" country="Azerbaijan"/>
+	<partner_company name="IndiGo Airlines" IATA="6E" ICAO="IGO" callsign="IFLY" country="India"/>
+	<partner_company name="Indian Airlines" IATA="IC" ICAO="IAC" callsign="INDAIR" country="India"/>
+	<partner_company name="Indigo" IATA="I9" ICAO="IBU" callsign="INDIGO BLUE" country="United States"/>
+	<partner_company name="Indonesia AirAsia" IATA="QZ" ICAO="AWQ" callsign="WAGON AIR" country="Indonesia"/>
+	<partner_company name="Indonesian Airlines" IATA="IO" ICAO="IAA" callsign="INDO LINES" country="Indonesia"/>
+	<partner_company name="Interair South Africa" IATA="D6" ICAO="ILN" callsign="INLINE" country="South Africa"/>
+	<partner_company name="Interavia Airlines" IATA="ZA" ICAO="SUW" callsign="ASTAIR" country="Russia"/>
+	<partner_company name="Interlink Airlines" IATA="ID" ICAO="ITK" callsign="INTERLINK" country="South Africa"/>
+	<partner_company name="Intersky" IATA="3L" ICAO="ISK" callsign="INTERSKY" country="Austria"/>
+	<partner_company name="Iran Air" IATA="IR" ICAO="IRA" callsign="IRANAIR" country="Iran"/>
+	<partner_company name="Iran Aseman Airlines" IATA="EP" ICAO="IRC" country="Iran"/>
+	<partner_company name="Iraqi Airways" IATA="IA" ICAO="IAW" callsign="IRAQI" country="Iraq"/>
+	<partner_company name="Island Airlines" IATA="IS" country="United States"/>
+	<partner_company name="Cargo Plus Aviation" IATA="8L" ICAO="CGP" country="United Arab Emirates"/>
+	<partner_company name="Islas Airways" IATA="IF" ICAO="ISW" callsign="PINTADERA" country="Spain"/>
+	<partner_company name="Islena De Inversiones" IATA="WC" ICAO="ISV" country="Honduras"/>
+	<partner_company name="Israir" IATA="6H" ICAO="ISR" callsign="ISRAIR" country="Israel"/>
+	<partner_company name="Itek Air" IATA="GI" ICAO="IKA" callsign="ITEK-AIR" country="Kyrgyzstan"/>
+	<partner_company name="JAL Express" IATA="JC" ICAO="JEX" callsign="JANEX" country="Japan"/>
+	<partner_company name="JALways" IATA="JO" ICAO="JAZ" callsign="JALWAYS" country="Japan"/>
+	<partner_company name="Japan Airlines" IATA="JL" ICAO="JAL" callsign="JAPANAIR" country="Japan"/>
+	<partner_company name="Japan Airlines Domestic" IATA="JL" ICAO="JAL" callsign="J-BIRD" country="Japan"/>
+	<partner_company name="Japan Asia Airways" IATA="EG" ICAO="JAA" callsign="ASIA" country="Japan"/>
+	<partner_company name="Japan Transocean Air" IATA="NU" ICAO="JTA" callsign="JAI OCEAN" country="Japan"/>
+	<partner_company name="Jat Airways" IATA="JU" ICAO="JAT" callsign="JAT" country="Serbia"/>
+	<partner_company name="Jazeera Airways" IATA="J9" ICAO="JZR" callsign="JAZEERA" country="Kuwait"/>
+	<partner_company name="Jeju Air" IATA="7C" ICAO="JJA" callsign="JEJU AIR" country="Republic of Korea"/>
+	<partner_company name="Jet Airways" IATA="9W" ICAO="JAI" callsign="JET AIRWAYS" country="India"/>
+	<partner_company name="Jet Airways" IATA="QJ" country="United States"/>
+	<partner_company name="Jetstar Asia Airways" IATA="3K" ICAO="JSA" callsign="JETSTAR ASIA" country="Singapore"/>
+	<partner_company name="Jet2.com" IATA="LS" ICAO="EXS" callsign="CHANNEX" country="United Kingdom"/>
+	<partner_company name="Jet4You" IATA="8J" ICAO="JFU" callsign="ARGAN" country="Morocco"/>
+	<partner_company name="JetBlue Airways" IATA="B6" ICAO="JBU" callsign="JETBLUE" country="United States"/>
+	<partner_company name="Jetairfly" IATA="JF" ICAO="JAF" callsign="BEAUTY" country="Belgium"/>
+	<partner_company name="Jetflite" ICAO="JEF" callsign="JETFLITE" country="Finland"/>
+	<partner_company name="Jetstar Airways" IATA="JQ" ICAO="JST" callsign="JETSTAR" country="Australia"/>
+	<partner_company name="Juneyao Airlines" IATA="HO" ICAO="DKH" callsign="JUNEYAO AIRLINES" country="China"/>
+	<partner_company name="KD Avia" IATA="KD" ICAO="KNI" callsign="KALININGRAD AIR" country="Russia"/>
+	<partner_company name="KLM Cityhopper" IATA="WA" ICAO="KLC" callsign="CITY" country="Netherlands"/>
+	<partner_company name="KLM Royal Dutch Airlines" IATA="KL" ICAO="KLM" callsign="KLM" country="Netherlands"/>
+	<partner_company name="Kam Air" IATA="RQ" ICAO="KMF" callsign="KAMGAR" country="Afghanistan"/>
+	<partner_company name="Kavminvodyavia" IATA="KV" ICAO="MVD" callsign="AIR MINVODY" country="Russia"/>
+	<partner_company name="Kendell Airlines" ICAO="KDA" callsign="KENDELL" country="Australia"/>
+	<partner_company name="Kenmore Air" IATA="M5" ICAO="KEN" callsign="KENMORE" country="United States"/>
+	<partner_company name="Kenya Airways" IATA="KQ" ICAO="KQA" callsign="KENYA" country="Kenya"/>
+	<partner_company name="Kingfisher Airlines" IATA="IT" ICAO="KFR" callsign="KINGFISHER" country="India"/>
+	<partner_company name="Kish Air" IATA="Y9" ICAO="IRK" callsign="KISHAIR" country="Iran"/>
+	<partner_company name="Kogalymavia Air Company" IATA="7K" ICAO="KGL" callsign="KOGALYM" country="Russia"/>
+	<partner_company name="Korean Air" IATA="KE" ICAO="KAL" callsign="KOREANAIR" country="Republic of Korea"/>
+	<partner_company name="Kosmos" ICAO="KSM" callsign="KOSMOS" country="Russia"/>
+	<partner_company name="Krasnojarsky Airlines" IATA="7B" ICAO="KJC" callsign="KRASNOJARSKY AIR" country="Russia"/>
+	<partner_company name="Kuban Airlines" IATA="GW" ICAO="KIL" callsign="AIR KUBAN" country="Russia"/>
+	<partner_company name="Kuwait Airways" IATA="KU" ICAO="KAC" callsign="KUWAITI" country="Kuwait"/>
+	<partner_company name="Kuzu Airlines Cargo" IATA="GO" ICAO="KZU" callsign="KUZU CARGO" country="Turkey"/>
+	<partner_company name="LACSA" IATA="LR" ICAO="LRC" callsign="LACSA" country="Costa Rica"/>
+	<partner_company name="LAN Airlines" IATA="LA" ICAO="LAN" callsign="LAN" country="Chile"/>
+	<partner_company name="LAN Argentina" IATA="4M" ICAO="DSM" callsign="LAN AR" country="Argentina"/>
+	<partner_company name="LAN Express" IATA="LU" ICAO="LXP" callsign="LANEX" country="Chile"/>
+	<partner_company name="LAN Peru" IATA="LP" ICAO="LPE" callsign="LANPERU" country="Peru"/>
+	<partner_company name="LOT Polish Airlines" IATA="LO" ICAO="LOT" callsign="POLLOT" country="Poland"/>
+	<partner_company name="LTE International Airways" IATA="XO" ICAO="LTE" callsign="FUN JET" country="Spain"/>
+	<partner_company name="LTU Austria" IATA="L3" ICAO="LTO" callsign="BILLA TRANSPORT" country="Austria"/>
+	<partner_company name="LTU International" IATA="LT" ICAO="LTU" callsign="LTU" country="Germany"/>
+	<partner_company name="Lao Airlines" IATA="QV" ICAO="LAO" callsign="LAO" country="Lao Peoples Democratic Republic"/>
+	<partner_company name="LatCharter" ICAO="LTC" callsign="LATCHARTER" country="Latvia"/>
+	<partner_company name="Lauda Air" IATA="NG" ICAO="LDA" callsign="LAUDA AIR" country="Austria"/>
+	<partner_company name="Leeward Islands Air Transport" IATA="LI" ICAO="LIA" callsign="LIAT" country="Antigua and Barbuda"/>
+	<partner_company name="Libyan Arab Airlines" IATA="LN" ICAO="LAA" callsign="LIBAIR" country="Libya"/>
+	<partner_company name="Linhas A" IATA="LM" ICAO="LAM" callsign="MOZAMBIQUE" country="Mozambique"/>
+	<partner_company name="Lion Mentari Airlines" IATA="JT" ICAO="LNI" callsign="LION INTER" country="Indonesia"/>
+	<partner_company name="Luftfahrtgesellschaft Walter" IATA="HE" ICAO="LGW" callsign="WALTER" country="Germany"/>
+	<partner_company name="Lufthansa" IATA="LH" ICAO="DLH" callsign="LUFTHANSA" country="Germany"/>
+	<partner_company name="Lufthansa Cargo" IATA="LH" ICAO="GEC" callsign="LUFTHANSA CARGO" country="Germany"/>
+	<partner_company name="Lufthansa CityLine" IATA="CL" ICAO="CLH" callsign="HANSALINE" country="Germany"/>
+	<partner_company name="Lufttransport" IATA="L5" ICAO="LTR" callsign="LUFT TRANSPORT" country="Norway"/>
+	<partner_company name="Luxair" IATA="LG" ICAO="LGL" callsign="LUXAIR" country="Luxembourg"/>
+	<partner_company name="L" IATA="MJ" ICAO="LPR" callsign="LAPA" country="Argentina"/>
+	<partner_company name="MasAir" IATA="M7" ICAO="MAA" callsign="MAS CARGA" country="Mexico"/>
+	<partner_company name="MAT Macedonian Airlines" IATA="IN" ICAO="MAK" callsign="MAKAVIO" country="Macedonia"/>
+	<partner_company name="MIAT Mongolian Airlines" IATA="OM" ICAO="MGL" callsign="MONGOL AIR" country="Mongolia"/>
+	<partner_company name="MNG Airlines" IATA="MB" ICAO="MNB" callsign="BLACK SEA" country="Turkey"/>
+	<partner_company name="Macair Airlines" IATA="CC" ICAO="MCK" country="Australia"/>
+	<partner_company name="Maersk" IATA="DM" country="Denmark"/>
+	<partner_company name="Mahan Air" IATA="W5" ICAO="IRM" callsign="MAHAN AIR" country="Iran"/>
+	<partner_company name="Malaysia Airlines" IATA="MH" ICAO="MAS" callsign="MALAYSIAN" country="Malaysia"/>
+	<partner_company name="Malmo Aviation" ICAO="SCW" callsign="SCANWING" country="Sweden"/>
+	<partner_company name="Malmö Aviation" IATA="TF" ICAO="SCW" callsign="Scanwings" country="Sweden"/>
+	<partner_company name="Malta Air Charter" IATA="R5" ICAO="MAC" callsign="MALTA CHARTER" country="Malta"/>
+	<partner_company name="Malév" IATA="MA" ICAO="MAH" callsign="MALEV" country="Hungary"/>
+	<partner_company name="Mandala Airlines" IATA="RI" ICAO="MDL" callsign="MANDALA" country="Indonesia"/>
+	<partner_company name="Mandarin Airlines" IATA="AE" ICAO="MDA" callsign="Mandarin" country="Taiwan"/>
+	<partner_company name="Mango" IATA="JE" ICAO="MNO" callsign="TULCA" country="South Africa"/>
+	<partner_company name="Martinair" IATA="MP" ICAO="MPH" callsign="MARTINAIR" country="Netherlands"/>
+	<partner_company name="Maxair" IATA="8M" ICAO="MXL" callsign="MAXAIR" country="Sweden"/>
+	<partner_company name="Maya Island Air" IATA="MW" ICAO="MYD" callsign="MYLAND" country="Belize"/>
+	<partner_company name="Meridiana" IATA="IG" ICAO="ISS" callsign="MERAIR" country="Italy"/>
+	<partner_company name="Merpati Nusantara Airlines" IATA="MZ" ICAO="MNA" callsign="MERPATI" country="Indonesia"/>
+	<partner_company name="Mesa Airlines" IATA="YV" ICAO="ASH" callsign="AIR SHUTTLE" country="United States"/>
+	<partner_company name="Mesaba Airlines" IATA="XJ" ICAO="MES" callsign="MESABA" country="United States"/>
+	<partner_company name="Mexicana de Aviaci" IATA="MX" ICAO="MXA" callsign="MEXICANA" country="Mexico"/>
+	<partner_company name="Middle East Airlines" IATA="ME" ICAO="MEA" callsign="CEDAR JET" country="Lebanon"/>
+	<partner_company name="Midway Airlines" IATA="JI" ICAO="MDW" callsign="MIDWAY" country="United States"/>
+	<partner_company name="Midwest Airlines" IATA="YX" ICAO="MEP" country="United States"/>
+	<partner_company name="Midwest Airlines (Egypt)" IATA="MY" ICAO="MWA" country="Egypt"/>
+	<partner_company name="Moldavian Airlines" IATA="2M" ICAO="MDV" callsign="MOLDAVIAN" country="Moldova"/>
+	<partner_company name="Monarch Airlines" IATA="ZB" ICAO="MON" callsign="MONARCH" country="United Kingdom"/>
+	<partner_company name="Myway Airlines" IATA="8I" country="Italy"/>
+	<partner_company name="Montenegro Airlines" IATA="YM" ICAO="MGX" callsign="MONTAIR" country="Montenegro"/>
+	<partner_company name="Morningstar Air Express" ICAO="MAL" callsign="MORNINGSTAR" country="Canada"/>
+	<partner_company name="Moskovia Airlines" IATA="3R" ICAO="GAI" callsign="GROMOV AIRLINE" country="Russia"/>
+	<partner_company name="Motor Sich" IATA="M9" ICAO="MSI" callsign="MOTOR SICH" country="Ukraine"/>
+	<partner_company name="MyTravel Airways" IATA="VZ" ICAO="MYT" callsign="KESTREL" country="United Kingdom"/>
+	<partner_company name="Myanma Airways" IATA="UB" ICAO="UBA" callsign="UNIONAIR" country="Myanmar"/>
+	<partner_company name="Myanmar Airways International" IATA="8M" ICAO="MMM" callsign="assignment postponed" country="Myanmar"/>
+	<partner_company name="Myflug" ICAO="MYA" callsign="MYFLUG" country="Iceland"/>
+	<partner_company name="Nasair" IATA="UE" ICAO="NAS" callsign="NASAIRWAYS" country="Eritrea"/>
+	<partner_company name="National Jet Systems" IATA="NC" ICAO="NJS" callsign="NATIONAL JET" country="Australia"/>
+	<partner_company name="Nationwide Airlines" IATA="CE" ICAO="NTW" callsign="NATIONWIDE" country="South Africa"/>
+	<partner_company name="Nauru Air Corporation" IATA="ON" ICAO="RON" callsign="AIR NAURU" country="Nauru"/>
+	<partner_company name="Nepal Airlines" IATA="RA" ICAO="RNA" callsign="ROYAL NEPAL" country="Nepal"/>
+	<partner_company name="NetJets" IATA="1I" ICAO="EJA" callsign="EXECJET" country="United States"/>
+	<partner_company name="New England Airlines" IATA="EJ" ICAO="NEA" callsign="NEW ENGLAND" country="United States"/>
+	<partner_company name="NextJet" IATA="2N" ICAO="NTJ" callsign="NEXTJET" country="Sweden"/>
+	<partner_company name="Niki" IATA="HG" ICAO="NLY" callsign="FLYNIKI" country="Austria"/>
+	<partner_company name="Nok Air" IATA="DD" ICAO="NOK" callsign="NOK AIR" country="Thailand"/>
+	<partner_company name="Norfolk County Flight College" ICAO="NCF" callsign="COUNTY" country="United Kingdom"/>
+	<partner_company name="North American Airlines" ICAO="NTM" callsign="NORTHAM" country="Canada"/>
+	<partner_company name="North American Charters" ICAO="HMR" callsign="HAMMER" country="Canada"/>
+	<partner_company name="Northern Dene Airways" IATA="U7" country="Canada"/>
+	<partner_company name="Northwest Airlines" IATA="NW" ICAO="NWA" callsign="NORTHWEST" country="United States"/>
+	<partner_company name="Northwestern Air" IATA="J3" ICAO="PLR" callsign="POLARIS" country="Canada"/>
+	<partner_company name="Norwegian Air Shuttle" IATA="DY" ICAO="NAX" callsign="NOR SHUTTLE" country="Norway"/>
+	<partner_company name="Norwegian Aviation College" ICAO="TFN" callsign="SPRIT" country="Norway"/>
+	<partner_company name="Nouvel Air Tunisie" IATA="BJ" ICAO="LBT" callsign="NOUVELAIR" country="Tunisia"/>
+	<partner_company name="Novair" IATA="1I" ICAO="NVR" callsign="NAVIGATOR" country="Sweden"/>
+	<partner_company name="Nas Air" IATA="XY" ICAO="KNE" callsign="NAS EXPRESS" country="Saudi Arabia"/>
+	<partner_company name="Oasis Hong Kong Airlines" IATA="O8" ICAO="OHK" callsign="OASIS" country="Hong Kong"/>
+	<partner_company name="Ocean Air" ICAO="BCN" callsign="BLUE OCEAN" country="Mauritania"/>
+	<partner_company name="Oceanair" IATA="O6" ICAO="ONE" callsign="OCEANAIR" country="Brazil"/>
+	<partner_company name="Oceanic Airlines" IATA="O2" country="Guinea"/>
+	<partner_company name="Olympic Airlines" IATA="OA" ICAO="OAL" callsign="OLYMPIC" country="Greece"/>
+	<partner_company name="Oman Air" IATA="WY" ICAO="OMA" callsign="OMAN AIR" country="Oman"/>
+	<partner_company name="Omni Air International" IATA="OY" ICAO="OAE" callsign="OMNI-EXPRESS" country="United States"/>
+	<partner_company name="One Two Go Airlines" ICAO="OTG" callsign="THAI EXPRESS" country="Thailand"/>
+	<partner_company name="Onur Air" IATA="8Q" ICAO="OHY" callsign="ONUR AIR" country="Turkey"/>
+	<partner_company name="Orenburg Airlines" IATA="R2" ICAO="ORB" callsign="ORENBURG" country="Russia"/>
+	<partner_company name="Orient Thai Airlines" IATA="OX" ICAO="OEA" callsign="ORIENT THAI" country="Thailand"/>
+	<partner_company name="Origin Pacific Airways" IATA="QO" ICAO="OGN" callsign="ORIGIN" country="New Zealand"/>
+	<partner_company name="Ostfriesische Lufttransport" IATA="OL" ICAO="OLT" callsign="OLTRA" country="Germany"/>
+	<partner_company name="Overland Airways" IATA="OJ" ICAO="OLA" callsign="OVERLAND" country="Nigeria"/>
+	<partner_company name="Ozjet Airlines" IATA="O7" ICAO="OZJ" callsign="AUSJET" country="Australia"/>
+	<partner_company name="PAN Air" IATA="PV" ICAO="PNR" callsign="SKYJET" country="Spain"/>
+	<partner_company name="PB Air" IATA="9Q" ICAO="PBA" callsign="PEEBEE AIR" country="Thailand"/>
+	<partner_company name="PLUNA" IATA="PU" ICAO="PUA" callsign="PLUNA" country="Uruguay"/>
+	<partner_company name="PMTair" IATA="U4" ICAO="PMT" callsign="MULTITRADE" country="Cambodia"/>
+	<partner_company name="Jetstar Pacific" IATA="BL" ICAO="PIC" callsign="PACIFIC AIRLINES" country="Vietnam"/>
+	<partner_company name="Pacific Coastal Airline" IATA="8P" ICAO="PCO" callsign="PASCO" country="Canada"/>
+	<partner_company name="Pacific East Asia Cargo Airlines" IATA="Q8" ICAO="PEC" callsign="PAC-EAST CARGO" country="Philippines"/>
+	<partner_company name="Pacific Island Aviation" ICAO="PSA" callsign="PACIFIC ISLE" country="United States"/>
+	<partner_company name="Pacific Wings" IATA="LW" ICAO="NMI" callsign="TSUNAMI" country="United States"/>
+	<partner_company name="Pakistan International Airlines" IATA="PK" ICAO="PIA" callsign="PAKISTAN" country="Pakistan"/>
+	<partner_company name="Paramount Airways" IATA="I7" ICAO="PMW" callsign="PARAWAY" country="India"/>
+	<partner_company name="Passaredo Transportes Aereos" ICAO="PTB" callsign="PASSAREDO" country="Brazil"/>
+	<partner_company name="Pegasus Airlines" IATA="PC" ICAO="PGT" callsign="SUNTURK" country="Turkey"/>
+	<partner_company name="Peninsula Airways" IATA="KS" ICAO="PEN" callsign="PENINSULA" country="United States"/>
+	<partner_company name="Philippine Airlines" IATA="PR" ICAO="PAL" callsign="PHILIPPINE" country="Philippines"/>
+	<partner_company name="Piedmont Airlines (1948-1989)" IATA="PI" ICAO="PDT" callsign="PIEDMONT" country="United States"/>
+	<partner_company name="Pinnacle Airlines" IATA="9E" ICAO="FLG" callsign="FLAGSHIP" country="United States"/>
+	<partner_company name="Polet" ICAO="POT" callsign="POLET" country="Russia"/>
+	<partner_company name="Polynesian Airlines" IATA="PH" ICAO="PAO" callsign="POLYNESIAN" country="Samoa"/>
+	<partner_company name="Porter Airlines" IATA="PD" ICAO="POE" callsign="PORTER AIR" country="Canada"/>
+	<partner_company name="Portugalia" IATA="NI" ICAO="PGA" callsign="PORTUGALIA" country="Portugal"/>
+	<partner_company name="Potomac Air" IATA="BK" ICAO="PDC" callsign="DISTRICT" country="United States"/>
+	<partner_company name="Precision Air" IATA="PW" ICAO="PRF" callsign="PRECISION AIR" country="Tanzania"/>
+	<partner_company name="Privatair" ICAO="PTI" callsign="PRIVATAIR" country="Switzerland"/>
+	<partner_company name="Proflight Commuter Services" IATA="P0" country="Zambia"/>
+	<partner_company name="Qantas" IATA="QF" ICAO="QFA" callsign="QANTAS" country="Australia"/>
+	<partner_company name="Qatar Airways" IATA="QR" ICAO="QTR" callsign="QATARI" country="Qatar"/>
+	<partner_company name="RACSA" IATA="R6" country="Guatemala"/>
+	<partner_company name="Kinloss Flying Training Unit" ICAO="KIN" callsign="KINLOSS" country="United Kingdom"/>
+	<partner_company name="Regional Airlines" IATA="FN" country="Morocco"/>
+	<partner_company name="Regional Express" IATA="ZL" ICAO="RXA" callsign="REX" country="Australia"/>
+	<partner_company name="Republic Airlines" IATA="RW" ICAO="RPA" callsign="BRICKYARD" country="United States"/>
+	<partner_company name="Republic Express Airlines" IATA="RH" ICAO="RPH" callsign="PUBLIC EXPRESS" country="Indonesia"/>
+	<partner_company name="Rossiya" IATA="R4" country="Russia"/>
+	<partner_company name="Air Rarotonga" IATA="GZ" ICAO="RAR" country="Cook Islands"/>
+	<partner_company name="Royal Air Maroc" IATA="AT" ICAO="RAM" callsign="ROYALAIR MAROC" country="Morocco"/>
+	<partner_company name="Royal Brunei Airlines" IATA="BI" ICAO="RBA" callsign="BRUNEI" country="Brunei"/>
+	<partner_company name="Royal Jordanian" IATA="RJ" ICAO="RJA" callsign="JORDANIAN" country="Jordan"/>
+	<partner_company name="Royal Nepal Airlines" IATA="RA" ICAO="RNA" callsign="ROYAL NEPAL" country="Nepal"/>
+	<partner_company name="Royal Phnom Penh Airways" ICAO="PPW" callsign="PHNOM-PENH AIR" country="Cambodia"/>
+	<partner_company name="Rusline" ICAO="RLU" callsign="RUSLINE AIR" country="Russia"/>
+	<partner_company name="Rwandair Express" IATA="WB" ICAO="RWD" callsign="RWANDAIR" country="Rwanda"/>
+	<partner_company name="Ryan Air Services" ICAO="RYA" callsign="RYAN AIR" country="United States"/>
+	<partner_company name="Ryan International Airlines" IATA="RD" ICAO="RYN" callsign="RYAN INTERNATIONAL" country="United States"/>
+	<partner_company name="Ryanair" IATA="FR" ICAO="RYR" callsign="RYANAIR" country="Ireland"/>
+	<partner_company name="Régional" IATA="YS" ICAO="RAE" callsign="REGIONAL EUROPE" country="France"/>
+	<partner_company name="SATA International" IATA="S4" ICAO="RZO" callsign="AIR AZORES" country="Portugal"/>
+	<partner_company name="South African Airways" IATA="SA" ICAO="SAA" callsign="SPRINGBOK" country="South Africa"/>
+	<partner_company name="Shaheen Air International" IATA="NL" ICAO="SAI" callsign="SHAHEEN AIR" country="Pakistan"/>
+	<partner_company name="Scandinavian Airlines System" IATA="SK" ICAO="SAS" callsign="SCANDINAVIAN" country="Sweden"/>
+	<partner_company name="ScotAirways" ICAO="SAY" callsign="SUCKLING" country="United Kingdom"/>
+	<partner_company name="S7 Airlines" IATA="S7" ICAO="SBI" callsign="SIBERIAN AIRLINES" country="Russia"/>
+	<partner_company name="Seaborne Airlines" IATA="BB" ICAO="SBS" callsign="SEABORNE" country="United States"/>
+	<partner_company name="Scenic Airlines" ICAO="SCE" callsign="SCENIC" country="United States"/>
+	<partner_company name="SriLankan Airlines" IATA="UL" ICAO="ALK" callsign="SRILANKAN" country="Sri Lanka"/>
+	<partner_company name="Sun Country Airlines" IATA="SY" ICAO="SCX" callsign="SUN COUNTRY" country="United States"/>
+	<partner_company name="Southeast Air" ICAO="SEA" callsign="SOUTHEAST AIR" country="United States"/>
+	<partner_company name="Sky Express" IATA="G3" ICAO="SEH" callsign="AIR CRETE" country="Greece"/>
+	<partner_company name="Spicejet" IATA="SG" ICAO="SEJ" callsign="SPICEJET" country="India"/>
+	<partner_company name="Star Flyer" IATA="7G" ICAO="SFJ" callsign="STARFLYER" country="Japan"/>
+	<partner_company name="Skagway Air Service" IATA="N5" ICAO="SGY" callsign="SKAGWAY AIR" country="United States"/>
+	<partner_company name="Sahara Airlines" ICAO="SHD" country="Algeria"/>
+	<partner_company name="SATA Air Acores" IATA="SP" ICAO="SAT" callsign="SATA" country="Portugal"/>
+	<partner_company name="Singapore Airlines" IATA="SQ" ICAO="SIA" callsign="SINGAPORE" country="Singapore"/>
+	<partner_company name="Sibaviatrans" IATA="5M" ICAO="SIB" callsign="SIBAVIA" country="Russia"/>
+	<partner_company name="Skynet Airlines" IATA="SI" ICAO="SIH" callsign="BLUEJET" country="Ireland"/>
+	<partner_company name="Sriwijaya Air" IATA="SJ" ICAO="SJY" callsign="SRIWIJAYA" country="Indonesia"/>
+	<partner_company name="Sama Airlines" IATA="ZS" ICAO="SMY" callsign="NAJIM" country="Saudi Arabia"/>
+	<partner_company name="Singapore Airlines Cargo" IATA="SQ" ICAO="SQC" callsign="SINGCARGO" country="Singapore"/>
+	<partner_company name="Siem Reap Airways" IATA="FT" ICAO="SRH" callsign="SIEMREAP AIR" country="Cambodia"/>
+	<partner_company name="South East Asian Airlines" IATA="DG" ICAO="SRQ" callsign="SEAIR" country="Philippines"/>
+	<partner_company name="Skyservice Airlines" IATA="5G" ICAO="SSV" callsign="SKYTOUR" country="Canada"/>
+	<partner_company name="Servicios de Transportes A" IATA="FS" ICAO="STU" callsign="FUEGUINO" country="Argentina"/>
+	<partner_company name="Sudan Airways" IATA="SD" ICAO="SUD" callsign="SUDANAIR" country="Sudan"/>
+	<partner_company name="Saudi Arabian Airlines" IATA="SV" ICAO="SVA" callsign="SAUDIA" country="Saudi Arabia"/>
+	<partner_company name="Southwest Airlines" IATA="WN" ICAO="SWA" callsign="SOUTHWEST" country="United States"/>
+	<partner_company name="Southern Winds Airlines" IATA="A4" ICAO="SWD" callsign="SOUTHERN WINDS" country="Argentina"/>
+	<partner_company name="Swiss International Air Lines" IATA="LX" ICAO="SWR" callsign="SWISS" country="Switzerland"/>
+	<partner_company name="Swissair" IATA="SR" ICAO="SWR" callsign="Swissair" country="Switzerland"/>
+	<partner_company name="Swiss European Air Lines" ICAO="SWU" callsign="EUROSWISS" country="Switzerland"/>
+	<partner_company name="Swe Fly" IATA="WV" ICAO="SWV" callsign="FLYING SWEDE" country="Sweden"/>
+	<partner_company name="SunExpress" IATA="XQ" ICAO="SXS" callsign="SUNEXPRESS" country="Turkey"/>
+	<partner_company name="Syrian Arab Airlines" IATA="RB" ICAO="SYR" callsign="SYRIANAIR" country="Syrian Arab Republic"/>
+	<partner_company name="Skywalk Airlines" IATA="AL" ICAO="SYX" callsign="SKYWAY-EX" country="United States"/>
+	<partner_company name="Shandong Airlines" IATA="SC" ICAO="CDG" callsign="SHANDONG" country="China"/>
+	<partner_company name="SAS Braathens" ICAO="CNO" callsign="SCANOR" country="Norway"/>
+	<partner_company name="Spring Airlines" IATA="9S" ICAO="CQH" callsign="AIR SPRING" country="China"/>
+	<partner_company name="Sichuan Airlines" IATA="3U" ICAO="CSC" callsign="SI CHUAN" country="China"/>
+	<partner_company name="Shanghai Airlines" IATA="FM" ICAO="CSH" callsign="SHANGHAI AIR" country="China"/>
+	<partner_company name="Shenzhen Airlines" IATA="ZH" ICAO="CSZ" callsign="SHENZHEN AIR" country="China"/>
+	<partner_company name="Sun D'Or" IATA="7L" ICAO="ERO" callsign="ECHO ROMEO" country="Israel"/>
+	<partner_company name="SkyEurope" IATA="NE" ICAO="ESK" callsign="RELAX" country="Slovakia"/>
+	<partner_company name="Sky Europe Airlines" ICAO="HSK" callsign="MATRA" country="Slovakia"/>
+	<partner_company name="Spanair" IATA="JK" ICAO="JKK" callsign="SPANAIR" country="Spain"/>
+	<partner_company name="Spirit Airlines" IATA="NK" ICAO="NKS" callsign="SPIRIT WINGS" country="United States"/>
+	<partner_company name="SATENA" IATA="9R" ICAO="NSE" callsign="SATENA" country="Colombia"/>
+	<partner_company name="Skywest Airlines" ICAO="OZW" callsign="OZWEST" country="Australia"/>
+	<partner_company name="Santa Barbara Airlines" IATA="S3" ICAO="BBR" callsign="SANTA BARBARA" country="Venezuela"/>
+	<partner_company name="Sky Airline" IATA="H2" ICAO="SKU" callsign="AEROSKY" country="Chile"/>
+	<partner_company name="SkyWest" IATA="OO" ICAO="SKW" callsign="SKYWEST" country="United States"/>
+	<partner_company name="Skyways Express" IATA="JZ" ICAO="SKX" callsign="SKY EXPRESS" country="Sweden"/>
+	<partner_company name="Skymark Airlines" IATA="BC" ICAO="SKY" callsign="SKYMARK" country="Japan"/>
+	<partner_company name="SilkAir" IATA="MI" ICAO="SLK" callsign="SILKAIR" country="Singapore"/>
+	<partner_company name="Surinam Airways" IATA="PY" ICAO="SLM" callsign="SURINAM" country="Suriname"/>
+	<partner_company name="Sterling Airlines" IATA="NB" ICAO="SNB" callsign="STERLING" country="Denmark"/>
+	<partner_company name="Skynet Asia Airways" IATA="6J" ICAO="SNJ" callsign="NEWSKY" country="Japan"/>
+	<partner_company name="Solomon Airlines" IATA="IE" ICAO="SOL" callsign="SOLOMON" country="Solomon Islands"/>
+	<partner_company name="Southern Airways" ICAO="SOU" callsign="SOUTHERN EXPRESS" country="United States"/>
+	<partner_company name="Saratov Aviation Division" IATA="6W" ICAO="SOV" callsign="SARATOV AIR" country="Russia"/>
+	<partner_company name="Sat Airlines" IATA="HZ" ICAO="SOZ" callsign="SATCO" country="Kazakhstan"/>
+	<partner_company name="South Pacific Island Airways" ICAO="SPI" callsign="SOUTH PACIFIC" country="United States"/>
+	<partner_company name="Shuttle America" IATA="S5" ICAO="TCF" callsign="MERCURY" country="United States"/>
+	<partner_company name="Scat Air" IATA="DV" ICAO="VSV" callsign="VLASTA" country="Kazakhstan"/>
+	<partner_company name="TAME" IATA="EQ" ICAO="TAE" callsign="TAME" country="Ecuador"/>
+	<partner_company name="TAM Brazilian Airlines" IATA="JJ" ICAO="TAM" callsign="TAM" country="Brazil"/>
+	<partner_company name="TAP Portugal" IATA="TP" ICAO="TAP" callsign="AIR PORTUGAL" country="Portugal"/>
+	<partner_company name="Tunisair" IATA="TU" ICAO="TAR" callsign="TUNAIR" country="Tunisia"/>
+	<partner_company name="Thai Air Cargo" IATA="T2" ICAO="TCG" callsign="THAI CARGO" country="Thailand"/>
+	<partner_company name="Thomas Cook Airlines" IATA="FQ" ICAO="TCW" callsign="THOMAS COOK" country="Belgium"/>
+	<partner_company name="Thomas Cook Airlines" IATA="MT" ICAO="TCX" callsign="KESTREL" country="United Kingdom"/>
+	<partner_company name="Trigana Air Service" ICAO="TGN" callsign="TRIGANA" country="Indonesia"/>
+	<partner_company name="Tiger Airways" IATA="TR" ICAO="TGW" callsign="GO CAT" country="Singapore"/>
+	<partner_company name="Tiger Airways Australia" IATA="TT" ICAO="TGW" callsign="GO CAT" country="Australia"/>
+	<partner_company name="Thai Airways International" IATA="TG" ICAO="THA" callsign="THAI" country="Thailand"/>
+	<partner_company name="Turk Hava Kurumu Hava Taksi Isletmesi" ICAO="THK" callsign="HUR KUS" country="Turkey"/>
+	<partner_company name="Thai AirAsia" IATA="FD" ICAO="AIQ" callsign="THAI ASIA" country="Thailand"/>
+	<partner_company name="Turkish Airlines" IATA="TK" ICAO="THY" callsign="TURKAIR" country="Turkey"/>
+	<partner_company name="Tajikistan International Airlines" ICAO="TIL" callsign="TIL" country="Tajikistan"/>
+	<partner_company name="Twin Jet" IATA="T7" ICAO="TJT" callsign="TWINJET" country="France"/>
+	<partner_company name="Translift Airways" ICAO="TLA" callsign="TRANSLIFT" country="Ireland"/>
+	<partner_company name="Trans Mediterranean Airlines" IATA="TL" ICAO="TMA" callsign="TANGO LIMA" country="Lebanon"/>
+	<partner_company name="Tiara Air" IATA="3P" ICAO="TNM" callsign="TIARA" country="Aruba"/>
+	<partner_company name="Thomsonfly" IATA="BY" ICAO="TOM" callsign="TOMSON" country="United Kingdom"/>
+	<partner_company name="Tropic Air" IATA="PM" ICAO="TOS" callsign="TROPISER" country="Belize"/>
+	<partner_company name="TAMPA" IATA="QT" ICAO="TPA" callsign="TAMPA" country="Colombia"/>
+	<partner_company name="TransAsia Airways" IATA="GE" ICAO="TNA" callsign="TransAsia" country="Taiwan"/>
+	<partner_company name="Transavia Holland" IATA="HV" ICAO="TRA" callsign="TRANSAVIA" country="Netherlands"/>
+	<partner_company name="TACV" IATA="VR" ICAO="TCV" callsign="CABOVERDE" country="Portugal"/>
+	<partner_company name="Transwest Air" IATA="9T" ICAO="ABS" callsign="ATHABASKA" country="Canada"/>
+	<partner_company name="Transaero Airlines" IATA="UN" ICAO="TSO" callsign="TRANSOVIET" country="Russia"/>
+	<partner_company name="Turkmenistan Airlines" IATA="T5" ICAO="TUA" callsign="TURKMENISTAN" country="Turkmenistan"/>
+	<partner_company name="Tuninter" IATA="UG" ICAO="TUI" country="Tunisia"/>
+	<partner_company name="Travel Service" IATA="QS" ICAO="TVS" callsign="SKYTRAVEL" country="Czech Republic"/>
+	<partner_company name="TUIfly Nordic" IATA="6B" ICAO="BLX" callsign="BLUESCAN" country="Sweden"/>
+	<partner_company name="TAAG Angola Airlines" IATA="DT" ICAO="DTA" callsign="DTA" country="Angola"/>
+	<partner_company name="Turkish Air Force" ICAO="HVK" callsign="TURKISH AIRFORCE" country="Turkey"/>
+	<partner_company name="TAM Mercosur" IATA="PZ" ICAO="LAP" callsign="PARAGUAYA" country="Paraguay"/>
+	<partner_company name="Trans States Airlines" IATA="AX" ICAO="LOF" callsign="WATERSKI" country="United States"/>
+	<partner_company name="Tarom" IATA="RO" ICAO="ROT" callsign="TAROM" country="Romania"/>
+	<partner_company name="Turan Air" IATA="3T" ICAO="URN" callsign="TURAN" country="Azerbaijan"/>
+	<partner_company name="TRIP Linhas A" IATA="8R" ICAO="TIB" callsign="TRIP" country="Brazil"/>
+	<partner_company name="USA3000 Airlines" IATA="U5" ICAO="GWY" callsign="GETAWAY" country="United States"/>
+	<partner_company name="United Airlines" IATA="UA" ICAO="UAL" callsign="UNITED" country="United States"/>
+	<partner_company name="United Air Charters" ICAO="UAC" callsign="UNITAIR" country="Zimbabwe"/>
+	<partner_company name="Ural Airlines" IATA="U6" ICAO="SVR" callsign="SVERDLOVSK AIR" country="Russia"/>
+	<partner_company name="UM Airlines" IATA="UF" ICAO="UKM" callsign="UKRAINE MEDITERRANEE" country="Ukraine"/>
+	<partner_company name="US Airways" IATA="US" ICAO="USA" callsign="U S AIR" country="United States"/>
+	<partner_company name="US Helicopter" ICAO="USH" callsign="US-HELI" country="United States"/>
+	<partner_company name="UTair Aviation" IATA="UT" ICAO="UTA" callsign="UTAIR" country="Russia"/>
+	<partner_company name="United States Air Force" ICAO="AIO" callsign="AIR CHIEF" country="United States"/>
+	<partner_company name="Uzbekistan Airways" IATA="HY" ICAO="UZB" callsign="UZBEK" country="Uzbekistan"/>
+	<partner_company name="Ukraine International Airlines" IATA="PS" ICAO="AUI" callsign="UKRAINE INTERNATIONAL" country="Ukraine"/>
+	<partner_company name="US Helicopter Corporation" IATA="UH" country="United States"/>
+	<partner_company name="Valuair" IATA="VF" ICAO="VLU" callsign="VALUAIR" country="Singapore"/>
+	<partner_company name="Vasco Air" ICAO="VFC" callsign="VASCO AIR" country="Vietnam"/>
+	<partner_company name="Vietnam Airlines" IATA="VN" ICAO="HVN" callsign="VIET NAM AIRLINES" country="Vietnam"/>
+	<partner_company name="VIM Airlines" IATA="NN" ICAO="MOV" callsign="MOV AIR" country="Russia"/>
+	<partner_company name="Volaris" IATA="Y4" ICAO="VOI" callsign="VOLARIS" country="Mexico"/>
+	<partner_company name="Volga-Dnepr Airlines" IATA="VI" ICAO="VDA" callsign="VOLGA-DNEPR" country="Russia"/>
+	<partner_company name="Virgin America" IATA="VX" ICAO="VRD" callsign="REDWOOD" country="United States"/>
+	<partner_company name="Virgin Express" IATA="TV" ICAO="VEX" callsign="VIRGIN EXPRESS" country="Belgium"/>
+	<partner_company name="Virgin Nigeria Airways" IATA="VK" ICAO="VGN" callsign="VIRGIN NIGERIA" country="Nigeria"/>
+	<partner_company name="Virgin Atlantic Airways" IATA="VS" ICAO="VIR" callsign="VIRGIN" country="United Kingdom"/>
+	<partner_company name="Viva Macau" IATA="ZG" ICAO="VVM" callsign="JACKPOT" country="Macao"/>
+	<partner_company name="Volare Airlines" IATA="VE" ICAO="VLE" callsign="VOLA" country="Italy"/>
+	<partner_company name="Vueling Airlines" IATA="VY" ICAO="VLG" callsign="VUELING" country="Spain"/>
+	<partner_company name="Vladivostok Air" IATA="XF" ICAO="VLK" callsign="VLADAIR" country="Russia"/>
+	<partner_company name="Varig Log" IATA="LC" ICAO="VLO" callsign="VELOG" country="Brazil"/>
+	<partner_company name="Virgin Australia" IATA="VA" ICAO="VOZ" callsign="VIRGIN" country="Australia"/>
+	<partner_company name="VRG Linhas Aereas" IATA="RG" ICAO="VRN" callsign="VARIG" country="Brazil"/>
+	<partner_company name="VASP" IATA="VP" ICAO="VSP" callsign="VASP" country="Brazil"/>
+	<partner_company name="VLM Airlines" IATA="VG" ICAO="VLM" callsign="RUBENS" country="Belgium"/>
+	<partner_company name="Wayraper" IATA="7W" callsign="WAYRAPER" country="Peru"/>
+	<partner_company name="WebJet Linhas A" IATA="WJ" ICAO="WEB" callsign="WEB-BRASIL" country="Brazil"/>
+	<partner_company name="Welcome Air" IATA="2W" ICAO="WLC" callsign="WELCOMEAIR" country="Austria"/>
+	<partner_company name="West Coast Air" IATA="8O" country="Canada"/>
+	<partner_company name="WestJet" IATA="WS" ICAO="WJA" callsign="WESTJET" country="Canada"/>
+	<partner_company name="Western Airlines" IATA="WA" ICAO="WAL" callsign="WESTERN" country="United States"/>
+	<partner_company name="Widerøe" IATA="WF" ICAO="WIF" callsign="WIDEROE" country="Norway"/>
+	<partner_company name="Wind Jet" IATA="IV" ICAO="JET" callsign="GHIBLI" country="Italy"/>
+	<partner_company name="Wings Air" IATA="IW" ICAO="WON" callsign="WINGS ABADI" country="Indonesia"/>
+	<partner_company name="Wizz Air" IATA="W6" ICAO="WZZ" callsign="WIZZ AIR" country="Hungary"/>
+	<partner_company name="Wizz Air Hungary" IATA="8Z" ICAO="WVL" callsign="WIZZBUL" country="Bulgaria"/>
+	<partner_company name="World Airways" IATA="WO" ICAO="WOA" callsign="WORLD" country="United States"/>
+	<partner_company name="XL Airways France" IATA="SE" ICAO="SEU" callsign="STARWAY" country="France"/>
+	<partner_company name="Xiamen Airlines" IATA="MF" ICAO="CXA" callsign="XIAMEN AIR" country="China"/>
+	<partner_company name="Yamal Airlines" IATA="YL" ICAO="LLM" callsign="YAMAL" country="Russia"/>
+	<partner_company name="Yemenia" IATA="IY" ICAO="IYE" callsign="YEMENI" country="Yemen"/>
+	<partner_company name="Yuzhmashavia" ICAO="UMK" callsign="YUZMASH" country="Ukraine"/>
+	<partner_company name="Zanair" ICAO="TAN" callsign="ZANAIR" country="Tanzania"/>
+	<partner_company name="Zoom Airlines" IATA="Z4" ICAO="OOM" callsign="ZOOM" country="Canada"/>
+	<partner_company name="Tyrolean Airways" IATA="\N" ICAO="TYR" callsign="TYROLEAN" country="\N"/>
+	<partner_company name="Maldivian Air Taxi" IATA="8Q" ICAO="\N" callsign="\N" country="Maldives"/>
+	<partner_company name="Royal Air Cambodge" IATA="VJ" ICAO="RAC" country="Cambodia"/>
+	<partner_company name="Air Mandalay" IATA="6T" ICAO="\N" callsign="Six Tango" country="Burma"/>
+	<partner_company name="Unknown" IATA="-" ICAO="N/A" callsign="\N" country="\N"/>
+	<partner_company name="Air Busan" IATA="BX" ICAO="ABL" callsign="Air Busan" country="Republic of Korea"/>
+	<partner_company name="Sky Express" IATA="XW" ICAO="SXR" callsign="SKYSTORM" country="Russia"/>
+	<partner_company name="Globus" IATA="GH" ICAO="GLP" country="Russia"/>
+	<partner_company name="Air Kazakhstan" IATA="9Y" ICAO="KZK" callsign="Kazakh" country="Kazakhstan"/>
+	<partner_company name="Japan Air System" IATA="JD" ICAO="JAS" callsign="Air System" country="Japan"/>
+	<partner_company name="EasyJet (DS)" IATA="DS" ICAO="\N" country="Switzerland"/>
+	<partner_company name="Star Peru (2I)" IATA="2I" ICAO="\N" country="Peru"/>
+	<partner_company name="Carnival Air Lines" IATA="KW" ICAO="\N" callsign="Carnival Air" country="United States"/>
+	<partner_company name="United Airways" IATA="4H" ICAO="UBD" callsign="UNITED BANGLADESH" country="Bangladesh"/>
+	<partner_company name="Fly540" IATA="5H" ICAO="FFV" callsign="SWIFT TANGO" country="Kenya"/>
+	<partner_company name="Transavia France" IATA="TO" ICAO="TVF" callsign="FRENCH SUN" country="France"/>
+	<partner_company name="Island Air (WP)" IATA="WP" ICAO="MKU" country="United States"/>
+	<partner_company name="Uni Air" IATA="B7" ICAO="UIA" callsign="Glory" country="Taiwan"/>
+	<partner_company name="Gomelavia" IATA="YD" ICAO="\N" country="Belarus"/>
+	<partner_company name="Red Wings" IATA="WZ" ICAO="RWZ" callsign="AIR RED" country="Russia"/>
+	<partner_company name="TUIfly (X3)" IATA="11" ICAO="\N" country="Germany"/>
+	<partner_company name="Felix Airways" IATA="FU" ICAO="FXX" country="Yemen"/>
+	<partner_company name="Kostromskie avialinii" IATA="K1" ICAO="KOQ" country="Russia"/>
+	<partner_company name="Greenfly" IATA="XX" ICAO="GFY" country="Spain"/>
+	<partner_company name="Tajik Air" IATA="7J" ICAO="\N" country="Tajikistan"/>
+	<partner_company name="Air Mozambique" IATA="TM" ICAO="\N" country="Mozambique"/>
+	<partner_company name="ELK Airways" IATA="--" ICAO="ELK" country="Estonia"/>
+	<partner_company name="Gabon Airlines" IATA="GY" ICAO="GBK" callsign="GABON AIRLINES" country="Gabon"/>
+	<partner_company name="MCA Airlines" ICAO="MCA" callsign="CALSON" country="Sweden"/>
+	<partner_company name="Maldivo Airlines" IATA="ML" ICAO="MAV" callsign="Maldivo" country="Maldives"/>
+	<partner_company name="Virgin Pacific" IATA="VH" ICAO="VNP" country="Fiji"/>
+	<partner_company name="Zest Air" IATA="Z2" ICAO="\N" country="Philippines"/>
+	<partner_company name="Yangon Airways" IATA="HK" ICAO="\N" callsign="Hotel Kilo" country="Burma"/>
+	<partner_company name="Eastar Jet" IATA="ZE" ICAO="ESR" callsign="Eastar" country="South Korea"/>
+	<partner_company name="Jin Air" IATA="LJ" ICAO="JNA" callsign="Jin Air" country="South Korea"/>
+	<partner_company name="Wataniya Airways" ICAO="KW1" country="Kuwait"/>
+	<partner_company name="Air Arabia Maroc" IATA="3O" ICAO="\N" callsign="Air Arabia" country="Morocco"/>
+	<partner_company name="Baltic Air lines" IATA="B1" ICAO="BA1" callsign="Baltic" country="Latvia"/>
+	<partner_company name="Ciel Canadien" IATA="YC" ICAO="YCC" callsign="Ciel" country="Canada"/>
+	<partner_company name="Canadian National Airways" IATA="CN" ICAO="YCP" callsign="CaNational" country="Canada"/>
+	<partner_company name="Epic Holiday" IATA="FA" ICAO="4AA" callsign="Epic" country="United States"/>
+	<partner_company name="Indochina Airlines" ICAO="AXC" callsign="Airspup" country="Vietnam"/>
+	<partner_company name="Air Comet Chile" IATA="3I" ICAO="\N" country="Chile"/>
+	<partner_company name="German Air Force - FLB" ICAO="FLB" callsign="FLB" country="Germany"/>
+	<partner_company name="Line Blue" IATA="L8" ICAO="LBL" callsign="Bluebird" country="Germany"/>
+	<partner_company name="FlyLAL Charters" ICAO="LLC" country="Lithuania"/>
+	<partner_company name="Salzburg arrows" IATA="SZ" ICAO="\N" callsign="SZA" country="Austria"/>
+	<partner_company name="Texas Wings" IATA="TQ" ICAO="TXW" callsign="TXW" country="United States"/>
+	<partner_company name="Dennis Sky" IATA="DH" ICAO="DSY" callsign="DSY" country="Israel"/>
+	<partner_company name="Zz" IATA="ZZ" ICAO="\N" country="Belgium"/>
+	<partner_company name="Atifly" IATA="A1" ICAO="A1F" callsign="atifly" country="United States"/>
+	<partner_company name="Aerolineas heredas santa maria" ICAO="SZB" country="Dominican Republic"/>
+	<partner_company name="Ciao Air" IATA="99" ICAO="\N" country="Italy"/>
+	<partner_company name="Jc royal.britannica" ICAO="JRB" country="United Kingdom"/>
+	<partner_company name="Pal airlines" IATA="5P" ICAO="\N" country="Chile"/>
+	<partner_company name="CanXpress" IATA="C1" ICAO="CA1" callsign="CAX" country="Canada"/>
+	<partner_company name="Danube Wings (V5)" IATA="V5" ICAO="\N" country="Slovakia"/>
+	<partner_company name="Sharp Airlines" IATA="SH" ICAO="SHA" callsign="SHARP" country="Australia"/>
+	<partner_company name="CanXplorer" IATA="C2" ICAO="CAP" country="Canada"/>
+	<partner_company name="Click (Mexicana)" IATA="QA" ICAO="\N" country="Mexico"/>
+	<partner_company name="World Experience Airline" IATA="W1" ICAO="WE1" callsign="WEA" country="Canada"/>
+	<partner_company name="ALAK" IATA="J4" ICAO="\N" country="Russia"/>
+	<partner_company name="Air Choice One" IATA="3E" ICAO="\N" country="United States"/>
+	<partner_company name="Tianjin Airlines" ICAO="GCR" country="China"/>
+	<partner_company name="China United" IATA="KN" ICAO="\N" country="China"/>
+	<partner_company name="Locair" IATA="ZQ" ICAO="LOC" callsign="LOCAIR" country="United States"/>
+	<partner_company name="Safi Airlines" IATA="4Q" ICAO="\N" country="Afghanistan"/>
+	<partner_company name="SeaPort Airlines" IATA="K5" ICAO="SQH" callsign="SASQUATCH" country="United States"/>
+	<partner_company name="Salmon Air" IATA="S6" ICAO="\N" country="United States"/>
+	<partner_company name="Bobb Air Freight" IATA="1" ICAO="\N" country="Germany"/>
+	<partner_company name="Star1 Airlines" IATA="V9" ICAO="HCW" country="Lithuania"/>
+	<partner_company name="Pelita" IATA="6D" ICAO="\N" country="Indonesia"/>
+	<partner_company name="Alaska Seaplane Service" IATA="J5" ICAO="\N" country="United States"/>
+	<partner_company name="Enerjet" ICAO="ENJ" callsign="ENERJET AIR" country="Canada"/>
+	<partner_company name="MexicanaLink" IATA="I6" ICAO="MXI" callsign="LINK" country="Mexico"/>
+	<partner_company name="Island Spirit" IATA="IP" ICAO="ISX" country="Iceland"/>
+	<partner_company name="TACA Peru" IATA="T0" ICAO="\N" callsign="TACA PERU" country="Peru"/>
+	<partner_company name="Orbest" ICAO="OBS" callsign="ORBEST" country="Portugal"/>
+	<partner_company name="Southern Air Charter" ICAO="SOA" country="Bahamas"/>
+	<partner_company name="SVG Air" ICAO="SVG" callsign="Grenadines" country="Saint Vincent and the Grenadines"/>
+	<partner_company name="Air Century" ICAO="CEY" country="Dominican Republic"/>
+	<partner_company name="Pan Am World Airways Dominicana" IATA="7Q" ICAO="\N" callsign="PAWA" country="Dominican Republic"/>
+	<partner_company name="Primera Air" IATA="PF" ICAO="\N" callsign="PRIMERA" country="Iceland"/>
+	<partner_company name="Air Antilles Express" IATA="3S" ICAO="\N" callsign="GREEN BIRD" country="Guadeloupe"/>
+	<partner_company name="Sol Lineas Aereas" ICAO="OLS" callsign="FLIGHT SOL" country="Argentina"/>
+	<partner_company name="Regional Paraguaya" IATA="P7" ICAO="REP" callsign="REGIOPAR" country="Paraguay"/>
+	<partner_company name="VIP Ecuador" IATA="V6" ICAO="\N" country="Ecuador"/>
+	<partner_company name="Transportes Aereos Cielos Andinos" ICAO="NDN" callsign="ANDINOS" country="Peru"/>
+	<partner_company name="Peruvian Airlines" IATA="P9" ICAO="\N" country="Peru"/>
+	<partner_company name="EasyFly" ICAO="EFY" callsign="EASYFLY" country="Colombia"/>
+	<partner_company name="Polar Airlines" IATA="ЯП" ICAO="\N" country="Russia"/>
+	<partner_company name="Catovair" IATA="OC" ICAO="\N" callsign="CATOVAIR" country="Mauritius"/>
+	<partner_company name="Andalus Lineas Aereas" ICAO="ANU" callsign="Andalus" country="Spain"/>
+	<partner_company name="Air 26" ICAO="DCD" callsign="DUCARD" country="Angola"/>
+	<partner_company name="Mauritania Airways" ICAO="MTW" callsign="MAURITANIA AIRWAYS" country="Mauritania"/>
+	<partner_company name="CEIBA Intercontinental" ICAO="CEL" callsign="CEIBA LINE" country="Equatorial Guinea"/>
+	<partner_company name="Halcyonair" IATA="7Z" ICAO="\N" callsign="CREOLE" country="Cape Verde"/>
+	<partner_company name="Business Aviation" IATA="4P" ICAO="\N" callsign="AFRICAN BUSINESS" country="Congo (Kinshasa)"/>
+	<partner_company name="Compagnie Africaine d\\'Aviation" IATA="E9" ICAO="\N" callsign="AFRICOMPANY" country="Congo (Kinshasa)"/>
+	<partner_company name="Zambia Skyways" IATA="K8" ICAO="\N" callsign="ZAMBIA SKIES" country="Zambia"/>
+	<partner_company name="AlMasria Universal Airlines" IATA="UJ" ICAO="LMU" callsign="ALMASRIA" country="Egypt"/>
+	<partner_company name="EgyptAir Express" ICAO="MSE" callsign="EGYPTAIR EXPRESS" country="Egypt"/>
+	<partner_company name="SmartLynx Airlines" IATA="6Y" ICAO="\N" country="Latvia"/>
+	<partner_company name="Air Italy Egypt" ICAO="EUD" country="Egypt"/>
+	<partner_company name="KoralBlue Airlines" IATA="K7" ICAO="KBR" callsign="KORAL BLUE" country="Egypt"/>
+	<partner_company name="Wind Rose Aviation" ICAO="WRC" callsign="WIND ROSE" country="Ukraine"/>
+	<partner_company name="Elysian Airlines" IATA="E4" ICAO="GIE" country="Cameroon"/>
+	<partner_company name="Sevenair" ICAO="SEN" callsign="SEVENAIR" country="Tunisia"/>
+	<partner_company name="Hellenic Imperial Airways" IATA="HT" ICAO="IMP" callsign="IMPERIAL" country="Greece"/>
+	<partner_company name="Amsterdam Airlines" IATA="WD" ICAO="AAN" callsign="AMSTEL" country="Netherlands"/>
+	<partner_company name="Arik Niger" IATA="Q9" ICAO="NAK" country="Niger"/>
+	<partner_company name="Dana Air" IATA="DA" ICAO="\N" callsign="DANACO" country="Nigeria"/>
+	<partner_company name="STP Airways" IATA="8F" ICAO="STP" callsign="SAOTOME AIRWAYS" country="Sao Tome and Principe"/>
+	<partner_company name="Med Airways" IATA="7Y" ICAO="\N" callsign="FLYING CARPET" country="Lebanon"/>
+	<partner_company name="Skyjet Airlines" IATA="UQ" ICAO="SJU" callsign="SKYJET" country="Uganda"/>
+	<partner_company name="Air Volga" IATA="G6" ICAO="\N" callsign="GOUMRAK" country="Russia"/>
+	<partner_company name="Transavia Denmark" ICAO="TDK" country="Denmark"/>
+	<partner_company name="Royal Falcon" IATA="RL" ICAO="RFJ" country="Jordan"/>
+	<partner_company name="Euroline" IATA="4L" ICAO="MJX" callsign="GEO-LINE" country="Georgia"/>
+	<partner_company name="Turkuaz Airlines" ICAO="TRK" callsign="TURKU" country="Turkey"/>
+	<partner_company name="Athens Airways" IATA="ZF" ICAO="\N" callsign="ATHENSAIR" country="Greece"/>
+	<partner_company name="Viking Hellas" IATA="VQ" ICAO="VKH" callsign="DELPHI" country="Greece"/>
+	<partner_company name="Norlandair" ICAO="FNA" callsign="NORLAND" country="Iceland"/>
+	<partner_company name="Flugfelag Vestmannaeyja" ICAO="FVM" callsign="ELEGANT" country="Iceland"/>
+	<partner_company name="Starline.kz" IATA="DZ" ICAO="\N" callsign="ALUNK" country="Kazakhstan"/>
+	<partner_company name="Lugansk Airlines" IATA="L7" ICAO="\N" callsign="ENTERPRISE LUHANSK" country="Ukraine"/>
+	<partner_company name="Gryphon Airlines" IATA="6P" ICAO="\N" country="United States"/>
+	<partner_company name="Gadair European Airlines" IATA="GP" ICAO="GDR" callsign="GADAIR" country="Spain"/>
+	<partner_company name="Spirit of Manila Airlines" IATA="SM" ICAO="MNP" callsign="MANILA SKY" country="Philippines"/>
+	<partner_company name="Chongqing Airlines" IATA="OQ" ICAO="CQN" callsign="CHONG QING" country="China"/>
+	<partner_company name="Grand China Air" ICAO="GDC" callsign="GRAND CHINA" country="China"/>
+	<partner_company name="West Air China" IATA="PN" ICAO="CHB" callsign="WEST CHINA" country="China"/>
+	<partner_company name="QatXpress" IATA="C3" ICAO="QAX" country="Qatar"/>
+	<partner_company name="OneChina" IATA="1C" ICAO="1CH" country="China"/>
+	<partner_company name="NordStar Airlines" IATA="Y7" ICAO="\N" country="Russia"/>
+	<partner_company name="Joy Air" IATA="JR" ICAO="JOY" callsign="JOY AIR" country="China"/>
+	<partner_company name="Air India Regional" IATA="CD" ICAO="\N" callsign="ALLIED" country="India"/>
+	<partner_company name="MDLR Airlines" IATA="9H" ICAO="\N" callsign="MDLR" country="India"/>
+	<partner_company name="Jagson Airlines" ICAO="JGN" callsign="JAGSON" country="India"/>
+	<partner_company name="Maldivian" IATA="Q2" ICAO="\N" callsign="ISLAND AVIATION" country="Maldives"/>
+	<partner_company name="Xpressair" IATA="XN" ICAO="\N" country="Indonesia"/>
+	<partner_company name="Strategic Airlines" IATA="VC" ICAO="\N" country="Australia"/>
+	<partner_company name="Fars Air Qeshm" ICAO="QFZ" callsign="FARS AIR" country="Iran"/>
+	<partner_company name="Eastok Avia" ICAO="EAA" country="Kyrgyzstan"/>
+	<partner_company name="Jupiter Airlines" ICAO="JPU" callsign="JUPITERAIR" country="United Arab Emirates"/>
+	<partner_company name="Vision Air International" ICAO="VIS" country="Pakistan"/>
+	<partner_company name="Al-Naser Airlines" IATA="NA" ICAO="\N" country="Iraq"/>
+	<partner_company name="Fuji Dream Airlines" IATA="JH" ICAO="\N" callsign="FUJI DREAM" country="Japan"/>
+	<partner_company name="Korea Express Air" ICAO="KEA" country="South Korea"/>
+	<partner_company name="Eznis Airways" ICAO="EZA" callsign="EZNIS" country="Mongolia"/>
+	<partner_company name="Pacific Flier" ICAO="PFL" callsign="KOROR" country="Palau"/>
+	<partner_company name="Syrian Pearl Airlines" ICAO="PSB" country="Syria"/>
+	<partner_company name="SGA Airlines" IATA="5E" ICAO="\N" callsign="SIAM" country="Thailand"/>
+	<partner_company name="Air2there" IATA="F8" ICAO="\N" country="New Zealand"/>
+	<partner_company name="Avianova (Russia)" IATA="AO" ICAO="\N" callsign="Nova" country="Russia"/>
+	<partner_company name="Parmiss Airlines (IPV)" IATA="PA" ICAO="IPV" callsign="IPV" country="Iran"/>
+	<partner_company name="EuropeSky" IATA="ES" ICAO="EUV" callsign="EuropeSky" country="Germany"/>
+	<partner_company name="BRAZIL AIR" IATA="GB" ICAO="BZE" callsign="BRAZIL AIR" country="Brazil"/>
+	<partner_company name="Homer Air" IATA="MR" ICAO="OME" country="Germany"/>
+	<partner_company name="U.S. Air" IATA="-+" ICAO="--+" country="United States"/>
+	<partner_company name="Wilderness Air" IATA=";;" ICAO="\N" country="Australia"/>
+	<partner_company name="Whitaker Air" IATA="^^" ICAO="\N" country="Australia"/>
+	<partner_company name="PanAm World Airways" IATA="WQ" ICAO="PQW" country="United States"/>
+	<partner_company name="Virginwings" IATA="YY" ICAO="VWA" country="Germany"/>
+	<partner_company name="KSY" IATA="KY" ICAO="KSY" callsign="KSY" country="Greece"/>
+	<partner_company name="Buquebus Líneas Aéreas" IATA="BQ" ICAO="BQB" country="Uruguay"/>
+	<partner_company name="SOCHI AIR" IATA="CQ" ICAO="KOL" callsign="SLOW FROG" country="Russia"/>
+	<partner_company name="Wizz Air Ukraine" IATA="WU" ICAO="WAU" callsign="WIZZAIR UKRAINE" country="Ukraine"/>
+	<partner_company name="88" IATA="47" ICAO="VVN" country="Cyprus"/>
+	<partner_company name="LCM AIRLINES" IATA="LQ" ICAO="LMM" country="Russia"/>
+	<partner_company name="Cambodia Angkor Air (K6)" IATA="K6" ICAO="\N" country="Cambodia"/>
+	<partner_company name="Royal European Airlines" IATA="69" ICAO="\N" country="United Kingdom"/>
+	<partner_company name="Tom\\'s &amp; co airliners" IATA="&amp;T" ICAO="T&amp;O" callsign="T&amp;" country="France"/>
+	<partner_company name="Azul" IATA="AD" ICAO="AZU" country="Brazil"/>
+	<partner_company name="LSM Airlines" IATA="PQ" ICAO="LOO" callsign="slowbird" country="Russia"/>
+	<partner_company name="Zapolyarie Airlines" ICAO="PZY" country="Russia"/>
+	<partner_company name="Finlandian" ICAO="FN1" country="Finland"/>
+	<partner_company name="LionXpress" IATA="C4" ICAO="LIX" callsign="LIX" country="Cameroon"/>
+	<partner_company name="Genesis" IATA="GK" ICAO="\N" country="Pakistan"/>
+	<partner_company name="Congo Express" IATA="XZ" ICAO="\N" callsign="EXPRESSWAYS" country="Congo (Kinshasa)"/>
+	<partner_company name="Fly Dubai" IATA="FZ" ICAO="FDB" country="United Arab Emirates"/>
+	<partner_company name="Domenican Airlines" IATA="D1" ICAO="MDO" callsign="Domenican" country="Dominican Republic"/>
+	<partner_company name="ConneX European Airline" ICAO="2CO" callsign="ConneX" country="Austria"/>
+	<partner_company name="Aereonautica militare" IATA="JY" ICAO="AXZ" country="Italy"/>
+	<partner_company name="Kal Star Aviation" ICAO="KLS" country="Indonesia"/>
+	<partner_company name="LSM AIRLINES " IATA="YZ" ICAO="YZZ" callsign="Moscow frog " country="Russia"/>
+	<partner_company name="UTair-Express" IATA="UR" ICAO="\N" country="Russia"/>
+	<partner_company name="Huaxia" IATA="G5" ICAO="\N" country="China"/>
+	<partner_company name="Zabaykalskii Airlines" IATA="ZP" ICAO="ZZZ" callsign="Lakeair" country="Russia"/>
+	<partner_company name="CBM America" ICAO="XBM" callsign="AIRMAX" country="United States"/>
+	<partner_company name="Marysya Airlines" IATA="M4" ICAO="1QA" callsign="MARSHAK AIR" country="Russia"/>
+	<partner_company name="N1" IATA="N1" ICAO="\N" country="Peru"/>
+	<partner_company name="Airlink (SAA)" IATA="4Z" ICAO="\N" country="South Africa"/>
+	<partner_company name="Westfalia Express VA" ICAO="WFX" country="Germany"/>
+	<partner_company name="JobAir" IATA="3B" ICAO="\N" country="Czech Republic"/>
+	<partner_company name="Black Stallion Airways" IATA="BZ" ICAO="BSA" callsign="Stallion" country="United States"/>
+	<partner_company name="German International Air Lines" IATA="GM" ICAO="GER" country="Germany"/>
+	<partner_company name="TrasBrasil" IATA="TB" ICAO="TBZ" country="Brazil"/>
+	<partner_company name="TransBrasil Airlines" IATA="TH" ICAO="THS" country="Brazil"/>
+	<partner_company name="China SSS" IATA="9C" ICAO="\N" country="China"/>
+	<partner_company name="AIR INDOCHINE" ICAO="IIA" country="Vietnam"/>
+	<partner_company name="Happy Air" ICAO="HPY" country="Thailand"/>
+	<partner_company name="Solar Air" ICAO="SRB" callsign="Solar Air" country="Thailand"/>
+	<partner_company name="Air Mekong" IATA="P8" ICAO="MKG" callsign="Air Mekong" country="Vietnam"/>
+	<partner_company name="Harbour Air (Priv)" IATA="H3" ICAO="\N" country="Canada"/>
+	<partner_company name="Air Hamburg (AHO)" IATA="HH" ICAO="AHO" callsign="Air Hamburg" country="Germany"/>
+	<partner_company name="ZABAIKAL AIRLINES" IATA="Z6" ICAO="ZTT" callsign="BAIKAL " country="Russia"/>
+	<partner_company name="TransHolding" IATA="TI" ICAO="THI" country="Brazil"/>
+	<partner_company name="SUR Lineas Aereas" ICAO="SZZ" country="Argentina"/>
+	<partner_company name="Aerolineas Africanas" ICAO="AA1" country="Guinea"/>
+	<partner_company name="Yeti Airways" IATA="YT" ICAO="\N" country="Nepal"/>
+	<partner_company name="Yellowstone Club Private Shuttle" IATA="Y1" ICAO="\N" callsign="YCS" country="United States"/>
+	<partner_company name="Caucasus Airlines" IATA="NS" ICAO="\N" country="Georgia"/>
+	<partner_company name="Serbian Airlines" IATA="S1" ICAO="SA1" country="Serbia"/>
+	<partner_company name="Windward Islands Airways" IATA="WM" ICAO="\N" callsign="Winair" country="Netherlands Antilles"/>
+	<partner_company name="TransHolding System" IATA="YO" ICAO="TYS" country="Brazil"/>
+	<partner_company name="CCML Airlines" IATA="CB" ICAO="CCC" country="Colombia"/>
+	<partner_company name="Small Planet Airlines" ICAO="ELC" country="Lithuania"/>
+	<partner_company name="Fly Brasil" IATA="F1" ICAO="FBL" callsign="FBL" country="Brazil"/>
+	<partner_company name="CB Airways UK ( Interliging Flights )" IATA="1F" ICAO="CIF" country="United Kingdom"/>
+	<partner_company name="Fly Colombia ( Interliging Flights )" IATA="3F" ICAO="3FF" country="Colombia"/>
+	<partner_company name="Trans Pas Air" IATA="T6" ICAO="TP6" country="United States"/>
+	<partner_company name="KMV" IATA="МИ" ICAO="\N" callsign="Air Minvody" country="Russia"/>
+	<partner_company name="Himalayan Airlines" IATA="HC" ICAO="HYM" callsign="Himalayan" country="Nepal"/>
+	<partner_company name="Indya Airline Group" IATA="G1" ICAO="IG1" callsign="Indya1" country="India"/>
+	<partner_company name="Sunwing" IATA="WG" ICAO="\N" callsign="sunwing" country="Canada"/>
+	<partner_company name="Turkish Wings Domestic" ICAO="TWD" callsign="TWD" country="Turkey"/>
+	<partner_company name="Japan Regio" IATA="ZX" ICAO="ZXY" country="Japan"/>
+	<partner_company name="OCEAN AIR CARGO" ICAO="IXO" country="India"/>
+	<partner_company name="Norte Lineas Aereas" IATA="N0" ICAO="\N" country="Argentina"/>
+	<partner_company name="Austral Brasil" IATA="W7" ICAO="\N" country="Brazil"/>
+	<partner_company name="PEGASUS AIRLINES-" IATA="H9" ICAO="\N" country="Turkey"/>
+	<partner_company name="Nihon.jet connect" ICAO="NX1" country="Kyrgyzstan"/>
+	<partner_company name="Camair-co" IATA="QC" ICAO="\N" country="Cameroon"/>
+	<partner_company name="Sky Regional" IATA="RS" ICAO="\N" callsign="Sky Regional" country="Canada"/>
+	<partner_company name="LSM International " IATA="II" ICAO="UWW" callsign="moose" country="Russia"/>
+	<partner_company name="Baikotovitchestrian Airlines " IATA="BU" ICAO="BUU" country="American Samoa"/>
+	<partner_company name="Luchsh Airlines " IATA="L4" ICAO="LJJ" callsign="russian sky" country="Russia"/>
+	<partner_company name="ENTERair" ICAO="QQQ" country="Poland"/>
+	<partner_company name="Air Cargo Germany" IATA="6U" ICAO="\N" callsign="Loadmaster" country="Germany"/>
+	<partner_company name="Mongolian International Air Lines " IATA="7M" ICAO="ZTF" callsign="Mongol_AIr " country="Mongolia"/>
+	<partner_company name="Tway Airlines" IATA="TW" ICAO="TWB" callsign="TWAY AIR" country="South Korea"/>
+	<partner_company name="Papillon Grand Canyon Helicopters" IATA="HI" ICAO="\N" country="United States"/>
+	<partner_company name="Jusur airways" IATA="JX" ICAO="JSR" country="Egypt"/>
+	<partner_company name="NEXT Brasil" IATA="XB" ICAO="NXB" callsign="XB" country="Brazil"/>
+	<partner_company name="AeroWorld " IATA="W4" ICAO="WER" callsign="sovet" country="Russia"/>
+	<partner_company name="GNB Linhas Aereas" IATA="GN" ICAO="\N" country="Brazil"/>
+	<partner_company name="Usa Sky Cargo" IATA="E1" ICAO="ES2" callsign="USKY" country="United States"/>
+	<partner_company name="Hankook Airline" IATA="HN" ICAO="HNX" callsign="HNX" country="South Korea"/>
+	<partner_company name="REDjet" IATA="Z7" ICAO="\N" country="Barbados"/>
+	<partner_company name="Red Jet Andes" IATA="PT" ICAO="\N" country="Peru"/>
+	<partner_company name="Red Jet Canada" IATA="QY" ICAO="\N" country="Canada"/>
+	<partner_company name="Sprintair" ICAO="SRN" country="Poland"/>
+	<partner_company name="Red Jet Mexico" IATA="4X" ICAO="\N" country="Mexico"/>
+	<partner_company name="Marusya Airways" IATA="Y8" ICAO="MRS" callsign="snowball" country="Russia"/>
+	<partner_company name="Era Alaska" IATA="7H" ICAO="ERR" callsign="ERAH" country="United States"/>
+	<partner_company name="AirRussia" IATA="R8" ICAO="RRJ" callsign="russiancloud" country="Russia"/>
+	<partner_company name="Hankook Air US" IATA="H1" ICAO="HA1" country="United States"/>
+	<partner_company name="Carpatair Flight Training" ICAO="SMW" callsign="Smartwings" country="Romania"/>
+	<partner_company name="I-Fly" IATA="H5" ICAO="RSY" callsign="RUSSIAN SKY" country="Russia"/>
+	<partner_company name="Whitejets" ICAO="WTJ" callsign="WHITEJET" country="Brazil"/>
+	<partner_company name="VickJet" IATA="KT" ICAO="VKJ" callsign="Vickjet" country="France"/>
+	<partner_company name="BVI Airways" IATA="XV" ICAO="\N" country="British Virgin Islands"/>
+	<partner_company name="Hamburg Airways" ICAO="HAY" country="Germany"/>
+	<partner_company name="Salsa d\\'Haiti" IATA="SO" ICAO="SLC" callsign="SALSA" country="Haiti"/>
+	<partner_company name="Zambezi Airlines (ZMA)" IATA="ZJ" ICAO="\N" country="Zambia"/>
+	<partner_company name="Kan Air" ICAO="KND" callsign="Kan Air" country="Thailand"/>
+	<partner_company name="Air Cudlua" ICAO="CUD" callsign="Cudlua" country="United Kingdom"/>
+	<partner_company name="Polet Airlines (Priv)" IATA="YQ" ICAO="\N" country="Russia"/>
+	<partner_company name="Air Explore" ICAO="AXE" country="Slovakia"/>
+	<partner_company name="12 North" IATA="12" ICAO="N12" callsign="12N" country="India"/>
+	<partner_company name="Holidays Czech Airlines" ICAO="HCC" country="Czech Republic"/>
+	<partner_company name="Comtel Air" ICAO="COE" country="Austria"/>
+	<partner_company name="Mint Airways" ICAO="MIC" country="Spain"/>
+	<partner_company name="Orbit Airlines" ICAO="OBT" callsign="Orbit" country="United States"/>
+	<partner_company name="Air Bucharest" ICAO="BUR" country="Romania"/>
+	<partner_company name="AlbaStar" ICAO="LAV" country="Spain"/>
+	<partner_company name="Mauritania Airlines International" IATA="L6" ICAO="MAI" country="Mauritania"/>
+	<partner_company name="MAT Airways" IATA="6F" ICAO="MKD" country="Macedonia"/>
+	<partner_company name="Asian Wings Airways" IATA="AW" ICAO="AWM" callsign="Asian Star" country="Burma"/>
+	<partner_company name="Air Arabia Egypt" IATA="E5" ICAO="RBG" country="Egypt"/>
+	<partner_company name="Eagles Airlines" ICAO="EGS" callsign="EAGLES" country="Italy"/>
+	<partner_company name="YES Airways" ICAO="YEP" country="Poland"/>
+	<partner_company name="Alitalia Cityliner" IATA="CT" ICAO="\N" country="Italy"/>
+	<partner_company name="Direct Aero Services" ICAO="DSV" country="Romania"/>
+	<partner_company name="Medallion Air" ICAO="MDP" callsign="MEDALS" country="Romania"/>
+	<partner_company name="Orchid Airlines" IATA="OI" ICAO="ORC" country="Australia"/>
+	<partner_company name="Asia Wings" IATA="Y5" ICAO="AWA" country="Kazakhstan"/>
+	<partner_company name="Georgian International Airlines" ICAO="GNN" callsign="GEO-LINE" country="Georgia"/>
+	<partner_company name="Air Batumi" ICAO="BTM" country="Georgia"/>
+	<partner_company name="Skywest Australia" IATA="XR" ICAO="\N" country="Australia"/>
+	<partner_company name="Nile Air" IATA="NP" ICAO="NIA" callsign="NILEBIRD" country="Egypt"/>
+	<partner_company name="Feeder Airlines" ICAO="FDD" country="Sudan"/>
+	<partner_company name="Senegal Airlines" IATA="DN" ICAO="SGG" country="Senegal"/>
+	<partner_company name="Fly 6ix" IATA="6I" ICAO="\N" country="Sierra Leone"/>
+	<partner_company name="Starbow Airlines" IATA="S9" ICAO="\N" country="Ghana"/>
+	<partner_company name="Copenhagen Express" IATA="0X" ICAO="CX0" callsign="Copex" country="Denmark"/>
+	<partner_company name="BusinessAir" IATA="8B" ICAO="BCC" country="Thailand"/>
+	<partner_company name="SENIC AIRLINES" IATA="YR" ICAO="\N" country="United States"/>
+	<partner_company name="XOJET" ICAO="XOJ" country="United States"/>
+	<partner_company name="Sky Wing Pacific" IATA="C7" ICAO="CR7" country="South Korea"/>
+	<partner_company name="Bateleur Air" ICAO="BEU" country="South Africa"/>
+	<partner_company name="Air Indus" IATA="PP" ICAO="AI0" callsign="AIPL" country="Pakistan"/>
+	<partner_company name="Orbit International Airlines" ICAO="OAI" callsign="OA" country="United States"/>
+	<partner_company name="Orbit Regional Airlines" ICAO="OAR" callsign="OA" country="United States"/>
+	<partner_company name="Orbit Atlantic Airways" ICAO="OAN" country="United States"/>
+	<partner_company name="Volotea" ICAO="VOO" callsign="Volotea" country="Spain"/>
+	<partner_company name="Peach Aviation" IATA="MM" ICAO="\N" callsign="Air Peach" country="Japan"/>
+	<partner_company name="Helitt Líneas Aéreas" ICAO="HTH" country="Spain"/>
+	<partner_company name="Russia State Transport" ICAO="RSD" callsign="STATE AERO" country="Russia"/>
+	<partner_company name="Malaysia Wings" ICAO="MWI" callsign="MWI" country="Malaysia"/>
+	<partner_company name="Aviabus" IATA="U1" ICAO="ABI" country="Russia"/>
+	<partner_company name="Michael Airlines" IATA="DF" ICAO="MJG" callsign="MJG" country="Puerto Rico"/>
+	<partner_company name="Korongo Airlines" IATA="ZC" ICAO="KGO" callsign="KORONGO" country="Congo (Kinshasa)"/>
+	<partner_company name="Indonesia Sky" IATA="I5" ICAO="IDS" country="Indonesia"/>
+	<partner_company name="Aws express" IATA="B0" ICAO="666" callsign="aws" country="United States"/>
+	<partner_company name="Southjet" IATA="76" ICAO="SJS" country="United States"/>
+	<partner_company name="Southjet connect" IATA="77" ICAO="ZCS" country="United States"/>
+	<partner_company name="Southjet cargo" IATA="78" ICAO="XAN" country="United States"/>
+	<partner_company name="Iberia Express" IATA="I2" ICAO="IBS" country="Spain"/>
+	<partner_company name="Interjet (ABC Aerolineas)" IATA="4O" ICAO="\N" callsign="INTERJET" country="Mexico"/>
+	<partner_company name="AirOnix" IATA="OG" ICAO="\N" country="Ukraine"/>
+	<partner_company name="Nordic Global Airlines" IATA="NJ" ICAO="NGB" callsign="Nordic Global" country="Finland"/>
+	<partner_company name="Scoot" IATA="TZ" ICAO="SCO" country="Singapore"/>
+	<partner_company name="Hi Fly (5K)" IATA="5K" ICAO="\N" country="Portugal"/>
+	<partner_company name="China Northwest Airlines (WH)" IATA="WH" ICAO="\N" country="China"/>
+	<partner_company name="Zenith International Airline" IATA="ZN" ICAO="ZNA" callsign="ZENITH" country="Thailand"/>
+	<partner_company name="Orbit Airlines Azerbaijan" IATA="O1" ICAO="OAB" callsign="Orbitaz" country="Azerbaijan"/>
+	<partner_company name="Air Alps Aviation (A6)" IATA="A6" ICAO="\N" callsign="ALPAV" country="Austria"/>
+	<partner_company name="Flying kangaroo Airline" ICAO="FKA" callsign="Skippy" country="Australia"/>
+	<partner_company name="RusJet" ICAO="RSJ" country="Russia"/>
+	<partner_company name="VietJet Air" ICAO="VJC" callsign="VIETJETAIR" country="Vietnam"/>
+	<partner_company name="Patriot Airways" IATA="P4" ICAO="\N" country="United States"/>
+	<partner_company name="Vision Airlines (V2)" IATA="V2" ICAO="RBY" callsign="RUBY" country="United States"/>
+	<partner_company name="BQB Lineas Aereas" IATA="5Q" ICAO="\N" country="Uruguay"/>
+	<partner_company name="AirAsia Japan" ICAO="WAJ" callsign="WING ASIA" country="Japan"/>
+	<partner_company name="Yellowtail" IATA="YE" ICAO="YEL" country="United States"/>
+	<partner_company name="Royal Airways" IATA="KG" ICAO="RAW" callsign="RAW" country="United States"/>
+	<partner_company name="FlyHigh Airlines Ireland (FH)" IATA="FH" ICAO="FHI" callsign="FLYHIRELAND" country="Ireland"/>
+	<partner_company name="Executive AirShare" ICAO="XSR" country="United States"/>
+	<partner_company name="Hebei Airlines" ICAO="HBH" callsign="Hebei Air" country="China"/>
+	<partner_company name="Air KBZ" ICAO="KBZ" callsign="Air KBZ" country="Burma"/>
+	<partner_company name="Aero VIP (2D)" IATA="2D" ICAO="\N" country="Portugal"/>
+	<partner_company name="Yangon Airways Ltd." IATA="YH" ICAO="\N" country="Burma"/>
+	<partner_company name="T.J. Air" IATA="TJ" ICAO="TJA" callsign="T.J. Air" country="United States"/>
+	<partner_company name="SkyWork Airlines " IATA="SX" ICAO="\N" callsign="SKYFOX" country="Switzerland"/>
+	<partner_company name="Maastricht Airlines" IATA="W2" ICAO="\N" country="Netherlands"/>
+	<partner_company name="Euro Jet" IATA="24" ICAO="\N" country="Germany"/>
+	<partner_company name="Ukraine Atlantic" ICAO="UAT" country="Ukraine"/>
+	<partner_company name="Nesma Airlines" ICAO="NMA" callsign="Nesma Airlines" country="Egypt"/>
+	<partner_company name="East Horizon" ICAO="EHN" callsign="EAST HORIZON" country="Afghanistan"/>
+	<partner_company name="Air Majoro" ICAO="MJP" callsign="Air Majoro" country="Peru"/>
+	<partner_company name="Rotana Jet" ICAO="RJD" callsign="ROTANA" country="United Arab Emirates"/>
+	<partner_company name="SOCHI AIR CHATER" IATA="Q3" ICAO="QER" callsign="russian doll" country="Russia"/>
+	<partner_company name="Denim Air " IATA="J7" ICAO="\N" callsign="DNM" country="Norway"/>
+	<partner_company name="Malindo Air" IATA="OD" ICAO="MXD" callsign="Malindo" country="Malaysia"/>
+	<partner_company name="Hermes Airlines" ICAO="HRM" callsign="HERMES" country="Greece"/>
+	<partner_company name="Flightlink Tanzania" IATA="Z9" ICAO="\N" country="Tanzania"/>
+	<partner_company name="IzAvia" IATA="I8" ICAO="\N" country="Russia"/>
+	<partner_company name="Катэкавиа" ICAO="КТК" country="Russia"/>
+	<partner_company name="Псковавиа" ICAO="PKV" country="Russia"/>
+	<partner_company name="Maryland Air" IATA="M1" ICAO="M1F" callsign="Maryland Flight" country="United States"/>
+	<partner_company name="Insel Air (7I/INC) (Priv)" IATA="7I" ICAO="\N" country="Netherlands Antilles"/>
+	<partner_company name="VivaColombia" IATA="5Z" ICAO="VVC" country="Colombia"/>
+	<partner_company name="Flybe Finland Oy" ICAO="FCM" callsign="FINNCOMM" country="Finland"/>
+	<partner_company name="Bingo Airways" ICAO="BGY" country="Poland"/>
+	<partner_company name="Bluebird Airways (BZ)" ICAO="BBG" country="Greece"/>
+	<partner_company name="Apache Air" IATA="ZM" ICAO="IWA" callsign="APACHE" country="United States"/>
+	<partner_company name="MHS Aviation GmbH" IATA="M2" ICAO="\N" country="Germany"/>
+	<partner_company name="Jettor Airlines" IATA="NR" ICAO="JTO" callsign="JETHAPPY" country="Hong Kong"/>
+	<partner_company name="Flyme (VP)" ICAO="VQI" country="Maldives"/>
+	<partner_company name="Thai Lion Air" IATA="SL" ICAO="\N" country="Thailand"/>
+	<partner_company name="Golden Myanmar Airlines" ICAO="GMR" callsign="Golden Myanmar" country="Burma"/>
+	<partner_company name="Canaryfly" ICAO="CNF" country="Spain"/>
+	<partner_company name="Sunrise Airways" ICAO="KSZ" country="Haiti"/>
+	<partner_company name="National Air Cargo" IATA="N8" ICAO="NCR" country="United States"/>
+	<partner_company name="Eastern Atlantic Virtual Airlines" IATA="13" ICAO="EAV" callsign="EAVA" country="United States"/>
+	<partner_company name="Citilink Indonesia" IATA="QG" ICAO="\N" callsign="SUPERGREEN" country="Indonesia"/>
+	<partner_company name="Transair" ICAO="TTZ" country="Canada"/>
+	<partner_company name="Comfort Express Virtual Charters Albany" ICAO="EVC" callsign="Comfort Express" country="United States"/>
+	<partner_company name="Comfort Express Virtual Charters" ICAO="CEO" country="United States"/>
+	<partner_company name="FLYJET" ICAO="FYJ" callsign="Fast Jet" country="Poland"/>
+	<partner_company name="Snowbird Airlines" IATA="S8" ICAO="SBD" country="Finland"/>
+	<partner_company name="Russkie Krylya" ICAO="KRY" country="Russia"/>
+	<partner_company name="Kharkiv Airlines" IATA="KH" ICAO="KHK" country="Ukraine"/>
+	<partner_company name="XAIR USA" IATA="XA" ICAO="XAU" callsign="XAIR" country="United States"/>
+	<partner_company name="Air Costa" IATA="LB" ICAO="\N" country="India"/>
+	<partner_company name="Simrik Airlines" ICAO="RMK" country="Nepal"/>
+	<partner_company name="XPTO" IATA="XP" ICAO="XPT" callsign="XPTO" country="Portugal"/>
+	<partner_company name="Royal Flight" ICAO="DME" country="Russia"/>
+	<partner_company name="BBN-Airways" ICAO="EGH" callsign="BBN" country="United Kingdom"/>
+	<partner_company name="Tomsk-Avia" ICAO="TKS" country="Russia"/>
+	<partner_company name="Malawian Airlines" IATA="3W" ICAO="\N" country="Malawi"/>
+	<partner_company name="Yeti Airlines " ICAO="NYT" country="Nepal"/>
+	<partner_company name="Avilu" IATA=".." ICAO="..." country="Switzerland"/>
+	<partner_company name="Skyline Ulasim Ticaret A.S." ICAO="KCU" callsign="Kocoglu" country="Turkey"/>
+	<partner_company name="Envoy Air" ICAO="ENY" callsign="Envoy" country="United States"/>
+	<partner_company name="CARICOM AIRWAYS (BARBADOS) INC." ICAO="CCB" country="Barbados"/>
+	<partner_company name="Rainbow Air (RAI)" IATA="RN" ICAO="RAB" callsign="Rainbow" country="United States"/>
+	<partner_company name="Rainbow Air Canada" IATA="RY" ICAO="RAY" callsign="Rainbow CAN" country="Canada"/>
+	<partner_company name="Rainbow Air Polynesia" IATA="RX" ICAO="RPO" callsign="Rainbow Air" country="United States"/>
+	<partner_company name="Rainbow Air Euro" IATA="RU" ICAO="RUE" callsign="Rainbow Air" country="United Kingdom"/>
+	<partner_company name="Rainbow Air US" IATA="RM" ICAO="RNY" callsign="Rainbow Air" country="United States"/>
+	<partner_company name="Transilvania" ICAO="TNS" country="Romania"/>
+	<partner_company name="Dobrolet" IATA="QD" ICAO="DOB" callsign="DOBROLET" country="Russia"/>
+	<partner_company name="Spike Airlines" IATA="S0" ICAO="SAL" callsign="Spike Air" country="United States"/>
+	<partner_company name="Grand Cru Airlines" ICAO="GCA" country="Lithuania"/>
+	<partner_company name="Go2Sky" ICAO="RLX" callsign="RELAX" country="Slovakia"/>
+	<partner_company name="All Argentina" IATA="L1" ICAO="AL1" country="Argentina"/>
+	<partner_company name="All America" IATA="A2" ICAO="AL2" country="United States"/>
+	<partner_company name="All Asia" IATA="L9" ICAO="AL3" country="China"/>
+	<partner_company name="All Africa" IATA="9A" ICAO="99F" country="South Africa"/>
+	<partner_company name="Regionalia México" IATA="N4" ICAO="J88" country="Mexico"/>
+	<partner_company name="All Europe" IATA="N9" ICAO="N99" country="United Kingdom"/>
+	<partner_company name="All Spain" IATA="N7" ICAO="N77" country="Spain"/>
+	<partner_company name="Regional Air Iceland" IATA="9N" ICAO="N78" country="Iceland"/>
+	<partner_company name="Voestar" IATA="8K" ICAO="K88" country="Brazil"/>
+	<partner_company name="All Colombia" IATA="7O" ICAO="7KK" country="Colombia"/>
+	<partner_company name="Regionalia Uruguay" IATA="2X" ICAO="2K2" country="Uruguay"/>
+	<partner_company name="Regionalia Venezuela" IATA="9X" ICAO="9XX" country="Venezuela"/>
+	<partner_company name="Regionalia Chile" IATA="9J" ICAO="CR1" country="Chile"/>
+	<partner_company name="Vuela Cuba" IATA="6C" ICAO="6CC" country="Cuba"/>
+	<partner_company name="All Australia" IATA="88" ICAO="8K8" country="Australia"/>
+	<partner_company name="Fly Europa" IATA="ER" ICAO="RWW" country="Spain"/>
+	<partner_company name="FlyPortugal" IATA="PO" ICAO="FPT" callsign="FlyPortugal" country="Portugal"/>
+</dataset>
