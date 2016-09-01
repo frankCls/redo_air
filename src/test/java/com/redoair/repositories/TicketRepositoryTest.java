@@ -5,11 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.realdolmen.course.utilities.persistence.*;
-import com.redoair.domain.BusinessClassData;
 import com.redoair.domain.Flight;
 import com.redoair.domain.Passenger;
 import com.redoair.domain.PurchaseStatus;
@@ -29,8 +27,7 @@ public class TicketRepositoryTest extends JpaPersistenceTest {
 	}
 
 	
-	@Test
-	
+	@Test	
 	public void testSaveTicket() {
 
 		Ticket ticket = new Ticket();

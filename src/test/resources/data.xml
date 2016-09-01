@@ -1,9 +1,9 @@
 <dataset>
-	<flight id="2" departureTime="2017-05-30 09:00:00" duration="500"
-		departureLocation_id="1" destinationLocation_id="2" />
-	<passenger id="3" firstName="test" lastName="lastname" />
+<!-- 	<flight id="2" departureTime="2017-05-30 09:00:00" duration="500" -->
+<!-- 		depID="1" destID="2" /> -->
+<!-- 	<passenger id="3" firstName="test" lastName="lastname" /> -->
 
-	<ticket id="1" purchaseStatus="PENDING" travelingClass="BUSINESS_CLASS"
-		flight_id="2" passenger_id="3" />
+<!-- 	<ticket id="1" purchaseStatus="PENDING" travelingClass="BUSINESS_CLASS" -->
+<!-- 		flight_id="2" passenger_id="3" /> -->
 
 </dataset>

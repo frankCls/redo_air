@@ -1,6 +1,7 @@
 package com.redoair.repositories;
 
-import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,10 +25,9 @@ public class TestFlightRepository extends JpaPersistenceTest {
 	private FlightRepository repo;
 	private static final long ID= 1;
 	private static final long depAirportId = 10L;
-//	private static final String depAirportName = "Thule Air Base";
-//	private static final String depAirportCountry = "Greenland";
-//	private static final String depAirPortCity = "Thule";
-	private static final long destAirport = 26L;
+	private static final long destAirportId = 26L;
+	private Airport depAirport;
+	private Airport destAirport;
 	
 	
 	
@@ -35,21 +35,20 @@ public class TestFlightRepository extends JpaPersistenceTest {
 	public void setup() throws Exception{
 		repo = new FlightRepository();
 		repo.em = entityManager();
+		depAirport = repo.em.find(Airport.class, depAirportId);
+		destAirport = repo.em.find(Airport.class, destAirportId);
 	}
 	
-	//@Test
+	@Test
 	public void ShouldReturnAFlight(){
 		Assert.assertTrue(true);
 	}
 	
 	@Test
 	public void ShouldPersistAFlight(){
-		Flight flight = new Flight();
-		Airport depLoc = repo.em.find(Airport.class, depAirportId);
-		
-		Airport destLoc = repo.em.find(Airport.class, destAirport);
-		flight.setDepartureLocation(depLoc);
-		flight.setDestinationLocation(destLoc);
+		Flight flight = new Flight();		
+		flight.setDepartureLocation(depAirport);
+		flight.setDestinationLocation(destAirport);
 		flight.setDuration(156105610L);
 		//Assert.assertTrue(repo.em.contains(depLoc));
 		FirstClassData firstClassData = new FirstClassData();
@@ -71,16 +70,27 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		flight.setFirstClassData(firstClassData);
 		flight.setBusinessClassData(businessClassData);
 		flight.setEconomyClassData(economyClassData);
-		flight.setDepartureTime(new Date(2016, 12, 12));
+		SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+		
+		try {
+			flight.setDepartureTime(date.parse("12-12-2016"));
+			System.err.println(date.parse("2016-12-12").toString());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		repo.saveFlight(flight);
 		Flight find = repo.em.find(Flight.class, flight.getId());
 		System.err.println(find.getId());
-		Assert.assertNotNull("Passenger ID should not be null after saving",find);
-		
-	
-		
+		Assert.assertNotNull("Passenger ID should not be null after saving",find);	
 
+	}
+	//@Test(expected=javax.validation.ConstraintViolationException.class)
+	public void ShouldThrowExceptionPersistingAFlight(){
+		Flight flight = new Flight();		
+		flight.setDepartureLocation(depAirport);
+		repo.saveFlight(flight);
 	}
 	
 	
