@@ -24,7 +24,6 @@ import com.redoair.repositories.FlightRepository;
 
 public class TestFlightRepository extends JpaPersistenceTest {
 	private FlightRepository repo;
-	private static final long ID = 1;
 	private static final long depAirportId = 1L;
 	private static final long destAirportId = 2L;
 	private static final long flightId = 2L;
@@ -98,9 +97,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		}
 
 		repo.saveFlight(flight);
-		Flight find = repo.em.find(Flight.class, flight.getId());
-		System.err.println(find.getId());
-		Assert.assertNotNull("Passenger ID should not be null after saving", find);
+		Assert.assertNotNull("Passenger ID should not be null after saving", flight.getId());
 
 	}
 
@@ -125,7 +122,9 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		}
 		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport.getCountry(), destAirport.getCountry(), TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
 		System.err.println(flights.size());
+		flights.forEach(s->System.out.println(s.getDepartureLocation().getName()));
 		Assert.assertTrue(1==flights.size());
+		Assert.assertEquals("Goroka", flights.get(0).getDepartureLocation().getName());
 	}
 	
 

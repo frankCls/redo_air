@@ -16,11 +16,10 @@ public class TicketRepository {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	@PersistenceContext(unitName = "MyPersistenceUnit")
-	EntityManager em;
+	protected EntityManager em;
 
 	public Ticket save(Ticket ticket) {
 		em.persist(ticket);
-
 		return ticket;
 	}
 
@@ -32,15 +31,9 @@ public class TicketRepository {
 		return em.createQuery("select t from Ticket t", Ticket.class).getResultList();
 	}
 
-	public void clear() {
-		em.clear();
-	}
-
 	public Ticket update(Ticket ticket) {
-
-		em.merge(ticket);
-		return ticket;
-
+		return em.merge(ticket);
+		
 	}
 
 	public void remove(long ticketId) {

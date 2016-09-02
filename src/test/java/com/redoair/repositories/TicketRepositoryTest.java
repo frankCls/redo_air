@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,6 +18,9 @@ import com.redoair.domain.TravelingClassType;
 public class TicketRepositoryTest extends JpaPersistenceTest {
 
 	private TicketRepository ticketRepository;
+	private static final long TICKET_ID = 2L;
+	private static final long FLIGHT_ID = 2L;
+	private Flight flight;
 
 
 
@@ -24,38 +28,32 @@ public class TicketRepositoryTest extends JpaPersistenceTest {
 	public void setUp() {
 		ticketRepository = new TicketRepository();
 		ticketRepository.em = entityManager();
+		flight = ticketRepository.em.find(Flight.class, FLIGHT_ID);
 	}
 
 	
 	@Test	
-	public void testSaveTicket() {
-
-		Ticket ticket = new Ticket();
-		Flight flight = new Flight();
+	public void shouldSaveATicket() {
+		Ticket ticket = new Ticket();		
 		Passenger passenger = new Passenger();
 		passenger.setPassword("password");
 		passenger.setFirstName("test");
-		passenger.setLastName("lastname");
-		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-		try {
-			Date date = format.parse("2-09-2016");
-			flight.setDepartureTime(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		passenger.setLastName("lastname");		
 		
-		flight.setDuration( 500L);
-		
-		ticket.setPurchaseStatus(PurchaseStatus.PENDING);
-		ticket.setTravelingClass(TravelingClassType.BUSINESS_CLASS);
-		
+		ticket.setTravelingClass(TravelingClassType.BUSINESS_CLASS);		
 		ticket.setFlight(flight);
 		ticket.setPassenger(passenger);
-		
-
 		ticketRepository.save(ticket);
 		assertNotNull("Ticket ID is not supposed to be null after saving", ticket.getId());
 	}
+	
+	@Test
+	public void shouldReturnATicket(){
+		Ticket ticket = ticketRepository.findById(TICKET_ID);
+		Assert.assertNotNull("ticket should not be null", ticket);
+		Assert.assertTrue(ticket.getFlight().getId()==2);
+	}
+	
+	
 
 }

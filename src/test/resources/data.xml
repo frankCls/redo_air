@@ -1,5 +1,8 @@
 <dataset>
-
+	<payer id="2" firstName="Bert" lastName="Von Testpersons"></payer>
+	<booking id="2" dateBooked="2016-05-03 15:03:11"
+		purchaseStatus="PENDING" payer_id="2" version="0"></booking>
+		
 	<pricing id="3" basePrice="50" defaultPrice="5.250" />
 	<travelingclassdata id="2" type="business_class"
 		remainingSeats="5" priceId="3" />
@@ -13,11 +16,17 @@
 		seatTreshold="5" />
 	<discounts Pricing_id="3" discountPercentage="0.07"
 		seatTreshold="10" />
-	<flight id="2" departureTime="2017-05-30 09:00:00" duration="500" businessClassId="2" economyClassId="4" firstClassId="5" depID="1" destID="2" />
-	<passenger id="3" firstName="test" lastName="lastname" />
+	<flight id="2" departureTime="2017-05-30 09:00:00" duration="500"
+		businessClassId="2" economyClassId="4" firstClassId="5" depID="1"
+		destID="2" />
+	<passenger id="3" firstName="test" lastName="lastname"
+		password="12345" />
+	<passenger id="4" firstName="Jos" lastName="Who" password="12345" />
 
 
- 	<ticket id="1" purchaseStatus="PENDING" travelingClass="BUSINESS_CLASS" 
-		flight_id="2" passenger_id="3" /> 
+	<ticket id="2" travelingClass="BUSINESS_CLASS" flight_id="2"
+		passenger_id="3" version="0"/>
+	<ticket id="3" travelingClass="BUSINESS_CLASS" flight_id="2"
+		passenger_id="3" version="0"/>
 
 </dataset>
