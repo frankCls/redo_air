@@ -34,8 +34,6 @@ public class Booking  implements Serializable{
 	@ManyToOne
 	private Payer payer;
 
-	
-
 	public Long getId() {
 		return id;
 	}
