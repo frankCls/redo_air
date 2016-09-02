@@ -1,11 +1,14 @@
 package com.redoair.web.controller;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.CascadeType;
@@ -26,6 +29,7 @@ import com.redoair.domain.BusinessClassData;
 import com.redoair.domain.EconomyClassData;
 import com.redoair.domain.FirstClassData;
 import com.redoair.domain.Flight;
+import com.redoair.domain.TravelingClassType;
 import com.redoair.repositories.FlightRepository;
 import com.redoair.services.FlightService;
 
@@ -37,29 +41,101 @@ public class FlightBean implements Serializable {
 	private FlightService flightService;
 	
 	@NotNull
-	private Long duration;
-		
+	private String nameCountryDeparture ="";
+	
 	@NotNull
+	private String nameCountryArrival ="";
+	
+	private int seats = 1;
+	
+	private TravelingClassType travelingClass = TravelingClassType.ECONOMY_CLASS;
+	
 	@Future
-	private Date departureTime;
+	private Date fromDate ;
 	
-	@NotNull
-	private Airport departureLocation;
+	@Future
+	private Date toDate ;
 	
-	@NotNull
-	private Airport destinationLocation;
+	private List<Flight> flightsList=new ArrayList<>() ;
+	private List<String> countryList = new ArrayList<>() ;
 	
-	@NotNull
-	private FirstClassData firstClassData;
 	
-	@NotNull
-	private EconomyClassData economyClassData;
 	
-	@NotNull
-	private BusinessClassData businessClassData;
+	public String getAllFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate() {
+		
+		Date fromDate=null;
+		Date toDate=null;
+		
+		SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
-	private List<Flight> filteredFlights = new ArrayList<>();
+		try {
+			fromDate= timeStampFormat.parse("2017-04-30 09:00:00");
+			toDate= timeStampFormat.parse("2017-08-30 09:10:00");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		System.err.println("Arr: "+nameCountryArrival);
+		System.err.println("dep: "+nameCountryDeparture);
+		System.err.println("fromDate: "+fromDate);
+		System.err.println("toDate: "+toDate);
+		
+		//flightsList = flightService.findAllFlightsByCountry(nameCountryArrival);
+		flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(nameCountryArrival, nameCountryDeparture, TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
+	
+		//String depAirport,String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate
+		
+		return null;
+	}
+	
+	
+	public List<String> getCountryList() {
+		return flightService.findAllCountryWithFlights();
+	}
 
-	private String nameCountryFilter = "";
+	public void setCountryList(List<String> countryList) {
+		this.countryList = countryList;
+	}
 
+	public String getNameCountryDeparture() {
+		return nameCountryDeparture;
+	}
+	public void setNameCountryDeparture(String nameCountryDeparture) {
+		this.nameCountryDeparture = nameCountryDeparture;
+	}
+	public String getNameCountryArrival() {
+		return nameCountryArrival;
+	}
+	public void setNameCountryArrival(String nameCountryArrival) {
+		this.nameCountryArrival = nameCountryArrival;
+	}
+	public int getSeats() {
+		return seats;
+	}
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+	public TravelingClassType getTravelingClass() {
+		return travelingClass;
+	}
+	public void setTravelingClass(TravelingClassType travelingClass) {
+		this.travelingClass = travelingClass;
+	}
+	public Date getFromDate() {
+		return fromDate;
+	}
+	public void setFromDate(Date fromDate) {
+		this.fromDate = fromDate;
+	}
+	public Date getToDate() {
+		return toDate;
+	}
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
+	}
+	public List<Flight> getFlightsList() {
+		return flightsList;
+	}
+	public void setFlightsList(List<Flight> flightsList) {
+		this.flightsList = flightsList;
+	}
 }

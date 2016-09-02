@@ -5,6 +5,28 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
               version="2.2">
 
-
+<navigation-rule>
+        <from-view-id>/registrationPassenger.xhtml</from-view-id>
+        <navigation-case>
+         
+            <from-outcome>success</from-outcome>
+            <to-view-id>/registrationPassenger.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+             
+            <from-outcome>fail</from-outcome>
+            <to-view-id>/errorPage.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+<application>      
+         <locale-config>
+             <default-locale>en</default-locale>
+             <supported-locale>be</supported-locale>
+         </locale-config>
+         <resource-bundle>
+             <base-name>com.redoair.language.messages</base-name>
+             <var>msg</var>
+         </resource-bundle>
+     </application>
 
 </faces-config>
