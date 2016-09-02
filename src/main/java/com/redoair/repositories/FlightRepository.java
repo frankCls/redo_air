@@ -1,5 +1,7 @@
 package com.redoair.repositories;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +9,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 
 import com.redoair.domain.AbstractTravelingClassData;
@@ -32,31 +35,47 @@ public class FlightRepository {
 	}
 
 	public List<Flight> findFlightsByLocations(Airport depAirport, Airport destAirport,
-			TravelingClassType travelingClass, Integer seats, Date departureDate) {
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(departureDate);
-		cal.add(Calendar.DATE,1);
-		Date oneDayLater = cal.getTime();
-		String travelingClassdata = null;
-		switch (travelingClass) {
-		case ECONOMY_CLASS:
-			travelingClassdata = " f.economyClassData";
-			break;
-		case BUSINESS_CLASS:
-			travelingClassdata = " f.businessClassData";
-			break;
-		case FIRST_CLASS:
-			travelingClassdata = " f.firstClassData";
-			break;
-		}
-
+			TravelingClassType travelingClass, Integer seats, Date fromDate,Date toDate) {
+		//String oneDayLater = returnOneDayLater(departureDate);
+		String travelingClassdata = decideWhichStringInQuery(travelingClass);
 		TypedQuery<Flight> q = em.createQuery(
-				"SELECT f FROM Flight f WHERE f.departureLocation=:depAirport AND f.destinationLocation=:destAirport AND" + travelingClassdata + ".remainingSeats=:seats AND f.departureTime BETWEEN :departureDate AND :oneDayLater",
+				"SELECT f FROM Flight f WHERE f.departureLocation=:depAirport AND f.destinationLocation=:destAirport AND "
+						+ travelingClassdata
+						+ ".remainingSeats>=:seats AND f.departureTime BETWEEN :fromDate AND :toDate",
 				Flight.class);
 		q.setParameter("depAirport", depAirport);
 		q.setParameter("destAirport", destAirport);
 		q.setParameter("seats", seats);
-		q.setParameter("oneDayLater", oneDayLater);
+		q.setParameter("fromDate", fromDate);
+		q.setParameter("toDate", toDate);
+		//q.setParameter("oneDayLater", oneDayLater,TemporalType.TIMESTAMP);
 		return q.getResultList();
+	}
+	
+	private String decideWhichStringInQuery(TravelingClassType travelingClassType){
+		String travelingClassdata = null;
+		switch (travelingClassType) {
+		case ECONOMY_CLASS:
+			travelingClassdata = "f.economyClassData";
+			break;
+		case BUSINESS_CLASS:
+			travelingClassdata = "f.businessClassData";
+			break;
+		case FIRST_CLASS:
+			travelingClassdata = "f.firstClassData";
+			break;
+		}
+		System.err.println(travelingClassdata);
+		return travelingClassdata;
+	}
+	
+	private String returnOneDayLater(Date date){
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		cal.add(Calendar.DATE, 1);
+		System.err.println(cal.getTime());
+		Date returnDate=  cal.getTime();		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		return formatter.format(returnDate);
 	}
 }
