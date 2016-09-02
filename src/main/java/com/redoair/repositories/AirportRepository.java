@@ -34,6 +34,17 @@ public class AirportRepository {
 		return em.createQuery("select distinct region from Airport a", String.class).getResultList();
 
 	}
+	
+	public List<String> findAllAirportCountry() {
+		return em.createQuery("select distinct country from Airport a", String.class).getResultList();
+
+	}
+	
+	public List<Airport> findAllAirportByCountry(String country) {
+		TypedQuery<Airport> query = em.createQuery("select a from Airport a where a.country= :country ", Airport.class);
+		query.setParameter("country", country);
+		return query.getResultList();
+	}
 
 	public List<Airport> findAllAirports() {
 		return em.createQuery("select a from Airport a", Airport.class).getResultList();

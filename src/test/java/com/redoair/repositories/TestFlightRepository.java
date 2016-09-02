@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.realdolmen.course.utilities.persistence.JpaPersistenceTest;
@@ -44,12 +45,25 @@ public class TestFlightRepository extends JpaPersistenceTest {
 
 	@Test
 	public void shouldReturnAFlight() {
-		Assert.assertTrue(true);
+		
 	}
 
+
+	public void returnAllCitiesWithFlightTest(){
+		List<String> findAllCitiesByCountryWithFlights = repo.findAllCitiesByCountryWithFlights("Papua New Guinea");
+		if (findAllCitiesByCountryWithFlights.isEmpty()) {
+			System.err.println("there are no flights in this country! \n");
+		}
+		for (String city : findAllCitiesByCountryWithFlights) {
+			System.out.println(city);
+		}
+	}
+	
 	@Test
-	public void shouldPersistAFlight() {
-		Flight flight = new Flight();
+	@Ignore
+	public void ShouldPersistAFlight(){
+		Flight flight = new Flight();		
+
 		flight.setDepartureLocation(depAirport);
 		flight.setDestinationLocation(destAirport);
 		flight.setDuration(156105610L);
@@ -108,7 +122,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		flights = repo.findFlightsByLocations(depAirport, destAirport, TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
+		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport, destAirport, TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
 		System.err.println(flights.size());
 		Assert.assertTrue(1==flights.size());
 	}
