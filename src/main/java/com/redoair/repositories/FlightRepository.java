@@ -28,12 +28,7 @@ public class FlightRepository {
 
 	public List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(String depAirport,
 			String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate) {
-		/*System.out.println(depAirport);
-		System.out.println(destAirport);
-		System.out.println(travelingClass);
-		System.out.println(seats);
-		System.out.println(fromDate);
-		System.out.println(toDate);*/
+
 		String travelingClassdata = decideWhichStringInQuery(travelingClass);
 	
 		TypedQuery<Flight> q = em
