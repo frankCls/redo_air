@@ -6,12 +6,12 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:composition template="/WEB-INF/templateRealdolmen.xhtml">
+<ui:composition template="/WEB-INF/template.xhtml"  >
 
 
 	<ui:define name="content">
 
-		<h1>passenger registration</h1>
+		<h1>booking registration</h1>
 
 		<h:form>
 
@@ -19,17 +19,12 @@
 			<h:panelGrid columns="2" cellpadding="6">
 				<h:panelGroup>
 					<h:outputLabel for="ssn" value="ssn:" style="font-weight:bold"
-						rendered="#{passengerBean.editable}" />
+						 />
 					<p:inputText id="ssn" value="#{passengerBean.ssn}"
-						rendered="#{passengerBean.editable}">
-						<f:ajax event="blur" render="firstnameerr"></f:ajax>
+						>
+						
 					</p:inputText>
-					<h:message id="firstnameerr" for="ssn" />
-					<h:outputLabel for="ssn2" value="ssn 2:" style="font-weight:bold"
-						rendered="#{not passengerBean.editable}" />
-					<h:outputText id="ssn2" value="#{passengerBean.ssn}"
-						rendered="#{not passengerBean.editable}" />
-				</h:panelGroup>
+						</h:panelGroup>
 
 
 				<h:panelGroup>
@@ -48,7 +43,7 @@
 					<h:outputLabel for="card" value="Bank account:"
 						style="font-weight:bold" />
 					<p:inputText id="card" value="#{passengerBean.creditcard.number}">
-						<f:converter converterId="cardConverter" />
+						
 
 					</p:inputText>
 					<h:message for="card" />
@@ -61,12 +56,15 @@
 						<f:selectItem itemValue="OCCASIONAL" itemLabel="OCCASIONAL" />
 					</p:selectOneRadio>
 				</h:panelGroup>
+				<h:panelGroup>
 				<h:outputLabel for="bday" value="Date of birth"
 					style="font-weight:bold" />
+					
 				<p:calendar id="bday" pattern="dd-MM-yyyy"
 					value="#{passengerBean.dateOfbirth}">
 
 				</p:calendar>
+				</h:panelGroup>
 				<h:commandButton value="Submit"
 					action="#{passengerBean.savePassenger()}" />
 
