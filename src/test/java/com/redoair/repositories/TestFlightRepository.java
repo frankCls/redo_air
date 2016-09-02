@@ -56,6 +56,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		for (String city : findAllCitiesByCountryWithFlights) {
 			System.out.println(city);
 		}
+		
 	}
 	
 	@Test

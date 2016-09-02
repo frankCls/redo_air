@@ -1,7 +1,9 @@
 package com.redoair.web.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -23,14 +25,16 @@ import com.redoair.domain.Airport;
 import com.redoair.domain.BusinessClassData;
 import com.redoair.domain.EconomyClassData;
 import com.redoair.domain.FirstClassData;
+import com.redoair.domain.Flight;
 import com.redoair.repositories.FlightRepository;
+import com.redoair.services.FlightService;
 
 @Named(value = "flightBean")
 @SessionScoped
 public class FlightBean implements Serializable {
 
 	@Inject
-	private FlightRepository flightRepository;
+	private FlightService flightService;
 	
 	@NotNull
 	private Long duration;
@@ -54,6 +58,8 @@ public class FlightBean implements Serializable {
 	@NotNull
 	private BusinessClassData businessClassData;
 
-	
+	private List<Flight> filteredFlights = new ArrayList<>();
+
+	private String nameCountryFilter = "";
 
 }
