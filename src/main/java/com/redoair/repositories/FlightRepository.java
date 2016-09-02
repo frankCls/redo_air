@@ -26,13 +26,13 @@ public class FlightRepository {
 		em.persist(flight);
 	}
 
-	public List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(Airport depAirport,
-			Airport destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate) {
+	public List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(String depAirport,
+			String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate) {
 		
 		String travelingClassdata = decideWhichStringInQuery(travelingClass);
 		TypedQuery<Flight> q = em
 				.createQuery(
-						"SELECT f FROM Flight f WHERE f.departureLocation=:depAirport AND f.destinationLocation=:destAirport AND "
+						"SELECT f FROM Flight f WHERE f.departureLocation.country=:depAirport AND f.destinationLocation.country=:destAirport AND "
 								+ travelingClassdata
 								+ ".remainingSeats>=:seats AND f.departureTime BETWEEN :fromDate AND :toDate",
 						Flight.class);
