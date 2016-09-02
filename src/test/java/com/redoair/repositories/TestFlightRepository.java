@@ -123,7 +123,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport, destAirport, TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
+		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport.getCountry(), destAirport.getCountry(), TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
 		System.err.println(flights.size());
 		Assert.assertTrue(1==flights.size());
 	}
