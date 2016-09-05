@@ -36,6 +36,8 @@ public abstract class AbstractTravelingClassData {
 	@Min(0)
 	@Column(nullable=false)
 	private int remainingSeats;
+	
+	
 
 	public Pricing getPricing() {
 		return pricing;

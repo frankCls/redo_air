@@ -48,20 +48,6 @@ public class Flight implements Serializable {
 	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
-	@NotNull
-	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name="firstClassId")
-	private FirstClassData firstClassData;
-	
-	@NotNull
-	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name="economyClassId")
-	private EconomyClassData economyClassData;
-	
-	@NotNull
-	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name="businessClassId")
-	private BusinessClassData businessClassData;
 
 	public Long getId() {
 		return id;
@@ -103,29 +89,7 @@ public class Flight implements Serializable {
 		this.destinationLocation = destinationLocation;
 	}
 
-	public FirstClassData getFirstClassData() {
-		return firstClassData;
-	}
 
-	public void setFirstClassData(FirstClassData firstClassData) {
-		this.firstClassData = firstClassData;
-	}
-
-	public EconomyClassData getEconomyClassData() {
-		return economyClassData;
-	}
-
-	public void setEconomyClassData(EconomyClassData economyClassData) {
-		this.economyClassData = economyClassData;
-	}
-
-	public BusinessClassData getBusinessClassData() {
-		return businessClassData;
-	}
-
-	public void setBusinessClassData(BusinessClassData businessClassData) {
-		this.businessClassData = businessClassData;
-	}
 //	public AbstractTravelingClassData getTravelingClassData(TravelingClassType type){
 //		AbstractTravelingClassData data=null;
 //		switch(type.name()){
