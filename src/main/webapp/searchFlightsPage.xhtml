@@ -14,19 +14,38 @@
 		<h:form>
 			<h:panelGrid>
 				<label for="nameDepartureCountry">Country departure:</label>
-				<h:selectOneListbox id="nameDepartureCountry"
+				<h:selectOneMenu id="nameDepartureCountry"
 					value="#{flightBean.nameCountryDeparture}">
 					<f:selectItems value="#{flightBean.countryList}" var="country"
 						itemValue="#{country}" />
-				</h:selectOneListbox>
+				</h:selectOneMenu>
+
 				<label for="nameArrivalCountry">Country arrival:</label>
-				<h:selectOneListbox id="nameArrivalCountry"
+
+				<h:selectOneMenu id="nameArrivalCountry"
 					value="#{flightBean.nameCountryArrival}">
 					<f:selectItems value="#{flightBean.countryList}" var="country"
 						itemValue="#{country}" />
-				</h:selectOneListbox>
+				</h:selectOneMenu>
 
+				<label for="travelingClass">Traveling class:</label>
 
+				<h:selectOneMenu id="travelingClass"
+					value="#{flightBean.travelingClass}">
+					<f:selectItem itemLabel="Bussiness class"
+						itemValue="bussiness_class" />
+					<f:selectItem itemLabel="Economy class" itemValue="economy_class" />
+					<f:selectItem itemLabel="First class" itemValue="first_class" />
+
+				</h:selectOneMenu>
+
+				<h:outputLabel for="ArrivalDate" value="ArrivalDate:"
+					style="font-weight:bold" />
+				<h:inputText id="ArrivalDate" value="#{flightBean.fromDate}" />
+				
+				<h:outputLabel for="ArrivalDate" value="ArrivalDate:"
+					style="font-weight:bold" />
+				<h:inputText id="ArrivalDate" value="#{flightBean.fromDate}" />
 
 				<h:commandButton value="Search"
 					action="#{flightBean.getAllFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate()}" />
@@ -43,6 +62,14 @@
 					<h:outputText value="Airport Name" />
 				</f:facet>
 				<h:outputText value="#{flight.departureLocation.name}" />
+
+				<f:facet name="header">
+					<h:outputText value=" Arrival date" />
+				</f:facet>
+				<h:outputText value="#{flight.departureTime}" />
+
+
+
 			</h:column>
 		</h:dataTable>
 	</ui:define>

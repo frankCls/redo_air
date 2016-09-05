@@ -75,7 +75,7 @@ public abstract class DataSetPersistenceTest extends PersistenceTest {
      * @return An array of Strings pointing to class-path relative dataset XML files.
      */
     protected String[] dataSets() {
-        return new String[] { "/500_airports.xml", "/data.xml" };
+        return new String[] { "/500_airports.xml", "/data.xml" ,"/flights.xml", "/tickets.xml"};
     }
 
 }

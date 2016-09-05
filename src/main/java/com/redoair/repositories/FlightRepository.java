@@ -5,8 +5,10 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.Parameter;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+
 
 import com.redoair.domain.Airport;
 import com.redoair.domain.Flight;
@@ -37,12 +39,14 @@ public class FlightRepository {
 								+ travelingClassdata
 								+ ".remainingSeats >= :seats AND f.departureTime BETWEEN :fromDate AND :toDate",
 						Flight.class);
+		
 		q.setParameter("depAirport", depAirport);
 		q.setParameter("destAirport", destAirport);
 		q.setParameter("seats", seats);
 		q.setParameter("fromDate", fromDate);
 		q.setParameter("toDate", toDate);
-System.out.println(q.getSingleResult());
+	
+
 		return q.getResultList();
 	}
 
