@@ -39,9 +39,9 @@ public abstract class AbstractTravelingClassData {
 	@Column(nullable=false)
 	private int remainingSeats;
 	
-	@ManyToOne
-	@JoinColumn(name="flightId")
-	private Flight flight;
+//	@ManyToOne
+//	@JoinColumn(name="flightId")
+//	private Flight flight;
 
 	public Pricing getPricing() {
 		return pricing;

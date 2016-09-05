@@ -18,6 +18,7 @@ import com.redoair.domain.BusinessClassData;
 import com.redoair.domain.EconomyClassData;
 import com.redoair.domain.FirstClassData;
 import com.redoair.domain.Flight;
+import com.redoair.domain.FlightData;
 import com.redoair.domain.Pricing;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.repositories.FlightRepository;
@@ -80,9 +81,14 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		EconomyClassData economyClassData = new EconomyClassData();
 		economyClassData.setPricing(pricing);
 		economyClassData.setRemainingSeats(10);
-		flight.setFirstClassData(firstClassData);
-		flight.setBusinessClassData(businessClassData);
-		flight.setEconomyClassData(economyClassData);
+//		flight.setFirstClassData(firstClassData);
+//		flight.setBusinessClassData(businessClassData);
+//		flight.setEconomyClassData(economyClassData);
+		FlightData data = new FlightData();
+		data.setBusinessClassData(businessClassData);
+		data.setEconomyClassData(economyClassData);
+		data.setFirstClassData(firstClassData);
+		flight.setFlightData(data);
 
 		try {
 			flight.setDepartureTime(dateFormat.parse("12-12-2016"));
@@ -119,6 +125,11 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport.getCountry(), destAirport.getCountry(), TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
 		System.err.println(flights.size());
 		Assert.assertTrue(1==flights.size());
+	}
+	
+	@Test
+	public void test(){
+		
 	}
 	
 

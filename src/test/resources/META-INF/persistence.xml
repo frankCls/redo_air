@@ -50,6 +50,7 @@
 		<class>com.redoair.domain.FirstClassData</class>
 		<class>com.redoair.domain.AbstractTravelingClassData</class>
 		<class>com.redoair.domain.Pricing</class>
+		<class>com.redoair.domain.FlightData</class>
 		
 
 

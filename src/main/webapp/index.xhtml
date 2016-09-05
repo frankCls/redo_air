@@ -1,17 +1,17 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:c="http://java.sun.com/jstl/core">
-
-<ui:composition template="/WEB-INF/template.xhtml">
+	xmlns:c="http://java.sun.com/jstl/core"
+	template="/WEB-INF/template.xhtml">
 
 
 	<ui:define name="pageTitle" value="#{msg['search.title']}" />
 	<ui:define name="pageContent">
 
 		<h:form id="form">
+
 			<div class="row selection">
 				<div class="col-md-2"></div>
 
@@ -44,14 +44,10 @@
 								<f:selectItems value="#{flightBean.travelingClassList}" />
 							</h:selectOneMenu>
 						</h:panelGroup>
-						<h:panelGroup class="form-group">
-							<h:outputLabel for="tickets" value="#{msg['search.tickets']}" />
-							<h:inputText id="tickets" class="form-control">
-								<c:if test="#{flightBean.nrOfTickets}>0" />
-							</h:inputText>
-						</h:panelGroup>
+
 					</div>
 				</div>
+
 				<div class="col-md-4">
 					<div class="form-horizontal">
 						<h:panelGroup class="form-group">
@@ -71,93 +67,114 @@
 								<f:selectItems value="#{flightBean.destRegionList}" />
 							</h:selectOneMenu>
 						</h:panelGroup>
-
-
-
-
-						<!-- 						<h:panelGroup class="form-group"> -->
-						<!-- 							<h:outputLabel for="datetimepicker1" -->
-						<!-- 								value="#{msg['search.depDate']}" /> -->
-						<!-- 							<div class='input-group date' id='datetimepicker1'>  -->
-						<!-- 								<p:calendar value="#{flightBean.depDate}"></p:calendar> -->
-						<!-- 																<span class="input-group-addon"> <span -->
-						<!-- 																	class="glyphicon glyphicon-calendar"></span> -->
-						<!-- 																</span> -->
-						<!-- 							</div> -->
-						<!-- 						</h:panelGroup> -->
-
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="tickets" value="#{msg['search.tickets']}" />
+							<h:inputText id="tickets" class="form-control">
+								<!-- 								<c:if test="#{flightBean.nrOfTickets}>0" /> -->
+							</h:inputText>
+						</h:panelGroup>
 					</div>
-
 				</div>
 				<div class="col-md-2">
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
+					<h:panelGroup class="row form-group"></h:panelGroup>
 					<h:panelGroup class="form-group">
-						<h:commandButton class="btn btn-default form-control"
+						<h:outputLabel for="search" />
+						<h:commandButton id="search" class="btn btn-default form-control"
 							value="#{msg['search.search']}" action="#{flightBean.search}" />
+
 					</h:panelGroup>
 				</div>
 			</div>
-
-			<h:dataTable class="table" id="flightTable"
-				value="#{flightBean.flightsList}" var="f">
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depCountry']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureLocation.country}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.destCountry']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureLocation.name}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depCountry']}" />
-					</f:facet>
-					<h:outputText value="#{f.destinationLocation.name}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depDate']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureTime}">
-						<f:convertDateTime pattern="dd-MM-yyyy" />
-					</h:outputText>
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depTime']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureTime}">
-						<f:convertDateTime pattern="hh:mm" />
-					</h:outputText>
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Economy" />
-					</f:facet>
-					<h:outputText
-						value="#{f.economyClassData.pricing.basePrice * (1+f.economyClassData.pricing.defaultPrice)}">
-
-					</h:outputText>
-				</h:column>
-
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Available seats" />
-					</f:facet>
-					<h:outputText
-						value="#{f.economyClassData.pricing.basePrice * (1+f.economyClassData.pricing.defaultPrice)}">
-
-					</h:outputText>
-				</h:column>
-			</h:dataTable>
+			<h:panelGrid id="flightTable"
+				rendered="#{flightBean.renderFlightsList}">
+				<table class="table">
+					<tr>
+						<h:panelGroup>
+							<th>#{msg['search.depCountry']}</th>
+							<th>#{msg['search.depAirport']}</th>
+							<th>#{msg['search.destCountry']}</th>
+							<th>#{msg['search.destAirport']}</th>
+							<th>#{msg['search.travelClass']}</th>
+							<th>#{msg['search.depDate']}</th>
+							<th>#{msg['search.depTime']}</th>
+							<th>#{msg['search.price']}</th>
+						</h:panelGroup>
+					</tr>
+					<ui:repeat items="#{flightBean.flightsList}" var="f">
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText value="#{f.departureLocation.country}" /></td>
+							</tr>
+						</h:panelGroup>
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText value="#{f.departureLocation.name}" /></td>
+							</tr>
+						</h:panelGroup>
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText value="#{f.destinationLocation.country}" /></td>
+							</tr>
+						</h:panelGroup>
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText value="#{f.destinationLocation.name}" /></td>
+							</tr>
+						</h:panelGroup>
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText value="#{f.departureLocation.country}" /></td>
+							</tr>
+						</h:panelGroup>
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText>
+										<c:when test="#{travelData.class==EconomyClassData}"
+											var="type">
+											<h:outputText>Economy</h:outputText>
+										</c:when>
+										<c:when test="#{travelData.class==BusinessClassData}"
+											var="type">
+											<h:outputText>Business</h:outputText>
+										</c:when>
+										<c:when test="#{travelData.class==FirstClassData}" var="type">
+											<h:outputText>First Class</h:outputText>
+										</c:when>
+									</h:outputText></td>
+							</tr>
+						</h:panelGroup>
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText value="#{f.departureTime}">
+										<f:convertDateTime pattern="dd-MM-yyyy" />
+									</h:outputText></td>
+							</tr>
+						</h:panelGroup>
+						<tr>
+							<td><h:outputText value="#{f.departureTime}">
+									<f:convertDateTime pattern="hh:mm" />
+								</h:outputText></td>
+						</tr>
+						<h:panelGroup>
+							<tr>
+								<td><h:outputText
+										value="#{travelData.basePrice * (1+travelData.defaultPrice)}">
+									</h:outputText></td>
+							</tr>
+						</h:panelGroup>
+					</ui:repeat>
+				</table>
+			</h:panelGrid>
 		</h:form>
 	</ui:define>
-
-
-
 </ui:composition>
 
-</html>

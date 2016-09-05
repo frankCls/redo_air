@@ -11,21 +11,21 @@ body {
     /*background-image: url("#{resource['images/skyclouds.jpeg']}") 100px 0px ;*/
     /*background-position:-100, */
     background: url("#{resource['images/skyclouds.jpeg']}")no-repeat top;
-    background-size:120%;
+    /*background-size:120%;
     animation-name: fly;
     animation-duration: 80s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    animation-timing-function: linear;
+    animation-timing-function: linear;*/
     
 	height: 100%;
 	width:100%; 
 	overflow:hidden;
 }
-@keyframes fly {
+/*@keyframes fly {
     0%   {background-position: 0% 40%;}
     100%  {background-position: 100% 0%;}    
-}
+}*/
 
 .navbar{
 	position:fixed;

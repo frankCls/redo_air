@@ -54,6 +54,9 @@ public class Flight implements Serializable {
 	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
+	@OneToOne
+	@JoinColumn(name="flightDataId")
+	private FlightData flightData;
 //	@NotNull
 //	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 //	@JoinColumn(name="firstClassId")
@@ -70,8 +73,16 @@ public class Flight implements Serializable {
 //	private BusinessClassData businessClassData;
 	
 
-	@OneToMany(mappedBy="flight")	
-	private Set<AbstractTravelingClassData>travelingClassData=new HashSet<>();
+//	@OneToMany(mappedBy="flight")	
+//	private Set<AbstractTravelingClassData>travelingClassData=new HashSet<>();
+
+	public FlightData getFlightData() {
+		return flightData;
+	}
+
+	public void setFlightData(FlightData flightData) {
+		this.flightData = flightData;
+	}
 
 	public Long getId() {
 		return id;
@@ -85,17 +96,17 @@ public class Flight implements Serializable {
 		return duration;
 	}
 
-	public Set<AbstractTravelingClassData> getTravelingClassData() {
-		return travelingClassData;
-	}
-
-	public void setTravelingClassData(Set<AbstractTravelingClassData> travelingClassData) {
-		this.travelingClassData = travelingClassData;
-	}
-	
-	public void addTravelingClassData(AbstractTravelingClassData data){
-		this.travelingClassData.add(data);
-	}
+//	public Set<AbstractTravelingClassData> getTravelingClassData() {
+//		return travelingClassData;
+//	}
+//
+//	public void setTravelingClassData(Set<AbstractTravelingClassData> travelingClassData) {
+//		this.travelingClassData = travelingClassData;
+//	}
+//	
+//	public void addTravelingClassData(AbstractTravelingClassData data){
+//		this.travelingClassData.add(data);
+//	}
 
 	public void setDuration(Long duration) {
 		this.duration = duration;

@@ -1,5 +1,6 @@
 package com.redoair.services;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -96,7 +97,7 @@ public class FlightService implements FlightServiceRemote {
 				}
 			}
 		}
-		return null;
+		return new ArrayList<>();
 	}
 
 }

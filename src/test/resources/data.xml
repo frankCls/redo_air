@@ -14,9 +14,14 @@
 		remainingSeats="10" priceId="3" />
 	<travelingclassdata id="5" type="first_class"
 		remainingSeats="12" priceId="3" />
+
+	<flightData id="4" economyClassId="4" businessClassId="2"
+		firstClassId="5"></flightData>
 	<flight id="2" departureTime="2017-05-30 09:00:00" duration="15680"
-		businessClassId="2" economyClassId="4" firstClassId="5" depID="1"
-		destID="2" />
+		depID="1" destID="2" flightDataId="4" />
+
+
+
 
 	<pricing id="4" basePrice="50" defaultPrice="0.05" />
 	<pricing id="5" basePrice="60" defaultPrice="0.05" />
@@ -33,9 +38,14 @@
 		remainingSeats="0" priceId="5" />
 	<travelingclassdata id="8" type="first_class"
 		remainingSeats="22" priceId="6" />
+	<flightData id="3" economyClassId="7" businessClassId="6"
+		firstClassId="8"></flightData>
 	<flight id="3" departureTime="2017-05-30 20:00:00" duration="500000"
-		businessClassId="6" economyClassId="7" firstClassId="8" depID="93"
-		destID="100" />
+		depID="93" destID="100" flightDataId="3" />
+
+
+
+
 
 	<pricing id="7" basePrice="200" defaultPrice="0.05" />
 	<pricing id="8" basePrice="260" defaultPrice="0.05" />
@@ -52,9 +62,15 @@
 		remainingSeats="0" priceId="5" />
 	<travelingclassdata id="11" type="first_class"
 		remainingSeats="22" priceId="6" />
+	<flightData id="2" economyClassId="10" businessClassId="9"
+		firstClassId="11"></flightData>
 	<flight id="4" departureTime="2017-05-30 15:30:00" duration="62000"
-		businessClassId="9" economyClassId="10" firstClassId="11" depID="412"
-		destID="390" />
+		depID="412" destID="390" flightDataId="2" />
+
+
+
+
+
 
 
 	<passenger id="3" firstName="test" lastName="lastname"
