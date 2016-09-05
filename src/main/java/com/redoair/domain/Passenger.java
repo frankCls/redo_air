@@ -3,13 +3,17 @@ package com.redoair.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Passenger {
 	@Id @GeneratedValue
 	private Long id;
+	@NotNull
 	private String password;
-	private String lastName;	
+	@NotNull
+	private String lastName;
+	@NotNull
 	private String firstName;
 
 	public Long getId() {

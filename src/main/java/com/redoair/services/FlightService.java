@@ -16,8 +16,10 @@ import com.redoair.repositories.FlightRepository;
 @Stateless
 @LocalBean
 public class FlightService implements FlightServiceRemote{
-	@EJB
-	 FlightRepository flightRepository;
+
+	@Inject
+	private FlightRepository flightRepository;
+
 
 	@Override
 	public Flight saveFlight(Flight flight) {
@@ -27,14 +29,12 @@ public class FlightService implements FlightServiceRemote{
 
 	@Override
 	public Flight findFlightById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return flightRepository.findFlightById(id);
 	}
 
 	@Override
 	public List<String> findAllCitiesByCountryWithFlights(String country) {
-		// TODO Auto-generated method stub
-		return null;
+		return flightRepository.findAllCitiesByCountryWithFlights(country);
 	}
 
 	@Override

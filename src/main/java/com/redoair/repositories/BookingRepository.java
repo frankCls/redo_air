@@ -24,6 +24,9 @@ public class BookingRepository {
 	}
 	
 	public Booking save(Booking booking) {
+//		for(Ticket t : booking.getTickets()) {
+//			em.merge(t);
+//		}
 		em.persist(booking);
 
 		return booking;
@@ -37,8 +40,8 @@ public class BookingRepository {
 	}
 
 	public Booking update(Booking booking) {
-		em.merge(booking);
-		return booking;
+		return em.merge(booking);
+		 
 
 	}
 

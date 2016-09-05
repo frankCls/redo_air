@@ -8,33 +8,43 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 
-import com.redoair.domain.PurchaseStatus;
 import com.redoair.domain.TravelingClassType;
 
-
 @Entity
-public class Ticket implements Serializable{
-	
+public class Ticket implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9025140047545706323L;
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
+	@Version
+	private Long version;
+
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private TravelingClassType travelingClass;
 
-	@Enumerated(EnumType.STRING)
-	private PurchaseStatus purchaseStatus;
-	
 	@NotNull
-	@ManyToOne( cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@ManyToOne
 	private Flight flight;
-	
+
+	@ManyToOne
+	@JoinColumn(name = "booking_id")
+	private Booking booking;
+
 	@NotNull
-	@OneToOne( cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	private Passenger passenger;
 
 	public Long getId() {
@@ -53,14 +63,6 @@ public class Ticket implements Serializable{
 		this.travelingClass = travelingClass;
 	}
 
-	public PurchaseStatus getPurchaseStatus() {
-		return purchaseStatus;
-	}
-
-	public void setPurchaseStatus(PurchaseStatus purchaseStatus) {
-		this.purchaseStatus = purchaseStatus;
-	}
-
 	public Flight getFlight() {
 		return flight;
 	}
@@ -76,7 +78,21 @@ public class Ticket implements Serializable{
 	public void setPassenger(Passenger passenger) {
 		this.passenger = passenger;
 	}
-	
-	
-	
+
+	public Booking getBooking() {
+		return booking;
+	}
+
+	public void setBooking(Booking booking) {
+		this.booking = booking;
+	}
+
+	public Long getVersion() {
+		return version;
+	}
+
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
 }
