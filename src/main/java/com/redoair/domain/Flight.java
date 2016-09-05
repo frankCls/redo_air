@@ -2,6 +2,9 @@ package com.redoair.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +15,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -48,20 +54,24 @@ public class Flight implements Serializable {
 	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
-	@NotNull
-	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name="firstClassId")
-	private FirstClassData firstClassData;
+//	@NotNull
+//	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//	@JoinColumn(name="firstClassId")
+//	private FirstClassData firstClassData;
+//	
+//	@NotNull
+//	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//	@JoinColumn(name="economyClassId")
+//	private EconomyClassData economyClassData;
+//	
+//	@NotNull
+//	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//	@JoinColumn(name="businessClassId")
+//	private BusinessClassData businessClassData;
 	
-	@NotNull
-	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name="economyClassId")
-	private EconomyClassData economyClassData;
-	
-	@NotNull
-	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name="businessClassId")
-	private BusinessClassData businessClassData;
+
+	@OneToMany(mappedBy="flight")	
+	private Set<AbstractTravelingClassData>travelingClassData=new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -73,6 +83,18 @@ public class Flight implements Serializable {
 
 	public Long getDuration() {
 		return duration;
+	}
+
+	public Set<AbstractTravelingClassData> getTravelingClassData() {
+		return travelingClassData;
+	}
+
+	public void setTravelingClassData(Set<AbstractTravelingClassData> travelingClassData) {
+		this.travelingClassData = travelingClassData;
+	}
+	
+	public void addTravelingClassData(AbstractTravelingClassData data){
+		this.travelingClassData.add(data);
 	}
 
 	public void setDuration(Long duration) {
@@ -103,29 +125,29 @@ public class Flight implements Serializable {
 		this.destinationLocation = destinationLocation;
 	}
 
-	public FirstClassData getFirstClassData() {
-		return firstClassData;
-	}
-
-	public void setFirstClassData(FirstClassData firstClassData) {
-		this.firstClassData = firstClassData;
-	}
-
-	public EconomyClassData getEconomyClassData() {
-		return economyClassData;
-	}
-
-	public void setEconomyClassData(EconomyClassData economyClassData) {
-		this.economyClassData = economyClassData;
-	}
-
-	public BusinessClassData getBusinessClassData() {
-		return businessClassData;
-	}
-
-	public void setBusinessClassData(BusinessClassData businessClassData) {
-		this.businessClassData = businessClassData;
-	}
+//	public FirstClassData getFirstClassData() {
+//		return firstClassData;
+//	}
+//
+//	public void setFirstClassData(FirstClassData firstClassData) {
+//		this.firstClassData = firstClassData;
+//	}
+//
+//	public EconomyClassData getEconomyClassData() {
+//		return economyClassData;
+//	}
+//
+//	public void setEconomyClassData(EconomyClassData economyClassData) {
+//		this.economyClassData = economyClassData;
+//	}
+//
+//	public BusinessClassData getBusinessClassData() {
+//		return businessClassData;
+//	}
+//
+//	public void setBusinessClassData(BusinessClassData businessClassData) {
+//		this.businessClassData = businessClassData;
+//	}
 //	public AbstractTravelingClassData getTravelingClassData(TravelingClassType type){
 //		AbstractTravelingClassData data=null;
 //		switch(type.name()){

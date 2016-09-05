@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
@@ -20,7 +22,7 @@ import javax.validation.constraints.NotNull;
 import com.redoair.domain.Pricing;
 
 @Entity
-@Table(name="travelingClassData")
+@Table(name="travelingclassdata")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="type", discriminatorType = DiscriminatorType.STRING)
 public abstract class AbstractTravelingClassData {
@@ -36,6 +38,10 @@ public abstract class AbstractTravelingClassData {
 	@Min(0)
 	@Column(nullable=false)
 	private int remainingSeats;
+	
+	@ManyToOne
+	@JoinColumn(name="flightId")
+	private Flight flight;
 
 	public Pricing getPricing() {
 		return pricing;
