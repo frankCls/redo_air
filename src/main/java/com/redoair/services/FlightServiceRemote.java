@@ -17,9 +17,9 @@ public interface FlightServiceRemote {
 
 	List<String> findAllCitiesByCountryWithFlights(String country);
 
-	List<String> findAllCountryWithFlights();
+	List<String> findAllDepartureCountries();
 
-	List<Flight> findAllFlightsByCountry(String country);
+	//List<Flight> findAllFlightsByCountry(String country);
 
 	List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(String depAirport,String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate);
 

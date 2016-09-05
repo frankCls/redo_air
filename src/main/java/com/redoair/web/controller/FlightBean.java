@@ -1,141 +1,223 @@
 package com.redoair.web.controller;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.component.behavior.AjaxBehavior;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
-import javax.validation.constraints.NotNull;
-
-import com.redoair.domain.Airport;
-import com.redoair.domain.BusinessClassData;
-import com.redoair.domain.EconomyClassData;
-import com.redoair.domain.FirstClassData;
 import com.redoair.domain.Flight;
 import com.redoair.domain.TravelingClassType;
-import com.redoair.repositories.FlightRepository;
 import com.redoair.services.FlightService;
 
 @Named(value = "flightBean")
 @SessionScoped
+// @Path()
 public class FlightBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4942143979117129063L;
 
 	@Inject
 	private FlightService flightService;
-	
-	@NotNull
-	private String nameCountryDeparture ="";
-	
-	@NotNull
-	private String nameCountryArrival ="";
-	
-	private int seats = 1;
-	
-	private TravelingClassType travelingClass = TravelingClassType.ECONOMY_CLASS;
-	
-	@Future
-	private Date fromDate ;
-	
-	@Future
-	private Date toDate ;
-	
-	private List<Flight> flightsList=new ArrayList<>() ;
-	private List<String> countryList = new ArrayList<>() ;
-	
-	
-	
-	public String getAllFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate() {
-		
-		Date fromDate=null;
-		Date toDate=null;
-		
-		SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
-		try {
-			fromDate= timeStampFormat.parse("2017-04-30 09:00:00");
-			toDate= timeStampFormat.parse("2017-08-30 09:10:00");
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		System.err.println("Arr: "+nameCountryArrival);
-		System.err.println("dep: "+nameCountryDeparture);
-		System.err.println("fromDate: "+fromDate);
-		System.err.println("toDate: "+toDate);
-		
-		//flightsList = flightService.findAllFlightsByCountry(nameCountryArrival);
-		flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(nameCountryArrival, nameCountryDeparture, TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
-	
-		//String depAirport,String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate
-		
-		return null;
-	}
-	
-	
-	public List<String> getCountryList() {
-		return flightService.findAllCountryWithFlights();
+	private Flight flight = new Flight();
+	// private Airport depLocation=new Airport();
+	// private Airport destLocation=new Airport();
+	private String depCountry="";
+	private String destCountry="";
+	private String depRegion="";
+	private String destRegion="";
+	private String TravelingClass = "";
+	private String depDate;
+	private int nrOfTickets = 1;
+
+	private List<Flight> flightsList = new ArrayList<>();
+	private List<String> depCountryList = new ArrayList<>();
+	private List<String> destCountryList = new ArrayList<>();
+	private List<String> depRegionList = new ArrayList<>();
+	private List<String> destRegionList = new ArrayList<>();
+	private List<String> travelingClassList = Arrays
+			.asList(Stream.of(TravelingClassType.values()).map(TravelingClassType::name).toArray(String[]::new));
+
+	@PostConstruct
+	public void init() {
+		depCountryList = flightService.findAllDepartureCountries();
+		// depCountryList.forEach(System.out::println);
+		destCountryList = flightService.findAllDestinationCountries();
+		// destCountryList.forEach(System.out::println);
+		depRegionList = flightService.findAllDepartureRegions();
+		destRegionList = flightService.findAllDestinationRegions();
 	}
 
-	public void setCountryList(List<String> countryList) {
-		this.countryList = countryList;
+	public void getFlightsForSearchCriteria() {
+		System.err.println("in getFlightsForSearchCriteria()");
+		flightsList = flightService.findFlightsForSearchCriteria(this.depCountry, this.depRegion, this.destCountry, this.destRegion);
 	}
 
-	public String getNameCountryDeparture() {
-		return nameCountryDeparture;
+	public void fillDepartureAndOrDestinationCountriesList() {
+		// if(flight.getDepartureLocation().getCountry()==null)
 	}
-	public void setNameCountryDeparture(String nameCountryDeparture) {
-		this.nameCountryDeparture = nameCountryDeparture;
+
+	public void search() {
+		System.err.println("in search()");
+		this.getFlightsForSearchCriteria();
 	}
-	public String getNameCountryArrival() {
-		return nameCountryArrival;
+
+	public void getFlightsForDepAndDest() {
+		flightsList = flightService.findFlightsByDepartureAndDestinationCountry(depCountry, destCountry);
+		// flightsList.forEach(s->System.err.println(s.getDepartureLocation().getCity()
+		// + " " + s.getDestinationLocation().getCity()));
 	}
-	public void setNameCountryArrival(String nameCountryArrival) {
-		this.nameCountryArrival = nameCountryArrival;
+
+	public Flight getFlight() {
+		return flight;
 	}
-	public int getSeats() {
-		return seats;
+
+	public void setFlight(Flight flight) {
+		this.flight = flight;
 	}
-	public void setSeats(int seats) {
-		this.seats = seats;
-	}
-	public TravelingClassType getTravelingClass() {
-		return travelingClass;
-	}
-	public void setTravelingClass(TravelingClassType travelingClass) {
-		this.travelingClass = travelingClass;
-	}
-	public Date getFromDate() {
-		return fromDate;
-	}
-	public void setFromDate(Date fromDate) {
-		this.fromDate = fromDate;
-	}
-	public Date getToDate() {
-		return toDate;
-	}
-	public void setToDate(Date toDate) {
-		this.toDate = toDate;
-	}
+
 	public List<Flight> getFlightsList() {
 		return flightsList;
 	}
+
 	public void setFlightsList(List<Flight> flightsList) {
 		this.flightsList = flightsList;
 	}
+
+	public List<String> getDestCountryList() {
+		return destCountryList;
+	}
+
+	public void setDestCountryList(List<String> destCountryList) {
+		this.destCountryList = destCountryList;
+	}
+
+	public String getDepCountry() {
+		return depCountry;
+	}
+
+	public void setDepCountry(String depCountry) {
+		this.depCountry = depCountry;
+	}
+
+	public String getDestCountry() {
+		return destCountry;
+	}
+
+	public void setDestCountry(String destCountry) {
+		this.destCountry = destCountry;
+	}
+
+	public String getDepRegion() {
+		return depRegion;
+	}
+
+	public void setDepRegion(String depRegion) {
+		this.depRegion = depRegion;
+	}
+
+	public String getDestRegion() {
+		return destRegion;
+	}
+
+	public void setDestRegion(String destRegion) {
+		this.destRegion = destRegion;
+	}
+
+	public List<String> getDepCountryList() {
+		return depCountryList;
+	}
+
+	public void setDepCountryList(List<String> depCountryList) {
+		this.depCountryList = depCountryList;
+	}
+
+	public List<String> getTravelingClassList() {
+		return travelingClassList;
+	}
+
+	public void setTravelingClassList(List<String> travelingClassList) {
+		this.travelingClassList = travelingClassList;
+	}
+
+	public String getTravelingClass() {
+		return TravelingClass;
+	}
+
+	public void setTravelingClass(String travelingClass) {
+		TravelingClass = travelingClass;
+	}
+
+	public String getDepDate() {
+		return depDate;
+	}
+
+	public void setDepDate(String depDate) {
+		this.depDate = depDate;
+	}
+
+	public int getNrOfTickets() {
+		return nrOfTickets;
+	}
+
+	public void setNrOfTickets(int nrOfTickets) {
+		this.nrOfTickets = nrOfTickets;
+	}
+
+	public List<String> getDepRegionList() {
+		return depRegionList;
+	}
+
+	public void setDepRegionList(List<String> depRegionList) {
+		this.depRegionList = depRegionList;
+	}
+
+	public List<String> getDestRegionList() {
+		return destRegionList;
+	}
+
+	public void setDestRegionList(List<String> destRegionList) {
+		this.destRegionList = destRegionList;
+	}
+
+	// public String
+	// getAllFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate()
+	// {
+	//
+	// Date fromDate=null;
+	// Date toDate=null;
+	//
+	// SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd
+	// hh:mm:ss");
+	//
+	// try {
+	// fromDate= timeStampFormat.parse("2017-04-30 09:00:00");
+	// toDate= timeStampFormat.parse("2017-08-30 09:10:00");
+	// } catch (ParseException e) {
+	// e.printStackTrace();
+	// }
+	//
+	// //flightsList =
+	// flightService.findAllFlightsByCountry(nameCountryArrival);
+	// flightsList =
+	// flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(nameCountryArrival,
+	// nameCountryDeparture, TravelingClassType.ECONOMY_CLASS,
+	// 4,fromDate,toDate);
+	//
+	// //String depAirport,String destAirport, TravelingClassType
+	// travelingClass, Integer seats, Date fromDate, Date toDate
+	//
+	// return null;
+	// }
+
 }

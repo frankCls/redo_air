@@ -1,5 +1,6 @@
 package com.redoair.repositories;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -66,11 +67,41 @@ System.out.println(q.getSingleResult());
 		return travelingClassdata;
 	}
 
-	public List<Flight> findAllFlightsByCountry(String country) {
-
-		TypedQuery<Flight> q = em.createQuery("SELECT f FROM Flight f WHERE f.departureLocation.country=:country",
+//	public List<Flight> findAllFlightsByCountry(String country) {
+//
+//		TypedQuery<Flight> q = em.createQuery("SELECT f FROM Flight f WHERE f.departureLocation.country=:country",
+//				Flight.class);
+//		q.setParameter("country", country);
+//		return q.getResultList();
+//	}
+	
+	public List<Flight> findFlightsByDepartureAndDestinationCountry(String depCountry, String destCountry){
+		TypedQuery<Flight> q = em.createQuery("SELECT f FROM Flight f WHERE f.departureLocation.country=:depCountry AND f.destinationLocation.country=:destCountry",
 				Flight.class);
-		q.setParameter("country", country);
+		q.setParameter("depCountry", depCountry);
+		q.setParameter("destCountry", destCountry);
+		return q.getResultList();
+	}
+	public List<Flight>findFlightsByDepartureCountryAndDestinationRegion(String depCountry, String destRegion){
+		TypedQuery<Flight> q = em.createQuery("SELECT f FROM Flight f WHERE f.departureLocation.country=:depCountry AND f.destinationLocation.region=:destRegion",
+				Flight.class);
+		q.setParameter("depCountry", depCountry);
+		q.setParameter("destRegion", destRegion);
+		return q.getResultList();
+	}
+	
+	public List<Flight>findFlightsByDepartureRegionAndDestinationCountry(String depRegion, String destCountry){
+		TypedQuery<Flight> q = em.createQuery("SELECT f FROM Flight f WHERE f.departureLocation.region=:depRegion AND f.destinationLocation.country=:destCountry",
+				Flight.class);
+		q.setParameter("depRegion", depRegion);
+		q.setParameter("destCountry", destCountry);
+		return q.getResultList();
+	}
+	public List<Flight>findFlightsByDepartureRegionAndDestinationRegion(String depRegion, String destRegion){
+		TypedQuery<Flight> q = em.createQuery("SELECT f FROM Flight f WHERE f.departureLocation.region=:depRegion AND f.destinationLocation.region=:destRegion",
+				Flight.class);
+		q.setParameter("depRegion", depRegion);
+		q.setParameter("destRegion", destRegion);
 		return q.getResultList();
 	}
 
@@ -83,10 +114,35 @@ System.out.println(q.getSingleResult());
 		return q.getResultList();
 	}
 
-	public List<String> findAllCountryWithFlights() {
-		TypedQuery<String> q = em.createQuery("SELECT distinct f.departureLocation.country FROM Flight f",
+	public List<String> findAllDepartureCountries() {
+		TypedQuery<String> q = em.createQuery("SELECT DISTINCT f.departureLocation.country FROM Flight f",
 				String.class);
-		return q.getResultList();
+		List<String>countries=q.getResultList();
+		Collections.sort(countries, ((a,b)->a.compareTo(b)));
+		return countries;
 	}
 
+	public List<String> findAllDestinationCountries() {
+		TypedQuery<String> q = em.createQuery("SELECT DISTINCT f.destinationLocation.country FROM Flight f",
+				String.class);
+		List<String>countries=q.getResultList();
+		Collections.sort(countries, ((a,b)->a.compareTo(b)));
+		return countries;
+	}
+
+	public List<String> findAllDepartureRegions() {
+		TypedQuery<String> q = em.createQuery("SELECT DISTINCT f.departureLocation.region FROM Flight f",
+				String.class);
+		List<String>regions=q.getResultList();
+		Collections.sort(regions, ((a,b)->a.compareTo(b)));
+		return regions;
+	}
+
+	public List<String> findAllDestinationRegions() {
+		TypedQuery<String> q = em.createQuery("SELECT DISTINCT f.destinationLocation.region FROM Flight f",
+				String.class);
+		List<String>regions=q.getResultList();
+		Collections.sort(regions, ((a,b)->a.compareTo(b)));
+		return regions;
+	}
 }

@@ -1,55 +1,87 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view locale="#{languageSwitcher.locale}">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<h:outputStylesheet name="/css/default.css" />
-		<h:outputStylesheet name="/css/cssLayout.css" />
-		<h:outputScript library="jquery-2.2.1" name="jquery.js" />
-		<h:outputScript library="bootstrap-3.3.6" name="/js/bootstrap.js" />
-		<ui:insert name="customScripts" />
-		<ui:insert name="customStylesheets" />
-		<title><ui:insert name="pageTitle">ReDo airlines</ui:insert></title>
-	
-	</h:head>
 
-	<h:body>
-		
-		<div id="top">
-			<h:graphicImage name="realdolmen.png" library="images" />
-			<h1>
-				<ui:insert name="pageTitle"> #{msg['pageTitle']}</ui:insert>
-			</h1>
+<h:head>
+	<title><ui:insert name="pageTitle">ReDo Air</ui:insert></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputScript library="jquery-2.2.1" name="jquery.js" />
+	<h:outputScript library="bootstrap-3.3.6" name="/js/bootstrap.js" />
+	<!-- 	<h:outputScript library="js" name="/moment.js" /> -->
+	<!-- 	<h:outputScript library="bootstrap-3.3.6" -->
+	<!-- 		name="/js/bootstrap-datetimepicker.min.js" /> -->
+	<h:outputStylesheet name="/bootstrap-3.3.6/css/bootstrap-jsf.css" />
+	<h:outputStylesheet
+		name="/bootstrap-3.3.6/css/bootstrap-datetimepicker.min.css" />
+	<h:outputStylesheet name="/css/default.css" />
+	<h:outputStylesheet name="/css/cssLayout.css" />
+	<ui:insert name="customScripts" />
+	<ui:insert name="customStylesheets" />
+</h:head>
+<h:body>
+	<div>
+		<div class="container">
+			<header>
+
+				<!-- 				<h:graphicImage name="redo-air-logo.png" library="images" -->
+				<!-- 					id="logo-img" class="title"/> -->
+
+				<div class="headerTitle">
+					<h1 class="title">ReDo Air</h1>
+					<h2 class="title">Fly to anywhere</h2>
+				</div>
+
+			</header>
+			<nav class="navbar navbar-light bg-faded">
+				<a class="navbar-brand" href="/images/air-travel-2400px.png" />
+				<ul class="nav navbar-nav">
+					<li role="presentation" class="btn btn-nav"><h:commandButton
+							value="nl" class="btn btn-default"
+							action="#{lang.changeLanguage('nl')}">
+							<span class="sr-only">(current)</span>
+						</h:commandButton></li>
+					<li role="presentation" class="btn btn-nav"><h:commandButton
+							value="fr" class="btn btn-default"
+							action="#{lang.changeLanguage('fr')}" /></li>
+					<li role="presentation" class="btn btn-nav"><h:commandButton
+							value="en" class="btn btn-default"
+							action="#{lang.changeLanguage('en')}" /></li>
+				</ul>
+			</nav>
+
+			<!-- 		<nav> -->
+			<!-- 			<ul class="nav nav-tabs"> -->
+			<!-- 				<li role="presentation" class="active"><h:commandButton value="nl" action="#{lang.changeLanguage('nl')}" -->
+			<!-- 					class="btn btn-default" /></li> -->
+			<!-- 				<li role="presentation"><h:commandButton value="fr" action="#{lang.changeLanguage('fr')}" -->
+			<!-- 					class="btn btn-default" /></li> -->
+			<!-- 				<li role="presentation"><h:commandButton value="en" action="#{lang.changeLanguage('fr')}" -->
+			<!-- 					class="btn btn-default" /></li> -->
+			<!-- 			</ul> -->
+			<!-- 		</nav> -->
+
+			<!-- 		<nav> -->
+			<!-- 			<h:form> -->
+
+			<!-- 				<h:commandButton value="en" action="#{lang.changeLanguage('en')}" -->
+			<!-- 					class="btn btn-default" /> -->
+
+			<!-- 			</h:form> -->
+			<!-- 		</nav> -->
+
+
+			<ui:insert name="pageContent">
+				Here comes content...
+		</ui:insert>
+
+			<footer> Copyright ReDo Air. All rights reserved. </footer>
 		</div>
 
-
-		<div id="left">
-			<h3>Language switcher:</h3>
-			<h:form id="langauge_form">
-				<h:commandLink
-					action="#{languageSwitcher.changeLanguage('nl_BE_EURO')}"
-					value="Belgium" /> | 
-                    <h:commandLink
-					action="#{languageSwitcher.changeLanguage('en')}" value="English" />
-			</h:form>
-		</div>
+	</div>
+</h:body>
 
 
-		<div id="content" class="left_content">
-
-			<ui:insert name="content">Content</ui:insert>
-		</div>
-
-		<div id="bottom">
-			<ui:insert name="bottom">CopyRight</ui:insert>
-		</div>
-
-	</h:body>
-		
-</f:view>
 
 </html>

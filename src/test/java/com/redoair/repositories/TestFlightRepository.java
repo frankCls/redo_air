@@ -27,6 +27,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 	private static final long depAirportId = 1L;
 	private static final long destAirportId = 2L;
 	private static final long flightId = 2L;
+	private static final int NUMBER_OF_FLIGHTS=3;
 	// private static final TravelingClassType TravelClassType =
 	// TravelingClassType.ECONOMY_CLASS;
 	private Airport depAirport;
@@ -48,16 +49,11 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		Assert.assertNotNull(flight);
 	}
 
-
+	@Test
 	public void returnAllCitiesWithFlightTest(){
-		List<String> findAllCitiesByCountryWithFlights = repo.findAllCitiesByCountryWithFlights("Papua New Guinea");
-		if (findAllCitiesByCountryWithFlights.isEmpty()) {
-			System.err.println("there are no flights in this country! \n");
-		}
-		for (String city : findAllCitiesByCountryWithFlights) {
-			System.out.println(city);
-		}
-		assertTrue("findAllCitiesByCountryWithFlights cannot be empty!", ! findAllCitiesByCountryWithFlights.isEmpty());;
+		List<String> cities = repo.findAllCitiesByCountryWithFlights("Papua New Guinea");
+		
+		assertTrue("findAllCitiesByCountryWithFlights cannot be empty!", ! cities.isEmpty());;
 	}
 	
 	@Test
@@ -122,9 +118,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		}
 		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport.getCountry(), destAirport.getCountry(), TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
 		System.err.println(flights.size());
-		flights.forEach(s->System.out.println(s.getDepartureLocation().getName()));
 		Assert.assertTrue(1==flights.size());
-		Assert.assertEquals("Goroka", flights.get(0).getDepartureLocation().getName());
 	}
 	
 

@@ -126,6 +126,15 @@ public class Flight implements Serializable {
 	public void setBusinessClassData(BusinessClassData businessClassData) {
 		this.businessClassData = businessClassData;
 	}
+//	public AbstractTravelingClassData getTravelingClassData(TravelingClassType type){
+//		AbstractTravelingClassData data=null;
+//		switch(type.name()){
+//		case "ECONOMY_CLASS" : data = this.getEconomyClassData();break;
+//		case "BUSINESS_CLASS" : data = this.getBusinessClassData();break;
+//		case "FIRST_CLASS" : data= this.getFirstClassData();break;		
+//		}
+//		return data;
+//	}
 	
 	
 }
