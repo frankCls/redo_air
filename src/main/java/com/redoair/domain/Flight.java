@@ -2,6 +2,9 @@ package com.redoair.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +15,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,9 +26,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Flight implements Serializable {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -6067918148882402340L;
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,6 +53,11 @@ public class Flight implements Serializable {
 	private Airport destinationLocation;
 	
 
+
+	@OneToMany(mappedBy="flight")	
+	private Set<AbstractTravelingClassData>travelingClassData=new HashSet<>();
+
+
 	public Long getId() {
 		return id;
 	}
@@ -59,6 +68,18 @@ public class Flight implements Serializable {
 
 	public Long getDuration() {
 		return duration;
+	}
+
+	public Set<AbstractTravelingClassData> getTravelingClassData() {
+		return travelingClassData;
+	}
+
+	public void setTravelingClassData(Set<AbstractTravelingClassData> travelingClassData) {
+		this.travelingClassData = travelingClassData;
+	}
+	
+	public void addTravelingClassData(AbstractTravelingClassData data){
+		this.travelingClassData.add(data);
 	}
 
 	public void setDuration(Long duration) {
@@ -89,7 +110,33 @@ public class Flight implements Serializable {
 		this.destinationLocation = destinationLocation;
 	}
 
+<<<<<<< HEAD
 
+=======
+//	public FirstClassData getFirstClassData() {
+//		return firstClassData;
+//	}
+//
+//	public void setFirstClassData(FirstClassData firstClassData) {
+//		this.firstClassData = firstClassData;
+//	}
+//
+//	public EconomyClassData getEconomyClassData() {
+//		return economyClassData;
+//	}
+//
+//	public void setEconomyClassData(EconomyClassData economyClassData) {
+//		this.economyClassData = economyClassData;
+//	}
+//
+//	public BusinessClassData getBusinessClassData() {
+//		return businessClassData;
+//	}
+//
+//	public void setBusinessClassData(BusinessClassData businessClassData) {
+//		this.businessClassData = businessClassData;
+//	}
+>>>>>>> 7dec8ff58a851698c9cda0b0f99b1a3f7c044efb
 //	public AbstractTravelingClassData getTravelingClassData(TravelingClassType type){
 //		AbstractTravelingClassData data=null;
 //		switch(type.name()){
