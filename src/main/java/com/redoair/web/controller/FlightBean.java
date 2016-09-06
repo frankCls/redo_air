@@ -105,8 +105,13 @@ public class FlightBean implements Serializable {
 	public void fillDepartureAndOrDestinationCountriesList() {
 		// if(flight.getDepartureLocation().getCountry()==null)
 	}
+	
+	public void toggleView(){
+		renderFlightsList=!renderFlightsList;
+	}
 
 	public void search() {
+		System.err.println(depDate);
 		System.err.println("in search()");		
 		this.getFlightsForSearchCriteria();
 

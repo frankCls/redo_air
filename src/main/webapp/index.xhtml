@@ -6,161 +6,166 @@
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	template="/WEB-INF/template.xhtml">
-		<ui:define name="pageTitle" value="#{msg['search.title']}" />
-		<ui:define name="pageContent">
-			<h:form id="form">
-				<h:panelGroup class="row selection" id="searchBox" rendered="#{!flightBean.renderFlightsList}">
-					
-					<div class="col-md-2"></div>
-					<div class="col-md-4">
-						<div class="form-horizontal">
-							<h:panelGroup class="form-group">
-								<h:outputLabel for="nameDepartureCountry"
-									value="#{msg['search.depCountry']}" />
-								<h:selectOneMenu id="nameDepartureCountry" class="form-control"
-									value="#{flightBean.depCountry}">
-									<f:selectItem itemValue="#{null}" itemLabel="" />
-									<f:selectItems value="#{flightBean.depCountryList}" />
-								</h:selectOneMenu>
-							</h:panelGroup>
-							<h:panelGroup class="form-group">
-								<h:outputLabel for="nameArrivalCountry"
-									value="#{msg['search.destCountry']}" />
-								<h:selectOneMenu id="nameArrivalCountry" class="form-control"
-									value="#{flightBean.destCountry}">
-									<f:selectItem itemValue="#{null}" itemLabel="" />
-									<f:selectItems value="#{flightBean.destCountryList}" />
-								</h:selectOneMenu>
-							</h:panelGroup>
-							<h:panelGroup class="form-group">
-								<h:outputLabel for="travelingClass"
-									value="#{msg['search.travelClass']}" />
-								<h:selectOneMenu id="travelingClass" class="form-control"
-									value="#{flightBean.travelingClass}">
+	<ui:define name="pageTitle" value="#{msg['search.title']}" />
+	<ui:define name="pageContent">
+		<h:form id="form">
+			<h:panelGroup class="row selection" id="searchBox"
+				rendered="#{!flightBean.renderFlightsList}">
 
-									<f:selectItems var="n" value="#{flightBean.travelingClassList}"
-										itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
-								</h:selectOneMenu>
-							</h:panelGroup>
-							<h:panelGroup class="form-group">
-								<h:outputLabel for="tickets" value="#{msg['search.tickets']}" />
-								<h:inputText id="tickets" value="#{flightBean.nrOfTickets}"
-									class="form-control">
-									<f:validateLongRange minimum="1" maximum="800" />
-								</h:inputText>
-								<h:message for="tickets" errorStyle="color:red; display:block" />
-							</h:panelGroup>
-						</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-4">
+					<div class="form-horizontal">
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="nameDepartureCountry"
+								value="#{msg['search.depCountry']}" />
+							<h:selectOneMenu id="nameDepartureCountry" class="form-control"
+								value="#{flightBean.depCountry}">
+								<f:selectItem itemValue="#{null}" itemLabel="" />
+								<f:selectItems value="#{flightBean.depCountryList}" />
+							</h:selectOneMenu>
+						</h:panelGroup>
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="nameArrivalCountry"
+								value="#{msg['search.destCountry']}" />
+							<h:selectOneMenu id="nameArrivalCountry" class="form-control"
+								value="#{flightBean.destCountry}">
+								<f:selectItem itemValue="#{null}" itemLabel="" />
+								<f:selectItems value="#{flightBean.destCountryList}" />
+							</h:selectOneMenu>
+						</h:panelGroup>
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="travelingClass"
+								value="#{msg['search.travelClass']}" />
+							<h:selectOneMenu id="travelingClass" class="form-control"
+								value="#{flightBean.travelingClass}">
+
+								<f:selectItems var="n" value="#{flightBean.travelingClassList}"
+									itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
+							</h:selectOneMenu>
+						</h:panelGroup>
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="tickets" value="#{msg['search.tickets']}" />
+							<h:inputText id="tickets" value="#{flightBean.nrOfTickets}"
+								class="form-control">
+								<f:validateLongRange minimum="1" maximum="800" />
+							</h:inputText>
+							<h:message for="tickets" errorStyle="color:red; display:block" />
+						</h:panelGroup>
 					</div>
+				</div>
 
-					<div class="col-md-4">
-						<div class="form-horizontal">
-							<h:panelGroup class="form-group">
-								<h:outputLabel for="depRegion"
-									value="#{msg['search.depRegion']}" />
-								<h:selectOneMenu id="depRegion" class="form-control"
-									value="#{flightBean.depRegion}">
-									<f:selectItem itemValue="#{null}" itemLabel="" />
-									<f:selectItems value="#{flightBean.depRegionList}" />
-								</h:selectOneMenu>
-							</h:panelGroup>
-							<h:panelGroup class="form-group">
-								<h:outputLabel for="destRegion"
-									value="#{msg['search.destRegion']}" />
-								<h:selectOneMenu id="destRegion" class="form-control"
-									value="#{flightBean.destRegion}">
-									<f:selectItem itemValue="#{null}" itemLabel="" />
-									<f:selectItems value="#{flightBean.destRegionList}" />
-								</h:selectOneMenu>
-							</h:panelGroup>
-							<h:panelGroup class="form-group">
-								<h:outputLabel for="datep"
-									value="#{msg['search.depDate']}" />
-								 
-									<b:datepicker binding="#{flightBean.fromDate}">/>
-								</div>
-								
-							</h:panelGroup>
-<!-- 							<h:panelGroup class="form-group"> -->
-<!-- 								<h:outputLabel for="tickets" value="#{msg['search.tickets']}" /> -->
-<!-- 								<h:inputText id="tickets" class="form-control"> -->
-<!-- 																	<c:if test="#{flightBean.nrOfTickets}>0" /> -->
-<!-- 								</h:inputText> -->
-<!-- 							</h:panelGroup> -->
-							<h:panelGroup class="form-group">
-							<h:commandButton class="btn btn-default form-control"
+				<div class="col-md-4">
+					<div class="form-horizontal">
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="depRegion" value="#{msg['search.depRegion']}" />
+							<h:selectOneMenu id="depRegion" class="form-control"
+								value="#{flightBean.depRegion}">
+								<f:selectItem itemValue="#{null}" itemLabel="" />
+								<f:selectItems value="#{flightBean.depRegionList}" />
+							</h:selectOneMenu>
+						</h:panelGroup>
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="destRegion"
+								value="#{msg['search.destRegion']}" />
+							<h:selectOneMenu id="destRegion" class="form-control"
+								value="#{flightBean.destRegion}">
+								<f:selectItem itemValue="#{null}" itemLabel="" />
+								<f:selectItems value="#{flightBean.destRegionList}" />
+							</h:selectOneMenu>
+						</h:panelGroup>
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="datep" value="#{msg['search.depDate']}" />
+							<b:datepicker binding="#{flightBean.depDate}" id="datep"></b:datepicker>
+
+						</h:panelGroup>
+						<!-- 							<h:panelGroup class="form-group"> -->
+						<!-- 								<h:outputLabel for="tickets" value="#{msg['search.tickets']}" /> -->
+						<!-- 								<h:inputText id="tickets" class="form-control"> -->
+						<!-- 																	<c:if test="#{flightBean.nrOfTickets}>0" /> -->
+						<!-- 								</h:inputText> -->
+						<!-- 							</h:panelGroup> -->
+						<h:panelGroup class="form-group">
+						<h:outputLabel for="searchBtn" value="" />
+							<h:commandButton id="searchBtn" class="btn btn-default form-control"
 								value="#{msg['search.search']}" action="#{flightBean.search()}" />
-							</h:panelGroup>
-							
-						</div>
-					</div>
-				</h:panelGroup>
+						</h:panelGroup>
 
-				<h:dataTable class="table" id="flightTable"
-					value="#{flightBean.flightsList}" var="f" rendered="#{flightBean.renderFlightsList}">
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{msg['search.dep']}" />
-						</f:facet>
-						<h:outputText value="#{f.departureLocation.city} - #{f.departureLocation.country}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{msg['search.dest']}" />
-						</f:facet>
-						<h:outputText value="#{f.destinationLocation.city} - #{f.destinationLocation.country}" />
-					</h:column>
-				
-<!-- 					<h:column> -->
-<!-- 						<f:facet name="header"> -->
-<!-- 							<h:outputText value="#{msg['search.depDate']}" /> -->
-<!-- 						</f:facet> -->
-<!-- 						<h:outputText value="#{f.departureTime}"> -->
-<!-- 							<f:convertDateTime pattern="dd-MM-yyyy" /> -->
-<!-- 						</h:outputText> -->
-<!-- 					</h:column> -->
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{msg['search.depTime']}" />
-						</f:facet>
-						<h:outputText value="#{f.departureTime}">
-							<f:convertDateTime pattern="hh:mm" />
-						</h:outputText>
-					</h:column>
-					<h:column>
-						<f:facet name="header">
-							<h:outputText value="#{msg['search.price']}" />
-						</f:facet>
-						<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
+					</div>
+				</div>
+			</h:panelGroup>
+			<h:panelGroup id="flightTable"
+				rendered="#{flightBean.renderFlightsList}">
+				<div class="tb">
+					<h:commandButton action="#{flightBean.toggleView()}" value="close"
+						class="btn btn-default" />
+					<h:dataTable class="table" value="#{flightBean.flightsList}"
+						var="f">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['search.dep']}" />
+							</f:facet>
 							<h:outputText
-								value="#{f.flightData.economyClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-						</c:if>
-						<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
+								value="#{f.departureLocation.city} - #{f.departureLocation.country}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['search.dest']}" />
+							</f:facet>
 							<h:outputText
-								value="#{f.flightData.firstClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-						</c:if>
-						<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
-							<h:outputText
-								value="#{f.flightData.businnessClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-						</c:if>
-					</h:column>
-<!-- 					<h:column> -->
-<!-- 						<f:facet name="header"> -->
-<!-- 							<h:outputText value="Available seats" /> -->
-<!-- 						</f:facet> -->
-<!-- 						<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}"> -->
-<!-- 							<h:outputText value="#{f.flightData.economyClass.remainingSeats}" /> -->
-<!-- 						</c:if> -->
-<!-- 						<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}"> -->
-<!-- 							<h:outputText value="#{f.flightData.firstClass.remainingSeats}" /> -->
-<!-- 						</c:if> -->
-<!-- 						<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}"> -->
-<!-- 							<h:outputText -->
-<!-- 								value="#{f.flightData.businnessClass.remainingSeats}" /> -->
-<!-- 						</c:if> -->
-<!-- 					</h:column> -->
-				</h:dataTable>
-			</h:form>
-		</ui:define>
-	</ui:composition>
-	
+								value="#{f.destinationLocation.city} - #{f.destinationLocation.country}" />
+						</h:column>
+
+						<!-- 					<h:column> -->
+						<!-- 						<f:facet name="header"> -->
+						<!-- 							<h:outputText value="#{msg['search.depDate']}" /> -->
+						<!-- 						</f:facet> -->
+						<!-- 						<h:outputText value="#{f.departureTime}"> -->
+						<!-- 							<f:convertDateTime pattern="dd-MM-yyyy" /> -->
+						<!-- 						</h:outputText> -->
+						<!-- 					</h:column>> -->
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['search.depTime']}" />
+							</f:facet>
+							<h:outputText value="#{f.departureTime}">
+								<f:convertDateTime pattern="hh:mm" />
+							</h:outputText>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{msg['search.price']}" />
+							</f:facet>
+							<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
+								<h:outputText
+									value="#{f.flightData.economyClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
+							</c:if>
+							<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
+								<h:outputText
+									value="#{f.flightData.firstClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
+							</c:if>
+							<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
+								<h:outputText
+									value="#{f.flightData.businnessClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
+							</c:if>
+						</h:column>
+						<!-- 					<h:column> -->
+						<!-- 						<f:facet name="header"> -->
+						<!-- 							<h:outputText value="Available seats" /> -->
+						<!-- 						</f:facet> -->
+						<!-- 						<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}"> -->
+						<!-- 							<h:outputText value="#{f.flightData.economyClass.remainingSeats}" /> -->
+						<!-- 						</c:if> -->
+						<!-- 						<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}"> -->
+						<!-- 							<h:outputText value="#{f.flightData.firstClass.remainingSeats}" /> -->
+						<!-- 						</c:if> -->
+						<!-- 						<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}"> -->
+						<!-- 							<h:outputText -->
+						<!-- 								value="#{f.flightData.businnessClass.remainingSeats}" /> -->
+						<!-- 						</c:if> -->
+						<!-- 					</h:column> -->
+					</h:dataTable>
+				</div>
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
+</ui:composition>
