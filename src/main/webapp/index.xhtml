@@ -47,11 +47,12 @@
 						</h:panelGroup>
 						<h:panelGroup class="form-group">
 							<h:outputLabel for="tickets" value="#{msg['search.tickets']}" />
-							<h:inputText id="tickets" value="#{flightBean.nrOfTickets}" class="form-control">
-								<f:validateLongRange  minimum="1" maximum="800"/>
-							
+							<h:inputText id="tickets" value="#{flightBean.nrOfTickets}"
+								class="form-control">
+								<f:validateLongRange minimum="1" maximum="800" />
+
 							</h:inputText>
-							<h:message for="tickets" errorStyle="color:red; display:block"/>
+							<h:message for="tickets" errorStyle="color:red; display:block" />
 						</h:panelGroup>
 					</div>
 				</div>
@@ -74,20 +75,26 @@
 								<f:selectItems value="#{flightBean.destRegionList}" />
 							</h:selectOneMenu>
 						</h:panelGroup>
-
-
-
-
-						<!-- 						<h:panelGroup class="form-group"> -->
-						<!-- 							<h:outputLabel for="datetimepicker1" -->
-						<!-- 								value="#{msg['search.depDate']}" /> -->
-						<!-- 							<div class='input-group date' id='datetimepicker1'>  -->
-						<!-- 								<p:calendar value="#{flightBean.depDate}"></p:calendar> -->
-						<!-- 																<span class="input-group-addon"> <span -->
-						<!-- 																	class="glyphicon glyphicon-calendar"></span> -->
-						<!-- 																</span> -->
-						<!-- 							</div> -->
-						<!-- 						</h:panelGroup> -->
+						<h:panelGroup class="form-group">
+							<h:outputLabel for="datetimepicker1"
+								value="#{msg['search.depDate']}" />
+							<div class='input-group date' id='datetimepicker1'>
+								<input type='text' class="form-control"></input> <span
+									class="input-group-addon"> <span
+									class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+							<script type="text/javascript">
+							$(function () {
+								$('#datetimepicker1').datetimepicker({
+									format:"DD-MM-YYYY"
+									
+									});
+                
+            });
+				           
+        </script>
+						</h:panelGroup>
 
 					</div>
 
@@ -139,7 +146,8 @@
 				<h:column>
 
 					<f:facet name="header">
-						<h:outputText value="#{fn:replace(flightBean.travelingClass.name().toLowerCase(),'_class',' price')}" />
+						<h:outputText
+							value="#{fn:replace(flightBean.travelingClass.name().toLowerCase(),'_class',' price')}" />
 					</f:facet>
 					<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
 						<h:outputText
@@ -168,10 +176,11 @@
 
 					</c:if>
 					<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
-						<h:outputText value="#{f.flightData.businnessClass.remainingSeats}" />
+						<h:outputText
+							value="#{f.flightData.businnessClass.remainingSeats}" />
 
 					</c:if>
-					
+
 				</h:column>
 
 
