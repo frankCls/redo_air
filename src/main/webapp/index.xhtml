@@ -150,7 +150,7 @@
 
 					<f:facet name="header">
 						<h:outputText
-							value="#{fn:replace(flightBean.travelingClass.name().toLowerCase(),'_class',' price')}" />
+							value="#{msg['search.price']}" />
 					</f:facet>
 					<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
 						<h:outputText
