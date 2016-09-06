@@ -101,91 +101,87 @@
 					</h:panelGroup>
 				</div>
 			</div>
-
-			<h:dataTable class="table" id="flightTable"
-				value="#{flightBean.flightsList}" var="f">
-
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depCountry']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureLocation.country}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.destCountry']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureLocation.name}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depCountry']}" />
-					</f:facet>
-					<h:outputText value="#{f.destinationLocation.name}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depDate']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureTime}">
-						<f:convertDateTime pattern="dd-MM-yyyy" />
-					</h:outputText>
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="#{msg['search.depTime']}" />
-					</f:facet>
-					<h:outputText value="#{f.departureTime}">
-						<f:convertDateTime pattern="hh:mm" />
-					</h:outputText>
-				</h:column>
-				<h:column>
-
-					<f:facet name="header">
-						<h:outputText
-							value="#{fn:replace(flightBean.travelingClass.name().toLowerCase(),'_class',' price')}" />
-					</f:facet>
-					<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
-						<h:outputText
-							value="#{f.flightData.economyClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-					</c:if>
-					<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
-						<h:outputText
-							value="#{f.flightData.firstClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-					</c:if>
-					<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
-						<h:outputText
-							value="#{f.flightData.businnessClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-					</c:if>
-				</h:column>
-
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Available seats" />
-					</f:facet>
-					<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
-
-						<h:outputText value="#{f.flightData.economyClass.remainingSeats}" />
-					</c:if>
-					<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
-						<h:outputText value="#{f.flightData.firstClass.remainingSeats}" />
-
-					</c:if>
-					<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
-						<h:outputText
-							value="#{f.flightData.businnessClass.remainingSeats}" />
-
-					</c:if>
-
-				</h:column>
-				<h:form>
-					<h:column>
-						<h:commandButton class="btn btn-default form-control"
-							value="Select" action="#{flightBean.setSelectedFlight(f)}" />
-					</h:column>
-				</h:form>
-			</h:dataTable>
 		</h:form>
+		<h:dataTable class="table" id="flightTable"
+			value="#{flightBean.flightsList}" var="f">
+
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['search.depAirport']}" />
+				</f:facet>
+				<h:outputText value="#{f.departureLocation.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['search.destAirport']}" />
+				</f:facet>
+				<h:outputText value="#{f.destinationLocation.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['search.depDate']}" />
+				</f:facet>
+				<h:outputText value="#{f.departureTime}">
+					<f:convertDateTime pattern="dd-MM-yyyy" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['search.depTime']}" />
+				</f:facet>
+				<h:outputText value="#{f.departureTime}">
+					<f:convertDateTime pattern="hh:mm" />
+				</h:outputText>
+			</h:column>
+			<h:column>
+
+				<f:facet name="header">
+					<h:outputText
+						value="#{fn:replace(flightBean.travelingClass.name().toLowerCase(),'_class',' class price')}" />
+				</f:facet>
+				<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
+					<h:outputText
+						value="#{f.flightData.economyClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
+				</c:if>
+				<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
+					<h:outputText
+						value="#{f.flightData.firstClass.pricing.basePrice * (1+f.flightData.firstClass.pricing.defaultPrice)}" />
+				</c:if>
+				<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
+					<h:outputText
+						value="#{f.flightData.businnessClass.pricing.basePrice * (1+f.flightData.businnessClass.pricing.defaultPrice)}" />
+				</c:if>
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Available seats" />
+				</f:facet>
+				<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
+
+					<h:outputText value="#{f.flightData.economyClass.remainingSeats}" />
+				</c:if>
+				<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
+					<h:outputText value="#{f.flightData.firstClass.remainingSeats}" />
+
+				</c:if>
+				<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
+					<h:outputText value="#{f.flightData.businnessClass.remainingSeats}" />
+
+				</c:if>
+
+			</h:column>
+			<h:column>
+				<h:form>
+
+					<h:commandButton class="btn btn-default form-control"
+						value="Select" action="#{flightBean.setSelectedFlight(f)}" />
+
+				</h:form>
+			</h:column>
+		</h:dataTable>
+
 	</ui:define>
 
 

@@ -32,11 +32,11 @@ public class FlightRepository {
 			String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate) {
 
 		String travelingClassdata = decideWhichStringInQuery(travelingClass);
-	System.out.println(depAirport);
+	/*System.out.println(depAirport);
 	System.out.println(destAirport);
 	System.out.println(seats);
 	System.out.println(fromDate);
-	System.out.println(toDate);
+	System.out.println(toDate);*/
 	
 		TypedQuery<Flight> q = em
 				.createQuery(

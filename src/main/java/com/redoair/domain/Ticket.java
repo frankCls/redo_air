@@ -41,7 +41,6 @@ public class Ticket implements Serializable {
 	private Flight flight;
 
 	@ManyToOne
-	
 	private Booking booking;
 
 	@NotNull

@@ -29,9 +29,6 @@ import com.redoair.services.FlightService;
 // @Path()
 public class FlightBean implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4942143979117129063L;
 
 	@Inject
@@ -52,7 +49,7 @@ public class FlightBean implements Serializable {
 
 	@Future
 	private Date toDate;
-
+	private Flight selectedFlight;
 	private List<Flight> flightsList = new ArrayList<>();
 	private List<String> depCountryList = new ArrayList<>();
 	private List<String> destCountryList = new ArrayList<>();
@@ -71,32 +68,43 @@ public class FlightBean implements Serializable {
 		destRegionList = flightService.findAllDestinationRegions();
 	}
 
+	
 	public void getFlightsForSearchCriteria() {
 		System.err.println("in getFlightsForSearchCriteria()");
 		// en dit mag uit comments dan
-/*
-		if (fromDate == null && toDate == null) {
-			flightsList = flightService.findFlightsForSearchCriteria(this.depCountry, this.depRegion, this.destCountry,
-					this.destRegion);
-
-		} else {
-*/
-			/* Dit mag weg als de webpagina ook datums kan mee geven */
-			SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-			try {
-				fromDate = timeStampFormat.parse("2016-09-29 09:00:00");
-				toDate = timeStampFormat.parse("2017-08-30 09:10:00");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			/* Dit mag weg als de webpagina ook datums kan mee geven */
-
-			flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depCountry,
-					destCountry, travelingClass, nrOfTickets, fromDate, toDate);
+		/*
+		 * if (fromDate == null && toDate == null) { flightsList =
+		 * flightService.findFlightsForSearchCriteria(this.depCountry,
+		 * this.depRegion, this.destCountry, this.destRegion);
+		 * 
+		 * } else {
+		 */
+		/* Dit mag weg als de webpagina ook datums kan mee geven */
+		SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		try {
+			fromDate = timeStampFormat.parse("2016-09-29 09:00:00");
+			toDate = timeStampFormat.parse("2017-08-30 09:10:00");
+		} catch (ParseException e) {
+			e.printStackTrace();
 		}
+		/* Dit mag weg als de webpagina ook datums kan mee geven */
 
-	//}
+		flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depCountry,
+				destCountry, travelingClass, nrOfTickets, fromDate, toDate);
+	}
 
+	// }
+	public Flight getSelectedFlight() {
+		return selectedFlight;
+	}
+
+
+
+	public String setSelectedFlight(Flight selectedFlight) {
+		System.out.println(selectedFlight.getDepartureTime() + " " + selectedFlight.getDepartureLocation().getCountry());
+		this.selectedFlight = selectedFlight;
+		return "booking";
+	}
 	public void fillDepartureAndOrDestinationCountriesList() {
 		// if(flight.getDepartureLocation().getCountry()==null)
 	}
