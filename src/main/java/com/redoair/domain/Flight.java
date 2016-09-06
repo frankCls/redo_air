@@ -52,9 +52,31 @@ public class Flight implements Serializable {
 	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
-	@ManyToOne
+
+	@OneToOne
 	@JoinColumn(name="flightDataId")
 	private FlightData flightData;
+//	@NotNull
+//	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//	@JoinColumn(name="firstClassId")
+//	private FirstClassData firstClassData;
+//	
+//	@NotNull
+//	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//	@JoinColumn(name="economyClassId")
+//	private EconomyClassData economyClassData;
+//	
+//	@NotNull
+//	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+//	@JoinColumn(name="businessClassId")
+//	private BusinessClassData businessClassData;
+	
+
+//	@OneToMany(mappedBy="flight")	
+//	private Set<AbstractTravelingClassData>travelingClassData=new HashSet<>();
+
+
+
 
 	public Long getId() {
 		return id;
@@ -67,6 +89,7 @@ public class Flight implements Serializable {
 	public Long getDuration() {
 		return duration;
 	}
+
 
 	public void setDuration(Long duration) {
 		this.duration = duration;

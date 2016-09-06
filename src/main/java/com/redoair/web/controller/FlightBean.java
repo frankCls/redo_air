@@ -1,3 +1,4 @@
+
 package com.redoair.web.controller;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.component.behavior.AjaxBehavior;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Inject;
@@ -24,11 +26,14 @@ import com.redoair.domain.Flight;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.services.FlightService;
 
-@Named(value = "flightBean")
+@ManagedBean(name="flightBean")
 @SessionScoped
 // @Path()
 public class FlightBean implements Serializable {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = -4942143979117129063L;
 
 	@Inject
@@ -49,7 +54,9 @@ public class FlightBean implements Serializable {
 
 	@Future
 	private Date toDate;
-	private Flight selectedFlight;
+	boolean renderFlightsList= false;
+
+
 	private List<Flight> flightsList = new ArrayList<>();
 	private List<String> depCountryList = new ArrayList<>();
 	private List<String> destCountryList = new ArrayList<>();
@@ -68,50 +75,60 @@ public class FlightBean implements Serializable {
 		destRegionList = flightService.findAllDestinationRegions();
 	}
 
-	
 	public void getFlightsForSearchCriteria() {
 		System.err.println("in getFlightsForSearchCriteria()");
+
 		// en dit mag uit comments dan
-		/*
-		 * if (fromDate == null && toDate == null) { flightsList =
-		 * flightService.findFlightsForSearchCriteria(this.depCountry,
-		 * this.depRegion, this.destCountry, this.destRegion);
-		 * 
-		 * } else {
-		 */
-		/* Dit mag weg als de webpagina ook datums kan mee geven */
-		SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		try {
-			fromDate = timeStampFormat.parse("2016-09-29 09:00:00");
-			toDate = timeStampFormat.parse("2017-08-30 09:10:00");
-		} catch (ParseException e) {
-			e.printStackTrace();
+/*
+		if (fromDate == null && toDate == null) {
+			flightsList = flightService.findFlightsForSearchCriteria(this.depCountry, this.depRegion, this.destCountry,
+					this.destRegion);
+
+		} else {
+*/
+			/* Dit mag weg als de webpagina ook datums kan mee geven */
+			SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			try {
+				fromDate = timeStampFormat.parse("2016-09-29 09:00:00");
+				toDate = timeStampFormat.parse("2017-08-30 09:10:00");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			/* Dit mag weg als de webpagina ook datums kan mee geven */
+
+			flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depCountry,
+					destCountry, travelingClass, nrOfTickets, fromDate, toDate);
 		}
-		/* Dit mag weg als de webpagina ook datums kan mee geven */
 
-		flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depCountry,
-				destCountry, travelingClass, nrOfTickets, fromDate, toDate);
-	}
-
-	// }
-	public Flight getSelectedFlight() {
-		return selectedFlight;
-	}
+	//}
 
 
-
-	public String setSelectedFlight(Flight selectedFlight) {
-		System.out.println(selectedFlight.getDepartureTime() + " " + selectedFlight.getDepartureLocation().getCountry());
-		this.selectedFlight = selectedFlight;
-		return "booking";
-	}
 	public void fillDepartureAndOrDestinationCountriesList() {
 		// if(flight.getDepartureLocation().getCountry()==null)
 	}
+	
+	public void toggleView(){
+		renderFlightsList=!renderFlightsList;
+	}
 
 	public void search() {
-		System.err.println("in search()");
+		System.err.println(depDate);
+		System.err.println("in search()");		
 		this.getFlightsForSearchCriteria();
+
+		if(this.flightsList.size()>0){
+			flightsList.forEach(s->System.out.println(s.getDepartureLocation().getCity()));
+			renderFlightsList=true;
+		}else renderFlightsList=false;
+		System.out.println(renderFlightsList);
+	}
+
+	public boolean isRenderFlightsList() {
+		return renderFlightsList;
+	}
+
+	public void setRenderFlightsList(boolean renderFlightsList) {
+		this.renderFlightsList = renderFlightsList;
 
 	}
 
@@ -264,3 +281,4 @@ public class FlightBean implements Serializable {
 	// }
 
 }
+

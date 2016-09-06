@@ -1,6 +1,6 @@
 package com.redoair.domain;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +27,14 @@ public class FlightData {
 	@JoinColumn(name="firstClassId")
 	private AbstractTravelingClassData firstClass;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public AbstractTravelingClassData getBusinnessClass() {
 		return businnessClass;
 	}
@@ -50,6 +58,7 @@ public class FlightData {
 	public void setFirstClass(AbstractTravelingClassData firstClass) {
 		this.firstClass = firstClass;
 	}
+
 
 	
 }

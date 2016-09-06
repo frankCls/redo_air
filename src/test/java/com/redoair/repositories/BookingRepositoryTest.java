@@ -63,14 +63,14 @@ public class BookingRepositoryTest extends JpaPersistenceTest {
 		//Assert.assertTrue(1L== ticket1.getVersion());
 	}
 
-	@Test @Ignore
+	@Test
 	public void shouldReturnABooking(){
 		Booking booking = bookingRepository.findBookingById(BOOKING_ID);
 		Assert.assertNotNull("booking should not be null", booking);
 		Assert.assertEquals("Von Testpersons", booking.getPayer().getLastName());
 	}
 	
-	@Test @Ignore
+	@Test 
 	public void shouldRemoveBooking(){
 		bookingRepository.remove(BOOKING_ID);
 		Ticket ticket = bookingRepository.em.find(Ticket.class, TICKET_ID1);

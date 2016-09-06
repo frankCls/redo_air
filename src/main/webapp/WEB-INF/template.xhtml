@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -9,9 +10,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<h:outputScript library="jquery-2.2.1" name="jquery.js" />
 		<h:outputScript library="bootstrap-3.3.6" name="/js/bootstrap.js" />
-		<!-- 	<h:outputScript library="js" name="/moment.js" /> -->
-		<!-- 	<h:outputScript library="bootstrap-3.3.6" -->
-		<!-- 		name="/js/bootstrap-datetimepicker.min.js" /> -->
+		<h:outputScript library="js" name="/moment.js" />
+		<h:outputScript library="bootstrap-3.3.6"
+			name="/js/bootstrap-datetimepicker.min.js" />
 		<h:outputStylesheet name="/bootstrap-3.3.6/css/bootstrap-jsf.css" />
 		<h:outputStylesheet
 			name="/bootstrap-3.3.6/css/bootstrap-datetimepicker.min.css" />
@@ -23,32 +24,29 @@
 	<h:body>
 		<div>
 			<div class="container">
-				<header>
-
-					<!-- 				<h:graphicImage name="redo-air-logo.png" library="images" -->
-					<!-- 					id="logo-img" class="title"/> -->
+				<header>		
 
 					<div class="headerTitle">
 						<h1 class="title">ReDo Air</h1>
-						<h2 class="title">Fly to anywhere</h2>
+						<h2 class="title">Fly anywhere</h2>
 					</div>
 
 				</header>
 				<nav class="navbar navbar-light bg-faded">
 					<a class="navbar-brand" href="/images/air-travel-2400px.png" />
-					<h:form >
+					<h:form class="form-inline">
 						<ul class="nav navbar-nav">
-							<li role="presentation" class="btn btn-nav"><h:commandButton
+							<li><h:commandButton
 									value="nl" class="btn btn-default"
 									action="#{lang.changeLanguage('nl')}">
 
 									<span class="sr-only">(current)</span>
 								</h:commandButton></li>
-							<li role="presentation" class="btn btn-nav"><h:commandButton
+							<li><h:commandButton
 									value="fr" class="btn btn-default"
 									action="#{lang.changeLanguage('fr')}" /></li>
 
-							<li role="presentation" class="btn btn-nav"><h:commandButton
+							<li><h:commandButton
 									value="en" class="btn btn-default"
 									action="#{lang.changeLanguage('en')}" /></li>
 
@@ -72,3 +70,4 @@
 
 
 </html>
+

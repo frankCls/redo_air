@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {  
 	/*position:absolute;*/
 	z-index:-1;
@@ -11,12 +12,15 @@ body {
     /*background-image: url("#{resource['images/skyclouds.jpeg']}") 100px 0px ;*/
     /*background-position:-100, */
     background: url("#{resource['images/skyclouds.jpeg']}")no-repeat top;
-    background-size:120%;
+    
+    /*Animate background*/
+    
+    /*background-size:120%;
     animation-name: fly;
     animation-duration: 80s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    animation-timing-function: linear;
+    animation-timing-function: linear;*/
     
 	height: 100%;
 	width:100%; 
@@ -101,6 +105,11 @@ header h2{
 	opacity:0.5;
 	border-radius: 5px;
 	color:white;
+}
+
+#flightTable{
+	overflow: auto;
+	height:30%;
 }
 
 

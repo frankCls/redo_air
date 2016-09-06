@@ -19,6 +19,7 @@ import com.redoair.domain.BusinessClassData;
 import com.redoair.domain.EconomyClassData;
 import com.redoair.domain.FirstClassData;
 import com.redoair.domain.Flight;
+import com.redoair.domain.FlightData;
 import com.redoair.domain.Pricing;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.repositories.FlightRepository;
@@ -27,7 +28,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 	private FlightRepository repo;
 	private static final long depAirportId = 1L;
 	private static final long destAirportId = 2L;
-	private static final long flightId = 17313L;
+	private static final long flightId = 17313;
 	private static final int NUMBER_OF_FLIGHTS=3;
 	// private static final TravelingClassType TravelClassType =
 	// TravelingClassType.ECONOMY_CLASS;
@@ -49,7 +50,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		Flight flight = repo.findFlightById(flightId);
 		Assert.assertNotNull(flight);
 	}
-
+	
 	@Test 
 	public void returnAllCitiesWithFlightTest(){
 		List<String> cities = repo.findAllCitiesByCountryWithFlights("Papua New Guinea");
@@ -81,7 +82,13 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		EconomyClassData economyClassData = new EconomyClassData();
 		economyClassData.setPricing(pricing);
 		economyClassData.setRemainingSeats(10);
-		
+
+		FlightData data = new FlightData();
+		data.setBusinnessClass(businessClassData);
+		data.setEconomyClass(economyClassData);
+		data.setFirstClass(firstClassData);
+		flight.setFlightData(data);
+
 
 		try {
 			flight.setDepartureTime(dateFormat.parse("12-12-2016"));
@@ -95,7 +102,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		Assert.assertNotNull("Passenger ID should not be null after saving", flight.getId());
 
 	}
-	
+
 	@Test(expected=javax.validation.ConstraintViolationException.class)
 	public void shouldThrowExceptionPersistingAFlight() {
 		Flight flight = new Flight();
@@ -119,6 +126,8 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		System.err.println(flights.size());
 		Assert.assertTrue(35<=flights.size());
 	}
+	
+	
 	
 
 }

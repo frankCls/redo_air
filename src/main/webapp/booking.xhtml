@@ -71,6 +71,7 @@
 				<div  class="form-horizontal">
 					<h:panelGroup class="form-group">
 						<h:outputLabel for="priceTicket" value="#{msg['search.price']}:" />
+						
 						<c:choose id="priceTicket">
 							<c:when
 								test="#{not (bookingBean.selectedCreditCardType eq 'ENDORSEMENT') }">

@@ -9,8 +9,7 @@ import javax.validation.constraints.NotNull;
 public class Passenger {
 	@Id @GeneratedValue
 	private Long id;
-	@NotNull
-	private String password;
+	
 	@NotNull
 	private String lastName;
 	@NotNull
@@ -23,14 +22,7 @@ public class Passenger {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 
 	public String getLastName() {
 		return lastName;
