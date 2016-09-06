@@ -39,9 +39,10 @@ public class LanguageSwitcher implements Serializable {
       * @param languageCode - ISO-639 language code
       */
      public void changeLanguage(String language) {
-    	 System.err.println("in changeLanguage");
+    	System.err.println("language switched" + language);
          locale = new Locale(language);
          FacesContext.getCurrentInstance().getViewRoot().setLocale(locale);
+        
      }
      
 }

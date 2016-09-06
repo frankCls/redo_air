@@ -3,7 +3,8 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:c="http://java.sun.com/jstl/core">
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
 <ui:composition template="/WEB-INF/template.xhtml">
 
@@ -46,9 +47,11 @@
 						</h:panelGroup>
 						<h:panelGroup class="form-group">
 							<h:outputLabel for="tickets" value="#{msg['search.tickets']}" />
-							<h:inputText id="tickets" class="form-control">
-								<c:if test="#{flightBean.nrOfTickets}>0" />
+							<h:inputText id="tickets" value="#{flightBean.nrOfTickets}" class="form-control">
+								<f:validateLongRange  minimum="1" maximum="800"/>
+							
 							</h:inputText>
+							<h:message for="tickets" errorStyle="color:red; display:block"/>
 						</h:panelGroup>
 					</div>
 				</div>
@@ -92,7 +95,7 @@
 				<div class="col-md-2">
 					<h:panelGroup class="form-group">
 						<h:commandButton class="btn btn-default form-control"
-							value="#{msg['search.search']}" action="#{flightBean.search}" />
+							value="#{msg['search.search']}" action="#{flightBean.search()}" />
 					</h:panelGroup>
 				</div>
 			</div>
@@ -134,24 +137,44 @@
 					</h:outputText>
 				</h:column>
 				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Economy" />
-					</f:facet>
-					<h:outputText
-						value="#{f.economyClassData.pricing.basePrice * (1+f.economyClassData.pricing.defaultPrice)}">
 
-					</h:outputText>
+					<f:facet name="header">
+						<h:outputText value="#{fn:replace(flightBean.travelingClass.name().toLowerCase(),'_class',' price')}" />
+					</f:facet>
+					<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
+						<h:outputText
+							value="#{f.flightData.economyClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
+					</c:if>
+					<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
+						<h:outputText
+							value="#{f.flightData.firstClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
+					</c:if>
+					<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
+						<h:outputText
+							value="#{f.flightData.businnessClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
+					</c:if>
 				</h:column>
 
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Available seats" />
 					</f:facet>
-					<h:outputText
-						value="#{f.economyClassData.pricing.basePrice * (1+f.economyClassData.pricing.defaultPrice)}">
+					<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
 
-					</h:outputText>
+						<h:outputText value="#{f.flightData.economyClass.remainingSeats}" />
+					</c:if>
+					<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
+						<h:outputText value="#{f.flightData.firstClass.remainingSeats}" />
+
+					</c:if>
+					<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
+						<h:outputText value="#{f.flightData.businnessClass.remainingSeats}" />
+
+					</c:if>
+					
 				</h:column>
+
+
 			</h:dataTable>
 		</h:form>
 	</ui:define>

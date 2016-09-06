@@ -2,6 +2,7 @@ package com.redoair.services;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
@@ -57,7 +58,7 @@ public class FlightService implements FlightServiceRemote {
 
 	@Override
 	public List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(String depAirport,
-			String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate) {
+			String destAirport, TravelingClassType travelingClass, Integer seats,Date  fromDate, Date toDate) {
 
 		return flightRepository.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport,
 				destAirport, travelingClass, seats, fromDate, toDate);

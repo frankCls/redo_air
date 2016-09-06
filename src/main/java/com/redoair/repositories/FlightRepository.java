@@ -3,6 +3,7 @@ package com.redoair.repositories;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -31,36 +32,40 @@ public class FlightRepository {
 			String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate) {
 
 		String travelingClassdata = decideWhichStringInQuery(travelingClass);
+	System.out.println(depAirport);
+	System.out.println(destAirport);
+	System.out.println(seats);
+	System.out.println(fromDate);
+	System.out.println(toDate);
 	
 		TypedQuery<Flight> q = em
 				.createQuery(
-						"SELECT f FROM Flight f WHERE f.departureLocation.country=:depAirport AND f.destinationLocation.country=:destAirport AND "
-								+ travelingClassdata
-								+ ".remainingSeats >= :seats AND f.departureTime BETWEEN :fromDate AND :toDate",
+						"SELECT f FROM Flight f WHERE f.departureLocation.country=:depAirport AND f.destinationLocation.country=:destAirport AND "+
+								 travelingClassdata +".remainingSeats >= :seats AND f.departureTime BETWEEN :fromDate AND :toDate",
 						Flight.class);
 		q.setParameter("depAirport", depAirport);
 		q.setParameter("destAirport", destAirport);
 		q.setParameter("seats", seats);
 		q.setParameter("fromDate", fromDate);
 		q.setParameter("toDate", toDate);
-System.out.println(q.getSingleResult());
+
 		return q.getResultList();
 	}
 
 	private String decideWhichStringInQuery(TravelingClassType travelingClassType) {
 
-		String travelingClassdata = "f.economyClassData";
+		String travelingClassdata = "f.flightData.economyClass";
 		//travelingClassType = TravelingClassType.ECONOMY_CLASS;
 		
 			switch (travelingClassType.name()) {
 			case "ECONOMY_CLASS":
-				travelingClassdata = "f.economyClassData";
+				travelingClassdata = "f.flightData.economyClass";
 				break;
 			case "BUSINESS_CLASS":
-				travelingClassdata = "f.businessClassData";
+				travelingClassdata = "f.flightData.businnessClass";
 				break;
 			case "FIRST_CLASS":
-				travelingClassdata = "f.firstClassData";
+				travelingClassdata = "f.flightData.firstClass";
 				break;
 			}
 		

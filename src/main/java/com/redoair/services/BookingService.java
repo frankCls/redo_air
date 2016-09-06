@@ -1,5 +1,7 @@
 package com.redoair.services;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
 import com.redoair.domain.Booking;
@@ -8,4 +10,5 @@ import com.redoair.domain.Booking;
 public interface BookingService {
 	
 	void saveBooking(Booking booking);
+	List<String> findAllDepartureCountries();
 }

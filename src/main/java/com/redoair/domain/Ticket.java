@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,7 +26,7 @@ public class Ticket implements Serializable {
 	private static final long serialVersionUID = -9025140047545706323L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 
 	@Version
@@ -40,7 +41,7 @@ public class Ticket implements Serializable {
 	private Flight flight;
 
 	@ManyToOne
-	@JoinColumn(name = "booking_id")
+	
 	private Booking booking;
 
 	@NotNull

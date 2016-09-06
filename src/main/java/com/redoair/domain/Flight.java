@@ -52,11 +52,9 @@ public class Flight implements Serializable {
 	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
-
-
-	@OneToMany(mappedBy="flight")	
-	private Set<AbstractTravelingClassData>travelingClassData=new HashSet<>();
-
+	@ManyToOne
+	@JoinColumn(name="flightDataId")
+	private FlightData flightData;
 
 	public Long getId() {
 		return id;
@@ -68,18 +66,6 @@ public class Flight implements Serializable {
 
 	public Long getDuration() {
 		return duration;
-	}
-
-	public Set<AbstractTravelingClassData> getTravelingClassData() {
-		return travelingClassData;
-	}
-
-	public void setTravelingClassData(Set<AbstractTravelingClassData> travelingClassData) {
-		this.travelingClassData = travelingClassData;
-	}
-	
-	public void addTravelingClassData(AbstractTravelingClassData data){
-		this.travelingClassData.add(data);
 	}
 
 	public void setDuration(Long duration) {
@@ -110,42 +96,15 @@ public class Flight implements Serializable {
 		this.destinationLocation = destinationLocation;
 	}
 
-<<<<<<< HEAD
+	public FlightData getFlightData() {
+		return flightData;
+	}
 
-=======
-//	public FirstClassData getFirstClassData() {
-//		return firstClassData;
-//	}
-//
-//	public void setFirstClassData(FirstClassData firstClassData) {
-//		this.firstClassData = firstClassData;
-//	}
-//
-//	public EconomyClassData getEconomyClassData() {
-//		return economyClassData;
-//	}
-//
-//	public void setEconomyClassData(EconomyClassData economyClassData) {
-//		this.economyClassData = economyClassData;
-//	}
-//
-//	public BusinessClassData getBusinessClassData() {
-//		return businessClassData;
-//	}
-//
-//	public void setBusinessClassData(BusinessClassData businessClassData) {
-//		this.businessClassData = businessClassData;
-//	}
->>>>>>> 7dec8ff58a851698c9cda0b0f99b1a3f7c044efb
-//	public AbstractTravelingClassData getTravelingClassData(TravelingClassType type){
-//		AbstractTravelingClassData data=null;
-//		switch(type.name()){
-//		case "ECONOMY_CLASS" : data = this.getEconomyClassData();break;
-//		case "BUSINESS_CLASS" : data = this.getBusinessClassData();break;
-//		case "FIRST_CLASS" : data= this.getFirstClassData();break;		
-//		}
-//		return data;
-//	}
+	public void setFlightData(FlightData flightData) {
+		this.flightData = flightData;
+	}
+
 	
+
 	
 }

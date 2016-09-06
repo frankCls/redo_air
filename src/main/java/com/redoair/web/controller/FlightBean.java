@@ -1,8 +1,11 @@
 package com.redoair.web.controller;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -12,6 +15,11 @@ import javax.faces.component.behavior.AjaxBehavior;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.Future;
+
+import com.redoair.domain.AbstractTravelingClassData;
 import com.redoair.domain.Flight;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.services.FlightService;
@@ -32,13 +40,18 @@ public class FlightBean implements Serializable {
 	private Flight flight = new Flight();
 	// private Airport depLocation=new Airport();
 	// private Airport destLocation=new Airport();
-	private String depCountry="";
-	private String destCountry="";
-	private String depRegion="";
-	private String destRegion="";
-	private String TravelingClass = "";
+	private String depCountry = "";
+	private String destCountry = "";
+	private String depRegion = "";
+	private String destRegion = "";
+	private TravelingClassType travelingClass = TravelingClassType.ECONOMY_CLASS;
 	private String depDate;
 	private int nrOfTickets = 1;
+	@Future
+	private Date fromDate;
+
+	@Future
+	private Date toDate;
 
 	private List<Flight> flightsList = new ArrayList<>();
 	private List<String> depCountryList = new ArrayList<>();
@@ -60,8 +73,29 @@ public class FlightBean implements Serializable {
 
 	public void getFlightsForSearchCriteria() {
 		System.err.println("in getFlightsForSearchCriteria()");
-		flightsList = flightService.findFlightsForSearchCriteria(this.depCountry, this.depRegion, this.destCountry, this.destRegion);
-	}
+		// en dit mag uit comments dan
+/*
+		if (fromDate == null && toDate == null) {
+			flightsList = flightService.findFlightsForSearchCriteria(this.depCountry, this.depRegion, this.destCountry,
+					this.destRegion);
+
+		} else {
+*/
+			/* Dit mag weg als de webpagina ook datums kan mee geven */
+			SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			try {
+				fromDate = timeStampFormat.parse("2016-09-29 09:00:00");
+				toDate = timeStampFormat.parse("2017-08-30 09:10:00");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			/* Dit mag weg als de webpagina ook datums kan mee geven */
+
+			flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depCountry,
+					destCountry, travelingClass, nrOfTickets, fromDate, toDate);
+		}
+
+	//}
 
 	public void fillDepartureAndOrDestinationCountriesList() {
 		// if(flight.getDepartureLocation().getCountry()==null)
@@ -70,6 +104,7 @@ public class FlightBean implements Serializable {
 	public void search() {
 		System.err.println("in search()");
 		this.getFlightsForSearchCriteria();
+
 	}
 
 	public void getFlightsForDepAndDest() {
@@ -150,14 +185,6 @@ public class FlightBean implements Serializable {
 		this.travelingClassList = travelingClassList;
 	}
 
-	public String getTravelingClass() {
-		return TravelingClass;
-	}
-
-	public void setTravelingClass(String travelingClass) {
-		TravelingClass = travelingClass;
-	}
-
 	public String getDepDate() {
 		return depDate;
 	}
@@ -188,6 +215,14 @@ public class FlightBean implements Serializable {
 
 	public void setDestRegionList(List<String> destRegionList) {
 		this.destRegionList = destRegionList;
+	}
+
+	public TravelingClassType getTravelingClass() {
+		return travelingClass;
+	}
+
+	public void setTravelingClass(TravelingClassType travelingClass) {
+		this.travelingClass = travelingClass;
 	}
 
 	// public String

@@ -1,6 +1,6 @@
 <dataset>
 <payer id="2" firstName="Bert" lastName="Von Testpersons"></payer>
-	<booking id="2" dateBooked="2016-05-03 15:03:11"
+	<booking id="2"  dateBooked="2016-05-03 15:03:11"
 		purchaseStatus="PENDING" payer_id="2" version="0"></booking>
 	
 	<pricing id="3" basePrice="50" defaultPrice="5.250" />
