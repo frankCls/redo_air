@@ -24,9 +24,9 @@ public class BookingServiceEjb implements BookingService {
 	}
 
 	@Override
-	public List<String> findAllDepartureCountries() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Booking> findAllBookings() {
+		
+		return bookingRepo.findAll();
 	}
 	
 }

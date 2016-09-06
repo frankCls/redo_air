@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<ui:composition template="/WEB-INF/template.xhtml">
+
+
+	<ui:define name="pageTitle" value="#{msg['search.title']}" />
+	<ui:define name="pageContent">
+
+		<h:form id="form">
+			<div class="col-md-4">
+				<div class="form-horizontal">
+					<h:panelGrid id="panel" columns="1" cellpadding="2" cellspacing="2">
+						<h:panelGroup class="form-group">
+
+							<h:outputLabel for="nameDepartureCountry"
+								value="#{msg['search.depCountry']}" />
+
+							<h:outputText id="nameDepartureCountry"
+								value=": #{bookingBean.flightBean.selectedFlight.departureLocation.country}"
+								style="font-weight:bold" />
+
+
+							<h:outputLabel for="nameDepartureAirport"
+								value="#{msg['search.depAirport']}" />
+
+							<h:outputText id="nameDepartureAirport"
+								value=": #{bookingBean.flightBean.selectedFlight.departureLocation.name}"
+								style="font-weight:bold" />
+						</h:panelGroup>
+						<h:panelGroup class="form-group">
+
+							<h:outputLabel for="nameArrivalCountry"
+								value="#{msg['search.destCountry']}" />
+
+							<h:outputText id="nameArrivalCountry"
+								value=": #{bookingBean.flightBean.selectedFlight.destinationLocation.country}"
+								style="font-weight:bold" />
+
+
+							<h:outputLabel for="nameArrivalAirport"
+								value="#{msg['search.destAirport']}" />
+
+							<h:outputText id="nameArrivalAirport"
+								value=": #{bookingBean.flightBean.selectedFlight.destinationLocation.name}"
+								style="font-weight:bold" />
+						</h:panelGroup>
+
+					</h:panelGrid>
+
+					<h:panelGroup class="form-group">
+						<h:outputLabel for="CreditCardType" value="CreditCardType" />
+						<h:selectOneMenu id="CreditCardType" class="form-control"
+							value="#{bookingBean.selectedCreditCardType}">
+
+							<f:selectItems var="n" value="#{bookingBean.creditCardtypeList}"
+								itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
+						</h:selectOneMenu>
+					</h:panelGroup>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-horizontal">
+					<h:panelGroup class="form-group">
+						<h:outputLabel for="priceTicket" value="#{msg['search.price']}:" />
+						<c:choose>
+							<c:when
+								test="#{not (bookingBean.selectedCreditCardType eq 'ENDORSEMENT') }">
+								<ui:param name="discount" value="0.1" />
+							</c:when>
+							<c:otherwise>
+								<ui:param name="discount" value="0" />
+							</c:otherwise>
+						</c:choose>
+
+
+						<c:if
+							test="#{bookingBean.flightBean.travelingClass eq 'ECONOMY_CLASS'}">
+							<ui:param name="price"
+								value="#{bookingBean.flightBean.selectedFlight.flightData.economyClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.economyClass.pricing.defaultPrice)}" />
+							<h:outputText value="#{price - (price * discount)}" />
+						</c:if>
+						<c:if
+							test=" #{bookingBean.flightBean.travelingClass eq 'FIRST_CLASS'}">
+							<ui:param name="price"
+								value="#{bookingBean.flightBean.selectedFlight.flightData.firstClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.firstClass.pricing.defaultPrice)}" />
+							<h:outputText value="#{price - (price * discount)}" />
+						</c:if>
+						<c:if
+							test="#{bookingBean.flightBean.travelingClass eq 'BUSINESS_CLASS'}">
+							<ui:param name="price"
+								value="#{bookingBean.flightBean.selectedFlight.flightData.businnessClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.businnessClass.pricing.defaultPrice)}" />
+							<h:outputText value="#{price - (price * discount)}" />
+						</c:if>
+
+					</h:panelGroup>
+				</div>
+			</div>
+
+		</h:form>
+	</ui:define>
+
+
+
+</ui:composition>
+
+</html>

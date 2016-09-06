@@ -10,5 +10,5 @@ import com.redoair.domain.Booking;
 public interface BookingService {
 	
 	void saveBooking(Booking booking);
-	List<String> findAllDepartureCountries();
+	 List<Booking> findAllBookings();
 }

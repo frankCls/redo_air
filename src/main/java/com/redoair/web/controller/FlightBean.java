@@ -1,3 +1,4 @@
+
 package com.redoair.web.controller;
 
 import java.io.Serializable;
@@ -280,3 +281,4 @@ public class FlightBean implements Serializable {
 	// }
 
 }
+

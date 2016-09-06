@@ -50,15 +50,15 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		Flight flight = repo.findFlightById(flightId);
 		Assert.assertNotNull(flight);
 	}
-
-	@Test
+	
+	@Test 
 	public void returnAllCitiesWithFlightTest(){
 		List<String> cities = repo.findAllCitiesByCountryWithFlights("Papua New Guinea");
 		
 		assertTrue("findAllCitiesByCountryWithFlights cannot be empty!", ! cities.isEmpty());;
 	}
 	
-	@Test
+	@Test  
 	public void ShouldPersistAFlight(){
 		Flight flight = new Flight();		
 
@@ -102,7 +102,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		Assert.assertNotNull("Passenger ID should not be null after saving", flight.getId());
 
 	}
-	 
+
 	@Test(expected=javax.validation.ConstraintViolationException.class)
 	public void shouldThrowExceptionPersistingAFlight() {
 		Flight flight = new Flight();
