@@ -41,8 +41,11 @@
 								value="#{msg['search.travelClass']}" />
 							<h:selectOneMenu id="travelingClass" class="form-control"
 								value="#{flightBean.travelingClass}">
-								<f:selectItem itemValue="#{null}" itemLabel="" />
-								<f:selectItems value="#{flightBean.travelingClassList}" />
+
+								<f:selectItems var="n" 
+									value="#{flightBean.travelingClassList}" 
+									itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}"
+									/>
 							</h:selectOneMenu>
 						</h:panelGroup>
 						<h:panelGroup class="form-group">
