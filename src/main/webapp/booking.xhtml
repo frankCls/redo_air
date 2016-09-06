@@ -55,20 +55,24 @@
 
 					<h:panelGroup class="form-group">
 						<h:outputLabel for="CreditCardType" value="CreditCardType" />
-						<h:selectOneMenu id="CreditCardType" class="form-control"
-							value="#{bookingBean.selectedCreditCardType}">
+						
+						<h:selectOneMenu  id="CreditCardType" class="form-control" valueChangeListener="#{bookingBean.selectOneMenuListener}">
 
 							<f:selectItems var="n" value="#{bookingBean.creditCardtypeList}"
-								itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
+								itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" 
+								itemValue="#{bookingBean.selectedCreditCardType}"
+								/>
+								 <f:ajax event="change" execute="form" render="priceTicket"/>
 						</h:selectOneMenu>
 					</h:panelGroup>
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="form-horizontal">
+				<div  class="form-horizontal">
 					<h:panelGroup class="form-group">
 						<h:outputLabel for="priceTicket" value="#{msg['search.price']}:" />
-						<c:choose>
+						
+						<c:choose id="priceTicket">
 							<c:when
 								test="#{not (bookingBean.selectedCreditCardType eq 'ENDORSEMENT') }">
 								<ui:param name="discount" value="0.1" />
@@ -79,23 +83,21 @@
 						</c:choose>
 
 
-						<c:if
-							test="#{bookingBean.flightBean.travelingClass eq 'ECONOMY_CLASS'}">
+						<c:if test="#{bookingBean.flightBean.travelingClass eq 'ECONOMY_CLASS'}">
 							<ui:param name="price"
 								value="#{bookingBean.flightBean.selectedFlight.flightData.economyClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.economyClass.pricing.defaultPrice)}" />
-							<h:outputText value="#{price - (price * discount)}" />
+							<h:outputText id="priceTicket" value="#{price - (price * discount)}" />
 						</c:if>
 						<c:if
 							test=" #{bookingBean.flightBean.travelingClass eq 'FIRST_CLASS'}">
 							<ui:param name="price"
 								value="#{bookingBean.flightBean.selectedFlight.flightData.firstClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.firstClass.pricing.defaultPrice)}" />
-							<h:outputText value="#{price - (price * discount)}" />
+							<h:outputText id="priceTicket" value="#{price - (price * discount)}" />
 						</c:if>
-						<c:if
-							test="#{bookingBean.flightBean.travelingClass eq 'BUSINESS_CLASS'}">
+						<c:if test="#{bookingBean.flightBean.travelingClass eq 'BUSINESS_CLASS'}">
 							<ui:param name="price"
 								value="#{bookingBean.flightBean.selectedFlight.flightData.businnessClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.businnessClass.pricing.defaultPrice)}" />
-							<h:outputText value="#{price - (price * discount)}" />
+							<h:outputText id="priceTicket" value="#{price - (price * discount)}" />
 						</c:if>
 
 					</h:panelGroup>

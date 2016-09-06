@@ -2,6 +2,7 @@ package com.redoair.web.controller;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 
 import com.redoair.domain.Booking;
@@ -33,7 +34,11 @@ public class BookingBean implements Serializable {
 			.asList(Stream.of(CreditCardType.values()).map(CreditCardType::name).toArray(String[]::new));
 
 
-
+	public void selectOneMenuListener(ValueChangeEvent event) {
+	    
+	    Object newValue = event.getNewValue(); 
+	   System.out.println(newValue.toString());
+	}
 	public List<String> getCreditCardtypeList() {
 		return CreditCardtypeList;
 	}
