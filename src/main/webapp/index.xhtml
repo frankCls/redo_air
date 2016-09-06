@@ -39,8 +39,7 @@
 							<h:outputLabel for="travelingClass"
 								value="#{msg['search.travelClass']}" />
 							<h:selectOneMenu id="travelingClass" class="form-control"
-								value="#{flightBean.travelingClass}">
-								<f:selectItem itemValue="#{null}" itemLabel="" />
+								value="#{fn:replace(flightBean.travelingClass.toLowerCase(),'_','  ')}">								
 								<f:selectItems value="#{flightBean.travelingClassList}" />
 							</h:selectOneMenu>
 						</h:panelGroup>
