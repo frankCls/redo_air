@@ -126,7 +126,7 @@ header#logo{
 }
 
 footer{
-	position:fixed;
+	/*position:fixed;*/
 	top:90%;
 }
 svg{
