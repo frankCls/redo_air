@@ -1,9 +1,5 @@
 package com.redoair.repositories;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -12,7 +8,6 @@ import org.junit.Test;
 import com.realdolmen.course.utilities.persistence.*;
 import com.redoair.domain.Flight;
 import com.redoair.domain.Passenger;
-import com.redoair.domain.PurchaseStatus;
 import com.redoair.domain.Ticket;
 import com.redoair.domain.TravelingClassType;
 
@@ -37,7 +32,7 @@ public class TicketRepositoryTest extends JpaPersistenceTest {
 	public void shouldSaveATicket() {
 		Ticket ticket = new Ticket();		
 		Passenger passenger = new Passenger();
-		passenger.setPassword("password");
+		
 		passenger.setFirstName("test");
 		passenger.setLastName("lastname");		
 		

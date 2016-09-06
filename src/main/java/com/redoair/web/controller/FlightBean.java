@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.component.behavior.AjaxBehavior;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Inject;
@@ -24,7 +25,7 @@ import com.redoair.domain.Flight;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.services.FlightService;
 
-@Named(value = "flightBean")
+@ManagedBean(name="flightBean")
 @SessionScoped
 // @Path()
 public class FlightBean implements Serializable {
@@ -52,6 +53,8 @@ public class FlightBean implements Serializable {
 
 	@Future
 	private Date toDate;
+	boolean renderFlightsList= false;
+
 
 	private List<Flight> flightsList = new ArrayList<>();
 	private List<String> depCountryList = new ArrayList<>();
@@ -73,6 +76,7 @@ public class FlightBean implements Serializable {
 
 	public void getFlightsForSearchCriteria() {
 		System.err.println("in getFlightsForSearchCriteria()");
+
 		// en dit mag uit comments dan
 /*
 		if (fromDate == null && toDate == null) {
@@ -97,13 +101,28 @@ public class FlightBean implements Serializable {
 
 	//}
 
+
 	public void fillDepartureAndOrDestinationCountriesList() {
 		// if(flight.getDepartureLocation().getCountry()==null)
 	}
 
 	public void search() {
-		System.err.println("in search()");
+		System.err.println("in search()");		
 		this.getFlightsForSearchCriteria();
+
+		if(this.flightsList.size()>0){
+			flightsList.forEach(s->System.out.println(s.getDepartureLocation().getCity()));
+			renderFlightsList=true;
+		}else renderFlightsList=false;
+		System.out.println(renderFlightsList);
+	}
+
+	public boolean isRenderFlightsList() {
+		return renderFlightsList;
+	}
+
+	public void setRenderFlightsList(boolean renderFlightsList) {
+		this.renderFlightsList = renderFlightsList;
 
 	}
 
