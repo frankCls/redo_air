@@ -1,6 +1,8 @@
 package com.redoair.domain;
 
 
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,15 +17,15 @@ public class FlightData {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="economyClassId")
 	private AbstractTravelingClassData businnessClass;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="businnessClassId")
 	private AbstractTravelingClassData economyClass;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="firstClassId")
 	private AbstractTravelingClassData firstClass;
 

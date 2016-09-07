@@ -53,7 +53,7 @@ public class Flight implements Serializable {
 	private Airport destinationLocation;
 	
 
-	@OneToOne
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="flightDataId")
 	private FlightData flightData;
 //	@NotNull
