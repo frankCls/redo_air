@@ -6,29 +6,30 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.component.behavior.AjaxBehavior;
-import javax.faces.event.AjaxBehaviorEvent;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.inject.Named;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.Future;
 
-import com.redoair.domain.AbstractTravelingClassData;
+import org.primefaces.context.RequestContext;
+import org.primefaces.event.SelectEvent;
+
 import com.redoair.domain.Flight;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.services.FlightService;
 
-@ManagedBean(name="flightBean")
+@ManagedBean(name = "flightBean")
 @SessionScoped
-// @Path()
+
 public class FlightBean implements Serializable {
 
 	/**
@@ -39,23 +40,19 @@ public class FlightBean implements Serializable {
 	@Inject
 	private FlightService flightService;
 
-	private Flight flight = new Flight();
-	// private Airport depLocation=new Airport();
-	// private Airport destLocation=new Airport();
 	private String depCountry = "";
 	private String destCountry = "";
 	private String depRegion = "";
 	private String destRegion = "";
 	private TravelingClassType travelingClass = TravelingClassType.ECONOMY_CLASS;
-	private String depDate;
+	private Date depDate;
 	private int nrOfTickets = 1;
 	@Future
 	private Date fromDate;
 
 	@Future
 	private Date toDate;
-	boolean renderFlightsList= false;
-
+	boolean renderFlightsList = false;
 
 	private List<Flight> flightsList = new ArrayList<>();
 	private List<String> depCountryList = new ArrayList<>();
@@ -68,59 +65,110 @@ public class FlightBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		depCountryList = flightService.findAllDepartureCountries();
-		// depCountryList.forEach(System.out::println);
 		destCountryList = flightService.findAllDestinationCountries();
-		// destCountryList.forEach(System.out::println);
 		depRegionList = flightService.findAllDepartureRegions();
 		destRegionList = flightService.findAllDestinationRegions();
 	}
 
 	public void getFlightsForSearchCriteria() {
 		System.err.println("in getFlightsForSearchCriteria()");
-
-		// en dit mag uit comments dan
-/*
-		if (fromDate == null && toDate == null) {
-			flightsList = flightService.findFlightsForSearchCriteria(this.depCountry, this.depRegion, this.destCountry,
-					this.destRegion);
-
-		} else {
-*/
-			/* Dit mag weg als de webpagina ook datums kan mee geven */
-			SimpleDateFormat timeStampFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-			try {
-				fromDate = timeStampFormat.parse("2016-09-29 09:00:00");
-				toDate = timeStampFormat.parse("2017-08-30 09:10:00");
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			/* Dit mag weg als de webpagina ook datums kan mee geven */
-
-			flightsList = flightService.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depCountry,
-					destCountry, travelingClass, nrOfTickets, fromDate, toDate);
+		if (depDate != null) {
+			System.out.println("chosen date: " + depDate);
+			Calendar c = Calendar.getInstance();
+			c.setTime(depDate);
+			c.add(Calendar.DATE, 1);
+			toDate = c.getTime();
+			System.out.println("max date: " + toDate);
 		}
+		
+		List<Flight> list = flightService.findFlightsForSearchCriteria(this.depCountry, this.depRegion,
+				this.destCountry, this.destRegion);
+		System.out.println("initial querylist");
+		list.forEach(s->System.out.println(s.getId()));
+		List<Flight> tempList = new ArrayList<>();
+		System.out.println(depDate  + "= depDate");
+		if (depDate == null) {
+			if (travelingClass.equals(TravelingClassType.ECONOMY_CLASS)) {
+				tempList = list.stream()
+						.filter(s -> s.getFlightData().getEconomyClass().getRemainingSeats() >= nrOfTickets)
+						.collect(Collectors.toList());
+			}
+			if (travelingClass.equals(TravelingClassType.BUSINESS_CLASS)) {
+				tempList = list.stream()
+						.filter(s -> s.getFlightData().getBusinnessClass().getRemainingSeats() >= nrOfTickets)
+						.collect(Collectors.toList());
+			}
+			if (travelingClass.equals(TravelingClassType.FIRST_CLASS)) {
+				tempList = list.stream()
+						.filter(s -> s.getFlightData().getBusinnessClass().getRemainingSeats() >= nrOfTickets)
+						.collect(Collectors.toList());
+			}
+		} else {
+			if (travelingClass.equals(TravelingClassType.ECONOMY_CLASS)) {
+				tempList = list.stream()
+						.filter(s -> s.getFlightData().getEconomyClass().getRemainingSeats() >= nrOfTickets)
+						.filter(s -> (depDate.before(s.getDepartureTime())
+								|| depDate.equals(s.getDepartureTime()))
+								&& s.getDepartureTime().before(toDate))
+						.collect(Collectors.toList());
 
-	//}
+			}
+			if (travelingClass.equals(TravelingClassType.BUSINESS_CLASS)) {
+				tempList = list.stream()
+						.filter(s -> s.getFlightData().getBusinnessClass().getRemainingSeats() >= nrOfTickets)
+						.filter(s -> (depDate.before(s.getDepartureTime())
+								|| depDate.equals(s.getDepartureTime()))
+								&& s.getDepartureTime().before(toDate))
+						.collect(Collectors.toList());
+			}
+			if (travelingClass.equals(TravelingClassType.FIRST_CLASS)) {
+				tempList = list.stream()
+						.filter(s -> s.getFlightData().getBusinnessClass().getRemainingSeats() >= nrOfTickets)
+						.filter(s -> (depDate.before(s.getDepartureTime())
+								|| depDate.equals(s.getDepartureTime()))
+								&& s.getDepartureTime().before(toDate))
+						.collect(Collectors.toList());
+			}
+			flightsList=tempList;
+			
+		}
+		System.out.println("after filtering");
+		flightsList.forEach(s->System.out.println(s.getId()));
+	}
 
+	public void onDateSelect(SelectEvent event) {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		// facesContext.addMessage(null, new
+		// FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected",
+		// format.format(event.getObject())));
+	}
+
+	public void click() {
+		RequestContext requestContext = RequestContext.getCurrentInstance();
+		requestContext.update("form:display");
+		requestContext.execute("PF('dlg').show()");
+	}
 
 	public void fillDepartureAndOrDestinationCountriesList() {
 		// if(flight.getDepartureLocation().getCountry()==null)
 	}
-	
-	public void toggleView(){
-		renderFlightsList=!renderFlightsList;
+
+	public void toggleView() {
+		renderFlightsList = !renderFlightsList;
 	}
 
-	public void search() {
-		System.err.println(depDate);
-		System.err.println("in search()");		
+	public String search() {
+		System.err.println("date: " + depDate);
+		System.out.println();
+		System.err.println("in search()");
 		this.getFlightsForSearchCriteria();
 
-		if(this.flightsList.size()>0){
-			flightsList.forEach(s->System.out.println(s.getDepartureLocation().getCity()));
-			renderFlightsList=true;
-		}else renderFlightsList=false;
-		System.out.println(renderFlightsList);
+		if (this.flightsList.size() > 0) {
+			flightsList.forEach(s -> System.out.println(s.getDepartureTime().toString()));
+		}
+
+		return "search_results";
 	}
 
 	public boolean isRenderFlightsList() {
@@ -130,20 +178,6 @@ public class FlightBean implements Serializable {
 	public void setRenderFlightsList(boolean renderFlightsList) {
 		this.renderFlightsList = renderFlightsList;
 
-	}
-
-	public void getFlightsForDepAndDest() {
-		flightsList = flightService.findFlightsByDepartureAndDestinationCountry(depCountry, destCountry);
-		// flightsList.forEach(s->System.err.println(s.getDepartureLocation().getCity()
-		// + " " + s.getDestinationLocation().getCity()));
-	}
-
-	public Flight getFlight() {
-		return flight;
-	}
-
-	public void setFlight(Flight flight) {
-		this.flight = flight;
 	}
 
 	public List<Flight> getFlightsList() {
@@ -210,11 +244,11 @@ public class FlightBean implements Serializable {
 		this.travelingClassList = travelingClassList;
 	}
 
-	public String getDepDate() {
+	public Date getDepDate() {
 		return depDate;
 	}
 
-	public void setDepDate(String depDate) {
+	public void setDepDate(Date depDate) {
 		this.depDate = depDate;
 	}
 
@@ -281,4 +315,3 @@ public class FlightBean implements Serializable {
 	// }
 
 }
-

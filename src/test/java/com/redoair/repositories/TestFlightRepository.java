@@ -26,12 +26,15 @@ import com.redoair.repositories.FlightRepository;
 
 public class TestFlightRepository extends JpaPersistenceTest {
 	private FlightRepository repo;
-	private static final long depAirportId = 1L;
-	private static final long destAirportId = 2L;
-	private static final long flightId = 17313L;
-	private static final int NUMBER_OF_FLIGHTS=3;
-	// private static final TravelingClassType TravelClassType =
-	// TravelingClassType.ECONOMY_CLASS;
+	private static final long depAirportId = 32L;
+	private static final long destAirportId = 37L;
+	private static final long flightId = 2037L;
+	private static final int NUMBER_OF_FLIGHTS = 3;
+	private static final TravelingClassType TravelClassType = TravelingClassType.ECONOMY_CLASS;
+	private static final Integer nrOfSeats = 4;
+	private Flight flight;
+	
+	 
 	private Airport depAirport;
 	private Airport destAirport;
 	SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -43,24 +46,27 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		repo.em = entityManager();
 		depAirport = repo.em.find(Airport.class, depAirportId);
 		destAirport = repo.em.find(Airport.class, destAirportId);
+		flight= repo.em.find(Flight.class, flightId);
+		
 	}
 
-	@Test 
+	@Test
 	public void shouldReturnAFlight() {
 		Flight flight = repo.findFlightById(flightId);
 		Assert.assertNotNull(flight);
 	}
-	
-	@Test 
-	public void returnAllCitiesWithFlightTest(){
+
+	@Test
+	public void returnAllCitiesWithFlightTest() {
 		List<String> cities = repo.findAllCitiesByCountryWithFlights("Papua New Guinea");
+
+		assertTrue("findAllCitiesByCountryWithFlights cannot be empty!", !cities.isEmpty());
 		
-		assertTrue("findAllCitiesByCountryWithFlights cannot be empty!", ! cities.isEmpty());;
 	}
-	
-	@Test  
-	public void ShouldPersistAFlight(){
-		Flight flight = new Flight();		
+
+	@Test
+	public void ShouldPersistAFlight() {
+		Flight flight = new Flight();
 
 		flight.setDepartureLocation(depAirport);
 		flight.setDestinationLocation(destAirport);
@@ -89,7 +95,6 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		data.setFirstClass(firstClassData);
 		flight.setFlightData(data);
 
-
 		try {
 			flight.setDepartureTime(dateFormat.parse("12-12-2016"));
 			System.err.println(dateFormat.parse("12-12-2017").toString());
@@ -103,7 +108,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 
 	}
 
-	@Test(expected=javax.validation.ConstraintViolationException.class)
+	@Test(expected = javax.validation.ConstraintViolationException.class)
 	public void shouldThrowExceptionPersistingAFlight() {
 		Flight flight = new Flight();
 		flight.setDepartureLocation(depAirport);
@@ -113,19 +118,40 @@ public class TestFlightRepository extends JpaPersistenceTest {
 	@Test
 	public void shouldReturnListOfFlightsBasedOnMultipleParameters() {
 		List<Flight> flights = new ArrayList<>();
-		Date fromDate=null;
-		Date toDate=null;
-		
+		Date fromDate = null;
+		Date toDate = null;
+
 		try {
-			fromDate= timeStampFormat.parse("2016-10-1 09:00:00");
-			toDate= timeStampFormat.parse("2017-05-30 09:10:00");
+			fromDate = timeStampFormat.parse("2016-10-1 09:00:00");
+			toDate = timeStampFormat.parse("2017-05-30 09:10:00");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport.getCountry(), destAirport.getCountry(), TravelingClassType.ECONOMY_CLASS, 4,fromDate,toDate);
+		flights = repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport.getCountry(),
+				destAirport.getCountry(), TravelingClassType.ECONOMY_CLASS, 4, fromDate, toDate);
 		System.err.println(flights.size());
-		Assert.assertTrue(35<=flights.size());
+		Assert.assertTrue(35 <= flights.size());
+		
 	}
-	
+
+	@Test
+	public void queryOnNumberOfSeats() {
+		String depCountry = "Canada";
+		String destCountry = "Canada";
+		String destRegion = "America";
+		String depRegion = "America";
+		Date fromDate = null;
+		Date toDate = null;
+		try {
+			fromDate = dateFormat.parse("28-10-1016");
+			toDate = dateFormat.parse("29-10-1016");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+//		List<Flight>results =repo.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport.getName(), destAirport.getName(), TravelClassType, nrOfSeats, fromDate, toDate);
+//		Assert.assertTrue(results.size()>0);
+		List<Flight>results =repo.findFlightsByDepartureAndDestinationCountry(depCountry, destCountry);
+		Assert.assertTrue(results.size()>0);
+	}
 
 }

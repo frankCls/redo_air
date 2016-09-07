@@ -60,7 +60,7 @@ public class FlightService implements FlightServiceRemote {
 	@Override
 	public List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(String depAirport,
 			String destAirport, TravelingClassType travelingClass, Integer seats,Date  fromDate, Date toDate) {
-
+		System.out.println("date to: " + toDate);
 		return flightRepository.findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(depAirport,
 				destAirport, travelingClass, seats, fromDate, toDate);
 

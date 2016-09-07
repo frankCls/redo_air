@@ -101,10 +101,16 @@ header h2{
 }
 
 .table{
-	background-color: black;
+	background-color: white;
 	opacity:0.5;
 	border-radius: 5px;
-	color:white;
+	color: black;
+}
+.ui-datatable-odd {
+   background-color: white;
+	opacity:0.5;
+	border-radius: 5px;
+	color: black;
 }
 
 #flightTable{

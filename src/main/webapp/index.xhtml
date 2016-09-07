@@ -5,12 +5,11 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-	template="/WEB-INF/template.xhtml">
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
 	<ui:define name="pageTitle" value="#{msg['search.title']}" />
 	<ui:define name="pageContent">
 		<h:form id="form">
-			<h:panelGroup class="row selection" id="searchBox"
-				rendered="#{!flightBean.renderFlightsList}">
+			<h:panelGroup class="row selection" id="searchBox">
 
 				<div class="col-md-2"></div>
 				<div class="col-md-4">
@@ -33,6 +32,10 @@
 								<f:selectItems value="#{flightBean.destCountryList}" />
 							</h:selectOneMenu>
 						</h:panelGroup>
+						<h:panelGroup>
+							<h:outputLabel for="basic" value="#{msg['search.tickets']}" />
+							<p:spinner id="basic" value="#{flightBean.nrOfTickets}" min="1" max="500" />
+						</h:panelGroup>
 						<h:panelGroup class="form-group">
 							<h:outputLabel for="travelingClass"
 								value="#{msg['search.travelClass']}" />
@@ -43,14 +46,15 @@
 									itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
 							</h:selectOneMenu>
 						</h:panelGroup>
-						<h:panelGroup class="form-group">
-							<h:outputLabel for="tickets" value="#{msg['search.tickets']}" />
-							<h:inputText id="tickets" value="#{flightBean.nrOfTickets}"
-								class="form-control">
-								<f:validateLongRange minimum="1" maximum="800" />
-							</h:inputText>
-							<h:message for="tickets" errorStyle="color:red; display:block" />
-						</h:panelGroup>
+						<!-- 						<h:panelGroup class="form-group"> -->
+						<!-- 							<h:outputLabel for="tickets" value="#{msg['search.tickets']}" /> -->
+						<!-- 							<h:inputText id="tickets" value="#{flightBean.nrOfTickets}" -->
+						<!-- 								class="form-control"> -->
+						<!-- 								<f:validateLongRange minimum="1" maximum="800" /> -->
+						<!-- 							</h:inputText> -->
+						<!-- 							<h:message for="tickets" errorStyle="color:red; display:block" /> -->
+						<!-- 						</h:panelGroup> -->
+						
 					</div>
 				</div>
 
@@ -75,8 +79,7 @@
 						</h:panelGroup>
 						<h:panelGroup class="form-group">
 							<h:outputLabel for="datep" value="#{msg['search.depDate']}" />
-							<b:datepicker binding="#{flightBean.depDate}" id="datep"></b:datepicker>
-
+							<p:calendar id="datep" value="#{flightBean.depDate}" />
 						</h:panelGroup>
 						<!-- 							<h:panelGroup class="form-group"> -->
 						<!-- 								<h:outputLabel for="tickets" value="#{msg['search.tickets']}" /> -->
@@ -94,80 +97,7 @@
 					</div>
 				</div>
 			</h:panelGroup>
-			<h:panelGroup id="flightTable"
-				rendered="#{flightBean.renderFlightsList}">
-				<div class="tb">
-					<h:commandButton action="#{flightBean.toggleView()}" value="close"
-						class="btn btn-default" />
-					<h:dataTable class="table" value="#{flightBean.flightsList}"
-						var="f">
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msg['search.dep']}" />
-							</f:facet>
-							<h:outputText
-								value="#{f.departureLocation.city} - #{f.departureLocation.country}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msg['search.dest']}" />
-							</f:facet>
-							<h:outputText
-								value="#{f.destinationLocation.city} - #{f.destinationLocation.country}" />
-						</h:column>
 
-						<!-- 					<h:column> -->
-						<!-- 						<f:facet name="header"> -->
-						<!-- 							<h:outputText value="#{msg['search.depDate']}" /> -->
-						<!-- 						</f:facet> -->
-						<!-- 						<h:outputText value="#{f.departureTime}"> -->
-						<!-- 							<f:convertDateTime pattern="dd-MM-yyyy" /> -->
-						<!-- 						</h:outputText> -->
-						<!-- 					</h:column>> -->
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msg['search.depTime']}" />
-							</f:facet>
-							<h:outputText value="#{f.departureTime}">
-								<f:convertDateTime pattern="hh:mm" />
-							</h:outputText>
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msg['search.price']}" />
-							</f:facet>
-							<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}">
-								<h:outputText
-									value="#{f.flightData.economyClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-							</c:if>
-							<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}">
-								<h:outputText
-									value="#{f.flightData.firstClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-							</c:if>
-							<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}">
-								<h:outputText
-									value="#{f.flightData.businnessClass.pricing.basePrice * (1+f.flightData.economyClass.pricing.defaultPrice)}" />
-							</c:if>
-						</h:column>
-						<!-- 					<h:column> -->
-						<!-- 						<f:facet name="header"> -->
-						<!-- 							<h:outputText value="Available seats" /> -->
-						<!-- 						</f:facet> -->
-						<!-- 						<c:if test="#{flightBean.travelingClass eq 'ECONOMY_CLASS'}"> -->
-						<!-- 							<h:outputText value="#{f.flightData.economyClass.remainingSeats}" /> -->
-						<!-- 						</c:if> -->
-						<!-- 						<c:if test="#{flightBean.travelingClass eq 'FIRST_CLASS'}"> -->
-						<!-- 							<h:outputText value="#{f.flightData.firstClass.remainingSeats}" /> -->
-						<!-- 						</c:if> -->
-						<!-- 						<c:if test="#{flightBean.travelingClass eq 'BUSINESS_CLASS'}"> -->
-						<!-- 							<h:outputText -->
-						<!-- 								value="#{f.flightData.businnessClass.remainingSeats}" /> -->
-						<!-- 						</c:if> -->
-						<!-- 					</h:column> -->
-					</h:dataTable>
-				</div>
-
-			</h:panelGroup>
 		</h:form>
 
 	</ui:define>

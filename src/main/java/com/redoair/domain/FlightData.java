@@ -19,15 +19,15 @@ public class FlightData {
 	
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="economyClassId")
-	private AbstractTravelingClassData businnessClass;
+	private BusinessClassData businnessClass;
 	
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="businnessClassId")
-	private AbstractTravelingClassData economyClass;
+	private EconomyClassData economyClass;
 	
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
 	@JoinColumn(name="firstClassId")
-	private AbstractTravelingClassData firstClass;
+	private FirstClassData firstClass;
 
 	public Long getId() {
 		return id;
@@ -41,7 +41,7 @@ public class FlightData {
 		return businnessClass;
 	}
 
-	public void setBusinnessClass(AbstractTravelingClassData businnessClass) {
+	public void setBusinnessClass(BusinessClassData businnessClass) {
 		this.businnessClass = businnessClass;
 	}
 
@@ -49,7 +49,7 @@ public class FlightData {
 		return economyClass;
 	}
 
-	public void setEconomyClass(AbstractTravelingClassData economyClass) {
+	public void setEconomyClass(EconomyClassData economyClass) {
 		this.economyClass = economyClass;
 	}
 
@@ -57,7 +57,7 @@ public class FlightData {
 		return firstClass;
 	}
 
-	public void setFirstClass(AbstractTravelingClassData firstClass) {
+	public void setFirstClass(FirstClassData firstClass) {
 		this.firstClass = firstClass;
 	}
 
