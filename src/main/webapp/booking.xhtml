@@ -1,11 +1,10 @@
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
-
 <ui:composition template="/WEB-INF/template.xhtml">
 
 
@@ -22,7 +21,7 @@
 								value="#{msg['search.depCountry']}" />
 
 							<h:outputText id="nameDepartureCountry"
-								value=": #{bookingBean.flightBean.selectedFlight.departureLocation.country}"
+								value=": #{bookingBean.flightBean.flight.departureLocation.country}"
 								style="font-weight:bold" />
 
 
@@ -30,7 +29,7 @@
 								value="#{msg['search.depAirport']}" />
 
 							<h:outputText id="nameDepartureAirport"
-								value=": #{bookingBean.flightBean.selectedFlight.departureLocation.name}"
+								value=": #{bookingBean.flightBean.flight.departureLocation.name}"
 								style="font-weight:bold" />
 						</h:panelGroup>
 						<h:panelGroup class="form-group">
@@ -39,7 +38,7 @@
 								value="#{msg['search.destCountry']}" />
 
 							<h:outputText id="nameArrivalCountry"
-								value=": #{bookingBean.flightBean.selectedFlight.destinationLocation.country}"
+								value=": #{bookingBean.flightBean.flight.destinationLocation.country}"
 								style="font-weight:bold" />
 
 
@@ -47,7 +46,7 @@
 								value="#{msg['search.destAirport']}" />
 
 							<h:outputText id="nameArrivalAirport"
-								value=": #{bookingBean.flightBean.selectedFlight.destinationLocation.name}"
+								value=": #{bookingBean.flightBean.flight.destinationLocation.name}"
 								style="font-weight:bold" />
 						</h:panelGroup>
 
@@ -55,60 +54,82 @@
 
 					<h:panelGroup class="form-group">
 						<h:outputLabel for="CreditCardType" value="CreditCardType" />
-						
-						<h:selectOneMenu  id="CreditCardType" class="form-control" valueChangeListener="#{bookingBean.selectOneMenuListener}">
+
+						<h:selectOneMenu id="CreditCardType" class="form-control"
+							valueChangeListener="#{bookingBean.selectOneMenuListener}"
+							value="#{bookingBean.selectedCreditCardType}">
 
 							<f:selectItems var="n" value="#{bookingBean.creditCardtypeList}"
-								itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" 
-								itemValue="#{bookingBean.selectedCreditCardType}"
-								/>
-								 <f:ajax event="change" execute="form" render="priceTicket"/>
+								itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
+							<f:ajax event="change" render="priceTicket" />
+							<f:ajax event="change" render="creditCardNumber" />
 						</h:selectOneMenu>
+
+						<h:outputLabel for="creditCardNumber" value="Credit Card number" />
+						<h:inputText id="creditCardNumber"
+							value="#{bookingBean.creditCardNumber}" class="form-control" />
+
+						<h:outputLabel for="firstNamePayer" value="First name: " />
+						<h:inputText id="firstNamePayer"
+							value="#{bookingBean.payer.firstName}" class="form-control" />
+
+						<h:outputLabel for="lastNamePayer" value="Last name: " />
+						<h:inputText id="lastNamePayer"
+							value="#{bookingBean.payer.lastName}" class="form-control" />
+
 					</h:panelGroup>
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div  class="form-horizontal">
+				<div class="form-horizontal">
 					<h:panelGroup class="form-group">
 						<h:outputLabel for="priceTicket" value="#{msg['search.price']}:" />
-						
-						<c:choose id="priceTicket">
-							<c:when
-								test="#{not (bookingBean.selectedCreditCardType eq 'ENDORSEMENT') }">
-								<ui:param name="discount" value="0.1" />
-							</c:when>
-							<c:otherwise>
-								<ui:param name="discount" value="0" />
-							</c:otherwise>
-						</c:choose>
+						<h:outputText id="priceTicket"
+							value="#{bookingBean.calculatePrice()}" />
 
+					</h:panelGroup>
+					<h:panelGroup id="flightTable">
+						<div class="tb">
+							<h:dataTable class="table" value="#{bookingBean.tickets}" var="t">
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Departure airport" />
+									</f:facet>
+									<h:outputText id="nameDepartureAirport"
+										value="#{t.flight.departureLocation.name}"
+										style="font-weight:bold" />
 
-						<c:if test="#{bookingBean.flightBean.travelingClass eq 'ECONOMY_CLASS'}">
-							<ui:param name="price"
-								value="#{bookingBean.flightBean.selectedFlight.flightData.economyClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.economyClass.pricing.defaultPrice)}" />
-							<h:outputText id="priceTicket" value="#{price - (price * discount)}" />
-						</c:if>
-						<c:if
-							test=" #{bookingBean.flightBean.travelingClass eq 'FIRST_CLASS'}">
-							<ui:param name="price"
-								value="#{bookingBean.flightBean.selectedFlight.flightData.firstClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.firstClass.pricing.defaultPrice)}" />
-							<h:outputText id="priceTicket" value="#{price - (price * discount)}" />
-						</c:if>
-						<c:if test="#{bookingBean.flightBean.travelingClass eq 'BUSINESS_CLASS'}">
-							<ui:param name="price"
-								value="#{bookingBean.flightBean.selectedFlight.flightData.businnessClass.pricing.basePrice * (1+bookingBean.flightBean.selectedFlight.flightData.businnessClass.pricing.defaultPrice)}" />
-							<h:outputText id="priceTicket" value="#{price - (price * discount)}" />
-						</c:if>
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="First name passenger" />
+									</f:facet>
+									<h:inputText id="firstNamePassenger"
+										value="#{t.passenger.firstName}" class="form-control" />
 
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Last name passenger" />
+									</f:facet>
+									<h:inputText id="lastNamePassenger"
+										value="#{t.passenger.lastName}" class="form-control" />
+
+								</h:column>
+							</h:dataTable>
+						</div>
 					</h:panelGroup>
 				</div>
 			</div>
-
+			<h:panelGroup class="form-group">
+				<h:outputLabel for="bookBtn" value="" />
+				<h:commandButton id="bookBtn" class="btn btn-default form-control"
+					value="Save booking" action="#{bookingBean.saveBooking()}" />
+			</h:panelGroup>
 		</h:form>
 	</ui:define>
 
 
 
 </ui:composition>
-
 </html>

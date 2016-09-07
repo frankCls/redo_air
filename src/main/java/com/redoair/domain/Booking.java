@@ -39,20 +39,21 @@ public class Booking implements Serializable {
 
 	@OneToMany( cascade = { CascadeType.PERSIST, CascadeType.MERGE,
 			CascadeType.REMOVE }, fetch = FetchType.EAGER)
-	
 	private List<Ticket> tickets = new ArrayList<>();
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date dateBooked;
+	private Date dateBooked = new Date();
 
 	@NotNull
-	@ManyToOne(fetch = FetchType.LAZY/* , cascade=CascadeType.PERSIST */)
+	@ManyToOne( cascade = {CascadeType.MERGE,CascadeType.PERSIST }, fetch = FetchType.EAGER)
 	private Payer payer;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private PurchaseStatus purchaseStatus;
 
+	
+	
 	public Long getId() {
 		return id;
 	}

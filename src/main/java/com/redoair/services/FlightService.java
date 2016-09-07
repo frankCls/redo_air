@@ -27,7 +27,10 @@ public class FlightService implements FlightServiceRemote {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@Override
+	public void updateFlight(Flight flight) {
+		flightRepository.updateFlight(flight);
+	}
 	@Override
 	public Flight findFlightById(Long id) {
 		return flightRepository.findFlightById(id);
@@ -100,5 +103,7 @@ public class FlightService implements FlightServiceRemote {
 		}
 		return new ArrayList<>();
 	}
+
+	
 
 }

@@ -15,9 +15,9 @@ public class PassengerRepository {
 		return em.find(Passenger.class, id);
 	}
 	
-	public Passenger savePassenger(Passenger passenger){
+	public void savePassenger(Passenger passenger){
 		em.persist(passenger);
-		return passenger;
+		
 	}
 		
 }

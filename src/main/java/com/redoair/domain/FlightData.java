@@ -17,15 +17,15 @@ public class FlightData {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
 	@JoinColumn(name="economyClassId")
-	private AbstractTravelingClassData businnessClass;
-	
-	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
-	@JoinColumn(name="businnessClassId")
 	private AbstractTravelingClassData economyClass;
 	
-	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
+	@JoinColumn(name="businnessClassId")
+	private AbstractTravelingClassData businnessClass;
+	
+	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
 	@JoinColumn(name="firstClassId")
 	private AbstractTravelingClassData firstClass;
 

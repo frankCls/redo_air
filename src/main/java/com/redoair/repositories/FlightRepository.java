@@ -27,6 +27,10 @@ public class FlightRepository {
 	public void saveFlight(Flight flight) {
 		em.persist(flight);
 	}
+	public void updateFlight(Flight flight) {
+		
+		em.merge(flight);
+	}
 
 	public List<Flight> findFlightsByLocationsWithTravelingClassTypeAndSeatsAndDepartureDate(String depAirport,
 			String destAirport, TravelingClassType travelingClass, Integer seats, Date fromDate, Date toDate) {

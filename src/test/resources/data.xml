@@ -1,18 +1,18 @@
 <dataset>
-	<payer id="2" firstName="Bert" lastName="Von Testpersons"></payer>
+	<!--  <payer id="2" firstName="Bert" lastName="Von Testpersons"></payer>
 	<booking id="2" dateBooked="2016-05-03 15:03:11"
 		purchaseStatus="PENDING" payer_id="2" version="0"></booking>
-
+	-->
 	<pricing id="3" basePrice="50" defaultPrice="5.250" />
 
 	<discounts Pricing_id="3" discountPercentage="0.05"
 		seatTreshold="5" />
 	<discounts Pricing_id="3" discountPercentage="0.07"
 		seatTreshold="10" />
-	<passenger id="3" firstName="test" lastName="lastname" />
+	<!--  <passenger id="3" firstName="test" lastName="lastname" />
 	<passenger id="4" firstName="Jos" lastName="Who" />
 
-
+-->
 
 
 </dataset>
