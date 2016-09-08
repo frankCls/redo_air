@@ -1,19 +1,25 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
-	version="2.2">
-
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 	<navigation-rule>
-		<from-view-id>/index.xhtml</from-view-id>		    
-		<navigation-case>			
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/search_results.xhtml</to-view-id>
-<!-- 			<from-action>#{flightBean.searchResults}</from-action> -->
-			<redirect />			    
+			<to-view-id>/searchResults.xhtml</to-view-id>
+			<!-- <from-action>#{flightBean.searchResults}</from-action> -->
+			<redirect />
 		</navigation-case>
 	</navigation-rule>
-
+	<navigation-rule>
+		<from-view-id>/searchResults.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>details</from-outcome>
+			<to-view-id>/details.xhtml</to-view-id>
+			<!-- <from-action>#{flightBean.searchResults}</from-action> -->
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 	<application>
 		<locale-config>
 			<default-locale>en</default-locale>
@@ -25,6 +31,4 @@
 			<var>msg</var>
 		</resource-bundle>
 	</application>
-
-
 </faces-config>

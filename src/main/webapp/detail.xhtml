@@ -33,7 +33,7 @@
 								<h:outputText value="#{msg['search.depDate']}" />
 							</f:facet>
 							<h:outputText value="#{f.departureTime}">
-<!-- 								<f:convertDateTime type="date" dateStyle="full" /> -->
+								<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
 							</h:outputText>
 						</h:column>
 
@@ -42,7 +42,7 @@
 								<h:outputText value="#{msg['search.depTime']}" />
 							</f:facet>
 							<h:outputText value="#{f.departureTime}">
-								<f:convertDateTime type="date" pattern="hh:mm" />
+								<f:convertDateTime type="date" pattern="HH:mm" />
 							</h:outputText>
 						</h:column>
 						<h:column>

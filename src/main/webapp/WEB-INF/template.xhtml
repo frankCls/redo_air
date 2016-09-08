@@ -8,16 +8,9 @@
 <f:view locale="#{lang.locale}">
 	<h:head>
 		<title><ui:insert name="pageTitle">ReDo Air</ui:insert></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!-- 		<h:outputScript library="jquery-2.2.1" name="jquery.js" /> -->
-<!-- 		<h:outputScript library="bootstrap-3.3.6" name="/js/bootstrap.js" /> -->
-<!-- 		<h:outputScript library="js" name="/moment.js" /> -->
-<!-- 		<h:outputScript library="bootstrap-3.3.6" -->
-<!-- 			name="/js/bootstrap-datetimepicker.min.js" /> -->
 		<h:outputStylesheet name="/bootstrap-3.3.6/css/bootstrap-jsf.css" />
-<!-- 		<h:outputStylesheet -->
-<!-- 			name="/bootstrap-3.3.6/css/bootstrap-datetimepicker.min.css" /> -->
-<!--  		<h:outputStylesheet name="/css/default.css" /> -->
 		<h:outputStylesheet name="/css/cssLayout.css" />
 		<ui:insert name="customScripts" />
 		<ui:insert name="customStylesheets" />
@@ -30,6 +23,7 @@
 						<h1 class="title">ReDo Air</h1>
 						<h2 class="title">Fly anywhere</h2>
 					</div>
+					
 				</header>
 				<nav class="navbar navbar-light bg-faded">
 					<a class="navbar-brand" href="/images/air-travel-2400px.png" />
@@ -51,7 +45,7 @@
 				<ui:insert name="pageContent">
 				Here comes content...
 				</ui:insert>
-				<footer> Copyright ReDo Air. All rights reserved. </footer>
+				<!-- 				<footer> Copyright ReDo Air. All rights reserved. </footer> -->
 			</div>
 		</div>
 	</h:body>
