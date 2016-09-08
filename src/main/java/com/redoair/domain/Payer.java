@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
 public class Payer implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotNull
@@ -27,12 +27,11 @@ public class Payer implements Serializable {
 	@NotNull
 	private String lastName;
 
-	
 	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name = "CreditCardList")
- private List<CreditCard> creditCardList = new ArrayList<>();
+	private List<CreditCard> creditCardList = new ArrayList<>();
 
-	public  void addCreditCard(CreditCard card) {
+	public void addCreditCard(CreditCard card) {
 		creditCardList.add(card);
 	}
 

@@ -1,4 +1,5 @@
 
+
 <ui:composition template="/WEB-INF/template.xhtml"
 xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -6,11 +7,16 @@ xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
-
+<f:event listener="#{bookingBean.initConversation}"   type="preRenderView"></f:event>
 
 	<ui:define name="pageTitle" value="#{msg['search.title']}" />
 	<ui:define name="pageContent">
-
+	 <f:view>
+	<h:form>
+ <p>
+                <h:commandButton value="logout" action="#{userBean.logout}" />
+            </p>
+            </h:form>
 		<h:form id="form">
 			<div class="col-md-4">
 				<div class="form-horizontal">
@@ -68,15 +74,15 @@ xmlns="http://www.w3.org/1999/xhtml"
 						<h:outputLabel for="creditCardNumber" value="Credit Card number" />
 						<h:inputText id="creditCardNumber"
 							value="#{bookingBean.creditCardNumber}" class="form-control" />
-
+<!-- mag weg als login page klaar is -->
 						<h:outputLabel for="firstNamePayer" value="First name: " />
-						<h:inputText id="firstNamePayer"
-							value="#{bookingBean.payer.firstName}" class="form-control" />
-
+						<h:outputText id="firstNamePayer"
+							value="#{bookingBean.payer.firstName}" style="font-weight:bold" />
+<br></br>
 						<h:outputLabel for="lastNamePayer" value="Last name: " />
-						<h:inputText id="lastNamePayer"
-							value="#{bookingBean.payer.lastName}" class="form-control" />
-
+						<h:outputText id="lastNamePayer"
+							value="#{bookingBean.payer.lastName}" style="font-weight:bold" />
+<!-- mag weg als login page klaar is -->
 					</h:panelGroup>
 				</div>
 			</div>
@@ -127,6 +133,7 @@ xmlns="http://www.w3.org/1999/xhtml"
 					value="Save booking" action="#{bookingBean.saveBooking()}" />
 			</h:panelGroup>
 		</h:form>
+		</f:view>
 	</ui:define>
 
 

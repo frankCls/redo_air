@@ -5,19 +5,53 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
 
-<!-- 	<navigation-rule> -->
-<!-- 		<from-view-id>/registrationPassenger.xhtml</from-view-id> -->
-<!-- 		<navigation-case> -->
+	<navigation-rule>
+		<description>login user</description>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>output</from-outcome>
+			<to-view-id>/booking.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
 
-<!-- 			<from-outcome>success</from-outcome> -->
-<!-- 			<to-view-id>/registrationPassenger.xhtml</to-view-id> -->
-<!-- 		</navigation-case> -->
-<!-- 		<navigation-case> -->
+		<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>invalid</from-outcome>
+			<to-view-id>/errorLogin.xhtml</to-view-id>
 
-<!-- 			<from-outcome>fail</from-outcome> -->
-<!-- 			<to-view-id>/errorPage.xhtml</to-view-id> -->
-<!-- 		</navigation-case> -->
-<!-- 	</navigation-rule> -->
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>noUser</from-outcome>
+			<to-view-id>/errorNoUser.xhtml</to-view-id>
+
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<description>register new user</description>
+		<from-view-id>/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{userBean.saveUser}</from-action>
+			<from-outcome>UserSaved</from-outcome>
+			<to-view-id>/success.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
+	<navigation-rule>
+		<description>booking</description>
+		<from-view-id>/booking.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{bookingBean.saveBooking()}</from-action>
+			<from-outcome>bookingSuccess</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
 	<application>
 		<locale-config>
 			<default-locale>en</default-locale>
@@ -29,6 +63,6 @@
 			<var>msg</var>
 		</resource-bundle>
 	</application>
-	
+
 
 </faces-config>

@@ -51,6 +51,7 @@
 		<class>com.redoair.domain.AbstractTravelingClassData</class>
 		<class>com.redoair.domain.Pricing</class>
 		<class>com.redoair.domain.FlightData</class>
+		<class>com.redoair.domain.User</class>
 
 
 		<properties>

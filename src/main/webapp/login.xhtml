@@ -7,23 +7,37 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 	<ui:define name="pageTitle" value="#{msg['search.title']}" />
 	<ui:define name="pageContent">
-		<h:form>
-			<h3>JSF Login Logout</h3>
-			<h:outputText value="Username" />
-			<h:inputText id="username" value="#{login.user}"></h:inputText>
-			<h:message for="username"></h:message>
-			<br></br>
-			<br></br>
-
-			<h:outputText value="Password" />
-			<h:inputSecret id="password" value="#{login.pwd}"></h:inputSecret>
-			<h:message for="password"></h:message>
-			<br></br>
-			<br></br>
-
-			<h:commandButton action="#{login.validateUsernamePassword}"
-				value="Login"></h:commandButton>
-		</h:form>
+		<f:view>
+			<center>
+				<h:form>
+					<table frame="box" id="loginTable">
+						<tr>
+							<th>Login Page</th>
+						</tr>
+						<tr>
+							<td><h:outputText value="Enter your username : " /></td>
+							<td><h:inputText id="inputName" value="#{userBean.userName}"
+									required="true"
+									requiredMessage="Username field must not be empty" /></td>
+							<td><h:message for="inputName" style="color:red" /></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Enter password :" /></td>
+							<td><h:inputSecret id="inputPassword"
+									value="#{userBean.password}" required="true"
+									requiredMessage="Password field must not be empty" /></td>
+							<td><h:message for="inputPassword" style="color:red" /></td>
+						</tr>
+						<tr>
+							<td><h:commandButton value="Sign In"
+									action="#{userBean.login()}" /></td>
+							<td><h:outputText value="Not a User " /> <h:outputLink
+									value="register.jsf">Sign Up</h:outputLink></td>
+						</tr>
+					</table>
+				</h:form>
+			</center>
+		</f:view>
 
 	</ui:define>
 </ui:composition>
