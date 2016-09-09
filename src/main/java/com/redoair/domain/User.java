@@ -22,12 +22,24 @@ public class User implements Serializable{
 	private String password;
 	@NotNull
 	private String firstName;
+	
+	
 	@NotNull
 	private String lastName;
+	
+	@NotNull
+	private String email;
+	
 	@Enumerated(EnumType.STRING)
-	private Role role = Role.PAYER;
+	private Role role ;
 	
 	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getUserName() {
 		return userName;
 	}

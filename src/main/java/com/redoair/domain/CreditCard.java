@@ -23,7 +23,7 @@ public class CreditCard implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private CreditCardType typeCreditCard;
 
-	private long creditCardNumber;
+	private String creditCardNumber;
 
 	/*public Payer getPayer_id() {
 		return payer;
@@ -41,11 +41,11 @@ public class CreditCard implements Serializable {
 		this.typeCreditCard = typeCreditCard;
 	}
 
-	public long getCreditCardNumber() {
+	public String getCreditCardNumber() {
 		return creditCardNumber;
 	}
 
-	public void setCreditCardNumber(long creditCardNumber) {
+	public void setCreditCardNumber(String creditCardNumber) {
 		this.creditCardNumber = creditCardNumber;
 	}
 	

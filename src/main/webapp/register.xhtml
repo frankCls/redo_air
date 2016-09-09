@@ -24,6 +24,12 @@
 							<td><h:message for="lname" style="color:red" /></td>
 						</tr>
 						<tr>
+							<td><h:outputText value="Enter Your email:" /></td>
+							<td><h:inputText id="email" value="#{userBean.email}"
+									required="true" requiredMessage="Please enter your email" /></td>
+							<td><h:message for="email" style="color:red" /></td>
+						</tr>
+						<tr>
 							<td><h:outputText value="Enter username :" /></td>
 							<td><h:inputText id="usr" value="#{userBean.userName}"
 									required="true" requiredMessage="Please enter your username" /></td>
@@ -39,7 +45,7 @@
 						<tr>
 							<td />
 							<td><h:commandButton value="Register"
-									action="#{userBean.saveUser}" /></td>
+									action="#{userBean.saveUser()}" /></td>
 						</tr>
 						<tr>
 							<td><h:outputLink value="index.xhtml">Home</h:outputLink></td>

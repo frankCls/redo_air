@@ -9,11 +9,12 @@ import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.redoair.domain.Booking;
 import com.redoair.domain.CreditCard;
@@ -38,6 +39,8 @@ public class BookingBean implements Serializable {
 
 	private Payer payer = new Payer();
 
+	@NotNull
+	@Size(min = 4, max = 30)
 	private String creditCardNumber = "";
 
 	@Inject
@@ -67,21 +70,23 @@ public class BookingBean implements Serializable {
 			conversation.end();
 
 		}
-	
+
 	}
 
 	// Navigation
-	public String goToBooking() {
-		if (flight == null || conversation == null) {
-			return "";// Dont go anywhere if the there was no input the field
-		}
-		conversation.begin();
-
-		return "booking.jsf?faces-redirect=true";
-	}
-
+	/*
+	 * public String goToBooking() { if (flight == null || conversation == null)
+	 * { return "";// Dont go anywhere if the there was no input the field }
+	 * conversation.begin();
+	 * 
+	 * return "booking.jsf?faces-redirect=true"; }
+	 */
 	public void initConversation() {
+		if (conversation != null) {
 
+			conversation.end();
+
+		}
 		if (!FacesContext.getCurrentInstance().isPostback() && conversation.isTransient()) {
 			conversation.begin();
 		}
@@ -117,7 +122,7 @@ public class BookingBean implements Serializable {
 		// System.err.println("in save booking()");
 		// System.out.println(getSelectedCreditCardType());
 		if (creditCardNumber != null) {
-			creditCard.setCreditCardNumber(Long.parseLong(creditCardNumber));
+			creditCard.setCreditCardNumber(creditCardNumber);
 			// System.out.println("card number: " +
 			// creditCard.getCreditCardNumber());
 
@@ -187,6 +192,7 @@ public class BookingBean implements Serializable {
 
 		}
 		end();
+
 		return "bookingSuccess";
 
 	}
@@ -212,7 +218,7 @@ public class BookingBean implements Serializable {
 		double discount = 0;
 		if (selectedCreditCardType != null) {
 
-			System.out.println(selectedCreditCardType);
+			System.out.println(" selectedCreditCardType " + selectedCreditCardType);
 			if (!selectedCreditCardType.equals(CreditCardType.ENDORSEMENT)) {
 				discount = 0.1;
 

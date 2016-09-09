@@ -15,24 +15,25 @@
 							<th>Login Page</th>
 						</tr>
 						<tr>
-							<td><h:outputText value="Enter your username : " /></td>
+							<td><h:outputText value="#{msg['login.username']}" /></td>
 							<td><h:inputText id="inputName" value="#{userBean.userName}"
 									required="true"
 									requiredMessage="Username field must not be empty" /></td>
 							<td><h:message for="inputName" style="color:red" /></td>
 						</tr>
 						<tr>
-							<td><h:outputText value="Enter password :" /></td>
+							<td><h:outputText value="#{msg['login.password']}" /></td>
 							<td><h:inputSecret id="inputPassword"
 									value="#{userBean.password}" required="true"
 									requiredMessage="Password field must not be empty" /></td>
 							<td><h:message for="inputPassword" style="color:red" /></td>
 						</tr>
 						<tr>
-							<td><h:commandButton value="Sign In"
+							<td><h:commandButton value="#{msg['login.login']}"
 									action="#{userBean.login()}" /></td>
-							<td><h:outputText value="Not a User " /> <h:outputLink
-									value="register.jsf">Sign Up</h:outputLink></td>
+							<td><h:outputText value="#{msg['login.notAnUser']}" />
+							<br></br>
+							 <h:outputLink value="register.jsf"> #{msg['login.register']}</h:outputLink></td>
 						</tr>
 					</table>
 				</h:form>

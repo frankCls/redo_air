@@ -10,8 +10,15 @@
 		<from-view-id>/login.xhtml</from-view-id>
 		<navigation-case>
 			<from-action>#{userBean.login()}</from-action>
-			<from-outcome>output</from-outcome>
+			<from-outcome>payer</from-outcome>
 			<to-view-id>/booking.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+			<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>partner</from-outcome>
+			<to-view-id>/partner.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 
@@ -34,7 +41,7 @@
 		<description>register new user</description>
 		<from-view-id>/register.xhtml</from-view-id>
 		<navigation-case>
-			<from-action>#{userBean.saveUser}</from-action>
+			<from-action>#{userBean.saveUser()}</from-action>
 			<from-outcome>UserSaved</from-outcome>
 			<to-view-id>/success.xhtml</to-view-id>
 			<redirect />
