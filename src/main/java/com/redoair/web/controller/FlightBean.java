@@ -184,21 +184,24 @@ public class FlightBean implements Serializable {
 
 	public String detailsListener(Flight flight) {
 		System.out.println("detail listener");
-//		flightDetails = (Flight) event.getComponent().getAttributes().get("flight");
+		// flightDetails = (Flight)
+		// event.getComponent().getAttributes().get("flight");
 		flightDetails = flight;
 		System.out.println("listener");
-//		if(flightDetails.getId()!=null){
-//			System.out.println(flightDetails.getId());
-//		}
-		
+		// if(flightDetails.getId()!=null){
+		// System.out.println(flightDetails.getId());
+		// }
+
 		return "details";
-		//showDetails();
+		// showDetails();
 	}
 
-public String book(){
-	System.out.println("in book()");
-	return "booking";
-}
+	public String book() {
+		
+		System.out.println("in book()");
+		
+		return "booking";
+	}
 
 	public List<Flight> getFlightsList() {
 		return flightsList;

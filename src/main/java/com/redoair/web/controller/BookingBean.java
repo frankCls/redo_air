@@ -4,15 +4,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -45,8 +49,6 @@ public class BookingBean implements Serializable {
 
 	@Inject
 	private BookingServiceEjb bookingServiceEjb;
-	@Inject
-	private FlightBean flightBean;
 
 	private List<Ticket> tickets = new ArrayList<>();
 
@@ -63,6 +65,12 @@ public class BookingBean implements Serializable {
 
 	@Inject
 	private Conversation conversation;
+
+	private String flightId;
+
+	private int numberTickets;
+
+	private TravelingClassType travelinclass;
 
 	public void end() {
 		if (!conversation.isTransient()) {
@@ -82,33 +90,47 @@ public class BookingBean implements Serializable {
 	 * return "booking.jsf?faces-redirect=true"; }
 	 */
 	public void initConversation() {
-		if (conversation != null) {
-
+		/*if (conversation != null) {
+			System.out.println("end conversation");
 			conversation.end();
 
 		}
 		if (!FacesContext.getCurrentInstance().isPostback() && conversation.isTransient()) {
+			System.out.println("start conversation");
 			conversation.begin();
-		}
+		}*/
 	}
+
+	
 
 	@PostConstruct
 	public void init() {
-		flight = flightService.findFlightById(17313L);
-		//flightBean.setFlight(flight);
+		System.out.println("in bookingbean");
+		
+		HttpServletRequest request = SessionUtils.getRequest();
+		String id =  request.getParameter("flightId");
+		
+		flightId = id;
+		long parseLong = 17313L;
+	
+		
+		
+		flight = flightService.findFlightById(parseLong);
+		System.out.println(flight.getDepartureLocation().getCountry());
+		// flightBean.setFlightDetails(flight);
+		numberTickets = 2;
+		// flightBean.setNrOfTickets(2);
+		travelinclass = TravelingClassType.ECONOMY_CLASS;
 
-		flightBean.setNrOfTickets(2);
-
-		flightBean.setTravelingClass(TravelingClassType.ECONOMY_CLASS);
 		// --------
 
 		payer.setFirstName(SessionUtils.getFirstName());
 		payer.setLastName(SessionUtils.getLastName());
 
-		for (int i = 1; i <= flightBean.getNrOfTickets(); i++) {
+		for (int i = 1; i <= numberTickets; i++) {
 			Ticket ticket = new Ticket();
 			ticket.setFlight(flight);
-			ticket.setTravelingClass(flightBean.getTravelingClass());
+			ticket.setTravelingClass(travelinclass);
 
 			ticket.setPassenger(new Passenger());
 			tickets.add(ticket);
@@ -176,12 +198,12 @@ public class BookingBean implements Serializable {
 			for (Ticket t : tickets) {
 				booking.addTickets(t);
 			}
-			System.out.println("traveling class: " + flightBean.getTravelingClass());
+			System.out.println("traveling class: " + travelinclass);
 			System.out.println("flightdataId: " + flight.getFlightData().getId());
 
 			int remainingSeats = flight.getFlightData().getEconomyClass().getRemainingSeats();
 			System.out.println("remainingSeats: " + remainingSeats);
-			flight.getFlightData().getEconomyClass().setRemainingSeats(remainingSeats - flightBean.getNrOfTickets());
+			flight.getFlightData().getEconomyClass().setRemainingSeats(remainingSeats - numberTickets);
 			System.out.println(
 					"remainingSeats after edit: " + flight.getFlightData().getEconomyClass().getRemainingSeats());
 
@@ -226,15 +248,15 @@ public class BookingBean implements Serializable {
 				discount = 0;
 			}
 			System.err.println("dicount" + discount);
-			if (flightBean.getTravelingClass().equals(TravelingClassType.ECONOMY_CLASS)) {
+			if (getTravelinclass().equals(TravelingClassType.ECONOMY_CLASS)) {
 				ticketBasePrice = flight.getFlightData().getEconomyClass().getPricing().getBasePrice()
 						* (1 + flight.getFlightData().getEconomyClass().getPricing().getDefaultPrice());
 
-			} else if (flightBean.getTravelingClass().equals(TravelingClassType.BUSINESS_CLASS)) {
+			} else if (getTravelinclass().equals(TravelingClassType.BUSINESS_CLASS)) {
 				ticketBasePrice = flight.getFlightData().getBusinnessClass().getPricing().getBasePrice()
 						* (1 + flight.getFlightData().getBusinnessClass().getPricing().getDefaultPrice());
 
-			} else if (flightBean.getTravelingClass().equals(TravelingClassType.FIRST_CLASS)) {
+			} else if (getTravelinclass().equals(TravelingClassType.FIRST_CLASS)) {
 				ticketBasePrice = flight.getFlightData().getFirstClass().getPricing().getBasePrice()
 						* (1 + flight.getFlightData().getFirstClass().getPricing().getDefaultPrice());
 
@@ -257,6 +279,30 @@ public class BookingBean implements Serializable {
 			System.out.println("selectedCreditCardType: " + selectedCreditCardType);
 
 		}
+	}
+
+	public String getFlightId() {
+		return flightId;
+	}
+
+	public void setFlightId(String flightId) {
+		this.flightId = flightId;
+	}
+
+	public int getNumberTickets() {
+		return numberTickets;
+	}
+
+	public void setNumberTickets(int numberTickets) {
+		this.numberTickets = numberTickets;
+	}
+
+	public TravelingClassType getTravelinclass() {
+		return travelinclass;
+	}
+
+	public void setTravelinclass(TravelingClassType travelinclass) {
+		this.travelinclass = travelinclass;
 	}
 
 	public List<Ticket> getTickets() {
@@ -297,14 +343,6 @@ public class BookingBean implements Serializable {
 
 	public void setBooking(Booking booking) {
 		this.booking = booking;
-	}
-
-	public FlightBean getFlightBean() {
-		return flightBean;
-	}
-
-	public void setFlightBean(FlightBean flightBean) {
-		this.flightBean = flightBean;
 	}
 
 	public CreditCardType getSelectedCreditCardType() {

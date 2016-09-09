@@ -19,16 +19,13 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
+		<description>book now</description>
 		<from-view-id>/details.xhtml</from-view-id>
 		<navigation-case>
+			<from-action>#{flightBean.book()}</from-action>
 			<from-outcome>booking</from-outcome>
 			<to-view-id>/booking.xhtml</to-view-id>
-			<redirect>
-				<view-param>
-					<name>id</name>
-					<value>#{flightBean.flightDetails.id}</value>
-				</view-param>
-			</redirect>
+			<redirect />
 		</navigation-case>
 	</navigation-rule>
 

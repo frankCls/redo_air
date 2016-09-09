@@ -18,7 +18,7 @@
 					<h:commandButton value="logout" action="#{userBean.logout}" />
 				</p>
 			</h:form>
-			<h:form id="form">
+			<h:form >
 				<div class="col-md-4">
 					<div class="form-horizontal">
 						<h:panelGrid id="panel" columns="1" cellpadding="2"
@@ -29,7 +29,7 @@
 									value="#{msg['search.depCountry']}" />
 
 								<h:outputText id="nameDepartureCountry"
-									value=": #{bookingBean.flightBean.flight.departureLocation.country}"
+									value=": #{bookingBean.flight.departureLocation.country}"
 									style="font-weight:bold" />
 
 
@@ -37,7 +37,7 @@
 									value="#{msg['search.depAirport']}" />
 
 								<h:outputText id="nameDepartureAirport"
-									value=": #{bookingBean.flightBean.flight.departureLocation.name}"
+									value=": #{bookingBean.flight.departureLocation.name}"
 									style="font-weight:bold" />
 							</h:panelGroup>
 							<h:panelGroup class="form-group">
@@ -46,7 +46,7 @@
 									value="#{msg['search.destCountry']}" />
 
 								<h:outputText id="nameArrivalCountry"
-									value=": #{bookingBean.flightBean.flight.destinationLocation.country}"
+									value=": #{bookingBean.flight.destinationLocation.country}"
 									style="font-weight:bold" />
 
 
@@ -54,7 +54,7 @@
 									value="#{msg['search.destAirport']}" />
 
 								<h:outputText id="nameArrivalAirport"
-									value=": #{bookingBean.flightBean.flight.destinationLocation.name}"
+									value=": #{bookingBean.flight.destinationLocation.name}"
 									style="font-weight:bold" />
 							</h:panelGroup>
 

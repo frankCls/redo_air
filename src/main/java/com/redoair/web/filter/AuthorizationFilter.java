@@ -37,9 +37,11 @@ public class AuthorizationFilter implements Filter {
 
 			String reqURI = reqt.getRequestURI();
 
-			if (reqURI.indexOf("/index.jsf") >= 0 || reqURI.indexOf("/login.jsf") >= 0 || reqURI.indexOf("/searchResults.jsf") >= 0 || reqURI.indexOf("/details.jsf") >= 0
-					|| reqURI.indexOf("/register.jsf") >= 0 || (reqURI.indexOf("/partner.jsf") < 0 && ses != null
-							&& ses.getAttribute("userName") != null && ses.getAttribute("role") == Role.PAYER)
+			if (reqURI.indexOf("/index.jsf") >= 0 || reqURI.indexOf("/login.jsf") >= 0 
+					|| reqURI.indexOf("/searchResults.jsf") >= 0 
+					|| reqURI.indexOf("/details.jsf") >= 0
+					|| reqURI.indexOf("/register.jsf") >= 0 
+					|| (reqURI.indexOf("/partner.jsf") < 0 	&& ses != null	&& ses.getAttribute("userName") != null && ses.getAttribute("role") == Role.PAYER)
 					|| reqURI.contains("javax.faces.resource"))
 				chain.doFilter(request, response);
 			else if ((reqURI.indexOf("/partner.jsf") >= 0 && ses != null && ses.getAttribute("userName") != null
