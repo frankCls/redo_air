@@ -131,7 +131,12 @@
 
 			</b:column>
 		</b:row>
+<h:form>
 
+<h:commandButton action="#{flightBean.book(flightBean.flightDetails.id)}" value="" >
+	<f:param name="flightId" value="#{flightBean.flightDetails.id}"/>
+</h:commandButton>
+</h:form>
 
 
 

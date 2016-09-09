@@ -28,7 +28,7 @@ import com.redoair.services.CalculatePriceServiceEjb;
 import com.redoair.services.FlightService;
 
 @Named("flightBean")
-@SessionScoped
+@ConversationScoped
 public class FlightBean implements Serializable {
 
 	/**
@@ -42,8 +42,8 @@ public class FlightBean implements Serializable {
 	@Inject
 	private CalculatePriceServiceEjb priceCalculator;
 
-//	@Inject
-//	private Conversation conversation;
+	@Inject
+	private Conversation conversation;
 
 	private String depCountry = "";
 	private String destCountry = "";
@@ -80,9 +80,9 @@ public class FlightBean implements Serializable {
 		destCountryList = flightService.findAllDestinationCountries();
 		depRegionList = flightService.findAllDepartureRegions();
 		destRegionList = flightService.findAllDestinationRegions();
-//		if (conversation.isTransient()) {
-//			conversation.begin();
-//		}
+		if (conversation.isTransient()) {
+			conversation.begin();
+		}
 	}
 
 	public void getFlightsForSearchCriteria() {
@@ -182,9 +182,10 @@ public class FlightBean implements Serializable {
 		return "success";
 	}
 
-	public String detailsListener() {
+	public String detailsListener(Flight flight) {
 		System.out.println("detail listener");
-		//flightDetails = (Flight) event.getComponent().getAttributes().get("flight");
+//		flightDetails = (Flight) event.getComponent().getAttributes().get("flight");
+		flightDetails = flight;
 		System.out.println("listener");
 //		if(flightDetails.getId()!=null){
 //			System.out.println(flightDetails.getId());
