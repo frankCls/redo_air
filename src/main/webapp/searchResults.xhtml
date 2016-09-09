@@ -63,14 +63,18 @@
 				<h:outputText
 					value="#{f.flightData.firstClass.pricing.calculatedPrice}" />
 			</h:column>
-			<f:facet name="header">
-					<h:outputText value="#{msg['search.detail']}" />
-				</f:facet>
+
 			<h:column>
+				<f:facet name="header">
+					<h:outputText value="details" />
+				</f:facet>
 				<h:form>
-					<h:commandButton action="#{flightBean.showDetails(f.id)}" value="details">
-						<f:param name="id" value="#{f.id}" />
-					</h:commandButton>
+					<h:form>
+						<h:commandButton action="#{flightBean.detailsListener()}"
+							value="details">
+<!-- 							<f:attribute name="flight" value="#{f}" /> -->
+						</h:commandButton>
+					</h:form>
 				</h:form>
 			</h:column>
 		</b:dataTable>

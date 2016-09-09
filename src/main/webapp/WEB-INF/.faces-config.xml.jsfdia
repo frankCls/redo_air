@@ -10,7 +10,7 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#searchResults.xhtml"
-  PATH="/searchResults.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  PATH="/searchResults.xhtml" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#searchResults.xhtml:0" NAME="item"
    PATH="/searchResults.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="details::#details.xhtml" NAME="output"

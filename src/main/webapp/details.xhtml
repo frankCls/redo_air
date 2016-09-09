@@ -8,18 +8,134 @@
 	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
 	<ui:define name="pageTitle" value="#{msg['search.title']}" />
 	<ui:define name="pageContent">
+		<!-- 		<b:panelGrid colspans="4,4,4"> -->
+		<b:row>
+			<b:column>
+				<h:outputText value="  " />
+			</b:column>
+			<b:column>
+				<h:outputText value="#{msg['search.dep']}" />
+			</b:column>
+			<b:column>
+				<h:outputText value="{msg['search.dest']}" />
+			</b:column>
+		</b:row>
 
-		<h:panelGroup>
-			<h:column>
-				<h:outputLabel value="from:" for="from" class=""/>
-				<h:outputText value="#{flightBean.flightDetails.departureLocation.country}" id="from" />
-			</h:column>
-			<h:column>
-				<h:outputLabel value="to:" for="" />
-				<h:outputText value="" id="" />
-			</h:column>
+		<b:row>
+			<b:column>
+				<h:outputText value="#{msg['details.region']}" />
+			</b:column>
+			<b:column>
+				<h:outputText
+					value="#{flightBean.flightDetails.departureLocation.region}" />
+			</b:column>
+			<b:column>
 
-		</h:panelGroup>
+			</b:column>
+		</b:row>
+		<b:row>
+			<b:column>
+				<h:outputText value="#{msg['details.country']}" />
+			</b:column>
+			<b:column>
+				<h:outputText
+					value="#{flightBean.flightDetails.departureLocation.country}" />
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+		<b:row>
+			<b:column>
+				<h:outputText value="#{msg['details.city']}" />
+			</b:column>
+			<b:column>
+				<h:outputText
+					value="#{flightBean.flightDetails.departureLocation.city})" />
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+		<b:row>
+			<b:column>
+				<h:outputText value="#{msg['details.airport']}" />
+			</b:column>
+			<b:column>
+				<h:outputText
+					value="#{flightBean.flightDetails.departureLocation.name})" />
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+		<b:row>
+			<b:column>
+				<h:outputText value="#{msg['details.date']}" />
+			</b:column>
+			<b:column>
+				<h:outputText value="#{flightBean.flightDetails.departureTime})">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
+				</h:outputText>
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+		<b:row>
+			<b:column>
+				<h:outputText value="#{msg['details.time']}" />
+			</b:column>
+			<b:column>
+				<h:outputText value="#{flightBean.flightDetails.departureTime})">
+					<f:convertDateTime type="date" pattern="HH:mm" />
+				</h:outputText>
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+		<b:row rendered="#{flightBean.renderEconomyPrice}">
+			<b:column>
+				<h:outputText value="#{msg['details.price']}" />
+			</b:column>
+			<b:column>
+				<h:outputText
+					value="#{flightBean.flightDetails.flightData.economyClass.pricing.calculatedPrice})" />
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+		<b:row rendered="#{flightBean.renderBusinessPrice}">
+			<b:column>
+				<h:outputText value="#{msg['details.price']}" />
+			</b:column>
+			<b:column>
+				<h:outputText
+					value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice})" />
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+		<b:row rendered="#{flightBean.renderFirstClassPrice}">
+			<b:column>
+				<h:outputText value="#{msg['details.price']}" />
+			</b:column>
+			<b:column>
+				<h:outputText
+					value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice})" />
+			</b:column>
+			<b:column>
+
+			</b:column>
+		</b:row>
+
+
+
+
+
 
 	</ui:define>
 </ui:composition>

@@ -7,7 +7,6 @@
 		<navigation-case>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/searchResults.xhtml</to-view-id>
-			<!-- <from-action>#{flightBean.searchResults}</from-action> -->
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -16,7 +15,6 @@
 		<navigation-case>
 			<from-outcome>details</from-outcome>
 			<to-view-id>/details.xhtml</to-view-id>
-			<!-- <from-action>#{flightBean.searchResults}</from-action> -->
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -32,3 +30,4 @@
 		</resource-bundle>
 	</application>
 </faces-config>
+
