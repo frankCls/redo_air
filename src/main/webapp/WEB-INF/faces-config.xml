@@ -18,6 +18,61 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+
+	<navigation-rule>
+		<description>login user</description>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>payer</from-outcome>
+			<to-view-id>/booking.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>partner</from-outcome>
+			<to-view-id>/partner.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>invalid</from-outcome>
+			<to-view-id>/errorLogin.xhtml</to-view-id>
+
+		</navigation-case>
+
+		<navigation-case>
+			<from-action>#{userBean.login()}</from-action>
+			<from-outcome>noUser</from-outcome>
+			<to-view-id>/errorNoUser.xhtml</to-view-id>
+
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<description>register new user</description>
+		<from-view-id>/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{userBean.saveUser()}</from-action>
+			<from-outcome>UserSaved</from-outcome>
+			<to-view-id>/success.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
+	<navigation-rule>
+		<description>booking</description>
+		<from-view-id>/booking.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{bookingBean.saveBooking()}</from-action>
+			<from-outcome>bookingSuccess</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
 	<application>
 		<locale-config>
 			<default-locale>en</default-locale>
@@ -29,5 +84,7 @@
 			<var>msg</var>
 		</resource-bundle>
 	</application>
+
+
 </faces-config>
 

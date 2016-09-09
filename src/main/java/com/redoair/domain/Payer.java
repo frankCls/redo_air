@@ -1,6 +1,7 @@
 package com.redoair.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CollectionTable;
@@ -10,15 +11,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-
 
 @Entity
 public class Payer implements Serializable {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotNull
@@ -26,11 +27,13 @@ public class Payer implements Serializable {
 	@NotNull
 	private String lastName;
 
-	@ElementCollection(fetch = FetchType.LAZY)
+	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name = "CreditCardList")
-	private List<CreditCard> creditCard;
+	private List<CreditCard> creditCardList = new ArrayList<>();
 
-
+	public void addCreditCard(CreditCard card) {
+		creditCardList.add(card);
+	}
 
 	public Long getId() {
 		return id;
@@ -57,11 +60,11 @@ public class Payer implements Serializable {
 	}
 
 	public List<CreditCard> getCreditCard() {
-		return creditCard;
+		return creditCardList;
 	}
 
 	public void setCreditCard(List<CreditCard> creditCard) {
-		this.creditCard = creditCard;
+		this.creditCardList = creditCard;
 	}
 
 }

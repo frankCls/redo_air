@@ -13,6 +13,7 @@ import com.redoair.domain.TravelingClassType;
 @Remote
 public interface FlightServiceRemote {
 	Flight saveFlight(Flight flight);
+	void updateFlight(Flight flight);
 
 	Flight findFlightById(Long id);
 
