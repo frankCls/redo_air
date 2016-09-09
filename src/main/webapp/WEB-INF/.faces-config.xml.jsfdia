@@ -18,5 +18,59 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#details.xhtml" PATH="/details.xhtml"
-  SHAPE="240,145,0,0" model-entity="JSFProcessGroup"/>
+  SHAPE="240,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#details.xhtml:0" NAME="item"
+   PATH="/details.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="booking::#booking.xhtml" NAME="output"
+    PATH="/booking.xhtml" TARGET="rules:#booking.xhtml" TITLE="booking" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml"
+  SHAPE="32,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="payer:#{userBean.login()}:#booking.xhtml"
+    NAME="output" PATH="/booking.xhtml" TARGET="rules:#booking.xhtml"
+    TITLE="#{userBean.login()}:payer" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="partner:#{userBean.login()}:#partner.xhtml"
+    NAME="output1" PATH="/partner.xhtml" TARGET="rules:#partner.xhtml"
+    TITLE="#{userBean.login()}:partner" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="invalid:#{userBean.login()}:#errorLogin.xhtml" NAME="output2"
+    PATH="/errorLogin.xhtml" TARGET="rules:#errorLogin.xhtml"
+    TITLE="#{userBean.login()}:invalid" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="noUser:#{userBean.login()}:#errorNoUser.xhtml" NAME="output3"
+    PATH="/errorNoUser.xhtml" TARGET="rules:#errorNoUser.xhtml"
+    TITLE="#{userBean.login()}:noUser" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#register.xhtml" PATH="/register.xhtml"
+  SHAPE="32,673,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#register.xhtml:0" NAME="item"
+   PATH="/register.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="UserSaved:#{userBean.saveUser()}:#success.xhtml" NAME="output"
+    PATH="/success.xhtml" TARGET="rules:#success.xhtml"
+    TITLE="#{userBean.saveUser()}:UserSaved" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#booking.xhtml" PATH="/booking.xhtml"
+  SHAPE="288,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#booking.xhtml:0" NAME="item"
+   PATH="/booking.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="bookingSuccess:#{bookingBean.saveBooking()}:#index.xhtml"
+    NAME="output" PATH="/index.xhtml" TARGET="rules:#index.xhtml"
+    TITLE="#{bookingBean.saveBooking()}:bookingSuccess" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#errorLogin.xhtml" PATH="/errorLogin.xhtml"
+  SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#success.xhtml" PATH="/success.xhtml"
+  SHAPE="240,689,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#partner.xhtml" PATH="/partner.xhtml"
+  SHAPE="288,257,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#errorNoUser.xhtml" PATH="/errorNoUser.xhtml"
+  SHAPE="288,577,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

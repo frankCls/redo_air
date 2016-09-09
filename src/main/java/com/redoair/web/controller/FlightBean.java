@@ -195,10 +195,10 @@ public class FlightBean implements Serializable {
 		//showDetails();
 	}
 
-//	public String showDetails() {
-//		System.out.println("in showDetails");
-//
-//	}
+public String book(){
+	System.out.println("in book()");
+	return "booking";
+}
 
 	public List<Flight> getFlightsList() {
 		return flightsList;

@@ -133,7 +133,7 @@
 		</b:row>
 <h:form>
 
-<h:commandButton action="#{flightBean.book(flightBean.flightDetails.id)}" value="" >
+<h:commandButton action="#{flightBean.book()}" value="Book">
 	<f:param name="flightId" value="#{flightBean.flightDetails.id}"/>
 </h:commandButton>
 </h:form>
