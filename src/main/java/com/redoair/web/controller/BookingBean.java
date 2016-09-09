@@ -95,7 +95,7 @@ public class BookingBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		flight = flightService.findFlightById(17313L);
-		flightBean.setFlight(flight);
+		//flightBean.setFlight(flight);
 
 		flightBean.setNrOfTickets(2);
 
