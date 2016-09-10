@@ -18,7 +18,7 @@
 					<h:commandButton value="logout" action="#{userBean.logout}" />
 				</p>
 			</h:form>
-			<h:form >
+			<h:form>
 				<div class="col-md-4">
 					<div class="form-horizontal">
 						<h:panelGrid id="panel" columns="1" cellpadding="2"
@@ -76,7 +76,7 @@
 							<h:outputLabel for="creditCardNumber" value="Credit Card number" />
 							<h:inputText id="creditCardNumber"
 								value="#{bookingBean.creditCardNumber}" class="form-control" />
-							<!-- mag weg als login page klaar is -->
+							<h:message for="creditCardNumber" style="color:red" />
 							<h:outputLabel for="firstNamePayer" value="First name: " />
 							<h:outputText id="firstNamePayer"
 								value="#{bookingBean.payer.firstName}" style="font-weight:bold" />
@@ -84,7 +84,7 @@
 							<h:outputLabel for="lastNamePayer" value="Last name: " />
 							<h:outputText id="lastNamePayer"
 								value="#{bookingBean.payer.lastName}" style="font-weight:bold" />
-							<!-- mag weg als login page klaar is -->
+
 						</h:panelGroup>
 					</div>
 				</div>
@@ -114,16 +114,18 @@
 											<h:outputText value="First name passenger" />
 										</f:facet>
 										<h:inputText id="firstNamePassenger"
-											value="#{t.passenger.firstName}" class="form-control" />
-
+											value="#{t.passenger.firstName}" required="true"
+									requiredMessage="FirstName field must not be empty" class="form-control" />
+										<h:message for="firstNamePassenger" style="color:red" />
 									</h:column>
 									<h:column>
 										<f:facet name="header">
 											<h:outputText value="Last name passenger" />
 										</f:facet>
 										<h:inputText id="lastNamePassenger"
-											value="#{t.passenger.lastName}" class="form-control" />
-
+											value="#{t.passenger.lastName}"  required="true"
+									requiredMessage="LastName field must not be empty" class="form-control" />
+										<h:message for="lastNamePassenger" style="color:red" />
 									</h:column>
 								</h:dataTable>
 							</div>
