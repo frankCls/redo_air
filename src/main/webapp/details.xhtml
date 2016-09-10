@@ -9,138 +9,104 @@
 	<ui:define name="pageTitle" value="#{msg['search.title']}" />
 	<ui:define name="pageContent">
 		<!-- 		<b:panelGrid colspans="4,4,4"> -->
-		<b:row>
-			<b:column>
-				<h:outputText value="  " />
-			</b:column>
-			<b:column>
-				<h:outputText value="#{msg['search.dep']}" />
-			</b:column>
-			<b:column>
-				<h:outputText value="{msg['search.dest']}" />
-			</b:column>
-		</b:row>
+		<h:panelGroup id="flightTable">
+			<div class="tb">
+				<table class="table">
+					<THEAD>
+						<tr>
+							<th class="order-table-header" scope="col"><h:outputText
+									value="#{msg['search.dep']} " /></th>
+							<th class="order-table-header" scope="col"><h:outputText
+									value="#{msg['search.dest']} " /></th>
 
-		<b:row>
-			<b:column>
-				<h:outputText value="#{msg['details.region']}" />
-			</b:column>
-			<b:column>
-				<h:outputText
-					value="#{flightBean.flightDetails.departureLocation.region}" />
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row>
-			<b:column>
-				<h:outputText value="#{msg['details.country']}" />
-			</b:column>
-			<b:column>
-				<h:outputText
-					value="#{flightBean.flightDetails.departureLocation.country}" />
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row>
-			<b:column>
-				<h:outputText value="#{msg['details.city']}" />
-			</b:column>
-			<b:column>
-				<h:outputText
-					value="#{flightBean.flightDetails.departureLocation.city})" />
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row>
-			<b:column>
-				<h:outputText value="#{msg['details.airport']}" />
-			</b:column>
-			<b:column>
-				<h:outputText
-					value="#{flightBean.flightDetails.departureLocation.name})" />
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row>
-			<b:column>
-				<h:outputText value="#{msg['details.date']}" />
-			</b:column>
-			<b:column>
-				<h:outputText value="#{flightBean.flightDetails.departureTime})">
-					<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
-				</h:outputText>
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row>
-			<b:column>
-				<h:outputText value="#{msg['details.time']}" />
-			</b:column>
-			<b:column>
-				<h:outputText value="#{flightBean.flightDetails.departureTime})">
-					<f:convertDateTime type="date" pattern="HH:mm" />
-				</h:outputText>
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row rendered="#{flightBean.renderEconomyPrice}">
-			<b:column>
-				<h:outputText value="#{msg['details.price']}" />
-			</b:column>
-			<b:column>
-				<h:outputText
-					value="#{flightBean.flightDetails.flightData.economyClass.pricing.calculatedPrice})" />
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row rendered="#{flightBean.renderBusinessPrice}">
-			<b:column>
-				<h:outputText value="#{msg['details.price']}" />
-			</b:column>
-			<b:column>
-				<h:outputText
-					value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice})" />
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<b:row rendered="#{flightBean.renderFirstClassPrice}">
-			<b:column>
-				<h:outputText value="#{msg['details.price']}" />
-			</b:column>
-			<b:column>
-				<h:outputText
-					value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice})" />
-			</b:column>
-			<b:column>
-
-			</b:column>
-		</b:row>
-		<h:form>
-
-			<h:commandButton action="#{flightBean.book()}" value="Book" >
+						</tr>
+					</THEAD>
+					<TBODY>
+						<TR>
+							<td><h:outputText value="#{msg['details.region']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.departureLocation.region}" /></td>
+						<td><h:outputText value="#{msg['details.region']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.destinationLocation.region}" /></td>
+					
+						</TR>
+						<TR>
+							<td><h:outputText value="#{msg['details.country']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.departureLocation.country}" /></td>
+					<td><h:outputText value="#{msg['details.country']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.destinationLocation.country}" /></td>
 				
-			</h:commandButton>
+						</TR>
+						<TR>
+							<td><h:outputText value="#{msg['details.city']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.departureLocation.city}" /></td>
+						<td><h:outputText value="#{msg['details.city']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.destinationLocation.city}" /></td>
+					
+						</TR>
+						<TR>
+							<td><h:outputText value="#{msg['details.airport']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.departureLocation.name}" /></td>
+							<td><h:outputText value="#{msg['details.airport']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.destinationLocation.name}" /></td>
+					
+						</TR>
+						<TR>
+							<td><h:outputText value="#{msg['details.date']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.departureTime}">
+									<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
+								</h:outputText></td>
+						</TR>
+						<TR>
+							<td><h:outputText value="#{msg['details.time']}: " /> <h:outputText
+									value="#{flightBean.flightDetails.departureTime}">
+									<f:convertDateTime type="time" pattern="HH:mm" />
+									
+								</h:outputText></td>
+								
+						</TR>
+
+						<tr>
+
+							<td><h:outputText value="#{msg['details.price']}: "
+									rendered="#{flightBean.renderEconomyPrice}" style="font-weight:bold" /> <h:outputText
+									value="#{flightBean.flightDetails.flightData.economyClass.pricing.calculatedPrice}€"
+									rendered="#{flightBean.renderEconomyPrice}" style="font-weight:bold" /></td>
+
+						</tr>
+
+
+						<tr>
+							<f:facet name="header"
+								rendered="#{flightBean.renderBusinessPrice}">
+								<td><h:outputText value="#{msg['details.price']}: "
+										rendered="#{flightBean.renderBusinessPrice}" style="font-weight:bold" /> <h:outputText
+										value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice}€"
+										rendered="#{flightBean.renderBusinessPrice}" style="font-weight:bold" /></td>
+							</f:facet>
+						</tr>
+
+
+						<tr>
+							<f:facet name="header"
+								rendered="#{flightBean.renderFirstClassPrice}">
+								<td><h:outputText value="#{msg['details.price']}: "
+										rendered="#{flightBean.renderFirstClassPrice}" style="font-weight:bold" /> <h:outputText
+										value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice}€"
+										rendered="#{flightBean.renderFirstClassPrice}" style="font-weight:bold" /></td>
+
+							</f:facet>
+						</tr>
+
+
+
+					</TBODY>
+
+
+				</table>
+			</div>
+		</h:panelGroup>
+		<h:form>
+			<h:commandButton action="#{flightBean.book()}" value="Book" />
 		</h:form>
-
-
-
-
-
 	</ui:define>
 </ui:composition>

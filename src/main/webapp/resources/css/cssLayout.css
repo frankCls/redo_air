@@ -101,8 +101,7 @@ header h2{
 }
 
 .table{
-	background-color: white;
-	opacity:0.5;
+	
 	border-radius: 5px;
 	color: black;
 }
@@ -143,6 +142,7 @@ header h2{
 }
 
 #flightTable{
+	background-color: rgba(255,255,255,0.5);
 	overflow: auto;
 	height:30%;
 }
