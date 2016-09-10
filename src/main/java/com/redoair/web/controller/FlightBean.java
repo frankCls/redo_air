@@ -225,6 +225,7 @@ public class FlightBean implements Serializable {
 		HttpSession session = SessionUtils.getSession();
 	
 		session.setAttribute("flightId", flightDetails.getId());
+		session.setAttribute("tickets", nrOfTickets);
 		
 		return "booking" ;
 	}

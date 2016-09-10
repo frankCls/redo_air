@@ -45,7 +45,7 @@ public class AuthorizationFilter implements Filter {
 					&& reqURI.indexOf("/login.jsf") >= 0 && ses.getAttribute("role") == Role.PARTNER))
 				chain.doFilter(request, response);
 			else if (reqURI.indexOf("/login.jsf") >= 0 || reqURI.indexOf("/index.jsf") >= 0 || reqURI.indexOf("/searchResults.jsf") >= 0
-					|| reqURI.indexOf("/details.jsf") >= 0 || reqURI.indexOf("/register.jsf") >= 0
+					|| reqURI.indexOf("/details.jsf") >= 0 || reqURI.indexOf("/register.jsf") >= 0 || reqURI.indexOf("/error.jsf") >= 0 
 					|| reqURI.contains("javax.faces.resource") )
 				chain.doFilter(request, response);
 			else

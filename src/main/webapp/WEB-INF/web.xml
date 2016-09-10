@@ -21,6 +21,7 @@
 	<error-page>
 		<exception-type>javax.servlet.ServletException</exception-type>
 		<location>/error.xhtml</location>
+		
 	</error-page>
 	
 	<context-param>

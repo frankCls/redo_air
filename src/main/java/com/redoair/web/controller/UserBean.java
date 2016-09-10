@@ -96,10 +96,11 @@ public class UserBean implements Serializable {
 		session.setAttribute("firstName", user.getFirstName());
 		session.setAttribute("lastName", user.getLastName());
 		session.setAttribute("role", user.getRole());
-	
-		if ( session.getAttribute("flightId") != null) {
+		
+		if ( session.getAttribute("flightId") != null && session.getAttribute("tickets") != null) {
 			System.out.println(session.getAttribute("flightId").toString());
 			session.setAttribute("flightId", session.getAttribute("flightId").toString());
+			session.setAttribute("tickets", session.getAttribute("tickets").toString());
 		}
 		
 	}
