@@ -30,10 +30,11 @@
 						</tr>
 						<tr>
 							<td><h:commandButton value="#{msg['login.login']}"
-									action="#{userBean.login()}" /></td>
-							<td><h:outputText value="#{msg['login.notAnUser']}" />
-							<br></br>
-							 <h:outputLink value="register.jsf"> #{msg['login.register']}</h:outputLink></td>
+									action="#{userBean.login()}" >
+								
+								</h:commandButton></td>
+							<td><h:outputText value="#{msg['login.notAnUser']}" /> <br></br>
+								<h:outputLink value="register.jsf"> #{msg['login.register']}</h:outputLink></td>
 						</tr>
 					</table>
 				</h:form>

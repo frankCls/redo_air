@@ -1,5 +1,6 @@
 package com.redoair.web.controller;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +9,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
 import javax.faces.bean.ManagedProperty;
@@ -73,10 +75,12 @@ public class BookingBean implements Serializable {
 	private TravelingClassType travelinclass;
 
 	public void end() {
+		System.out.println("in bookingbean()");
+		
+		System.out.println(conversation + " "+ conversation.getId());
 		if (!conversation.isTransient()) {
-
+			System.out.println("conversation is ended!");
 			conversation.end();
-
 		}
 
 	}
@@ -90,32 +94,56 @@ public class BookingBean implements Serializable {
 	 * return "booking.jsf?faces-redirect=true"; }
 	 */
 	public void initConversation() {
-		/*if (conversation != null) {
-			System.out.println("end conversation");
-			conversation.end();
 
-		}
-		if (!FacesContext.getCurrentInstance().isPostback() && conversation.isTransient()) {
-			System.out.println("start conversation");
-			conversation.begin();
-		}*/
+	
+
 	}
 
-	
+	@PreDestroy
+	public void endConversationIfsomethingIsWrong() {
+		System.out.println("in bookingbean()");
+		
+		System.out.println(conversation + " "+ conversation.getId());
+		if (!conversation.isTransient()) {
+			System.out.println("conversation is ended!");
+			conversation.end();
+		}
+	}
 
 	@PostConstruct
-	public void init() {
+	public void init() throws IOException {
 		System.out.println("in bookingbean");
-		
-		HttpServletRequest request = SessionUtils.getRequest();
-		String id =  request.getParameter("flightId");
-		
-		flightId = id;
-		long parseLong = 17313L;
+		/*if (FacesContext.getCurrentInstance().isPostback() && conversation.isTransient() && conversation != null) {
+			System.out.println("start conversation");
+			conversation.setTimeout(30000);
+			conversation.begin();
+		}*/
+		 HttpSession session = SessionUtils.getSession();
+		String id = "" ;
 	
 		
+		Object attribute = session.getAttribute("flightId");
+		if (attribute != null) {
+			 id = (String) session.getAttribute("flightId");
+		}else {
+			try {
+				System.err.println("no flight!");
+				FacesContext.getCurrentInstance().getExternalContext().redirect(SessionUtils.getRequest().getContextPath() + "/index.xhtml");
+			} catch (IOException e) {
+			
+				FacesContext.getCurrentInstance().getExternalContext().responseSendError(400, "Please select a flight first");
+			}
+			
+		}
+		System.out.println("values " + session.getAttribute("flightId"));
 		
-		flight = flightService.findFlightById(parseLong);
+
+		flightId = id;
+
+		System.out.println(id.trim());
+		Long parsedlong = Long.valueOf(id.trim());
+		System.out.println(parsedlong);
+		flight = flightService.findFlightById(parsedlong);
 		System.out.println(flight.getDepartureLocation().getCountry());
 		// flightBean.setFlightDetails(flight);
 		numberTickets = 2;
@@ -124,8 +152,8 @@ public class BookingBean implements Serializable {
 
 		// --------
 
-		payer.setFirstName(SessionUtils.getFirstName());
-		payer.setLastName(SessionUtils.getLastName());
+		payer.setFirstName((String) session.getAttribute("firstName"));
+		payer.setLastName((String) session.getAttribute("lastName"));
 
 		for (int i = 1; i <= numberTickets; i++) {
 			Ticket ticket = new Ticket();
@@ -213,8 +241,8 @@ public class BookingBean implements Serializable {
 			bookingServiceEjb.saveBooking(booking);
 
 		}
-		end();
-
+		
+end();
 		return "bookingSuccess";
 
 	}

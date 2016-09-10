@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.context.SessionScoped;
@@ -20,12 +21,14 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpSession;
 import javax.validation.constraints.Future;
 
 import com.redoair.domain.Flight;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.services.CalculatePriceServiceEjb;
 import com.redoair.services.FlightService;
+import com.redoair.web.utils.SessionUtils;
 
 @Named("flightBean")
 @ConversationScoped
@@ -74,13 +77,28 @@ public class FlightBean implements Serializable {
 	private boolean renderFirstClassPrice = false;
 	private Flight flightDetails;
 
+	@PreDestroy
+	public void endConversationIfsomethingIsWrong() {
+		System.out.println("in flightbean()");
+		System.out.println(conversation + " "+ conversation.getId());
+		if (!conversation.isTransient()) {
+			System.out.println("conversation is ended!");
+			conversation.end();
+		}
+	}
+	
 	@PostConstruct
 	public void init() {
 		depCountryList = flightService.findAllDepartureCountries();
 		destCountryList = flightService.findAllDestinationCountries();
 		depRegionList = flightService.findAllDepartureRegions();
 		destRegionList = flightService.findAllDestinationRegions();
-		if (conversation.isTransient()) {
+		System.out.println(conversation + " "+conversation.getId());
+	
+	
+		if (FacesContext.getCurrentInstance().isPostback() && conversation.isTransient()) {
+			System.out.println("start conversation");
+			conversation.setTimeout(30000);
 			conversation.begin();
 		}
 	}
@@ -197,10 +215,18 @@ public class FlightBean implements Serializable {
 	}
 
 	public String book() {
-		
+
 		System.out.println("in book()");
+		System.out.println("converation end " + conversation+ conversation.getId());
+		if (!conversation.isTransient() && !FacesContext.getCurrentInstance().isPostback()) {
+			System.out.println("conversation is ended!");
+			conversation.end();
+		}
+		HttpSession session = SessionUtils.getSession();
+	
+		session.setAttribute("flightId", flightDetails.getId());
 		
-		return "booking";
+		return "booking" ;
 	}
 
 	public List<Flight> getFlightsList() {

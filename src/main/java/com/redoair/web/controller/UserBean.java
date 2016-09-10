@@ -2,13 +2,16 @@ package com.redoair.web.controller;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.Conversation;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.constraints.Size;
 
@@ -33,8 +36,13 @@ public class UserBean implements Serializable {
 
 	@Size(min = 4, max = 30)
 	private String userName;
+	
+	@ManagedProperty(value="#{flightId}")
+	private String userData;
+	
 	@EJB
 	private UserRemote userService;
+
 
 	public String saveUser() {
 		System.out.println(userName);
@@ -46,11 +54,8 @@ public class UserBean implements Serializable {
 		user.setUserName(userName);
 		user.setRole(Role.PAYER);
 		if (userService.saveUser(user) != null) {
-			HttpSession session = SessionUtils.getSession();
-			session.setAttribute("userName", userName);
-			session.setAttribute("firstName", firstName);
-			session.setAttribute("lastName", lastName);
-			session.setAttribute("role", user.getRole());
+			
+			setSessionAttributes(user);
 			return "UserSaved";
 
 		} else {
@@ -61,6 +66,7 @@ public class UserBean implements Serializable {
 	public String login() {
 		
 		System.out.println("in login()");
+		
 		User user = userService.findUserByUserName(userName);
 		if (user == null) {
 			System.out.println("no user found!");
@@ -70,27 +76,43 @@ public class UserBean implements Serializable {
 		if (userName.equals(user.getUserName()) && user.getRole() == Role.PAYER
 				&& checkPassword(password, user.getPassword())) {
 			setSessionAttributes(user);
-			return "payer";
+			System.out.println("user is found");
+			return "payer" ;
 		} else if (userName.equals(user.getUserName()) && user.getRole() == Role.PARTNER
 				&& checkPassword(password, user.getPassword())) {
 			setSessionAttributes(user);
-			return "partner";
+			return "partner" ;
 		} else {
 			System.out.println("login failed");
-			return "invalid";
+			return "invalid" ;
 		}
 
 	}
 
 	public void setSessionAttributes(User user) {
 		HttpSession session = SessionUtils.getSession();
+	
 		session.setAttribute("userName", user.getUserName());
 		session.setAttribute("firstName", user.getFirstName());
 		session.setAttribute("lastName", user.getLastName());
 		session.setAttribute("role", user.getRole());
+	
+		if ( session.getAttribute("flightId") != null) {
+			System.out.println(session.getAttribute("flightId").toString());
+			session.setAttribute("flightId", session.getAttribute("flightId").toString());
+		}
+		
 	}
 	
 	
+	public String getUserData() {
+		return userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+	}
+
 	public String hashPassword(String password_plaintext) {
 		String salt = BCrypt.gensalt(12);
 		String hashed_password = BCrypt.hashpw(password_plaintext, salt);
@@ -155,5 +177,7 @@ public class UserBean implements Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
+
 
 }

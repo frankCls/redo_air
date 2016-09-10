@@ -36,18 +36,18 @@ public class AuthorizationFilter implements Filter {
 			HttpSession ses = reqt.getSession(false);
 
 			String reqURI = reqt.getRequestURI();
-
-			if (reqURI.indexOf("/index.jsf") >= 0 || reqURI.indexOf("/login.jsf") >= 0 
-					|| reqURI.indexOf("/searchResults.jsf") >= 0 
-					|| reqURI.indexOf("/details.jsf") >= 0
-					|| reqURI.indexOf("/register.jsf") >= 0 
-					|| (reqURI.indexOf("/partner.jsf") < 0 	&& ses != null	&& ses.getAttribute("userName") != null && ses.getAttribute("role") == Role.PAYER)
-					|| reqURI.contains("javax.faces.resource"))
+			System.out.println("in " + reqURI);
+			if ((reqURI.indexOf("/partner.jsf") < 0 && ses != null && ses.getAttribute("userName") != null
+					&& ses.getAttribute("role") == Role.PAYER))
 				chain.doFilter(request, response);
+			
 			else if ((reqURI.indexOf("/partner.jsf") >= 0 && ses != null && ses.getAttribute("userName") != null
-					&& ses.getAttribute("role") == Role.PARTNER) || reqURI.contains("javax.faces.resource"))
+					&& reqURI.indexOf("/login.jsf") >= 0 && ses.getAttribute("role") == Role.PARTNER))
 				chain.doFilter(request, response);
-
+			else if (reqURI.indexOf("/login.jsf") >= 0 || reqURI.indexOf("/index.jsf") >= 0 || reqURI.indexOf("/searchResults.jsf") >= 0
+					|| reqURI.indexOf("/details.jsf") >= 0 || reqURI.indexOf("/register.jsf") >= 0
+					|| reqURI.contains("javax.faces.resource") )
+				chain.doFilter(request, response);
 			else
 				resp.sendRedirect(reqt.getContextPath() + "/login.jsf");
 		} catch (Exception e) {

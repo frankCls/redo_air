@@ -24,9 +24,10 @@
 		<navigation-case>
 			<from-action>#{flightBean.book()}</from-action>
 			<from-outcome>booking</from-outcome>
-			<to-view-id>/booking.xhtml</to-view-id>
-			<redirect />
+			<to-view-id>/login.xhtml</to-view-id>
+		<redirect />
 		</navigation-case>
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -36,14 +37,14 @@
 			<from-action>#{userBean.login()}</from-action>
 			<from-outcome>payer</from-outcome>
 			<to-view-id>/booking.xhtml</to-view-id>
-			<redirect />
+
 		</navigation-case>
 
 		<navigation-case>
 			<from-action>#{userBean.login()}</from-action>
 			<from-outcome>partner</from-outcome>
 			<to-view-id>/partner.xhtml</to-view-id>
-			<redirect />
+
 		</navigation-case>
 
 		<navigation-case>
@@ -68,7 +69,7 @@
 			<from-action>#{userBean.saveUser()}</from-action>
 			<from-outcome>UserSaved</from-outcome>
 			<to-view-id>/success.xhtml</to-view-id>
-			<redirect />
+
 		</navigation-case>
 
 	</navigation-rule>
