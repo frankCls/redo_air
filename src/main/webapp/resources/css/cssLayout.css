@@ -44,7 +44,9 @@ nav>li{
 body>div{
 	
 }
-
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+	width:inherit;
+}
 
 
 div.container{
@@ -125,18 +127,23 @@ header h2{
 	top: 35%;
 	left: 30%;
 }
-
+#logoutButton{
+	float: right;	
+	
+}
 .left,.right{
-	width : 50%;
+	
 	/*height :25%;*/
 	padding: 5px;;
 }
 
 .right{
+	width : 100%;
 	float: right;	
 }
 
 .left{
+	width : 100%;
 	float: left;
 }
 .lbl{

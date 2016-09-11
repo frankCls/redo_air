@@ -13,10 +13,10 @@
 	<ui:define name="pageTitle" value="#{msg['search.title']}" />
 	<ui:define name="pageContent">
 		<f:view>
-			<h:form>
-				<p>
+			<h:form id="logoutButton">
+				
 					<h:commandButton value="logout" action="#{userBean.logout}" />
-				</p>
+				
 			</h:form>
 			<h:form>
 				<div class="col-md-4">
