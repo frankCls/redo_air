@@ -6,7 +6,12 @@
 	xmlns:c="http://java.sun.com/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
-	<ui:define name="pageTitle" value="#{msg['search.title']}" />
+	<ui:define name="pageTitle">
+		<div class="pageTitle">
+			<h3>#{msg['search.title']}</h3>
+		</div>
+	</ui:define>
+
 	<ui:define name="pageContent">
 		<h:form id="form">
 			<h:panelGroup class="left">
