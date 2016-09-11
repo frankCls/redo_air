@@ -40,7 +40,7 @@ public class QRCodeController implements Serializable {
 		}
 	
 		System.out.println(booking.getId());
-
+	
 	}
 
 	public QRCodeController() {

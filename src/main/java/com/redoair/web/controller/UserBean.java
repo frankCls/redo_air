@@ -1,5 +1,6 @@
 package com.redoair.web.controller;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
@@ -12,6 +13,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.constraints.Size;
 
@@ -132,11 +134,11 @@ public class UserBean implements Serializable {
 		return (password_verified);
 	}
 
-	public void logout() {
+	public void logout() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		FacesContext.getCurrentInstance().getApplication().getNavigationHandler()
-				.handleNavigation(FacesContext.getCurrentInstance(), null, "/index.xhtml?faces-redirect=true");
-
+		FacesContext.getCurrentInstance().getExternalContext().redirect(SessionUtils.getRequest().getContextPath()+"/index.jsf");
+		
+		
 	}
 
 	public String getEmail() {

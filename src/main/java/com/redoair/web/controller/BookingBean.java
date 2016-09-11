@@ -251,7 +251,7 @@ System.out.println(payer.getFirstName());
 		HttpSession session = SessionUtils.getSession();
 
 		session.setAttribute("myBooking", booking);
-
+		
 		return "bookingSuccess";
 
 	}
