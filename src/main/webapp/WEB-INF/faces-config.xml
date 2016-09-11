@@ -82,7 +82,7 @@
 			<to-view-id>/bookingSuccess.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-
+		
 	</navigation-rule>
 	<application>
 		<locale-config>

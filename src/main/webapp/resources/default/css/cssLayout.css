@@ -12,10 +12,10 @@ body {
     /*background-image: url("#{resource['images/skyclouds.jpeg']}") 100px 0px ;*/
     /*background-position:-100, */
     background: url("#{resource['images/skyclouds.jpeg']}")no-repeat top;
+      background-attachment: fixed;
+   /* Animate background*/
     
-    /*Animate background*/
-    
-    /*background-size:120%;
+   /* background-size:120%;
     animation-name: fly;
     animation-duration: 80s;
     animation-iteration-count: infinite;
@@ -51,10 +51,10 @@ body>div{
 .invisible{
 	display: none;
 }
-/*.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
 	width:inherit;
 
-}*/
+}
 
 
 div.container{
