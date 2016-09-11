@@ -45,13 +45,18 @@ body>div{
 	
 }
 
+.invisible{
+	display: none;
+}
 
 
 div.container{
 	
 }
 
-
+#timeZone{
+	display: none;
+}
 
 header{
 	background-image:url("#{resource['images/redo-air-logo.png']}");
@@ -116,6 +121,7 @@ header h2{
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 5px;
 	color: black;
+	
 }
 
 #form{

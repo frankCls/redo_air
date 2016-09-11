@@ -53,7 +53,7 @@ public class FlightBean implements Serializable {
 	private String depRegion = "";
 	private String destRegion = "";
 	private TravelingClassType travelingClass = TravelingClassType.ECONOMY_CLASS;
-
+	private int timeOffSet;
 	private String flightId;
 
 	private Date depDate;
@@ -80,25 +80,24 @@ public class FlightBean implements Serializable {
 	@PreDestroy
 	public void endConversationIfsomethingIsWrong() {
 		System.out.println("in flightbean()");
-		System.out.println(conversation + " "+ conversation.getId());
+		System.out.println(conversation + " " + conversation.getId());
 		if (!conversation.isTransient()) {
 			System.out.println("conversation is ended!");
 			conversation.end();
 		}
 	}
-	
+
 	@PostConstruct
 	public void init() {
 		depCountryList = flightService.findAllDepartureCountries();
 		destCountryList = flightService.findAllDestinationCountries();
 		depRegionList = flightService.findAllDepartureRegions();
 		destRegionList = flightService.findAllDestinationRegions();
-		System.out.println(conversation + " "+conversation.getId());
-	
-	
+		System.out.println(conversation + " " + conversation.getId());
+
 		if (FacesContext.getCurrentInstance().isPostback() && conversation.isTransient()) {
 			System.out.println("start conversation");
-			//conversation.setTimeout(30000);
+			// conversation.setTimeout(30000);
 			conversation.begin();
 		}
 	}
@@ -173,6 +172,16 @@ public class FlightBean implements Serializable {
 
 	}
 
+	public Date calculateDestinationTime() {
+		System.out.println("chosen date: " + depDate);
+		Long duration = flightDetails.getDuration();
+		Calendar c = Calendar.getInstance();
+		// c.setTime(depDate);
+
+		c.setTimeInMillis(flightDetails.getDepartureTime().getTime() + duration);
+		return c.getTime();
+	}
+
 	private void whichPriceToRender(TravelingClassType type) {
 		if (type.equals(TravelingClassType.ECONOMY_CLASS)) {
 			setRenderEconomyPrice(true);
@@ -217,17 +226,17 @@ public class FlightBean implements Serializable {
 	public String book() {
 
 		System.out.println("in book()");
-		System.out.println("converation end " + conversation+ conversation.getId());
+		System.out.println("converation end " + conversation + conversation.getId());
 		if (!conversation.isTransient() && !FacesContext.getCurrentInstance().isPostback()) {
 			System.out.println("conversation is ended!");
 			conversation.end();
 		}
 		HttpSession session = SessionUtils.getSession();
-	
+
 		session.setAttribute("flightId", flightDetails.getId());
 		session.setAttribute("tickets", nrOfTickets);
-		
-		return "booking" ;
+
+		return "booking";
 	}
 
 	public List<Flight> getFlightsList() {
@@ -372,6 +381,14 @@ public class FlightBean implements Serializable {
 
 	public void setFlightDetails(Flight flightDetails) {
 		this.flightDetails = flightDetails;
+	}
+
+	public int getTimeOffSet() {
+		return timeOffSet;
+	}
+
+	public void setTimeOffSet(int timeOffSet) {
+		this.timeOffSet = timeOffSet;
 	}
 
 }
