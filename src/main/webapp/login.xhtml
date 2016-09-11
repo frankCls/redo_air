@@ -11,39 +11,45 @@
 		</div>
 	</ui:define>
 	<ui:define name="pageContent">
-		<f:view>
-			<center>
-				<h:form>
-					<table frame="box" id="loginTable">
-<!-- 						<tr> -->
-<!-- 							<th>Login Page</th> -->
-<!-- 						</tr> -->
-						<tr>
-							<td><h:outputText value="#{msg['login.username']}" /></td>
-							<td><h:inputText id="inputName" value="#{userBean.userName}"
-									required="true"
-									requiredMessage="Username field must not be empty" /></td>
-							<td><h:message for="inputName" style="color:red" /></td>
-						</tr>
-						<tr>
-							<td><h:outputText value="#{msg['login.password']}" /></td>
-							<td><h:inputSecret id="inputPassword"
-									value="#{userBean.password}" required="true"
-									requiredMessage="Password field must not be empty" /></td>
-							<td><h:message for="inputPassword" style="color:red" /></td>
-						</tr>
-						<tr>
-							<td><h:commandButton value="#{msg['login.login']}"
-									action="#{userBean.login()}" >
-								
-								</h:commandButton></td>
-							<td><h:outputText value="#{msg['login.notAnUser']}" /> <br></br>
-								<h:outputLink value="register.jsf"> #{msg['login.register']}</h:outputLink></td>
-						</tr>
-					</table>
-				</h:form>
-			</center>
-		</f:view>
+
+		<h:form class="form-horizontal">
+			<h:outputLabel value="#{msg['login.username']}" for="inputName" />
+			<h:inputText id="inputName" value="#{userBean.userName}"
+				class="form-control" required="true"
+				requiredMessage="Username field must not be empty" />
+			<h:message for="inputName" style="color:red" />
+
+
+			<h:outputText value="#{msg['login.password']}" />
+			<h:inputSecret id="inputPassword" value="#{userBean.password}"
+				required="true" requiredMessage="Password field must not be empty"
+				class="form-control" />
+			<h:message for="inputPassword" style="color:red" />
+
+
+			<h:commandButton class="btn btn-default"
+				value="#{msg['login.login']}" action="#{userBean.login()}">
+			</h:commandButton>
+			<h:outputText value="#{msg['login.notAnUser']}" />
+
+			<h:outputLink value="register.jsf"> #{msg['login.register']}</h:outputLink>
+		</h:form>
+
+
+		
+		<!-- 		<h:panelGroup> -->
+		<!-- 			<form class="form-horizontal" method="POST" action="j_security_check"> -->
+		<!-- 				<h:outputLabel value="#{msg['login.username']}" for="usrName" /> -->
+		<!-- 				<h:inputText id="usrName" name="j_username" class="form-control" -->
+		<!-- 					autocomplete="off" /> -->
+		<!-- 				<h:outputText value="#{msg['login.password']}" for="passWord" /> -->
+		<!-- 				<h:inputSecret name="j_password" class="form-control" -->
+		<!-- 					autocomplete="off" /> -->
+		<!-- 				<input type="submit" value="Login" /> -->
+		<!-- 				<h:outputText value="#{msg['login.notAnUser']}" /> -->
+		<!-- 				<h:outputLink value="register.xhtml"> #{msg['login.register']}</h:outputLink> -->
+		<!-- 			</form> -->
+		<!-- 		</h:panelGroup> -->
 
 	</ui:define>
 </ui:composition>

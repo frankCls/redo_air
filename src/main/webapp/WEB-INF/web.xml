@@ -47,5 +47,20 @@
 		<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
 
 	</listener>
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.xhtml</form-login-page>
+			<form-error-page>/errorLogin.xhtml</form-error-page>
+		
+		</form-login-config>
+	</login-config>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>book</web-resource-name>
+			<url-pattern>/booking.xhtml</url-pattern>
+		</web-resource-collection>
+	</security-constraint>
+	
 
 </web-app>

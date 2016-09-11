@@ -52,151 +52,141 @@
 				<td><h:outputText
 						value="#{flightBean.flightDetails.destinationLocation.name}" /></td>
 			</tr>
+		</table>
+		<table class="table">
 			<tr>
 				<td><h:outputText value="#{msg['details.date']}" /></td>
 				<td><h:outputText
 						value="#{flightBean.flightDetails.departureTime}">
-						<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
+						<f:convertDateTime type="date" pattern="dd-MM-yyyy"
+							timeZone="#{flightBean.flightDetails.departureLocation.timezoneTz}" />
 					</h:outputText></td>
-				<td></td>
+				<td><h:outputText
+						value="#{flightBean.calculateDestinationTime()}">
+						<f:convertDateTime type="date" pattern="dd-MM-yyyy"
+							timeZone="#{flightBean.flightDetails.destinationLocation.timezoneTz}" />
+					</h:outputText></td>
 			</tr>
 
 			<tr>
-				<td><h:outputText value="#{msg['details.time']}" /></td>
+				<td><h:outputText value="#{msg['details.time.local']}" /></td>
 				<td><h:outputText
 						value="#{flightBean.flightDetails.departureTime}">
-						<f:convertDateTime type="date" pattern="HH:mm" />
+						<f:convertDateTime type="date" pattern="HH:mm"
+							timeZone="#{flightBean.flightDetails.departureLocation.timezoneTz}" />
 					</h:outputText></td>
-				<td></td>
+				<td><h:outputText
+						value="#{flightBean.calculateDestinationTime()}">
+						<f:convertDateTime type="date" pattern="HH:mm"
+							timeZone="#{flightBean.flightDetails.destinationLocation.timezoneTz}" />
+					</h:outputText></td>
 			</tr>
+		</table>
+		<table class="table">
 			<h:panelGroup rendered="#{flightBean.renderEconomyPrice}">
 				<tr>
-					<td><h:outputText value="#{msg['details.price']}" /></td>
+					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.economyClass.pricing.calculatedPrice}" />
+							value="#{flightBean.flightDetails.flightData.economyClass.pricing.calculatedPrice} €" />
 					</td>
 					<td></td>
 				</tr>
 			</h:panelGroup>
 			<h:panelGroup rendered="#{flightBean.renderBusinessPrice}">
 				<tr>
-					<td><h:outputText value="#{msg['details.price']}" /></td>
+					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice})" />
+							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice}) €" />
 					</td>
 					<td></td>
 				</tr>
 			</h:panelGroup>
-			<h:panelGroup rendered="#{flightBean.renderFirstClassPrice}"><tr>
-				<td><h:outputText value="#{msg['details.price']}" /></td>
-				<td><h:outputText
-						value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice})" />
-				</td>
-				<td></td>
-			</tr>
+			<h:panelGroup rendered="#{flightBean.renderFirstClassPrice}">
+				<tr>
+					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
+					<td><h:outputText
+							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice}) €" />
+					</td>
+					<td></td>
+				</tr>
 			</h:panelGroup>
+
+			<h:panelGroup rendered="#{flightBean.renderBusinessPrice}">
+				<tr>
+					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
+					<td><h:outputText
+							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice}) €" />
+					</td>
+					<td></td>
+				</tr>
+			</h:panelGroup>
+			<h:panelGroup rendered="#{flightBean.renderFirstClassPrice}">
+				<tr>
+					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
+					<td><h:outputText
+							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice}) €" />
+					</td>
+					<td></td>
+				</tr>
+			</h:panelGroup>
+			<h:panelGroup>
+				<tr>
+					<td><h:outputText value="#{msg['search.tickets']}" /></td>
+					<td><h:outputText value="#{flightBean.nrOfTickets}" /></td>
+					<td></td>
+				</tr>
+			</h:panelGroup>
+			<h:panelGroup rendered="#{flightBean.renderEconomyPrice}">
+				<tr>
+					<td><h:outputText value="#{msg['details.price.total']}" /></td>
+					<td><h:outputText
+							value="#{flightBean.flightDetails.flightData.economyClass.pricing.calculatedPrice*flightBean.nrOfTickets} €" />
+					</td>
+					<td></td>
+				</tr>
+			</h:panelGroup>
+			<h:panelGroup rendered="#{flightBean.renderBusinessPrice}">
+				<tr>
+					<td><h:outputText value="#{msg['details.price.total']}" /></td>
+					<td><h:outputText
+							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice*flightBean.nrOfTickets}) €" />
+					</td>
+					<td></td>
+				</tr>
+			</h:panelGroup>
+
+			<h:panelGroup rendered="#{flightBean.renderFirstClassPrice}">
+				<tr>
+					<td><h:outputText value="#{msg['details.price.total']}" /></td>
+					<td><h:outputText
+							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice*flightBean.nrOfTickets}) €" />
+					</td>
+					<td></td>
+				</tr>
+			</h:panelGroup>
+
 		</table>
-		<!-- 		<b:panelGrid colspans="4,4,4"> -->
+<!-- 	getting user timezone
+		<h:form prependId="false" styleClass="invisible">
+			
+			<h:inputText id="timeZone" value="#{flightBean.timeOffSet}">
+				<f:ajax event="change" execute="timeZone"/>
+			</h:inputText>
 
-		<!-- 		<h:panelGroup id="flightTable"> -->
-		<!-- 			<div class="tb"> -->
-		<!-- 				<table class="table"> -->
-		<!-- 					<THEAD> -->
-		<!-- 						<tr> -->
-		<!-- 							<th class="order-table-header" scope="col"><h:outputText -->
-		<!-- 									value="#{msg['search.dep']} " /></th> -->
-		<!-- 							<th class="order-table-header" scope="col"><h:outputText -->
-		<!-- 									value="#{msg['search.dest']} " /></th> -->
-
-		<!-- 						</tr> -->
-		<!-- 					</THEAD> -->
-		<!-- 					<TBODY> -->
-		<!-- 						<TR> -->
-		<!-- 							<td><h:outputText value="#{msg['details.region']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.departureLocation.region}" /></td> -->
-		<!-- 						<td><h:outputText value="#{msg['details.region']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.destinationLocation.region}" /></td> -->
-
-		<!-- 						</TR> -->
-		<!-- 						<TR> -->
-		<!-- 							<td><h:outputText value="#{msg['details.country']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.departureLocation.country}" /></td> -->
-		<!-- 					<td><h:outputText value="#{msg['details.country']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.destinationLocation.country}" /></td> -->
-
-		<!-- 						</TR> -->
-		<!-- 						<TR> -->
-		<!-- 							<td><h:outputText value="#{msg['details.city']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.departureLocation.city}" /></td> -->
-		<!-- 						<td><h:outputText value="#{msg['details.city']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.destinationLocation.city}" /></td> -->
-
-		<!-- 						</TR> -->
-		<!-- 						<TR> -->
-		<!-- 							<td><h:outputText value="#{msg['details.airport']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.departureLocation.name}" /></td> -->
-		<!-- 							<td><h:outputText value="#{msg['details.airport']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.destinationLocation.name}" /></td> -->
-
-		<!-- 						</TR> -->
-		<!-- 						<TR> -->
-		<!-- 							<td><h:outputText value="#{msg['details.date']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.departureTime}"> -->
-		<!-- 									<f:convertDateTime type="date" pattern="dd-MM-yyyy" /> -->
-		<!-- 								</h:outputText></td> -->
-		<!-- 						</TR> -->
-		<!-- 						<TR> -->
-		<!-- 							<td><h:outputText value="#{msg['details.time']}: " /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.departureTime}"> -->
-		<!-- 									<f:convertDateTime type="time" pattern="HH:mm" /> -->
-
-		<!-- 								</h:outputText></td> -->
-
-		<!-- 						</TR> -->
-
-		<!-- 						<tr> -->
-
-		<!-- 							<td><h:outputText value="#{msg['details.price']}: " -->
-		<!-- 									rendered="#{flightBean.renderEconomyPrice}" style="font-weight:bold" /> <h:outputText -->
-		<!-- 									value="#{flightBean.flightDetails.flightData.economyClass.pricing.calculatedPrice}€" -->
-		<!-- 									rendered="#{flightBean.renderEconomyPrice}" style="font-weight:bold" /></td> -->
-
-		<!-- 						</tr> -->
-
-
-		<!-- 						<tr> -->
-		<!-- 							<f:facet name="header" -->
-		<!-- 								rendered="#{flightBean.renderBusinessPrice}"> -->
-		<!-- 								<td><h:outputText value="#{msg['details.price']}: " -->
-		<!-- 										rendered="#{flightBean.renderBusinessPrice}" style="font-weight:bold" /> <h:outputText -->
-		<!-- 										value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice}€" -->
-		<!-- 										rendered="#{flightBean.renderBusinessPrice}" style="font-weight:bold" /></td> -->
-		<!-- 							</f:facet> -->
-		<!-- 						</tr> -->
-
-
-		<!-- 						<tr> -->
-		<!-- 							<f:facet name="header" -->
-		<!-- 								rendered="#{flightBean.renderFirstClassPrice}"> -->
-		<!-- 								<td><h:outputText value="#{msg['details.price']}: " -->
-		<!-- 										rendered="#{flightBean.renderFirstClassPrice}" style="font-weight:bold" /> <h:outputText -->
-		<!-- 										value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice}€" -->
-		<!-- 										rendered="#{flightBean.renderFirstClassPrice}" style="font-weight:bold" /></td> -->
-
-		<!-- 							</f:facet> -->
-		<!-- 						</tr> -->
-
-
-
-		<!-- 					</TBODY> -->
-
-
-		<!-- 				</table> -->
-		<!-- 			</div> -->
-		<!-- 		</h:panelGroup> -->
+		</h:form>
+		<script type="text/javascript">		
+		(function getTimeZone(){
+			var timeZone=document.getElementById("j_idt121");
+			var offset = new Date().getTimezoneOffset();
+			console.log(offset);
+			timeZone.innerHTML=offset;			
+		})();		
+		</script> -->
+	
 		<h:form>
 			<h:commandButton class="btn btn-default"
-				action="#{flightBean.book()}" value="Book" />
+				action="#{flightBean.book()}" value="Book Now" />
 		</h:form>
 	</ui:define>
 </ui:composition>
+
