@@ -8,80 +8,85 @@
 	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
 	<ui:define name="pageTitle">
 		<div class="pageTitle">
-			<h3>#{msg['search.title']}</h3>
+			<center>
+				<h3>#{msg['search.title']}</h3>
+			</center>
 		</div>
 	</ui:define>
 
 	<ui:define name="pageContent">
 		<h:form id="form">
-			<h:panelGroup class="left">
-				<h:outputLabel for="nameDepartureCountry" class="lbl"
-					value="#{msg['search.depCountry']}" />
-				<h:selectOneMenu id="nameDepartureCountry"
-					class="ui-widget ui-corner-all ui-inputfield widg"
-					value="#{flightBean.depCountry}">
-					<f:selectItem itemValue="#{null}" itemLabel="" />
-					<f:selectItems value="#{flightBean.depCountryList}" />
-				</h:selectOneMenu>
-			</h:panelGroup>
+			<h:panelGrid id="panel" columns="2">
+				<h:panelGroup class="left">
+					<h:outputLabel for="nameDepartureCountry" class="lbl"
+						value="#{msg['search.depCountry']}" />
+					<h:selectOneMenu id="nameDepartureCountry"
+						class="ui-widget ui-corner-all ui-inputfield widg"
+						value="#{flightBean.depCountry}">
+						<f:selectItem itemValue="#{null}" itemLabel="" />
+						<f:selectItems value="#{flightBean.depCountryList}" />
+					</h:selectOneMenu>
+				</h:panelGroup>
 
-			<h:panelGroup class="right">
-				<h:outputLabel for="nameArrivalCountry"
-					value="#{msg['search.destCountry']}" class="lbl" />
-				<h:selectOneMenu id="nameArrivalCountry"
-					class="ui-widget ui-corner-all ui-inputfield widg"
-					value="#{flightBean.destCountry}">
-					<f:selectItem itemValue="#{null}" itemLabel="" />
-					<f:selectItems value="#{flightBean.destCountryList}" />
-				</h:selectOneMenu>
-			</h:panelGroup>
-			<h:panelGroup class="left">
-				<h:outputLabel for="depRegion" value="#{msg['search.depRegion']}"
-					class="lbl" />
-				<h:selectOneMenu id="depRegion"
-					class="ui-widget ui-corner-all ui-inputfield widg"
-					value="#{flightBean.depRegion}">
-					<f:selectItem itemValue="#{null}" itemLabel="" />
-					<f:selectItems value="#{flightBean.depRegionList}" />
-				</h:selectOneMenu>
-			</h:panelGroup>
-			<h:panelGroup class="right">
-				<h:outputLabel for="destRegion" value="#{msg['search.destRegion']}"
-					class="lbl" />
-				<h:selectOneMenu id="destRegion"
-					class="ui-widget ui-corner-all ui-inputfield widg"
-					value="#{flightBean.destRegion}">
-					<f:selectItem itemValue="#{null}" itemLabel="" />
-					<f:selectItems value="#{flightBean.destRegionList}" />
-				</h:selectOneMenu>
-			</h:panelGroup>
-			<h:panelGroup class="left">
-				<h:outputLabel for="basic" value="#{msg['search.tickets']}"
-					class="lbl" />
-				<p:spinner id="basic" value="#{flightBean.nrOfTickets}" min="1"
-					max="500" class="widg" />
-			</h:panelGroup>
-			<h:panelGroup class="right">
-				<h:outputLabel for="travelingClass"
-					value="#{msg['search.travelClass']}" class="lbl" />
-				<h:selectOneMenu id="travelingClass"
-					class="ui-widget ui-corner-all ui-inputfield widg"
-					value="#{flightBean.travelingClass}">
+				<h:panelGroup class="right">
+					<h:outputLabel for="nameArrivalCountry"
+						value="#{msg['search.destCountry']}" class="lbl" />
+					<h:selectOneMenu id="nameArrivalCountry"
+						class="ui-widget ui-corner-all ui-inputfield widg"
+						value="#{flightBean.destCountry}">
+						<f:selectItem itemValue="#{null}" itemLabel="" />
+						<f:selectItems value="#{flightBean.destCountryList}" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+				<h:panelGroup class="left">
+					<h:outputLabel for="depRegion" value="#{msg['search.depRegion']}"
+						class="lbl" />
+					<h:selectOneMenu id="depRegion"
+						class="ui-widget ui-corner-all ui-inputfield widg"
+						value="#{flightBean.depRegion}">
+						<f:selectItem itemValue="#{null}" itemLabel="" />
+						<f:selectItems value="#{flightBean.depRegionList}" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+				<h:panelGroup class="right">
+					<h:outputLabel for="destRegion" value="#{msg['search.destRegion']}"
+						class="lbl" />
+					<h:selectOneMenu id="destRegion"
+						class="ui-widget ui-corner-all ui-inputfield widg"
+						value="#{flightBean.destRegion}">
+						<f:selectItem itemValue="#{null}" itemLabel="" />
+						<f:selectItems value="#{flightBean.destRegionList}" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+				<h:panelGroup class="left">
+					<h:outputLabel for="basic" value="#{msg['search.tickets']}"
+						class="lbl" />
+					<p:spinner id="basic" value="#{flightBean.nrOfTickets}" min="1"
+						max="500" class="widg" />
+				</h:panelGroup>
+				<h:panelGroup class="right">
+					<h:outputLabel for="travelingClass"
+						value="#{msg['search.travelClass']}" class="lbl" />
+					<h:selectOneMenu id="travelingClass"
+						class="ui-widget ui-corner-all ui-inputfield widg"
+						value="#{flightBean.travelingClass}">
 
-					<f:selectItems var="n" value="#{flightBean.travelingClassList}"
-						itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
-				</h:selectOneMenu>
-			</h:panelGroup>
-			<h:panelGroup class="left">
-				<p:outputLabel for="datep" value="#{msg['search.depDate']}"
-					class="lbl" />
-				<p:calendar id="datep" value="#{flightBean.depDate}" class="widg" />
-			</h:panelGroup>
-			<h:panelGroup class="center">
+						<f:selectItems var="n" value="#{flightBean.travelingClassList}"
+							itemLabel="#{fn:replace(n.toLowerCase(),'_',' ')}" />
+					</h:selectOneMenu>
+				</h:panelGroup>
+				<h:panelGroup class="left">
+					<p:outputLabel for="datep" value="#{msg['search.depDate']}"
+						class="lbl" />
+					<p:calendar id="datep" value="#{flightBean.depDate}" class="widg" />
+				</h:panelGroup>
+			</h:panelGrid>
+			<h:panelGroup >
 				<p:outputLabel for="searchBtn" class="lbl" />
 				<p:commandButton id="searchBtn" class="widg"
 					value="#{msg['search.search']}" action="#{flightBean.search()}" />
 			</h:panelGroup>
+
 
 
 		</h:form>

@@ -27,7 +27,7 @@ public class FlightData {
 	
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
 	@JoinColumn(name="firstClassId")
-	private FirstClassData firstClass;
+	private AbstractTravelingClassData firstClass;
 
 	public Long getId() {
 		return id;
