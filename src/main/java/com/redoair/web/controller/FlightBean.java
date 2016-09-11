@@ -98,7 +98,7 @@ public class FlightBean implements Serializable {
 	
 		if (FacesContext.getCurrentInstance().isPostback() && conversation.isTransient()) {
 			System.out.println("start conversation");
-			conversation.setTimeout(30000);
+			//conversation.setTimeout(30000);
 			conversation.begin();
 		}
 	}
