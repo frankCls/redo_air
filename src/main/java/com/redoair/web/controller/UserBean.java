@@ -8,6 +8,7 @@ import javax.enterprise.context.Conversation;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Inject;
@@ -20,41 +21,47 @@ import org.mindrot.jbcrypt.BCrypt;
 import com.redoair.domain.Role;
 import com.redoair.domain.User;
 import com.redoair.services.UserRemote;
+import com.redoair.services.UserService;
 import com.redoair.web.utils.SessionUtils;
 
 @ManagedBean(name = "userBean")
 @RequestScoped
 public class UserBean implements Serializable {
 
-	private String firstName;
-	private String lastName;
-	@Size(min = 8, max = 30)
-	private String password;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1759509149313742759L;
 
-	@Size(min = 4, max = 30)
-	private String email;
+	// private String firstName;
+	// private String lastName;
+	// @Size(min = 8, max = 30)
+	// private String password;
+	//
+	// @Size(min = 4, max = 30)
+	// private String email;
+	//
+	// @Size(min = 4, max = 30)
+	// private String userName;
+	private User user=new User();
 
-	@Size(min = 4, max = 30)
-	private String userName;
-	
-	@ManagedProperty(value="#{flightId}")
+	@ManagedProperty(value = "#{flightId}")
 	private String userData;
-	
-	@EJB
-	private UserRemote userService;
 
+	@EJB
+	private UserService userService;
 
 	public String saveUser() {
-		System.out.println(userName);
+		System.out.println(this.user.getLastName());
 		User user = new User();
-		user.setFirstName(firstName);
-		user.setLastName(lastName);
-		user.setPassword(hashPassword(password));
-		user.setEmail(email);
-		user.setUserName(userName);
+		user.setFirstName(this.user.getFirstName());
+		user.setLastName(this.user.getLastName());
+		user.setPassword(hashPassword(this.user.getPassword()));
+		user.setEmail(this.user.getEmail());
+		user.setUserName("null");
 		user.setRole(Role.PAYER);
 		if (userService.saveUser(user) != null) {
-			
+
 			setSessionAttributes(user);
 			return "UserSaved";
 
@@ -67,45 +74,42 @@ public class UserBean implements Serializable {
 		
 		System.out.println("in login()");
 		
-		User user = userService.findUserByUserName(userName);
-		if (user == null) {
+		User checkUser = userService.findUserByEmail(user.getEmail());
+		if (checkUser==null) {
 			System.out.println("no user found!");
 			return "noUser";
-		}
-
-		if (userName.equals(user.getUserName()) && user.getRole() == Role.PAYER
-				&& checkPassword(password, user.getPassword())) {
+		}else if (checkUser.getEmail().equals(user.getEmail()) && user.getRole().equals(Role.PAYER)
+				&& checkPassword(user.getPassword(), checkUser.getPassword())) {
 			setSessionAttributes(user);
 			System.out.println("user is found");
 			return "payer" ;
-		} else if (userName.equals(user.getUserName()) && user.getRole() == Role.PARTNER
-				&& checkPassword(password, user.getPassword())) {
+		} else if (checkUser.getEmail().equals(user.getUserName()) && user.getRole() == Role.PARTNER
+				&& checkPassword(user.getPassword(), checkUser.getPassword())) {
 			setSessionAttributes(user);
 			return "partner" ;
 		} else {
 			System.out.println("login failed");
 			return "invalid" ;
 		}
-
+		
 	}
 
 	public void setSessionAttributes(User user) {
 		HttpSession session = SessionUtils.getSession();
-	
+
 		session.setAttribute("userName", user.getUserName());
 		session.setAttribute("firstName", user.getFirstName());
 		session.setAttribute("lastName", user.getLastName());
 		session.setAttribute("role", user.getRole());
-		
-		if ( session.getAttribute("flightId") != null && session.getAttribute("tickets") != null) {
+
+		if (session.getAttribute("flightId") != null && session.getAttribute("tickets") != null) {
 			System.out.println(session.getAttribute("flightId").toString());
 			session.setAttribute("flightId", session.getAttribute("flightId").toString());
 			session.setAttribute("tickets", session.getAttribute("tickets").toString());
 		}
-		
+
 	}
-	
-	
+
 	public String getUserData() {
 		return userData;
 	}
@@ -139,46 +143,52 @@ public class UserBean implements Serializable {
 
 	}
 
-	public String getEmail() {
-		return email;
+	// public String getEmail() {
+	// return email;
+	// }
+	//
+	// public void setEmail(String email) {
+	// this.email = email;
+	// }
+	//
+	// public String getFirstName() {
+	// return firstName;
+	// }
+	//
+	// public void setFirstName(String firstName) {
+	// this.firstName = firstName;
+	// }
+	//
+	// public String getLastName() {
+	// return lastName;
+	// }
+	//
+	// public void setLastName(String lastName) {
+	// this.lastName = lastName;
+	// }
+	//
+	// public String getPassword() {
+	// return password;
+	// }
+	//
+	// public void setPassword(String password) {
+	// this.password = password;
+	// }
+	//
+	// public String getUserName() {
+	// return userName;
+	// }
+	//
+	// public void setUserName(String userName) {
+	// this.userName = userName;
+	// }
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUser(User user) {
+		this.user = user;
 	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-
 
 }

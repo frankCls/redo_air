@@ -10,35 +10,32 @@
 		<f:view>
 			<center>
 				<h:form id="registerForm">
-					<table frame="box" id="registerTable">
+					<table class="table" id="registerTable">
 						<tr>
 							<td><h:outputText value="Enter Your First Name:" /></td>
-							<td><h:inputText id="fname" value="#{userBean.firstName}"
-									required="true" requiredMessage="Please enter your first name" /></td>
+							<td><h:inputText id="fname"
+									value="#{userBean.user.firstName}" required="true"
+									requiredMessage="Please enter your first name" autocomplete="off"/></td>
 							<td><h:message for="fname" style="color:red" /></td>
 						</tr>
 						<tr>
 							<td><h:outputText value="Enter Your Last Name:" /></td>
-							<td><h:inputText id="lname" value="#{userBean.lastName}"
-									required="true" requiredMessage="Please enter your last name" /></td>
+							<td><h:inputText id="lname"
+									value="#{userBean.user.lastName}" required="true"
+									requiredMessage="Please enter your last name" autocomplete="off" /></td>
 							<td><h:message for="lname" style="color:red" /></td>
 						</tr>
 						<tr>
 							<td><h:outputText value="Enter Your email:" /></td>
-							<td><h:inputText id="email" value="#{userBean.email}"
-									required="true" requiredMessage="Please enter your email" /></td>
+							<td><h:inputText id="email" value="#{userBean.user.email}"
+									required="true" requiredMessage="Please enter your email" autocomplete="off"/></td>
 							<td><h:message for="email" style="color:red" /></td>
 						</tr>
 						<tr>
-							<td><h:outputText value="Enter username :" /></td>
-							<td><h:inputText id="usr" value="#{userBean.userName}"
-									required="true" requiredMessage="Please enter your username" /></td>
-							<td><h:message for="usr" style="color:red" /></td>
-						</tr>
-						<tr>
 							<td><h:outputText value="Enter Password :" /></td>
-							<td><h:inputSecret id="psw" value="#{userBean.password}"
-									required="true" requiredMessage="Please enter your password" /></td>
+							<td><h:inputSecret id="psw"
+									value="#{userBean.user.password}" required="true"
+									requiredMessage="Please enter your password" autocomplete="off"/></td>
 							<td><h:message for="psw" style="color:red" /></td>
 						</tr>
 

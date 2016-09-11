@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User implements Serializable{
@@ -16,22 +18,25 @@ public class User implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+	
 	private String userName;
 	@NotNull
 	private String password;
-	@NotNull
+	@Size(min = 2, max = 30)
 	private String firstName;
 	
 	
-	@NotNull
+	@Size(min = 1, max = 30)
 	private String lastName;
 	
-	@NotNull
+	@Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."
+	        +"[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
+	        +"(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
+	             message="Invalid email")
 	private String email;
 	
 	@Enumerated(EnumType.STRING)
-	private Role role ;
+	private Role role =Role.PAYER;
 	
 	
 	public String getEmail() {

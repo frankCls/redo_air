@@ -13,7 +13,7 @@
 		<f:view>
 			<center>
 				<h1>Successfully registered</h1>
-				<h2>Hi, #{userBean.firstName}</h2>
+				<h2>#{msg['welcome']}, #{userBean.user.firstName} #{userBean.user.lastName}</h2>
 				<h:form>
 					<p>
 						<h:commandLink value="logout" action="#{userBean.logout}" />

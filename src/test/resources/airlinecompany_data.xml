@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataset>
+	<partner_company id="1000" name="1Time Airline" IATA="1T" ICAO="RNX" callsign="NEXTIME" country="South Africa"/>
+	<partner_company id="1001" name="40-Mile Air" IATA="Q5" ICAO="MLA" callsign="MILE-AIR" country="United States"/>
+	<partner_company id="1002" name="Ansett Australia" IATA="AN" ICAO="AAA" callsign="ANSETT" country="Australia"/>
+	<partner_company id="1003" name="Abacus International" IATA="1B" country="Singapore"/>
+	<partner_company id="1004" name="Aigle Azur" IATA="ZI" ICAO="AAF" callsign="AIGLE AZUR" country="France"/>
+	<partner_company id="1005" name="Aloha Airlines" IATA="AQ" ICAO="AAH" callsign="ALOHA" country="United States"/>
+	<partner_company id="1006" name="American Airlines" IATA="AA" ICAO="AAL" callsign="AMERICAN" country="United States"/>
+	<partner_company id="1007" name="Asiana Airlines" IATA="OZ" ICAO="AAR" callsign="ASIANA" country="Republic of Korea"/>
+	<partner_company id="1008" name="Askari Aviation" IATA="4K" ICAO="AAS" callsign="AL-AAS" country="Pakistan"/>
+	<partner_company id="1009" name="Afriqiyah Airways" IATA="8U" ICAO="AAW" callsign="AFRIQIYAH" country="Libya"/>
+	<partner_company id="1010" name="Allegiant Air" IATA="G4" ICAO="AAY" callsign="ALLEGIANT" country="United States"/>
+	<partner_company id="1011" name="Aeroflot-Don" IATA="D9" ICAO="DNV" callsign="DONAVIA" country="Russia"/>
+	<partner_company id="1012" name="Air Madrid" IATA="NM" ICAO="DRD" callsign="ALADA AIR" country="Spain"/>
+	<partner_company id="1013" name="Aer Lingus" IATA="EI" ICAO="EIN" callsign="SHAMROCK" country="Ireland"/>
+	<partner_company id="1014" name="Air Finland" IATA="OF" ICAO="FIF" callsign="AIR FINLAND" country="Finland"/>
+	<partner_company id="1015" name="Airfix Aviation" ICAO="FIX" callsign="AIRFIX" country="Finland"/>
+	<partner_company id="1016" name="Air Pacific" IATA="FJ" ICAO="FJI" callsign="PACIFIC" country="Fiji"/>
+	<partner_company id="1017" name="Atlantic Airways" IATA="RC" ICAO="FLI" callsign="FAROELINE" country="Faroe Islands"/>
+	<partner_company id="1018" name="Air Florida" IATA="QH" ICAO="FLZ" callsign="AIR FLORIDA" country="United States"/>
+	<partner_company id="1019" name="Air Iceland" IATA="NY" ICAO="FXI" callsign="FAXI" country="Iceland"/>
+	<partner_company id="1020" name="Air Philippines" IATA="2P" ICAO="GAP" callsign="ORIENT PACIFIC" country="Philippines"/>
+	<partner_company id="1021" name="Air Guinee Express" IATA="2U" ICAO="GIP" callsign="FUTURE EXPRESS" country="Guinea"/>
+	<partner_company id="1022" name="Air Greenland" IATA="GL" ICAO="GRL" callsign="GREENLAND" country="Denmark"/>
+	<partner_company id="1023" name="Czech Airlines" IATA="OK" ICAO="CSA" callsign="CSA-LINES" country="Czech Republic"/>
+	<partner_company id="1024" name="DAT Danish Air Transport" IATA="DX" ICAO="DTR" callsign="DANISH" country="Denmark"/>
+	<partner_company id="1025" name="Daallo Airlines" IATA="D3" ICAO="DAO" callsign="DALO AIRLINES" country="Djibouti"/>
+	<partner_company id="1026" name="Dalavia" IATA="H8" ICAO="KHB" callsign="DALAVIA" country="Russia"/>
+	<partner_company id="1027" name="Darwin Airline" IATA="0D" ICAO="DWT" callsign="DARWIN" country="Switzerland"/>
+	<partner_company id="1028" name="Delta Aerotaxi" ICAO="DEA" callsign="JET SERVICE" country="Italy"/>
+	<partner_company id="1029" name="Delta Air Lines" IATA="DL" ICAO="DAL" callsign="DELTA" country="United States"/>
+	<partner_company id="1030" name="Denim Air" ICAO="DNM" callsign="DENIM" country="Netherlands"/>
+	<partner_company id="1031" name="Deutsche Bahn" IATA="2A" country="Germany"/>
+	<partner_company id="1032" name="Djibouti Airlines" IATA="D8" ICAO="DJB" callsign="DJIBOUTI AIR" country="Djibouti"/>
+	<partner_company id="1033" name="Dniproavia" ICAO="UDN" callsign="DNIEPRO" country="Ukraine"/>
+	<partner_company id="1034" name="Dominicana de Aviaci" IATA="DO" ICAO="DOA" callsign="DOMINICANA" country="Dominican Republic"/>
+	<partner_company id="1035" name="Domodedovo Airlines" IATA="E3" ICAO="DMO" callsign="DOMODEDOVO" country="Russia"/>
+	<partner_company id="1036" name="DonbassAero" IATA="5D" ICAO="UDC" callsign="DONBASS AERO" country="Ukraine"/>
+	<partner_company id="1037" name="Dragonair" IATA="KA" ICAO="HDA" callsign=" Hong Kong Dragon Airlines" country="DRAGON"/>
+	<partner_company id="1038" name="Druk Air" IATA="KB" ICAO="DRK" callsign="ROYAL BHUTAN" country="Bhutan"/>
+	<partner_company id="1039" name="Dubrovnik Air" ICAO="DBK" callsign="SEAGULL" country="Croatia"/>
+	<partner_company id="1040" name="Dutch Antilles Express" ICAO="DNL" callsign="DUTCH ANTILLES" country="Netherlands Antilles"/>
+	<partner_company id="1041" name="dba" IATA="DI" ICAO="BAG" callsign="SPEEDWAY" country="Germany"/>
+	<partner_company id="1042" name="EVA Air" IATA="BR" ICAO="EVA" callsign="EVA" country="Taiwan"/>
+	<partner_company id="1043" name="Eagle Air" IATA="H7" country="Uganda"/>
+	<partner_company id="1044" name="East African" IATA="QU" ICAO="UGX" callsign="CRANE" country="Uganda"/>
+	<partner_company id="1045" name="Eastern Airways" IATA="T3" ICAO="EZE" callsign="EASTFLIGHT" country="United Kingdom"/>
+	<partner_company id="1046" name="Eastland Air" IATA="DK" ICAO="ELA" country="Australia"/>
+	<partner_company id="1047" name="Ecuavia" ICAO="ECU" callsign="ECUAVIA" country="Ecuador"/>
+	<partner_company id="1048" name="Edelweiss Air" IATA="WK" ICAO="EDW" callsign="EDELWEISS" country="Switzerland"/>
+</dataset>

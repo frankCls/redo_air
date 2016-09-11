@@ -37,6 +37,12 @@
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy" />
 				</h:outputText>
 			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{msg['search.comp']}" />
+				</f:facet>
+				<h:outputText value="#{f.company.name}"/>
+			</h:column>
 
 			<h:column>
 				<f:facet name="header">

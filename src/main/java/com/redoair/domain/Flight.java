@@ -52,6 +52,11 @@ public class Flight implements Serializable {
 	@JoinColumn(name="destID", nullable=false)
 	private Airport destinationLocation;
 	
+	@NotNull
+	@OneToOne(fetch=FetchType.EAGER,cascade={CascadeType.MERGE})
+	@JoinColumn(name="companyID", nullable=false)
+	private PartnerCompany company;
+	
 
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE,CascadeType.MERGE})
 	@JoinColumn(name="flightDataId")
@@ -150,6 +155,14 @@ public class Flight implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public PartnerCompany getCompany() {
+		return company;
+	}
+
+	public void setCompany(PartnerCompany company) {
+		this.company = company;
 	}
 
 

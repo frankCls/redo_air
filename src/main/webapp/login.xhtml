@@ -13,15 +13,15 @@
 	<ui:define name="pageContent">
 
 		<h:form class="form-horizontal">
-			<h:outputLabel value="#{msg['login.username']}" for="inputName" />
-			<h:inputText id="inputName" value="#{userBean.userName}"
+			<h:outputLabel value="#{msg['login.email']}" for="inputName" />
+			<h:inputText id="inputName" value="#{userBean.user.email}"
 				class="form-control" required="true"
 				requiredMessage="Username field must not be empty" />
 			<h:message for="inputName" style="color:red" />
 
 
 			<h:outputText value="#{msg['login.password']}" />
-			<h:inputSecret id="inputPassword" value="#{userBean.password}"
+			<h:inputSecret id="inputPassword" value="#{userBean.user.password}"
 				required="true" requiredMessage="Password field must not be empty"
 				class="form-control" />
 			<h:message for="inputPassword" style="color:red" />

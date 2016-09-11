@@ -16,13 +16,25 @@ public class UserService implements UserRemote {
 
 	@Override
 	public User saveUser(User user) {
-		return userRepository.saveUser(user);
+		User checkUser = findUserByEmail(user.getEmail());
+
+		if (checkUser != null) {
+			System.out.println("old user: " + user.getEmail());
+			return userRepository.updateUser(user);
+		} else {
+			System.out.println("new user: " + user.getFirstName());
+			return userRepository.saveUser(user);			
+		}
+			
 	}
 
 	@Override
-	public User findUserByUserName(String userName) {
-	
+	public User findUserByUserName(String userName) {	
 		return userRepository.findUserByUserName(userName);
+	}
+
+	public User findUserByEmail(String email) {		
+		return userRepository.findUserByEmail(email);
 	}
 
 

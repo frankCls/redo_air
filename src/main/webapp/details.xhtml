@@ -53,9 +53,10 @@
 						value="#{flightBean.flightDetails.destinationLocation.name}" /></td>
 			</tr>
 		</table>
+
 		<table class="table">
 			<tr>
-				<td><h:outputText value="#{msg['details.date']}" /></td>
+				<td><h:outputText value="#{msg['details.date.local']}" /></td>
 				<td><h:outputText
 						value="#{flightBean.flightDetails.departureTime}">
 						<f:convertDateTime type="date" pattern="dd-MM-yyyy"
@@ -83,6 +84,14 @@
 			</tr>
 		</table>
 		<table class="table">
+			<tr>
+				<td><h:outputText value="#{msg['search.comp']}" /></td>
+				<td><h:outputText
+						value="#{flightBean.flightDetails.company.name} (#{flightBean.flightDetails.company.country})" /></td>
+				<td><h:outputText value="  " /></td>
+			</tr>
+		</table>
+		<table class="table">
 			<h:panelGroup rendered="#{flightBean.renderEconomyPrice}">
 				<tr>
 					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
@@ -96,7 +105,7 @@
 				<tr>
 					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice}) €" />
+							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice} €" />
 					</td>
 					<td></td>
 				</tr>
@@ -105,7 +114,7 @@
 				<tr>
 					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice}) €" />
+							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice} €" />
 					</td>
 					<td></td>
 				</tr>
@@ -115,7 +124,7 @@
 				<tr>
 					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice}) €" />
+							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice} €" />
 					</td>
 					<td></td>
 				</tr>
@@ -124,7 +133,7 @@
 				<tr>
 					<td><h:outputText value="#{msg['details.price.ticket']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice}) €" />
+							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice} €" />
 					</td>
 					<td></td>
 				</tr>
@@ -149,7 +158,7 @@
 				<tr>
 					<td><h:outputText value="#{msg['details.price.total']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice*flightBean.nrOfTickets}) €" />
+							value="#{flightBean.flightDetails.flightData.businnessClass.pricing.calculatedPrice*flightBean.nrOfTickets} €" />
 					</td>
 					<td></td>
 				</tr>
@@ -159,14 +168,14 @@
 				<tr>
 					<td><h:outputText value="#{msg['details.price.total']}" /></td>
 					<td><h:outputText
-							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice*flightBean.nrOfTickets}) €" />
+							value="#{flightBean.flightDetails.flightData.firstClass.pricing.calculatedPrice*flightBean.nrOfTickets} €" />
 					</td>
 					<td></td>
 				</tr>
 			</h:panelGroup>
 
 		</table>
-<!-- 	getting user timezone
+		<!-- 	getting user timezone
 		<h:form prependId="false" styleClass="invisible">
 			
 			<h:inputText id="timeZone" value="#{flightBean.timeOffSet}">
@@ -182,7 +191,10 @@
 			timeZone.innerHTML=offset;			
 		})();		
 		</script> -->
-	
+		<h:form>
+			<h:commandButton class="btn btn-default"
+				action="index.xhtml" immediate="true" value="#{msg['cancel']}" />
+		</h:form>
 		<h:form>
 			<h:commandButton class="btn btn-default"
 				action="#{flightBean.book()}" value="Book Now" />
