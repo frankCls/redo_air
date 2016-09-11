@@ -28,9 +28,9 @@ public class BookingRepository {
 		return em.find(Booking.class, id);
 	}
 	
-	public void save(Booking booking) {
+	public Booking save(Booking booking) {
 
-		em.merge(booking);
+		return em.merge(booking);
 
 	}
 	public Booking findById(Long id) {

@@ -24,8 +24,10 @@ body {
     
 	height: 100%;
 	width:100%; 
-	overflow:hidden;
+	
+	overflow-y:auto;
 }
+
 @keyframes fly {
     0%   {background-position: 0% 40%;}
     100%  {background-position: 100% 0%;}    

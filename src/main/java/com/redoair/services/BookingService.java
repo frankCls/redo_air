@@ -11,8 +11,9 @@ import com.redoair.domain.Payer;
 @Remote
 public interface BookingService {
 	
-	void saveBooking(Booking booking);
+	Booking saveBooking(Booking booking);
 	 List<Booking> findAllBookings();
 
 	 List<Payer> findPayersByLastNameAndFirstName(Payer payer);
+	 Booking findBookingById(Long id);
 }

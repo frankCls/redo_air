@@ -24,7 +24,7 @@
 
 
 	<dependencies>
-	<dependency>
+		<dependency>
 			<groupId>org.primefaces.extensions</groupId>
 			<artifactId>primefaces-extensions</artifactId>
 			<version>4.0.0</version>
@@ -34,11 +34,7 @@
 			<artifactId>jbcrypt</artifactId>
 			<version>0.3m</version>
 		</dependency>
-		<dependency>
-			<groupId>org.primefaces</groupId>
-			<artifactId>primefaces</artifactId>
-			<version>6.0</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>net.bootsfaces</groupId>
 			<artifactId>bootsfaces</artifactId>
@@ -168,7 +164,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		
+
 	</dependencies>
 
 	<build>

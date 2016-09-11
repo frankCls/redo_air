@@ -7,18 +7,23 @@
 <f:view locale="#{lang.locale}">
 
 	<h:head>
+		
 		<title><ui:insert name="headerTitle">ReDo Air</ui:insert></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	
 		<ui:insert name="customScripts">
 			<h:outputScript library="js" name="/counter.js" />
+			
 		</ui:insert>
-		<ui:insert name="customStylesheets">
-			<h:outputStylesheet library="css" name="all.css" />
-		</ui:insert>
+<h:outputStylesheet  name="/default/css/all.css" />
+		<h:outputStylesheet name="/default/css/print.css" media="print" />
+			
 
 	</h:head>
 	<h:body>
+
 
 
 		<div>
@@ -35,7 +40,7 @@
 
 				<nav class="navbar navbar-light bg-faded">
 					<a class="navbar-brand" href="/images/air-travel-2400px.png" />
-					
+
 
 					<h:form class="form-inline">
 						<ul class="nav navbar-nav">
@@ -52,7 +57,7 @@
 						</ul>
 					</h:form>
 				</nav>
-				
+
 				<ui:insert name="pageTitle">Here comes page title</ui:insert>
 				<ui:insert name="pageContent">
 				Here comes content...

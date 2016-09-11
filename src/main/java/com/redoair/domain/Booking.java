@@ -13,6 +13,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,29 +32,26 @@ public class Booking implements Serializable {
 	private static final long serialVersionUID = -6700641769939449352L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Version
 	private Long version;
 
-	@OneToMany( cascade = { CascadeType.PERSIST, CascadeType.MERGE,
-			CascadeType.REMOVE }, fetch = FetchType.EAGER)
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }, fetch = FetchType.EAGER)
 	private List<Ticket> tickets = new ArrayList<>();
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateBooked = new Date();
 
 	@NotNull
-	@ManyToOne( cascade = {CascadeType.MERGE,CascadeType.PERSIST }, fetch = FetchType.EAGER)
-	private Payer payer;
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST }, fetch = FetchType.EAGER)
+	private Payer payer = new Payer();
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private PurchaseStatus purchaseStatus;
 
-	
-	
 	public Long getId() {
 		return id;
 	}

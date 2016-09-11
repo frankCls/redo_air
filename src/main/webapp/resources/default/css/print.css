@@ -1,0 +1,5 @@
+@media print {
+    header, .pageTitle, #dontShowInPrint{ 
+        display: none;
+    }
+}

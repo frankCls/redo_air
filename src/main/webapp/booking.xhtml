@@ -14,9 +14,9 @@
 	<ui:define name="pageContent">
 		<f:view>
 			<h:form id="logoutButton">
-				
-					<h:commandButton value="logout" action="#{userBean.logout}" />
-				
+
+				<h:commandButton value="logout" action="#{userBean.logout}" />
+
 			</h:form>
 			<h:form>
 				<div class="col-md-4">
@@ -115,7 +115,8 @@
 										</f:facet>
 										<h:inputText id="firstNamePassenger"
 											value="#{t.passenger.firstName}" required="true"
-									requiredMessage="FirstName field must not be empty" class="form-control" />
+											requiredMessage="FirstName field must not be empty"
+											class="form-control" />
 										<h:message for="firstNamePassenger" style="color:red" />
 									</h:column>
 									<h:column>
@@ -123,8 +124,9 @@
 											<h:outputText value="Last name passenger" />
 										</f:facet>
 										<h:inputText id="lastNamePassenger"
-											value="#{t.passenger.lastName}"  required="true"
-									requiredMessage="LastName field must not be empty" class="form-control" />
+											value="#{t.passenger.lastName}" required="true"
+											requiredMessage="LastName field must not be empty"
+											class="form-control" />
 										<h:message for="lastNamePassenger" style="color:red" />
 									</h:column>
 								</h:dataTable>
@@ -135,7 +137,9 @@
 				<h:panelGroup class="form-group">
 					<h:outputLabel for="bookBtn" value="" />
 					<h:commandButton id="bookBtn" class="btn btn-default form-control"
-						value="Save booking" action="#{bookingBean.saveBooking()}" />
+						value="Save booking" action="#{bookingBean.saveBooking()}">
+					
+					</h:commandButton>
 				</h:panelGroup>
 			</h:form>
 		</f:view>
