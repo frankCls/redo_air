@@ -1,5 +1,6 @@
 package com.redoair.web.controller;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
@@ -13,6 +14,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.constraints.Size;
 
@@ -78,14 +80,14 @@ public class UserBean implements Serializable {
 		if (checkUser==null) {
 			System.out.println("no user found!");
 			return "noUser";
-		}else if (checkUser.getEmail().equals(user.getEmail()) && user.getRole().equals(Role.PAYER)
+		}else if (checkUser.getEmail().equals(user.getEmail()) && checkUser.getRole().equals(Role.PAYER)
 				&& checkPassword(user.getPassword(), checkUser.getPassword())) {
-			setSessionAttributes(user);
+			setSessionAttributes(checkUser);
 			System.out.println("user is found");
 			return "payer" ;
-		} else if (checkUser.getEmail().equals(user.getUserName()) && user.getRole() == Role.PARTNER
+		} else if (checkUser.getEmail().equals(user.getUserName()) && checkUser.getRole() == Role.PARTNER
 				&& checkPassword(user.getPassword(), checkUser.getPassword())) {
-			setSessionAttributes(user);
+			setSessionAttributes(checkUser);
 			return "partner" ;
 		} else {
 			System.out.println("login failed");
@@ -97,7 +99,7 @@ public class UserBean implements Serializable {
 	public void setSessionAttributes(User user) {
 		HttpSession session = SessionUtils.getSession();
 
-		session.setAttribute("userName", user.getUserName());
+		session.setAttribute("email", user.getEmail());
 		session.setAttribute("firstName", user.getFirstName());
 		session.setAttribute("lastName", user.getLastName());
 		session.setAttribute("role", user.getRole());
@@ -136,11 +138,11 @@ public class UserBean implements Serializable {
 		return (password_verified);
 	}
 
-	public void logout() {
+	public void logout() throws IOException {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		FacesContext.getCurrentInstance().getApplication().getNavigationHandler()
-				.handleNavigation(FacesContext.getCurrentInstance(), null, "/login.xhtml");
-
+		FacesContext.getCurrentInstance().getExternalContext().redirect(SessionUtils.getRequest().getContextPath()+"/index.jsf");
+		
+		
 	}
 
 	// public String getEmail() {

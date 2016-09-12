@@ -20,9 +20,9 @@ public class BookingServiceEjb implements BookingService {
 	private BookingRepository bookingRepo;
 		
 	@Override
-	public void saveBooking(Booking booking) {
+	public Booking saveBooking(Booking booking) {
 		
-		bookingRepo.save(booking);		
+		return bookingRepo.save(booking);		
 	}
 
 	@Override
@@ -34,6 +34,12 @@ public class BookingServiceEjb implements BookingService {
 	@Override
 	public List<Payer> findPayersByLastNameAndFirstName(Payer payer) {
 		return bookingRepo.findPayersByLastNameAndFirstName(payer );
+	}
+
+	@Override
+	public Booking findBookingById(Long id) {
+		
+		return bookingRepo.findBookingById(id);
 	}
 
 	

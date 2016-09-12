@@ -20,6 +20,7 @@ import com.redoair.domain.EconomyClassData;
 import com.redoair.domain.FirstClassData;
 import com.redoair.domain.Flight;
 import com.redoair.domain.FlightData;
+import com.redoair.domain.PartnerCompany;
 import com.redoair.domain.Pricing;
 import com.redoair.domain.TravelingClassType;
 import com.redoair.repositories.FlightRepository;
@@ -33,6 +34,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 	private static final TravelingClassType TravelClassType = TravelingClassType.ECONOMY_CLASS;
 	private static final Integer nrOfSeats = 4;
 	private Flight flight;
+	private PartnerCompany company;
 	
 	 
 	private Airport depAirport;
@@ -47,6 +49,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		depAirport = repo.em.find(Airport.class, depAirportId);
 		destAirport = repo.em.find(Airport.class, destAirportId);
 		flight= repo.em.find(Flight.class, flightId);
+		company = repo.em.find(PartnerCompany.class,1000L);
 		
 	}
 
@@ -94,6 +97,7 @@ public class TestFlightRepository extends JpaPersistenceTest {
 		data.setEconomyClass(economyClassData);
 		data.setFirstClass(firstClassData);
 		flight.setFlightData(data);
+		flight.setCompany(company);
 
 		try {
 			flight.setDepartureTime(dateFormat.parse("12-12-2016"));

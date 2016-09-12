@@ -1,0 +1,38 @@
+<ui:composition template="/WEB-INF/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="pageTitle" value="#{msg['search.title']}" />
+	<ui:define name="pageContent">
+		<f:view>
+			<center>
+
+
+				<h:form id="form">
+
+					<p:panel id="panel" header="user already exists"
+						style="width: 400px;margin: auto;">
+
+						<h:panelGrid columns="1">
+							
+							<p>
+								<h:outputLink value="login.jsf">Please sign in</h:outputLink>
+							</p>
+
+
+						</h:panelGrid>
+
+
+					</p:panel>
+
+				</h:form>
+
+			</center>
+		</f:view>
+
+	</ui:define>
+</ui:composition>

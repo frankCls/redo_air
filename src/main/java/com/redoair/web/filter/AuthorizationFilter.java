@@ -37,11 +37,11 @@ public class AuthorizationFilter implements Filter {
 
 			String reqURI = reqt.getRequestURI();
 			System.out.println("in " + reqURI);
-			if ((reqURI.indexOf("/partner.jsf") < 0 && ses != null && ses.getAttribute("userName") != null
+			if ((reqURI.indexOf("/partner.jsf") < 0 && ses != null && ses.getAttribute("email") != null
 					&& ses.getAttribute("role") == Role.PAYER))
 				chain.doFilter(request, response);
 			
-			else if ((reqURI.indexOf("/partner.jsf") >= 0 && ses != null && ses.getAttribute("userName") != null
+			else if ((reqURI.indexOf("/partner.jsf") >= 0 && ses != null && ses.getAttribute("email") != null
 					&& reqURI.indexOf("/login.jsf") >= 0 && ses.getAttribute("role") == Role.PARTNER))
 				chain.doFilter(request, response);
 			else if (reqURI.indexOf("/login.jsf") >= 0 || reqURI.indexOf("/index.jsf") >= 0 || reqURI.indexOf("/searchResults.jsf") >= 0

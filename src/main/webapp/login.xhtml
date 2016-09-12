@@ -7,11 +7,12 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 	<ui:define name="pageTitle">
 		<div class="pageTitle">
-			<center>	<h3>#{msg['login.title']}</h3></center>
+			<center>
+				<h3>#{msg['login.title']}</h3>
+			</center>
 		</div>
 	</ui:define>
 	<ui:define name="pageContent">
-
 		<h:form class="form-horizontal">
 			<h:outputLabel value="#{msg['login.email']}" for="inputName" />
 			<h:inputText id="inputName" value="#{userBean.user.email}"
@@ -36,7 +37,10 @@
 		</h:form>
 
 
-		
+
+
+
+
 		<!-- 		<h:panelGroup> -->
 		<!-- 			<form class="form-horizontal" method="POST" action="j_security_check"> -->
 		<!-- 				<h:outputLabel value="#{msg['login.username']}" for="usrName" /> -->

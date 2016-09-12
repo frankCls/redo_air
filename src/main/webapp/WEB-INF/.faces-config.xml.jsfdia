@@ -60,9 +60,9 @@
   <PROCESS-ITEM ID="rules:#booking.xhtml:0" NAME="item"
    PATH="/booking.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
-    ID="bookingSuccess:#{bookingBean.saveBooking()}:#bookingSucces.xhtml"
-    NAME="output" PATH="/bookingSucces.xhtml"
-    TARGET="rules:#bookingSucces.xhtml"
+    ID="bookingSuccess:#{bookingBean.saveBooking()}:#bookingSuccess.xhtml"
+    NAME="output" PATH="/bookingSuccess.xhtml"
+    TARGET="rules:#bookingSuccess.xhtml"
     TITLE="#{bookingBean.saveBooking()}:bookingSuccess" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
@@ -74,6 +74,6 @@
   SHAPE="288,257,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#errorNoUser.xhtml" PATH="/errorNoUser.xhtml"
   SHAPE="288,577,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#bookingSucces.xhtml"
-  PATH="/bookingSucces.xhtml" SHAPE="496,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#bookingSuccess.xhtml"
+  PATH="/bookingSuccess.xhtml" SHAPE="496,17,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

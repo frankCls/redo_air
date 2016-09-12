@@ -126,7 +126,7 @@ public class BookingBean implements Serializable {
 			Object ticketscount = session.getAttribute("tickets");
 			if (attribute != null && ticketscount != null) {
 				id = (String) session.getAttribute("flightId");
-				numberTickets = Integer.valueOf( session.getAttribute("tickets").toString());
+				numberTickets = Integer.valueOf(session.getAttribute("tickets").toString());
 			} else {
 
 				System.err.println("no flight!");
@@ -154,7 +154,8 @@ public class BookingBean implements Serializable {
 		travelinclass = TravelingClassType.ECONOMY_CLASS;
 
 		// --------
-
+System.out.println("first name "+(String) session.getAttribute("firstName"));
+System.out.println("last name "+(String) session.getAttribute("lastName"));
 		payer.setFirstName((String) session.getAttribute("firstName"));
 		payer.setLastName((String) session.getAttribute("lastName"));
 
@@ -183,8 +184,8 @@ public class BookingBean implements Serializable {
 
 			if (findPayersList.isEmpty()) {
 
-				// System.err.println("No payer found");
-
+				System.err.println("No payer found");
+System.out.println(payer.getFirstName());
 				creditCard.setTypeCreditCard(getSelectedCreditCardType());
 				payer.addCreditCard(creditCard);
 				booking.setPayer(payer);
@@ -241,11 +242,17 @@ public class BookingBean implements Serializable {
 			flightService.updateFlight(flight);
 			flight = flightService.findFlightById(17313L);
 			System.out.println("flight after merge:" + flight.getFlightData().getEconomyClass().getRemainingSeats());
-			bookingServiceEjb.saveBooking(booking);
+			booking = bookingServiceEjb.saveBooking(booking);
 
 		}
+		
+		System.out.println("myBooking" + booking.getId());
 
 		end();
+		HttpSession session = SessionUtils.getSession();
+
+		session.setAttribute("myBooking", booking);
+		
 		return "bookingSuccess";
 
 	}
